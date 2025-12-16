@@ -89,7 +89,12 @@ We are committed to providing a welcoming and inclusive environment. Please be r
 
 ## License
 
-This project is open source. Content is provided for educational purposes with citations to original sources where applicable.
+- **Content** (documentation): [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) — Share and adapt with attribution, non-commercial use only
+- **Code** (tooling/scripts): [MIT License](LICENSE.md)
+
+See [LICENSE.md](LICENSE.md) for full details.
+
+© 2024 Cumulative Design. All rights reserved for commercial use.
 
 ## Acknowledgments
 
