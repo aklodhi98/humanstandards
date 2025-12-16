@@ -1,0 +1,66 @@
+/* Custom styles for Human Standards */
+
+/* Force hero centering on ALL viewport sizes */
+.hero {
+  text-align: center !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: auto !important;
+  padding: 4rem 2rem !important;
+  min-height: 50vh !important;
+}
+
+/* Override the two-column grid layout on desktop */
+.hero>img,
+.hero>picture,
+.hero>.hero-html {
+  display: none !important;
+}
+
+.hero .stack {
+  text-align: center !important;
+  align-items: center !important;
+  margin-inline: auto !important;
+  max-width: 42rem !important;
+  grid-column: 1 / -1 !important;
+  /* Span full width if in grid */
+}
+
+.hero h1,
+.hero h1#_top {
+  text-align: center !important;
+}
+
+.hero .tagline {
+  text-align: center !important;
+}
+
+.hero .actions {
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+}
+
+/* Override any grid/flex layout that creates two columns */
+@media (min-width: 50rem) {
+  .hero {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero .stack {
+    text-align: center !important;
+    align-items: center !important;
+  }
+}
+
+/* Center content below hero */
+[data-page-type="splash"] .sl-markdown-content {
+  max-width: 65ch;
+  margin-inline: auto;
+}

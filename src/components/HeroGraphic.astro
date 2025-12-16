@@ -1,0 +1,263 @@
+---
+/**
+ * Progressive Human Figure - Hero graphic for Human Standards
+ * A human silhouette that builds up section by section, representing
+ * the various aspects of human factors covered in the documentation.
+ * 
+ * Categories animate in sequence:
+ * 1. Body outline (Ergonomics) - base structure
+ * 2. Head/brain (Cognition) - thinking/processing
+ * 3. Eyes/ears/hands (Perception) - senses
+ * 4. Heart (Emotions & Motivation) - feeling/drive
+ * 5. Neural pathways (Decision-Making) - connections
+ * 6. Outer glow (Accessibility) - inclusive design
+ */
+---
+
+<style>
+  .hero-graphic {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 3/4;
+    margin: 0 auto;
+  }
+  
+  /* Base styles */
+  .outline {
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  
+  /* Category colors */
+  .ergonomics { stroke: #94a3b8; }
+  .cognition { stroke: #a78bfa; }
+  .perception { stroke: #22d3ee; }
+  .emotions { stroke: #f472b6; }
+  .decisions { stroke: #fbbf24; }
+  
+  /* Dashed to solid animation */
+  .build-in {
+    stroke-dasharray: 8 8;
+    animation: dashToSolid 2s ease-out forwards;
+  }
+  
+  @keyframes dashToSolid {
+    0% {
+      stroke-dasharray: 8 8;
+      stroke-opacity: 0.3;
+    }
+    50% {
+      stroke-dasharray: 4 4;
+      stroke-opacity: 0.6;
+    }
+    100% {
+      stroke-dasharray: 0 0;
+      stroke-opacity: 1;
+    }
+  }
+  
+  /* Staggered delays for each category */
+  .stage-1 { animation-delay: 0s; }
+  .stage-2 { animation-delay: 1.5s; stroke-dasharray: 8 8; stroke-opacity: 0.3; }
+  .stage-3 { animation-delay: 3s; stroke-dasharray: 8 8; stroke-opacity: 0.3; }
+  .stage-4 { animation-delay: 4.5s; stroke-dasharray: 8 8; stroke-opacity: 0.3; }
+  .stage-5 { animation-delay: 6s; stroke-dasharray: 8 8; stroke-opacity: 0.3; }
+  
+  /* Fill animations */
+  .fill-in {
+    fill-opacity: 0;
+    animation: fillAppear 1.5s ease-out forwards;
+  }
+  
+  .fill-stage-2 { animation-delay: 2s; }
+  .fill-stage-3 { animation-delay: 3.5s; }
+  .fill-stage-4 { animation-delay: 5s; }
+  
+  @keyframes fillAppear {
+    0% { fill-opacity: 0; }
+    100% { fill-opacity: 0.15; }
+  }
+  
+  /* Heart pulse */
+  .heart {
+    fill: #f472b6;
+    fill-opacity: 0;
+    animation: heartBeat 1.5s ease-out 5s forwards;
+  }
+  
+  @keyframes heartBeat {
+    0% { fill-opacity: 0; transform: scale(1); }
+    20% { fill-opacity: 0.4; transform: scale(1.1); }
+    40% { fill-opacity: 0.3; transform: scale(1); }
+    60% { fill-opacity: 0.4; transform: scale(1.05); }
+    100% { fill-opacity: 0.25; transform: scale(1); }
+  }
+  
+  /* Neural pathway draw */
+  .neural-path {
+    stroke: #fbbf24;
+    stroke-width: 1.5;
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: drawPath 1.5s ease-out forwards;
+  }
+  
+  .neural-1 { animation-delay: 6.5s; }
+  .neural-2 { animation-delay: 6.8s; }
+  .neural-3 { animation-delay: 7.1s; }
+  
+  @keyframes drawPath {
+    to { stroke-dashoffset: 0; }
+  }
+  
+  /* Accessibility glow */
+  .glow-ring {
+    fill: none;
+    stroke: #a78bfa;
+    stroke-width: 1;
+    opacity: 0;
+    animation: glowAppear 2s ease-out 8s forwards;
+  }
+  
+  @keyframes glowAppear {
+    0% { opacity: 0; transform: scale(0.95); }
+    100% { opacity: 0.3; transform: scale(1); }
+  }
+  
+  /* Labels */
+  .label {
+    font-family: system-ui, -apple-system, sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    fill-opacity: 0;
+    animation: labelFade 1s ease-out forwards;
+  }
+  
+  .label-ergonomics { fill: #94a3b8; animation-delay: 0.5s; }
+  .label-cognition { fill: #a78bfa; animation-delay: 2s; }
+  .label-perception { fill: #22d3ee; animation-delay: 3.5s; }
+  .label-emotions { fill: #f472b6; animation-delay: 5.5s; }
+  .label-decisions { fill: #fbbf24; animation-delay: 7s; }
+  .label-accessibility { fill: #a78bfa; animation-delay: 8.5s; }
+  
+  @keyframes labelFade {
+    0% { fill-opacity: 0; transform: translateX(-5px); }
+    100% { fill-opacity: 0.8; transform: translateX(0); }
+  }
+  
+  /* Loop the animation */
+  .animation-container {
+    animation: resetLoop 12s linear infinite;
+  }
+  
+  @keyframes resetLoop {
+    /* Animation plays for ~9s, holds for 3s, then resets */
+    0%, 100% { opacity: 1; }
+  }
+  
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .build-in, .fill-in, .heart, .neural-path, .glow-ring, .label {
+      animation: none;
+      stroke-dasharray: 0;
+      stroke-opacity: 1;
+      fill-opacity: 0.15;
+      opacity: 0.5;
+    }
+    .heart { fill-opacity: 0.25; }
+  }
+</style>
+
+<svg class="hero-graphic" viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brain-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a78bfa" />
+      <stop offset="100%" style="stop-color:#818cf8" />
+    </linearGradient>
+  </defs>
+  
+  <g class="animation-container">
+    <!-- Accessibility glow (outer ring) -->
+    <ellipse class="glow-ring" cx="120" cy="160" rx="110" ry="150" />
+    <ellipse class="glow-ring" cx="120" cy="160" rx="100" ry="140" style="animation-delay: 8.3s" />
+    
+    <!-- Stage 1: Body outline (Ergonomics) -->
+    <g class="ergonomics-layer">
+      <!-- Torso -->
+      <path class="outline ergonomics build-in stage-1" 
+            d="M120 90 L120 200 M80 120 L120 100 L160 120 M85 200 L120 200 L155 200" />
+      <!-- Arms -->
+      <path class="outline ergonomics build-in stage-1" 
+            d="M80 120 L50 180 M160 120 L190 180" />
+      <!-- Legs -->
+      <path class="outline ergonomics build-in stage-1" 
+            d="M85 200 L70 290 M155 200 L170 290" />
+      
+      <!-- Fill -->
+      <path class="fill-in ergonomics" style="animation-delay: 0.8s"
+            d="M80 120 L120 100 L160 120 L155 200 L85 200 Z" 
+            fill="#94a3b8" />
+    </g>
+    
+    <!-- Stage 2: Head/Brain (Cognition) -->
+    <g class="cognition-layer">
+      <!-- Head circle -->
+      <circle class="outline cognition build-in stage-2" cx="120" cy="55" r="35" />
+      
+      <!-- Brain pattern inside -->
+      <path class="outline cognition build-in stage-2" style="stroke-width: 1.5"
+            d="M105 45 Q110 40 115 45 Q120 50 125 45 Q130 40 135 45
+               M100 55 Q108 50 115 55 Q122 60 130 55 Q138 50 140 55
+               M105 65 Q112 60 120 65 Q128 60 135 65" />
+      
+      <!-- Brain fill -->
+      <circle class="fill-in fill-stage-2" cx="120" cy="55" r="33" fill="url(#brain-gradient)" />
+    </g>
+    
+    <!-- Stage 3: Perception (eyes, ears, hands) -->
+    <g class="perception-layer">
+      <!-- Eyes -->
+      <circle class="outline perception build-in stage-3" cx="108" cy="50" r="5" />
+      <circle class="outline perception build-in stage-3" cx="132" cy="50" r="5" />
+      
+      <!-- Ears -->
+      <path class="outline perception build-in stage-3" 
+            d="M85 55 Q82 50 85 45 Q88 50 85 55" />
+      <path class="outline perception build-in stage-3" 
+            d="M155 55 Q158 50 155 45 Q152 50 155 55" />
+      
+      <!-- Hands -->
+      <circle class="outline perception build-in stage-3" cx="45" cy="185" r="8" />
+      <circle class="outline perception build-in stage-3" cx="195" cy="185" r="8" />
+      
+      <!-- Perception fills -->
+      <circle class="fill-in fill-stage-3" cx="108" cy="50" r="4" fill="#22d3ee" />
+      <circle class="fill-in fill-stage-3" cx="132" cy="50" r="4" fill="#22d3ee" />
+    </g>
+    
+    <!-- Stage 4: Heart (Emotions & Motivation) -->
+    <g class="emotions-layer">
+      <!-- Heart shape -->
+      <path class="heart" transform="translate(108, 135) scale(0.8)"
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+    </g>
+    
+    <!-- Stage 5: Neural pathways (Decision-Making) -->
+    <g class="decisions-layer">
+      <path class="neural-path neural-1" d="M120 90 Q100 110 85 130" />
+      <path class="neural-path neural-2" d="M120 90 Q140 110 155 130" />
+      <path class="neural-path neural-3" d="M120 90 L120 135" />
+    </g>
+    
+    <!-- Labels -->
+    <text class="label label-ergonomics" x="175" y="250">Ergonomics</text>
+    <text class="label label-cognition" x="165" y="55">Cognition</text>
+    <text class="label label-perception" x="205" y="185">Perception</text>
+    <text class="label label-emotions" x="145" y="150">Emotions</text>
+    <text class="label label-decisions" x="145" y="115">Decisions</text>
+    <text class="label label-accessibility" x="15" y="290">Accessibility</text>
+  </g>
+</svg>

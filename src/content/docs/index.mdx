@@ -1,40 +1,67 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: What are Human Standards?
+description: Principles for ensuring technology respects our rights, enhances our well-being, and empowers us all.
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
-  image:
-    file: ../../assets/houston.webp
+  tagline: Building the guide for a digital world designed for people.
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Get Started
+      link: /human-overview/what-are-human-factors/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: View on GitHub
+      link: https://github.com/humanstandards
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Why Human Standards?
+
+The digital age has unfurled a world of unprecedented connection, innovation, and access. Yet, as this digital landscape expands, a critical question emerges: **Is our technology truly serving humanity's best interests?**
+
+Too often, digital experiences feel extractive rather than empowering, divisive rather than unifying, and overwhelming rather than supportive of our well-being.
+
+---
+
+## Our Vision
+
+We envision a digital future where technology is a powerful force for good:
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Empowerment" icon="rocket">
+		Digital tools that give individuals agency and control over their experiences.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Respect & Inclusivity" icon="heart">
+		Online environments that foster genuine connection and welcome everyone.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Ethical Innovation" icon="approve-check">
+		Design guided by principles of fairness, safety, and dignity.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Human Well-being" icon="sun">
+		Mental, emotional, and societal health as primary considerations.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+</CardGrid>
+
+---
+
+## Explore the Standards
+
+<CardGrid>
+	<Card title="Human Overview" icon="open-book">
+		Core principles and why human factors matter in design.
+		[Learn more →](/human-overview/what-are-human-factors/)
+	</Card>
+	<Card title="Cognition" icon="puzzle">
+		Attention, cognitive load, and working memory considerations.
+		[Learn more →](/cognition/cognitive-load/)
+	</Card>
+	<Card title="Perception" icon="seti:image">
+		Vision, hearing, and touch—how we sense the digital world.
+		[Learn more →](/perception/vision/)
+	</Card>
+	<Card title="Accessibility" icon="approve-check-circle">
+		WCAG guidelines, assistive technologies, and audit tools.
+		[Learn more →](/accessibility/wcag-guidelines/)
 	</Card>
 </CardGrid>
