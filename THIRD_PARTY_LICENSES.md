@@ -17,7 +17,7 @@ Portions of Human Standards documentation are adapted from the **Luxor Claude Ma
   - `ux-principles/SKILL.md` - UX principles and best practices
   - `performance-benchmark-specialist/SKILL.md` - Performance-first philosophy
 - **Integration Date:** January 2026
-- **Adapted By:** Adnan Khan
+- **Adapted By:** Adnan Lodhi
 
 ### How Content Was Adapted
 
@@ -123,7 +123,7 @@ See [LICENSE.md](LICENSE.md) for full Human Standards license text.
 
 If you believe any content in Human Standards uses your work without proper attribution, please:
 
-1. Open an issue at: https://github.com/adnank98/humanstandards/issues
+1. Open an issue at: https://github.com/aklodhi98/humanstandards/issues
 2. Email: [your-email@example.com]
 3. Provide:
    - Link to original work
@@ -150,5 +150,5 @@ Thank you all for advancing human-centered design. 🙏
 ---
 
 **Last Updated:** January 8, 2026
-**Maintained By:** Adnan Khan
-**Project:** Human Standards (https://github.com/adnank98/humanstandards)
+**Maintained By:** Adnan Lodhi
+**Project:** Human Standards (https://github.com/aklodhi98/humanstandards)

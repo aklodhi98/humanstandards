@@ -1,0 +1,92 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Omit<HTMLAttributes<'a'>, 'title'> {
+	icon?: string;
+	title: string;
+	href: string;
+}
+
+const { icon, title, href, ...attributes } = Astro.props;
+---
+
+<a href={href} class="clickable-card sl-flex" {...attributes}>
+	<article class="card-content sl-flex">
+		<p class="title sl-flex">
+			{icon && <Icon name={icon} class="icon" size="1.333em" />}
+			<span set:html={title} />
+		</p>
+		<div class="body"><slot /></div>
+	</article>
+</a>
+
+<style>
+	.clickable-card {
+		text-decoration: none;
+		display: block;
+		border-radius: 0.5rem;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+
+	.clickable-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.card-content {
+		--sl-card-border: var(--sl-color-purple);
+		--sl-card-bg: var(--sl-color-purple-low);
+		border: 1px solid var(--sl-color-gray-5);
+		background-color: var(--sl-color-black);
+		padding: clamp(1rem, calc(0.125rem + 3vw), 2.5rem);
+		flex-direction: column;
+		gap: clamp(0.5rem, calc(0.125rem + 1vw), 1rem);
+		border-radius: 0.5rem;
+		height: 100%;
+	}
+
+	.clickable-card:hover .card-content {
+		border-color: var(--sl-color-gray-2);
+	}
+
+	.clickable-card:nth-child(4n + 1) .card-content {
+		--sl-card-border: var(--sl-color-orange);
+		--sl-card-bg: var(--sl-color-orange-low);
+	}
+	.clickable-card:nth-child(4n + 3) .card-content {
+		--sl-card-border: var(--sl-color-green);
+		--sl-card-bg: var(--sl-color-green-low);
+	}
+	.clickable-card:nth-child(4n + 4) .card-content {
+		--sl-card-border: var(--sl-color-red);
+		--sl-card-bg: var(--sl-color-red-low);
+	}
+	.clickable-card:nth-child(4n + 5) .card-content {
+		--sl-card-border: var(--sl-color-blue);
+		--sl-card-bg: var(--sl-color-blue-low);
+	}
+
+	.title {
+		font-weight: 600;
+		font-size: var(--sl-text-h4);
+		color: var(--sl-color-white);
+		line-height: var(--sl-line-height-headings);
+		gap: 1rem;
+		align-items: center;
+	}
+
+	.card-content .icon {
+		border: 1px solid var(--sl-card-border);
+		background-color: var(--sl-card-bg);
+		padding: 0.2em;
+		border-radius: 0.25rem;
+		flex-shrink: 0;
+	}
+
+	.card-content .body {
+		margin: 0;
+		font-size: clamp(var(--sl-text-sm), calc(0.5rem + 1vw), var(--sl-text-body));
+		color: var(--sl-color-gray-2);
+	}
+</style>

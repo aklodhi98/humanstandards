@@ -8,75 +8,105 @@ export default defineConfig({
 		starlight({
 			title: 'Human Standards',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/Cumulative-Design/humanstandards' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/aklodhi98/humanstandards' },
 			],
 			customCss: [
 				'./src/styles/custom.css',
 			],
 			sidebar: [
+				// Getting Started - always visible
 				{
-					label: 'Home',
-					autogenerate: { directory: 'home' },
+					label: 'Getting Started',
+					items: [
+						{ slug: 'human-overview/getting-started' },
+						{ slug: 'human-overview/what-are-human-standards' },
+						{ slug: 'human-overview/scope-and-roadmap' },
+						{ slug: 'human-overview/key-principles-and-laws' },
+					],
 				},
+
+				// Understanding Humans - collapsed
 				{
-					label: 'Human Overview',
-					autogenerate: { directory: 'human-overview' },
+					label: 'Understanding Humans',
+					collapsed: true,
+					items: [
+						{
+							label: 'Cognition',
+							autogenerate: { directory: 'cognition' },
+						},
+						{
+							label: 'Perception',
+							autogenerate: { directory: 'perception' },
+						},
+						{
+							label: 'Emotions & Motivation',
+							autogenerate: { directory: 'emotions-motivation' },
+						},
+						{
+							label: 'Decision-Making & Errors',
+							autogenerate: { directory: 'decision-making-errors' },
+						},
+					],
 				},
+
+				// Design Standards - collapsed
 				{
-					label: 'Real-World Examples',
-					autogenerate: { directory: 'examples' },
+					label: 'Design Standards',
+					collapsed: true,
+					items: [
+						{
+							label: 'Ergonomics',
+							autogenerate: { directory: 'ergonomics' },
+						},
+						{
+							label: 'Accessibility',
+							autogenerate: { directory: 'accessibility' },
+						},
+						{
+							label: 'Interaction Patterns',
+							autogenerate: { directory: 'interaction-patterns' },
+						},
+					],
 				},
+
+				// Implementation - collapsed
 				{
-					label: 'Cognition',
-					autogenerate: { directory: 'cognition' },
+					label: 'Implementation',
+					collapsed: true,
+					items: [
+						{
+							label: 'Code & Design Tokens',
+							autogenerate: { directory: 'code-design-tokens' },
+						},
+						{
+							label: 'Real-World Examples',
+							autogenerate: { directory: 'examples' },
+						},
+						{
+							label: 'Checklists & Playbooks',
+							autogenerate: { directory: 'checklists-playbooks' },
+						},
+					],
 				},
+
+				// Research & References - collapsed
 				{
-					label: 'Perception',
-					autogenerate: { directory: 'perception' },
-				},
-				{
-					label: 'Emotions & Motivation',
-					autogenerate: { directory: 'emotions-motivation' },
-				},
-				{
-					label: 'Decision-Making & Errors',
-					autogenerate: { directory: 'decision-making-errors' },
-				},
-				{
-					label: 'Ergonomics',
-					autogenerate: { directory: 'ergonomics' },
-				},
-				{
-					label: 'Accessibility',
-					autogenerate: { directory: 'accessibility' },
-				},
-				{
-					label: 'Interaction Patterns',
-					autogenerate: { directory: 'interaction-patterns' },
-				},
-				{
-					label: 'Code & Design Tokens',
-					autogenerate: { directory: 'code-design-tokens' },
-				},
-				{
-					label: 'Checklists & Playbooks',
-					autogenerate: { directory: 'checklists-playbooks' },
-				},
-				{
-					label: 'Case Studies',
-					autogenerate: { directory: 'case-studies' },
-				},
-				{
-					label: 'Research Methods',
-					autogenerate: { directory: 'research-methods-metrics' },
-				},
-				{
-					label: 'Social & Cultural',
-					autogenerate: { directory: 'social-cultural' },
-				},
-				{
-					label: 'References',
-					autogenerate: { directory: 'references' },
+					label: 'Research & References',
+					collapsed: true,
+					items: [
+						{
+							label: 'Research Methods',
+							autogenerate: { directory: 'research-methods-metrics' },
+						},
+						{
+							label: 'Social & Cultural',
+							autogenerate: { directory: 'social-cultural' },
+						},
+						{
+							label: 'References',
+							autogenerate: { directory: 'references' },
+						},
+					],
 				},
 			],
 		}),

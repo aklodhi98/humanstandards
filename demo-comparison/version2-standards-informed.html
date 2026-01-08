@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Version 2 (Standards-Informed)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            /* Better contrast for text (WCAG 2.2 AA) */
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Progressive disclosure: Show step progress */
+        .progress {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 32px;
+        }
+
+        .progress-step {
+            flex: 1;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+        }
+
+        .progress-step.active {
+            background: #0066cc;
+        }
+
+        h1 {
+            margin-bottom: 8px;
+            font-size: 28px;
+            line-height: 1.2;
+        }
+
+        .step-description {
+            color: #666;
+            margin-bottom: 32px;
+            font-size: 16px;
+        }
+
+        /* Form step container (for progressive disclosure) */
+        .form-step {
+            display: none;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        /* Clear, visible labels (not placeholders) */
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            font-weight: 500;
+            color: #1a1a1a;
+        }
+
+        /* Hint text for complex fields */
+        .hint {
+            display: block;
+            font-size: 14px;
+            color: #666;
+            margin-top: 4px;
+            margin-bottom: 8px;
+        }
+
+        /* Larger input fields, better touch targets (min 44px) */
+        input, select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #d0d0d0;
+            border-radius: 6px;
+            font-size: 16px;
+            /* Prevent zoom on iOS */
+            transition: border-color 0.2s;
+        }
+
+        /* Clear focus indicators (WCAG Operable) */
+        input:focus, select:focus, button:focus {
+            outline: 3px solid #0066cc;
+            outline-offset: 2px;
+            border-color: #0066cc;
+        }
+
+        /* Error state with sufficient contrast */
+        input.error, select.error {
+            border-color: #d32f2f;
+        }
+
+        /* Error messages explain WHAT and HOW TO FIX */
+        .error-message {
+            color: #d32f2f;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+            /* Icon for additional visual indicator */
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .error-message::before {
+            content: "⚠";
+            position: absolute;
+            left: 0;
+        }
+
+        .error-message.visible {
+            display: block;
+        }
+
+        /* Success feedback */
+        .success-indicator {
+            color: #2e7d32;
+            font-size: 14px;
+            margin-top: 8px;
+            display: none;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .success-indicator::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+        }
+
+        .success-indicator.visible {
+            display: block;
+        }
+
+        /* Password strength indicator (inline help) */
+        .password-strength {
+            margin-top: 8px;
+            height: 4px;
+            background: #e0e0e0;
+            border-radius: 2px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .password-strength.visible {
+            display: block;
+        }
+
+        .password-strength-bar {
+            height: 100%;
+            transition: width 0.3s, background-color 0.3s;
+            width: 0%;
+        }
+
+        .password-strength-bar.weak {
+            width: 33%;
+            background: #d32f2f;
+        }
+
+        .password-strength-bar.medium {
+            width: 66%;
+            background: #f57c00;
+        }
+
+        .password-strength-bar.strong {
+            width: 100%;
+            background: #2e7d32;
+        }
+
+        .password-strength-text {
+            font-size: 14px;
+            margin-top: 4px;
+            color: #666;
+        }
+
+        /* Button with proper touch target size (min 48px) */
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            min-height: 48px;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #0052a3;
+        }
+
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+        }
+
+        button.secondary {
+            background: white;
+            color: #0066cc;
+            border: 2px solid #0066cc;
+        }
+
+        button.secondary:hover {
+            background: #f0f7ff;
+        }
+
+        /* Autosave indicator */
+        .autosave-status {
+            font-size: 14px;
+            color: #666;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .autosave-status.saved::before {
+            content: "✓ ";
+            color: #2e7d32;
+        }
+
+        /* Required field indicator */
+        .required {
+            color: #d32f2f;
+            margin-left: 4px;
+        }
+
+        /* Better contrast for links (WCAG 2.2 AA: 4.5:1) */
+        a {
+            color: #0052a3;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #003d7a;
+        }
+
+        /* Screen reader only text */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Progressive disclosure: 3-step wizard reduces cognitive load -->
+        <div class="progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Registration progress">
+            <div class="progress-step active"></div>
+            <div class="progress-step"></div>
+            <div class="progress-step"></div>
+        </div>
+
+        <h1 id="form-title">Create Your Account</h1>
+        <p class="step-description" id="step-description">Step 1 of 3: Basic Information</p>
+
+        <form id="registrationForm" novalidate>
+            <!-- STEP 1: Essential information only -->
+            <div class="form-step active" data-step="1">
+                <div class="form-group">
+                    <label for="email">
+                        Email Address <span class="required" aria-label="required">*</span>
+                    </label>
+                    <span class="hint">We'll send a confirmation to this address</span>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required
+                        aria-required="true"
+                        aria-describedby="email-error email-success"
+                    >
+                    <div class="error-message" id="email-error" role="alert"></div>
+                    <div class="success-indicator" id="email-success"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        Password <span class="required" aria-label="required">*</span>
+                    </label>
+                    <span class="hint">At least 8 characters with a mix of letters and numbers</span>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        autocomplete="new-password"
+                        required
+                        aria-required="true"
+                        aria-describedby="password-error password-strength-text"
+                    >
+                    <!-- Real-time feedback on password strength -->
+                    <div class="password-strength">
+                        <div class="password-strength-bar"></div>
+                    </div>
+                    <div class="password-strength-text" id="password-strength-text"></div>
+                    <div class="error-message" id="password-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="firstName">
+                        First Name <span class="required" aria-label="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        autocomplete="given-name"
+                        required
+                        aria-required="true"
+                        aria-describedby="firstName-error"
+                    >
+                    <div class="error-message" id="firstName-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">
+                        Last Name <span class="required" aria-label="required">*</span>
+                    </label>
+                    <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        autocomplete="family-name"
+                        required
+                        aria-required="true"
+                        aria-describedby="lastName-error"
+                    >
+                    <div class="error-message" id="lastName-error" role="alert"></div>
+                </div>
+            </div>
+
+            <!-- STEP 2: Optional preferences (collected later, reduces initial load) -->
+            <div class="form-step" data-step="2">
+                <div class="form-group">
+                    <label for="phone">
+                        Phone Number <span style="color: #666;">(Optional)</span>
+                    </label>
+                    <span class="hint">For account recovery and security alerts</span>
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel"
+                        aria-describedby="phone-error"
+                    >
+                    <div class="error-message" id="phone-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">
+                        Country <span class="required" aria-label="required">*</span>
+                    </label>
+                    <select
+                        id="country"
+                        name="country"
+                        autocomplete="country"
+                        required
+                        aria-required="true"
+                        aria-describedby="country-error"
+                    >
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="ca">Canada</option>
+                        <option value="au">Australia</option>
+                    </select>
+                    <div class="error-message" id="country-error" role="alert"></div>
+                </div>
+            </div>
+
+            <!-- STEP 3: Final confirmation -->
+            <div class="form-step" data-step="3">
+                <div class="form-group">
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="terms"
+                            name="terms"
+                            required
+                            aria-required="true"
+                            aria-describedby="terms-error"
+                            style="width: auto; margin-right: 8px;"
+                        >
+                        I agree to the <a href="#" target="_blank" rel="noopener noreferrer">Terms of Service</a> and <a href="#" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                    </label>
+                    <div class="error-message" id="terms-error" role="alert"></div>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input
+                            type="checkbox"
+                            id="newsletter"
+                            name="newsletter"
+                            style="width: auto; margin-right: 8px;"
+                        >
+                        Send me product updates and tips (you can unsubscribe anytime)
+                    </label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="secondary" id="backBtn" style="display: none;">
+                    Back
+                </button>
+                <button type="button" id="nextBtn" style="flex: 1;">
+                    Continue
+                </button>
+            </div>
+
+            <!-- Autosave status (defensive design: prevent data loss) -->
+            <div class="autosave-status" id="autosaveStatus" aria-live="polite"></div>
+        </form>
+    </div>
+
+    <script>
+        // Multi-step form state
+        let currentStep = 1;
+        const totalSteps = 3;
+        const formData = {};
+
+        // Autosave to localStorage (defensive design: prevent data loss)
+        function autosave() {
+            const form = document.getElementById('registrationForm');
+            const formDataObj = new FormData(form);
+            const data = {};
+            formDataObj.forEach((value, key) => {
+                if (key !== 'password') { // Don't persist password
+                    data[key] = value;
+                }
+            });
+            localStorage.setItem('registrationDraft', JSON.stringify(data));
+
+            const status = document.getElementById('autosaveStatus');
+            status.textContent = 'Draft saved';
+            status.className = 'autosave-status saved';
+        }
+
+        // Restore draft on page load
+        window.addEventListener('load', function() {
+            const draft = localStorage.getItem('registrationDraft');
+            if (draft) {
+                const data = JSON.parse(draft);
+                Object.keys(data).forEach(key => {
+                    const field = document.querySelector(`[name="${key}"]`);
+                    if (field && field.type !== 'checkbox') {
+                        field.value = data[key];
+                    }
+                });
+            }
+        });
+
+        // Debounced autosave on input
+        let autosaveTimer;
+        document.getElementById('registrationForm').addEventListener('input', function() {
+            clearTimeout(autosaveTimer);
+            autosaveTimer = setTimeout(autosave, 1000);
+        });
+
+        // Validate on blur (not on keystroke - prevents premature errors)
+        function validateField(field) {
+            const errorDiv = document.getElementById(`${field.id}-error`);
+            const successDiv = document.getElementById(`${field.id}-success`);
+            let isValid = true;
+            let errorMessage = '';
+
+            if (field.hasAttribute('required') && !field.value.trim()) {
+                isValid = false;
+                errorMessage = `${field.labels[0].textContent.replace('*', '').trim()} is required`;
+            } else if (field.type === 'email' && field.value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(field.value)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid email address (e.g., name@example.com)';
+                } else {
+                    // Show success for email
+                    if (successDiv) {
+                        successDiv.textContent = 'Email format looks good';
+                        successDiv.classList.add('visible');
+                    }
+                }
+            } else if (field.id === 'password' && field.value) {
+                if (field.value.length < 8) {
+                    isValid = false;
+                    errorMessage = 'Password must be at least 8 characters long';
+                } else if (!/[A-Za-z]/.test(field.value) || !/[0-9]/.test(field.value)) {
+                    isValid = false;
+                    errorMessage = 'Password must contain both letters and numbers';
+                }
+            } else if (field.type === 'tel' && field.value) {
+                const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+                if (!phoneRegex.test(field.value)) {
+                    isValid = false;
+                    errorMessage = 'Please enter a valid phone number';
+                }
+            }
+
+            if (errorDiv) {
+                if (isValid) {
+                    field.classList.remove('error');
+                    field.setAttribute('aria-invalid', 'false');
+                    errorDiv.textContent = '';
+                    errorDiv.classList.remove('visible');
+                } else {
+                    field.classList.add('error');
+                    field.setAttribute('aria-invalid', 'true');
+                    errorDiv.textContent = errorMessage;
+                    errorDiv.classList.add('visible');
+                }
+            }
+
+            return isValid;
+        }
+
+        // Password strength indicator (real-time feedback)
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthBar = document.querySelector('.password-strength-bar');
+            const strengthDiv = document.querySelector('.password-strength');
+            const strengthText = document.getElementById('password-strength-text');
+
+            if (!password) {
+                strengthDiv.classList.remove('visible');
+                return;
+            }
+
+            strengthDiv.classList.add('visible');
+
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[a-z]/.test(password) && /[A-Z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+
+            strengthBar.className = 'password-strength-bar';
+            if (strength <= 1) {
+                strengthBar.classList.add('weak');
+                strengthText.textContent = 'Weak password';
+            } else if (strength <= 2) {
+                strengthBar.classList.add('medium');
+                strengthText.textContent = 'Medium strength';
+            } else {
+                strengthBar.classList.add('strong');
+                strengthText.textContent = 'Strong password';
+            }
+        });
+
+        // Attach blur validation to all inputs
+        document.querySelectorAll('input, select').forEach(field => {
+            field.addEventListener('blur', () => validateField(field));
+        });
+
+        // Step navigation
+        function updateStep() {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(step => {
+                step.classList.remove('active');
+            });
+
+            // Show current step
+            document.querySelector(`[data-step="${currentStep}"]`).classList.add('active');
+
+            // Update progress bar
+            document.querySelectorAll('.progress-step').forEach((step, index) => {
+                if (index < currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            // Update progress aria
+            const progress = document.querySelector('.progress');
+            progress.setAttribute('aria-valuenow', currentStep);
+
+            // Update title
+            const descriptions = [
+                'Step 1 of 3: Basic Information',
+                'Step 2 of 3: Contact Details',
+                'Step 3 of 3: Review & Confirm'
+            ];
+            document.getElementById('step-description').textContent = descriptions[currentStep - 1];
+
+            // Update buttons
+            const backBtn = document.getElementById('backBtn');
+            const nextBtn = document.getElementById('nextBtn');
+
+            backBtn.style.display = currentStep > 1 ? 'block' : 'none';
+            nextBtn.textContent = currentStep === totalSteps ? 'Create Account' : 'Continue';
+        }
+
+        // Next button
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            // Validate current step fields
+            const currentStepDiv = document.querySelector(`[data-step="${currentStep}"]`);
+            const fields = currentStepDiv.querySelectorAll('input[required], select[required]');
+            let allValid = true;
+
+            fields.forEach(field => {
+                if (!validateField(field)) {
+                    allValid = false;
+                }
+            });
+
+            if (!allValid) {
+                // Focus first error
+                const firstError = currentStepDiv.querySelector('.error');
+                if (firstError) {
+                    firstError.focus();
+                }
+                return;
+            }
+
+            if (currentStep < totalSteps) {
+                currentStep++;
+                updateStep();
+                // Focus first field in next step
+                setTimeout(() => {
+                    const nextStepDiv = document.querySelector(`[data-step="${currentStep}"]`);
+                    const firstField = nextStepDiv.querySelector('input, select');
+                    if (firstField) firstField.focus();
+                }, 100);
+            } else {
+                // Final submission
+                submitForm();
+            }
+        });
+
+        // Back button
+        document.getElementById('backBtn').addEventListener('click', function() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStep();
+            }
+        });
+
+        // Form submission
+        function submitForm() {
+            const form = document.getElementById('registrationForm');
+            const formData = new FormData(form);
+
+            // Simulate submission
+            alert('✓ Account created successfully!\n\nIn a real app, this would:\n1. Submit data securely\n2. Show confirmation\n3. Clear the draft\n4. Redirect to dashboard');
+
+            // Clear autosaved draft
+            localStorage.removeItem('registrationDraft');
+        }
+
+        // Warn before leaving with unsaved changes
+        window.addEventListener('beforeunload', function(e) {
+            const draft = localStorage.getItem('registrationDraft');
+            if (draft && draft !== '{}') {
+                e.preventDefault();
+                e.returnValue = 'You have unsaved changes. Are you sure you want to leave?';
+            }
+        });
+    </script>
+</body>
+</html>

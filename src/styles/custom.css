@@ -10,8 +10,63 @@
   width: 100% !important;
   max-width: none !important;
   margin-inline: auto !important;
-  padding: 4rem 2rem !important;
+  padding: 1rem 2rem 2rem 2rem !important;
   min-height: 50vh !important;
+  position: relative !important;
+  overflow: visible !important;
+}
+
+/* Gradient blob behind hero - Purple (top-left) */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 500px;
+  background: radial-gradient(ellipse at center,
+      rgba(139, 92, 246, 0.18) 0%,
+      rgba(99, 102, 241, 0.1) 40%,
+      transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Gradient blob behind hero - Orange (bottom-right) */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 65%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  width: 650px;
+  height: 450px;
+  background: radial-gradient(ellipse at center,
+      rgba(251, 146, 60, 0.2) 0%,
+      rgba(249, 115, 22, 0.12) 40%,
+      transparent 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Adjust blobs for dark mode */
+:root[data-theme='dark'] .hero::before {
+  background: radial-gradient(ellipse at center,
+      rgba(139, 92, 246, 0.25) 0%,
+      rgba(99, 102, 241, 0.12) 40%,
+      transparent 70%);
+}
+
+:root[data-theme='dark'] .hero::after {
+  background: radial-gradient(ellipse at center,
+      rgba(251, 146, 60, 0.25) 0%,
+      rgba(249, 115, 22, 0.15) 40%,
+      transparent 70%);
 }
 
 /* Override the two-column grid layout on desktop */
@@ -25,7 +80,7 @@
   text-align: center !important;
   align-items: center !important;
   margin-inline: auto !important;
-  max-width: 42rem !important;
+  max-width: 900px !important;
   grid-column: 1 / -1 !important;
   /* Span full width if in grid */
 }
@@ -33,15 +88,23 @@
 .hero h1,
 .hero h1#_top {
   text-align: center !important;
+  width: 100% !important;
 }
 
-.hero .tagline {
+/* Target the tagline paragraph */
+.hero .tagline,
+.hero .stack>p,
+.hero p {
   text-align: center !important;
+  width: 100% !important;
+  margin-inline: auto !important;
+  display: block !important;
 }
 
 .hero .actions {
   justify-content: center !important;
   flex-wrap: wrap !important;
+  width: 100% !important;
 }
 
 /* Override any grid/flex layout that creates two columns */
@@ -61,6 +124,6 @@
 
 /* Center content below hero */
 [data-page-type="splash"] .sl-markdown-content {
-  max-width: 65ch;
+  max-width: 900px;
   margin-inline: auto;
 }

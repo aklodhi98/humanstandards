@@ -78,8 +78,41 @@ For keyboard users, focus position is their place in the interface:
 - **Competing animations**: Create chaos, not clarity
 - **Hidden important info**: Burying essentials in visual noise
 
+## Recent Research (2024-2025)
+
+### Eye-Tracking and Visual Attention
+
+The eye tracking market is expected to jump from USD 913.6 million in 2023 to USD 4.9 billion by 2030. [Eye-tracking data analysis](https://editverse.com/eye-tracking-data-analysis-insights-into-visual-attention-for-2024-2025/) is providing deep insights into how users pay attention and engage with digital interfaces.
+
+Research shows users form opinions about websites in just fifty milliseconds, and eye-tracking studies confirm that users often scan web pages in an F-pattern, highlighting the importance of immediate visual hierarchy.
+
+### Visual Hierarchy in E-commerce
+
+A 2024 study found that 90% of shopping decisions are influenced by visual factors. Users spend 80% of their attention on the top left of the display, and an increase in image size by 25% can lead to a 10% rise in engagement rates. A product with a bold, contrasting background can outperform similar items by 50% in click-through rates.
+
+### Interface Design Based on Visual Cognition
+
+A January 2025 study on [public guidance service interface design](https://www.nature.com/articles/s41598-025-00633-y) found that the synergistic integration of layout aesthetics (e.g., visual hierarchy balance) and visual cognition characteristics (e.g., attention distribution patterns) significantly improves interface usability.
+
+### VR Learning Environments
+
+A 2025 framework for [measuring visual attention in VR learning environments](https://dl.acm.org/doi/10.1145/3715669.3726795) using Meta Quest Pro demonstrates active research in how spatial interfaces direct and measure user attention in immersive contexts.
+
+These findings demonstrate that visual hierarchy and attention management remain critical areas of active research, with significant developments in eye-tracking technology and quantitative metrics for measuring design effectiveness.
+
 ## References
 
+**Foundational Work:**
+- Gloria Mark — The Cost of Interrupted Work: https://www.ics.uci.edu/~gmark/chi08-mark.pdf
+
+**Practical Resources:**
 - NN/g — Banner Blindness Revisited: https://www.nngroup.com/articles/banner-blindness-old-and-new-findings/
 - WAI-ARIA — Focus Management: https://www.w3.org/WAI/ARIA/apg/practices/keyboard-interface/
-- Gloria Mark — The Cost of Interrupted Work: https://www.ics.uci.edu/~gmark/chi08-mark.pdf
+
+---
+
+## See Also
+
+- [Cognitive Load](/cognition/cognitive-load/) — How attention relates to mental capacity
+- [Confusion](/cognition/confusion/) — What happens when attention is misdirected
+- [Vision](/perception/vision/) — Visual perception fundamentals

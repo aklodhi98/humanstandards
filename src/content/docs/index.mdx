@@ -6,21 +6,24 @@ hero:
   tagline: Building the guide for a digital world designed for people.
   actions:
     - text: Get Started
-      link: /human-overview/what-are-human-factors/
+      link: /human-overview/getting-started/
       icon: right-arrow
     - text: View on GitHub
-      link: https://github.com/humanstandards
+      link: https://github.com/aklodhi98/humanstandards
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import ClickableCard from '../../components/ClickableCard.astro';
 
 ## Why Human Standards?
 
 The digital age has unfurled a world of unprecedented connection, innovation, and access. Yet, as this digital landscape expands, a critical question emerges: **Is our technology truly serving humanity's best interests?**
 
 Too often, digital experiences feel extractive rather than empowering, divisive rather than unifying, and overwhelming rather than supportive of our well-being.
+
+**Current Focus:** This project currently focuses on **digital interfaces** (web, mobile, desktop). While the underlying principles apply universally, our implementation guidance and code examples are tailored to digital product design. See our [Scope & Roadmap](/human-overview/scope-and-roadmap/) for planned expansion into voice, VR/AR, robotics, and other domains.
 
 ---
 
@@ -48,20 +51,16 @@ We envision a digital future where technology is a powerful force for good:
 ## Explore the Standards
 
 <CardGrid>
-	<Card title="Human Overview" icon="open-book">
+	<ClickableCard title="Human Overview" icon="open-book" href="/human-overview/what-are-human-factors/">
 		Core principles and why human factors matter in design.
-		[Learn more →](/human-overview/what-are-human-factors/)
-	</Card>
-	<Card title="Cognition" icon="puzzle">
+	</ClickableCard>
+	<ClickableCard title="Cognition" icon="puzzle" href="/cognition/cognitive-load/">
 		Attention, cognitive load, and working memory considerations.
-		[Learn more →](/cognition/cognitive-load/)
-	</Card>
-	<Card title="Perception" icon="seti:image">
+	</ClickableCard>
+	<ClickableCard title="Perception" icon="seti:image" href="/perception/vision/">
 		Vision, hearing, and touch—how we sense the digital world.
-		[Learn more →](/perception/vision/)
-	</Card>
-	<Card title="Accessibility" icon="approve-check-circle">
+	</ClickableCard>
+	<ClickableCard title="Accessibility" icon="approve-check-circle" href="/accessibility/wcag-guidelines/">
 		WCAG guidelines, assistive technologies, and audit tools.
-		[Learn more →](/accessibility/wcag-guidelines/)
-	</Card>
+	</ClickableCard>
 </CardGrid>

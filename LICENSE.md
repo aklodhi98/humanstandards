@@ -13,7 +13,7 @@ All documentation content in this repository is licensed under the **Creative Co
 
 ### Under the following terms:
 
-- **Attribution** — You must give appropriate credit to Cumulative Design, provide a link to the license, and indicate if changes were made.
+- **Attribution** — You must give appropriate credit to Adnan Lodhi, provide a link to the license, and indicate if changes were made.
 - **NonCommercial** — You may not use the material for commercial purposes without explicit permission.
 - **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
 
@@ -28,7 +28,7 @@ Any code, scripts, or tooling in this repository (excluding documentation conten
 ```
 MIT License
 
-Copyright (c) 2024 Cumulative Design
+Copyright (c) 2024-2026 Adnan Lodhi
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -55,4 +55,4 @@ SOFTWARE.
 
 By submitting a contribution (pull request, issue, or otherwise), you agree that your contribution will be licensed under the same terms as the rest of the project, and you confirm that you have the right to license your contribution accordingly.
 
-For commercial licensing inquiries, please contact Cumulative Design.
+For commercial licensing inquiries, please contact Adnan Lodhi via https://aklodhi.com

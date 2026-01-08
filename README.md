@@ -21,7 +21,7 @@ Human Standards is a comprehensive guide covering the human side of product desi
 
 ```bash
 # Clone the repository
-git clone https://github.com/Cumulative-Design/humanstandards.git
+git clone https://github.com/aklodhi98/humanstandards.git
 cd humanstandards
 
 # Install dependencies
@@ -94,7 +94,7 @@ We are committed to providing a welcoming and inclusive environment. Please be r
 
 See [LICENSE.md](LICENSE.md) for full details.
 
-© 2024 Cumulative Design. All rights reserved for commercial use.
+© 2024-2026 Adnan Lodhi. All rights reserved for commercial use.
 
 ## Acknowledgments
 

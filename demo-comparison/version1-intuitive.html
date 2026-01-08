@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Version 1 (Intuitive)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .required {
+            color: red;
+        }
+
+        .terms {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .terms a {
+            color: #0066cc;
+        }
+
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #0052a3;
+        }
+
+        .error {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Create Account</h1>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label>First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" required>
+                <div class="error" id="firstNameError">Invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" required>
+                <div class="error" id="lastNameError">Invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label>Email <span class="required">*</span></label>
+                <input type="email" id="email" required>
+                <div class="error" id="emailError">Invalid email</div>
+            </div>
+
+            <div class="form-group">
+                <label>Password <span class="required">*</span></label>
+                <input type="password" id="password" required>
+                <div class="error" id="passwordError">Invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label>Confirm Password <span class="required">*</span></label>
+                <input type="password" id="confirmPassword" required>
+                <div class="error" id="confirmPasswordError">Passwords don't match</div>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" required>
+                <div class="error" id="phoneError">Invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label>Country <span class="required">*</span></label>
+                <select id="country" required>
+                    <option value="">Select a country</option>
+                    <option value="us">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="ca">Canada</option>
+                    <option value="au">Australia</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Date of Birth <span class="required">*</span></label>
+                <input type="date" id="dob" required>
+                <div class="error" id="dobError">Invalid</div>
+            </div>
+
+            <div class="form-group">
+                <label>Address <span class="required">*</span></label>
+                <input type="text" id="address" required>
+            </div>
+
+            <div class="form-group">
+                <label>City <span class="required">*</span></label>
+                <input type="text" id="city" required>
+            </div>
+
+            <div class="form-group">
+                <label>Postal Code <span class="required">*</span></label>
+                <input type="text" id="postalCode" required>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="newsletter">
+                    Subscribe to newsletter
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="terms" required>
+                    <span class="terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                </label>
+            </div>
+
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Simple validation
+            let valid = true;
+            const errors = document.querySelectorAll('.error');
+            errors.forEach(error => error.style.display = 'none');
+
+            if (!document.getElementById('firstName').value) {
+                document.getElementById('firstNameError').style.display = 'block';
+                valid = false;
+            }
+
+            if (!document.getElementById('email').value.includes('@')) {
+                document.getElementById('emailError').style.display = 'block';
+                valid = false;
+            }
+
+            if (document.getElementById('password').value !== document.getElementById('confirmPassword').value) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                valid = false;
+            }
+
+            if (valid) {
+                alert('Account created successfully!');
+            }
+        });
+    </script>
+</body>
+</html>

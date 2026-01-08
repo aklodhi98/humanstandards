@@ -79,8 +79,43 @@ When users make mistakes, explain what went wrong and how to fix it. Don't just 
 - **Abandonment**: People leave when overwhelmed
 - **User feedback**: "This is confusing" = high extraneous load
 
+## Recent Research (2024-2025)
+
+### Interface Optimization Based on Cognitive Load Theory
+
+Research from 2024 demonstrates that optimization methods based on cognitive load theory can effectively reduce operators' cognitive load and improve operation efficiency. [Research on Information Interaction Interface Optimization Based on Cognitive Load](https://dl.acm.org/doi/10.1145/3727993.3728096) shows strategic management of intrinsic, extraneous, and germane cognitive load in information services interfaces.
+
+### Mobile Applications and Elderly Users
+
+A 2024 study using eye movement tests and subjective evaluation scales found that visual complexity of mobile news client interfaces significantly impacts cognitive load of elderly users. [Research on the Influence of Interface Visual Design Features of Mobile News on Cognitive Load](https://www.mdpi.com/2076-328X/16/1/32) emphasizes the importance of reducing visual clutter for aging populations.
+
+### Serious Games and Interface Complexity
+
+Recent research reveals that complex interfaces in serious games may impose additional cognitive load beyond the game mechanics themselves. A 2025 study on [interface and load in MCI (Mild Cognitive Impairment)](https://www.tandfonline.com/doi/full/10.1080/0144929X.2025.2604586) found that benefits depend on interface optimization that balances engagement with cognitive sustainability.
+
+### Measurement Methods
+
+Studies suggest combining subjective assessments (like NASA-TLX) with objective physiological measurements including electrodermal activity, heart rate variability, electroencephalography, and electrocardiography. Research on [mobile learning applications](https://www.sciencedirect.com/science/article/pii/S2405844024135256) developed new subjective instruments specifically for measuring extraneous cognitive load caused by UI design.
+
+### Multi-modal Interfaces
+
+Studies on [multi-modal gaze and gesture interfaces](https://arxiv.org/html/2509.05898v1) found they can deliberately enhance cognitive load, indicating that exaggerated design is not recommended in educational systems and accessibility contexts.
+
+These studies emphasize user-centered design approaches that minimize extraneous cognitive load through visual hierarchy, consistent design patterns, and adaptive interfaces tailored to specific user populations.
+
 ## References
 
+**Foundational Work:**
 - Sweller (1988) — Cognitive load during problem solving: https://doi.org/10.1016/0959-4752(88)90004-4
-- NN/g — Minimize Cognitive Load: https://www.nngroup.com/articles/minimize-cognitive-load/
 - Mayer (2009) — Multimedia Learning (cognitive load in learning): https://www.cambridge.org/core/books/multimedia-learning/A74FCED632DD219B3F00487AA45F7ADB
+
+**Practical Resources:**
+- NN/g — Minimize Cognitive Load: https://www.nngroup.com/articles/minimize-cognitive-load/
+
+---
+
+## See Also
+
+- [Confusion](/cognition/confusion/) — How cognitive load creates confusion
+- [Working Memory](/cognition/working-memory/) — Understanding capacity limits
+- [Attention & Focus](/cognition/attention-focus/) — Directing user attention effectively
