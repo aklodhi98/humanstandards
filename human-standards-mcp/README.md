@@ -248,20 +248,60 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 
 ### With Claude Code (CLI)
 
-Add to `.claude/config.json`:
+Claude Code stores MCP server configurations per-project in `~/.claude.json`. You can add the Human Standards MCP server in two ways:
+
+**Option 1: Edit `~/.claude.json` directly**
+
+Find your project entry and add the `mcpServers` configuration:
 
 ```json
 {
-  "mcp": {
-    "servers": {
-      "human-standards": {
-        "command": "node",
-        "args": ["/path/to/humanstandards/human-standards-mcp/dist/index.js"]
+  "projects": {
+    "/path/to/your/project": {
+      "mcpServers": {
+        "human-standards": {
+          "command": "node",
+          "args": ["/path/to/humanstandards/human-standards-mcp/dist/index.js"]
+        }
       }
     }
   }
 }
 ```
+
+**Option 2: Use the `/mcp` command in Claude Code**
+
+1. Start Claude Code in your project directory
+2. Type `/mcp` to open the MCP configuration menu
+3. Add a new server with:
+   - Name: `human-standards`
+   - Command: `node`
+   - Args: `/path/to/humanstandards/human-standards-mcp/dist/index.js`
+
+**After configuration:**
+
+1. Restart Claude Code (close and reopen the terminal/IDE)
+2. Type `/mcp` to verify the server is connected
+3. You should see "human-standards" with 5 tools available
+
+**Example configuration for macOS:**
+
+```json
+{
+  "projects": {
+    "/Users/yourname/workspace/myproject": {
+      "mcpServers": {
+        "human-standards": {
+          "command": "node",
+          "args": ["/Users/yourname/workspace/humanstandards/human-standards-mcp/dist/index.js"]
+        }
+      }
+    }
+  }
+}
+```
+
+**Note:** The MCP server starts automatically when Claude Code initializes - you don't need to run it manually in a separate terminal.
 
 ### Standalone Testing
 
