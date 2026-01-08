@@ -98,7 +98,28 @@ See [LICENSE.md](LICENSE.md) for full details.
 
 ## Acknowledgments
 
+Human Standards builds upon and is inspired by excellent prior work in the UX and accessibility communities.
+
+### Third-Party Content
+
+- **[Luxor Claude Marketplace](https://github.com/manutej/luxor-claude-marketplace)** by Manu Tej + Claude Code - Real-world UX examples and patterns adapted with permission under MIT license. See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
+
+### Standards and Guidelines
+
+- **[WCAG 2.2](https://www.w3.org/WAI/WCAG22/quickref/)** - W3C Web Content Accessibility Guidelines
+- **[Nielsen's Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)** - Nielsen Norman Group foundational principles
+- **[iOS Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)** - Apple Inc. design standards
+- **[Material Design](https://m3.material.io/)** - Google LLC design system
+
+### Technology
+
 Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
+
+### Research Community
+
+Thank you to researchers in cognitive psychology, human factors engineering, and HCI whose evidence-based work makes this resource possible. Full citations in [academic research references](/references/academic-research.md).
+
+Thank you to all who advance human-centered design. 🙏
 
 ---
 

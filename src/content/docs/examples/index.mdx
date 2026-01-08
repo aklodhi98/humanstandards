@@ -1,0 +1,138 @@
+---
+title: Real-World Examples
+description: Case studies showing how leading companies apply human factors principles, with metrics and implementation details
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## What You'll Find Here
+
+This section features real-world examples from leading companies demonstrating human factors principles in action. Each example includes:
+
+- **The Principle** - Core concept being applied
+- **Implementation Details** - Specific design decisions and rationale
+- **Quantitative Metrics** - Measured impact (completion rates, time savings, satisfaction scores)
+- **Human Standards Connection** - Links to our documentation and MCP validation rules
+- **Code Examples** - Practical implementations you can adapt
+
+## Why Examples Matter
+
+Theory is valuable, but **seeing principles applied** makes them actionable. These examples show:
+
+1. **Proof of Impact** - Real metrics from production systems
+2. **Design Decisions** - The "why" behind implementation choices
+3. **Business Value** - How human factors drive measurable outcomes
+4. **Implementation Patterns** - Code you can adapt for your projects
+
+## Examples by Category
+
+### Cognitive Load Reduction
+
+<CardGrid>
+  <Card title="Progressive Disclosure - TurboTax" icon="document">
+    How breaking a 100+ field tax form into simple questions reduced completion time by **30%** and help requests by **45%**.
+
+    [Read case study →](/examples/progressive-disclosure-turbotax/)
+  </Card>
+</CardGrid>
+
+### Coming Soon
+
+More examples are being added regularly. Categories include:
+
+- **Defensive Design** - Undo culture (Gmail), autosave (Google Docs)
+- **Error Prevention** - Real-time validation (Grammarly), constraints (Airbnb)
+- **Accessibility First** - Keyboard navigation (BBC), screen reader optimization
+- **Smart Defaults** - Intelligent automation (iOS Camera)
+- **Contextual Help** - In-context guidance (Slack)
+- **Recognition Over Recall** - Visual browsing (Spotify)
+- **Consistency** - Platform standards (Apple HIG, Material Design)
+- **User Control** - Customization (YouTube playback controls)
+- **Feedback & Confirmation** - System status (Stripe Dashboard)
+- **Affordances** - Visual cues for interaction (Material Design)
+
+## Using Examples with Human Standards MCP
+
+Each example shows how to query the Human Standards MCP server for guidance:
+
+```typescript
+// Example: Get component guidance for a complex form
+const guidance = await mcp.callTool('get_component_guidance', {
+  component: 'form',
+  context: {
+    fields: 12,
+    complexity: 'complex'
+  }
+});
+
+// Returns recommendations for progressive disclosure,
+// autosave, validation timing, and more
+```
+
+The MCP server encodes these proven patterns so AI tools can apply them systematically during code generation.
+
+## How to Apply These Patterns
+
+### 1. Before Building
+- **Read the example** to understand the principle
+- **Check the metrics** to see potential impact
+- **Query the MCP server** for component-specific guidance
+
+### 2. During Implementation
+- **Use the code examples** as starting points
+- **Follow the design decisions** documented in the case study
+- **Reference Human Standards docs** for deeper understanding
+
+### 3. After Building
+- **Validate with MCP** to check compliance
+- **Measure metrics** to quantify your impact
+- **Test with users** to confirm improvements
+
+## Metrics Guide
+
+Examples include different types of metrics:
+
+| Metric Type | What It Measures | Example |
+|-------------|------------------|---------|
+| **Task Completion Rate** | % of users who successfully complete task | 68% → 87% (+19pp) |
+| **Time on Task** | How long tasks take | 45 min → 31 min (30% faster) |
+| **Error Rate** | Frequency of user mistakes | 15% → 5% errors |
+| **Help Requests** | % of users needing support | 18% → 10% (-45%) |
+| **User Satisfaction** | Subjective experience rating | 3.2/5 → 4.4/5 (+38%) |
+| **Conversion Rate** | % who complete desired action | 2.5% → 3.8% (+52%) |
+
+Use these as benchmarks for your own improvements.
+
+## Source Attribution
+
+Many examples in this section are adapted from the excellent [Luxor UX Principles skill](https://github.com/manutej/luxor-claude-marketplace/tree/main/ux-principles) by Manu Tej + Claude Code, licensed under MIT. We've enhanced them with:
+
+- Human Standards documentation cross-references
+- MCP server validation rule connections
+- Implementation code examples
+- AI code generation context
+
+See [THIRD_PARTY_LICENSES.md](/THIRD_PARTY_LICENSES.md) for full attribution.
+
+## Contributing Examples
+
+Have a great example of human factors principles in action? We'd love to include it!
+
+**Required Information:**
+- ✅ Company/product name (with permission if not public)
+- ✅ Specific principle being applied
+- ✅ Implementation details and design decisions
+- ✅ Quantitative metrics showing impact
+- ✅ References to Human Standards documentation
+
+**Submission Process:**
+1. Fork the repository
+2. Create a new file in `src/content/docs/examples/`
+3. Use [progressive-disclosure-turbotax.mdx](/examples/progressive-disclosure-turbotax/) as a template
+4. Submit a pull request with your example
+
+See [CONTRIBUTING.md](https://github.com/Cumulative-Design/humanstandards/blob/main/CONTRIBUTING.md) for detailed guidelines.
+
+---
+
+**Browse all examples** using the sidebar navigation, or jump to a specific category above.

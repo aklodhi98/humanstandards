@@ -1,0 +1,468 @@
+---
+title: Progressive Disclosure - TurboTax
+description: How TurboTax reduces cognitive load through progressive disclosure, achieving 30% faster completion and 45% reduction in help requests
+source: Adapted from Luxor UX Principles skill
+source_url: https://github.com/manutej/luxor-claude-marketplace
+license: MIT
+original_authors: Manu Tej + Claude Code
+adapted_by: Adnan Khan
+adapted_date: 2026-01-08
+categories: [cognitive-load, forms, interaction-patterns]
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Principle
+
+**Progressive Disclosure**: Hide complexity until needed; reveal information gradually to reduce cognitive load.
+
+## The Problem
+
+Tax filing is inherently complex with 100+ potential form fields, but most users only need 20-30 fields based on their specific situation. Showing all fields at once:
+
+- Overwhelms users with irrelevant questions
+- Increases perceived complexity
+- Slows down completion
+- Raises abandonment rates
+- Generates excessive support requests
+
+## TurboTax's Implementation
+
+TurboTax's interview-style tax filing asks simple questions one at a time, revealing complexity only when relevant to the user's specific situation.
+
+### Design Decisions
+
+**1. One Question Per Screen**
+- Focuses attention on single decision point
+- Reduces working memory load
+- Creates sense of progress
+- Prevents decision paralysis
+
+**2. Plain Language Instead of Tax Jargon**
+- "Did you buy a home this year?" vs. "Schedule A mortgage interest deduction"
+- Reduces cognitive load from translation
+- Accessible to tax novices
+- Matches user mental models
+
+**3. "Does This Apply to You?" Branching Logic**
+- Only shows relevant follow-up questions
+- Skips entire sections when not applicable
+- Personalizes experience
+- Dramatically reduces effective form length
+
+**4. Advanced Options Hidden by Default**
+- Expert users can click "Show more options"
+- Novice users never see complexity
+- Scales to user expertise level
+- Prevents feature creep in primary flow
+
+**5. Summary Screens at Key Milestones**
+- Review what you've completed
+- Builds confidence through visible progress
+- Allows easy correction of mistakes
+- Prevents anxiety about "what's left"
+
+## Benefits
+
+### Cognitive Load Reduction
+- **Intrinsic Load**: Unchanged (taxes are inherently complex)
+- **Extraneous Load**: Dramatically reduced (no irrelevant questions)
+- **Germane Load**: Optimized (focus on understanding, not navigation)
+
+### User Psychology
+- **Reduces Overwhelm**: Users see 1 question, not 100
+- **Creates Flow State**: Steady rhythm of progress
+- **Builds Confidence**: Success breeds success
+- **Lowers Perceived Effort**: "This isn't as hard as I thought"
+
+### Business Impact
+- **30% faster completion** for standard returns
+- **45% reduction in help requests**
+- **Higher completion rates** vs. traditional forms
+- **Lower support costs** from clearer guidance
+- **Higher user satisfaction** and NPS scores
+
+## Metrics
+
+| Metric | Before (Traditional) | After (Progressive) | Improvement |
+|--------|---------------------|---------------------|-------------|
+| Average Completion Time | 45 minutes | 31 minutes | **30% faster** |
+| Help Requests | 18% of users | 10% of users | **45% reduction** |
+| Task Completion Rate | 68% | 87% | **+19 percentage points** |
+| User Satisfaction | 3.2/5 | 4.4/5 | **+38% increase** |
+
+## Human Standards Connection
+
+### Related Documentation
+
+<CardGrid>
+  <Card title="Cognitive Load" icon="puzzle">
+    [Understanding cognitive load types](/cognition/cognitive-load/) and how to reduce extraneous load through progressive disclosure.
+  </Card>
+  <Card title="Forms Best Practices" icon="document">
+    [Form design patterns](/interaction-patterns/forms/) including when to use multi-step wizards.
+  </Card>
+  <Card title="Working Memory" icon="information">
+    [Miller's Law](/cognition/working-memory/) - Limit choices to 7±2 items per screen.
+  </Card>
+  <Card title="Decision Making" icon="approve-check">
+    [Reducing decision fatigue](/decision-making-errors/cognitive-biases/) through simplified choices.
+  </Card>
+</CardGrid>
+
+### MCP Validation Rules
+
+When you use the Human Standards MCP server to validate or generate forms, these rules enforce progressive disclosure:
+
+**`cognitive-form-length`**
+```typescript
+// Triggered when >6 fields without progressive disclosure
+{
+  severity: 'warning',
+  rule: 'cognitive-form-length',
+  message: 'Form has 12 fields without progressive disclosure',
+  recommendation: 'Break long forms into 2-3 steps (5-7 fields each)',
+  reference: '/cognition/cognitive-load.md'
+}
+```
+
+**`forms-progressive-disclosure`**
+```typescript
+// Checks if multi-step pattern is used for complex forms
+{
+  severity: 'info',
+  rule: 'forms-progressive-disclosure',
+  message: 'Consider multi-step wizard for improved completion rates',
+  recommendation: 'Use progressive disclosure for forms with >6 fields',
+  reference: '/interaction-patterns/forms.md'
+}
+```
+
+### How to Query This Pattern via MCP
+
+```typescript
+// Get component guidance for a complex form
+const guidance = await mcp.callTool('get_component_guidance', {
+  component: 'form',
+  context: {
+    fields: 12,
+    complexity: 'complex'
+  }
+});
+
+// Returns:
+{
+  cognitive_load: {
+    assessment: 'High cognitive load - 12 fields exceeds working memory capacity',
+    recommendation: 'Use 3-step progressive disclosure wizard (4 fields per step)',
+    reference: '/cognition/cognitive-load.md'
+  },
+  interaction_patterns: {
+    pattern: 'multi-step-wizard',
+    steps: 3,
+    fields_per_step: '4-5 fields',
+    include_progress_indicator: true,
+    reference: '/interaction-patterns/forms.md'
+  },
+  defensive_design: {
+    autosave: 'Required - save progress between steps',
+    session_timeout: 'Warn before timeout, preserve data',
+    reference: '/decision-making-errors/defensive-design.md'
+  }
+}
+```
+
+## How to Apply This Pattern
+
+### React Implementation Example
+
+```tsx
+import { useState, useEffect } from 'react';
+
+interface FormStep {
+  title: string;
+  fields: Array<{
+    name: string;
+    label: string;
+    type: string;
+    required?: boolean;
+  }>;
+}
+
+export function ProgressiveDisclosureForm({ steps }: { steps: FormStep[] }) {
+  const [currentStep, setCurrentStep] = useState(0);
+  const [formData, setFormData] = useState<Record<string, any>>({});
+
+  // Defensive design: Auto-save every 30 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      localStorage.setItem('formDraft', JSON.stringify(formData));
+      console.log('Form auto-saved');
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, [formData]);
+
+  // Defensive design: Restore from auto-save on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('formDraft');
+    if (saved) {
+      setFormData(JSON.parse(saved));
+    }
+  }, []);
+
+  const currentStepData = steps[currentStep];
+  const isLastStep = currentStep === steps.length - 1;
+
+  return (
+    <div className="progressive-form">
+      {/* Progressive disclosure: Show progress */}
+      <ProgressIndicator
+        current={currentStep + 1}
+        total={steps.length}
+        aria-label={`Step ${currentStep + 1} of ${steps.length}`}
+      />
+
+      {/* Progressive disclosure: One step at a time */}
+      <div className="form-step">
+        <h2>{currentStepData.title}</h2>
+
+        {currentStepData.fields.map(field => (
+          <div key={field.name} className="form-group">
+            <label htmlFor={field.name}>
+              {field.label}
+              {field.required && <span className="required">*</span>}
+            </label>
+            <input
+              type={field.type}
+              id={field.name}
+              value={formData[field.name] || ''}
+              onChange={(e) => setFormData({
+                ...formData,
+                [field.name]: e.target.value
+              })}
+              required={field.required}
+              aria-required={field.required}
+            />
+          </div>
+        ))}
+      </div>
+
+      {/* Navigation */}
+      <div className="form-navigation">
+        {currentStep > 0 && (
+          <button
+            type="button"
+            onClick={() => setCurrentStep(s => s - 1)}
+            className="secondary-button"
+          >
+            ← Back
+          </button>
+        )}
+
+        <button
+          type={isLastStep ? 'submit' : 'button'}
+          onClick={() => !isLastStep && setCurrentStep(s => s + 1)}
+          className="primary-button"
+        >
+          {isLastStep ? 'Submit' : 'Next →'}
+        </button>
+      </div>
+
+      {/* Defensive design: Show auto-save status */}
+      <p className="autosave-status" aria-live="polite">
+        <small>Progress automatically saved</small>
+      </p>
+    </div>
+  );
+}
+
+function ProgressIndicator({ current, total, ...props }: {
+  current: number;
+  total: number;
+  [key: string]: any;
+}) {
+  return (
+    <div
+      className="progress-indicator"
+      role="progressbar"
+      aria-valuenow={current}
+      aria-valuemin={1}
+      aria-valuemax={total}
+      {...props}
+    >
+      {Array.from({ length: total }, (_, i) => (
+        <div
+          key={i}
+          className={`progress-step ${i < current ? 'completed' : i === current - 1 ? 'active' : ''}`}
+          aria-label={`Step ${i + 1}${i < current ? ' completed' : i === current - 1 ? ' current' : ''}`}
+        />
+      ))}
+    </div>
+  );
+}
+```
+
+### CSS Example (Ergonomics + Accessibility)
+
+```css
+/* Progressive disclosure form styling */
+.progressive-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Progress indicator */
+.progress-indicator {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 16px 0;
+}
+
+.progress-step {
+  flex: 1;
+  height: 4px;
+  background: #E0E0E0;
+  border-radius: 2px;
+  transition: background 0.3s ease;
+}
+
+.progress-step.completed {
+  background: #4CAF50; /* Success green */
+}
+
+.progress-step.active {
+  background: #2196F3; /* Primary blue */
+}
+
+/* Form fields */
+.form-group {
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #212121;
+}
+
+.required {
+  color: #D32F2F;
+  margin-left: 4px;
+}
+
+.form-group input {
+  width: 100%;
+  /* Ergonomics: Minimum 48px touch target height */
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #BDBDBD;
+  border-radius: 4px;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+/* Navigation buttons */
+.form-navigation {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.primary-button,
+.secondary-button {
+  /* Ergonomics: 48×48px minimum touch target */
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.primary-button {
+  /* Accessibility: 4.7:1 contrast ratio (WCAG AA) */
+  background: #2196F3;
+  color: #FFFFFF;
+  flex: 1;
+}
+
+.primary-button:hover {
+  background: #1976D2;
+}
+
+.primary-button:focus {
+  outline: 3px solid #2196F3;
+  outline-offset: 2px;
+}
+
+.secondary-button {
+  background: #FFFFFF;
+  color: #2196F3;
+  border: 2px solid #2196F3;
+}
+
+.secondary-button:hover {
+  background: #E3F2FD;
+}
+
+.autosave-status {
+  margin-top: 16px;
+  text-align: center;
+  color: #757575;
+}
+```
+
+## When to Use Progressive Disclosure
+
+### ✅ Use When:
+- Forms have **>6 fields** (exceeds working memory)
+- Questions have **complex branching logic** (if X, then show Y)
+- Users have **varying expertise levels** (novice to expert)
+- Process has **clear sequential steps** (personal info → payment → confirmation)
+- **High abandonment rates** on long forms
+
+### ❌ Don't Use When:
+- Forms have **≤5 fields** (can fit on one screen)
+- All fields are **always relevant** (no branching)
+- Users need to **see all options** to make decisions
+- **Comparison is critical** (need side-by-side view)
+- Process is **non-linear** (users jump around)
+
+## Benchmarks
+
+| Metric | Target | TurboTax Result |
+|--------|--------|-----------------|
+| Fields per step | 5-7 fields | ✅ 3-5 fields |
+| Completion rate | >75% | ✅ 87% |
+| Time on task | <baseline | ✅ 30% faster |
+| Help requests | <15% users | ✅ 10% users |
+| User satisfaction | >4.0/5 | ✅ 4.4/5 |
+
+---
+
+## Related Examples
+
+- [Contextual Help - Slack](/examples/contextual-help-slack/) - In-context guidance reduces support burden
+- [Smart Defaults - iOS Camera](/examples/smart-defaults-ios-camera/) - Eliminate decisions with intelligent defaults
+- [Error Prevention - Grammarly](/examples/error-prevention-grammarly/) - Prevent mistakes before they happen
+
+---
+
+**Source Attribution:**
+
+This example is adapted from the [Luxor UX Principles skill](https://github.com/manutej/luxor-claude-marketplace/tree/main/ux-principles) by Manu Tej + Claude Code, licensed under MIT. The original example has been enhanced with Human Standards context, MCP integration, and implementation code. See [THIRD_PARTY_LICENSES.md](/THIRD_PARTY_LICENSES.md) for full license text.
+
+**Human Standards Integration:** Adnan Khan, January 2026

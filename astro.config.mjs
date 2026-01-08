@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'Human Standards',
 			social: [
-				{ icon: 'github', label: 'GitHub', href: 'https://github.com/humanstandards' },
+				{ icon: 'github', label: 'GitHub', href: 'https://github.com/Cumulative-Design/humanstandards' },
 			],
 			customCss: [
 				'./src/styles/custom.css',
@@ -21,6 +21,10 @@ export default defineConfig({
 				{
 					label: 'Human Overview',
 					autogenerate: { directory: 'human-overview' },
+				},
+				{
+					label: 'Real-World Examples',
+					autogenerate: { directory: 'examples' },
 				},
 				{
 					label: 'Cognition',
