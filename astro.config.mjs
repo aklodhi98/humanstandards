@@ -10,6 +10,10 @@ export default defineConfig({
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/aklodhi98/humanstandards' },
 			],
+			credits: false,
+			components: {
+				Footer: './src/components/overrides/Footer.astro',
+			},
 			customCss: [
 				'./src/styles/custom.css',
 			],

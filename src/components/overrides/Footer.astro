@@ -1,0 +1,36 @@
+---
+import Default from '@astrojs/starlight/components/Footer.astro';
+---
+
+<Default {...Astro.props} />
+
+<div class="custom-footer-credit">
+  <hr />
+  Maintained by <a href="https://aklodhi.com" target="_blank" rel="noopener">AK Lodhi</a>
+</div>
+
+<style>
+  .custom-footer-credit {
+    padding: 1rem 1rem 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--sl-color-gray-2);
+    text-align: center;
+  }
+
+  .custom-footer-credit hr {
+    border: none;
+    border-top: 1px solid var(--sl-color-gray-5);
+    margin: 0 0 1rem 0;
+    width: 100%;
+  }
+
+  .custom-footer-credit a {
+    color: var(--sl-color-text-accent);
+    text-decoration: underline;
+  }
+
+  .custom-footer-credit a:hover {
+    text-decoration: underline;
+  }
+</style>
