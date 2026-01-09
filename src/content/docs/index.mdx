@@ -1,66 +1,36 @@
 ---
-title: What are Human Standards?
-description: Principles for ensuring technology respects our rights, enhances our well-being, and empowers us all.
+title: Human Standards
+description: Practical human factors and accessibility guidance for product teams
 template: splash
 hero:
-  tagline: Building the guide for a digital world designed for people.
-  actions:
-    - text: Get Started
-      link: /human-overview/getting-started/
-      icon: right-arrow
-    - text: View on GitHub
-      link: https://github.com/aklodhi98/humanstandards
-      icon: external
-      variant: minimal
+  tagline: Human factors research translated into design standards, code examples, and an MCP server for AI-assisted validation.
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { CardGrid, LinkButton } from '@astrojs/starlight/components';
 import ClickableCard from '../../components/ClickableCard.astro';
 
-## Why Human Standards?
-
-The digital age has unfurled a world of unprecedented connection, innovation, and access. Yet, as this digital landscape expands, a critical question emerges: **Is our technology truly serving humanity's best interests?**
-
-Too often, digital experiences feel extractive rather than empowering, divisive rather than unifying, and overwhelming rather than supportive of our well-being.
-
-**Current Focus:** This project currently focuses on **digital interfaces** (web, mobile, desktop). While the underlying principles apply universally, our implementation guidance and code examples are tailored to digital product design. See our [Scope & Roadmap](/human-overview/scope-and-roadmap/) for planned expansion into voice, VR/AR, robotics, and other domains.
-
----
-
-## Our Vision
-
-We envision a digital future where technology is a powerful force for good:
-
-<CardGrid stagger>
-	<Card title="Empowerment" icon="rocket">
-		Digital tools that give individuals agency and control over their experiences.
-	</Card>
-	<Card title="Respect & Inclusivity" icon="heart">
-		Online environments that foster genuine connection and welcome everyone.
-	</Card>
-	<Card title="Ethical Innovation" icon="approve-check">
-		Design guided by principles of fairness, safety, and dignity.
-	</Card>
-	<Card title="Human Well-being" icon="sun">
-		Mental, emotional, and societal health as primary considerations.
-	</Card>
-</CardGrid>
-
----
+<div class="sl-flex actions hero-actions">
+  <LinkButton href="/human-overview/getting-started/" variant="primary" icon="right-arrow">
+    Explore the Standards
+  </LinkButton>
+</div>
 
 ## Explore the Standards
 
 <CardGrid>
-	<ClickableCard title="Human Overview" icon="open-book" href="/human-overview/what-are-human-factors/">
-		Core principles and why human factors matter in design.
+	<ClickableCard title="Getting Started" icon="rocket" href="/human-overview/getting-started/">
+		Introduction to human factors and how to use this guide effectively.
 	</ClickableCard>
-	<ClickableCard title="Cognition" icon="puzzle" href="/cognition/cognitive-load/">
-		Attention, cognitive load, and working memory considerations.
+	<ClickableCard title="Understanding Humans" icon="puzzle" href="/cognition/cognitive-load/">
+		Cognition, perception, emotions, and decision-making patterns.
 	</ClickableCard>
-	<ClickableCard title="Perception" icon="seti:image" href="/perception/vision/">
-		Vision, hearing, and touch—how we sense the digital world.
+	<ClickableCard title="Design Standards" icon="approve-check-circle" href="/accessibility/wcag-guidelines/">
+		Ergonomics, accessibility (WCAG), and interaction patterns.
 	</ClickableCard>
-	<ClickableCard title="Accessibility" icon="approve-check-circle" href="/accessibility/wcag-guidelines/">
-		WCAG guidelines, assistive technologies, and audit tools.
+	<ClickableCard title="Implementation" icon="seti:html" href="/examples/">
+		Code examples, design tokens, and checklists for your projects.
+	</ClickableCard>
+	<ClickableCard title="Research & References" icon="open-book" href="/research-methods-metrics/usability-tests/">
+		Research methods, metrics, and academic sources.
 	</ClickableCard>
 </CardGrid>

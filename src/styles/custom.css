@@ -10,8 +10,8 @@
   width: 100% !important;
   max-width: none !important;
   margin-inline: auto !important;
-  padding: 1rem 2rem 2rem 2rem !important;
-  min-height: 50vh !important;
+  padding: 2rem 2rem 1rem 2rem !important;
+  min-height: auto !important;
   position: relative !important;
   overflow: visible !important;
 }
@@ -123,7 +123,37 @@
 }
 
 /* Center content below hero */
-[data-page-type="splash"] .sl-markdown-content {
+body:has(.hero) .sl-markdown-content {
   max-width: 900px;
   margin-inline: auto;
+}
+
+/* Hero search component positioning */
+body:has(.hero) .sl-markdown-content .hero-search {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+/* Hero action buttons below search */
+body:has(.hero) .hero-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Five-card grid layout for homepage */
+body:has(.hero) .sl-link-card {
+  min-height: 120px;
+}
+
+/* Ensure cards grid looks good with 5 items */
+@media (min-width: 50rem) {
+  body:has(.hero) .sl-markdown-content > .not-content:has(.clickable-card) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+  }
 }

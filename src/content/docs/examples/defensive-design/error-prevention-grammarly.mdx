@@ -168,46 +168,28 @@ When you use the Human Standards MCP server, these rules enforce error preventio
 ### How to Query This Pattern via MCP
 
 ```typescript
-// Get component guidance for form validation
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'form',
-  context: {
-    validation: 'real-time',
-    complexity: 'complex'
-  }
-});
+// Get relevant heuristics for error prevention
+const errorPrevention = await mcp.callTool('get_heuristic', { id: 'H5' });
+// Returns: Error prevention - validation, confirmations, constraints
 
-// Returns:
-{
-  validation: {
-    timing: 'on-blur',
-    rationale: 'Validates after user finishes each field, before moving on',
-    pattern: 'immediate-feedback',
-    avoid: 'Validation on submit only - too late to catch errors early',
-    reference: '/interaction-patterns/forms.md'
-  },
-  error_messages: {
-    specificity: 'high',
-    requirements: [
-      'Explain what went wrong',
-      'Show correct format with example',
-      'Position message near the field',
-      'Use aria-live for screen readers'
-    ],
-    bad_example: 'Invalid input',
-    good_example: 'Password must be at least 8 characters with 1 number',
-    reference: '/decision-making-errors/defensive-design.md'
-  },
-  visual_feedback: {
-    required: [
-      'Visual indicator of error state (red border, icon)',
-      'Color + icon (not color alone for accessibility)',
-      'Error message visible near field',
-      'Success state when corrected (green checkmark)'
-    ],
-    reference: '/interaction-patterns/feedback.md'
-  }
-}
+const errorRecovery = await mcp.callTool('get_heuristic', { id: 'H9' });
+// Returns: Help users recover from errors - specific messages, solutions
+
+const systemStatus = await mcp.callTool('get_heuristic', { id: 'H1' });
+// Returns: Visibility of system status - immediate feedback
+
+// Search for form validation patterns
+const formDocs = await mcp.callTool('search_standards', { query: 'forms validation' });
+// Returns: Form design, validation timing, error messages
+
+const defensiveDocs = await mcp.callTool('search_standards', { query: 'defensive design' });
+// Returns: Error prevention strategies, recovery patterns
+
+// Example results inform implementation:
+// - H5 (Error Prevention): Validate on blur, not just on submit
+// - H9 (Error Recovery): "Password must be 8+ chars with 1 number" not "Invalid"
+// - H1 (System Status): Show validation state immediately (green check, red X)
+// - Forms docs: Position errors near fields, use aria-live for screen readers
 ```
 
 ## How to Apply This Pattern

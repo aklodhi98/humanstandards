@@ -190,47 +190,25 @@ When you use the Human Standards MCP server, these rules enforce keyboard access
 ### How to Query This Pattern via MCP
 
 ```typescript
-// Get component guidance for accessible modal
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'modal',
-  context: {
-    accessibility: 'wcag-aa'
-  }
-});
+// Get relevant heuristics for accessibility
+const userControl = await mcp.callTool('get_heuristic', { id: 'H3' });
+// Returns: User control and freedom - undo, cancel, escape routes
 
-// Returns:
-{
-  accessibility: {
-    keyboard_navigation: {
-      focus_management: [
-        'Move focus to modal when opened',
-        'Trap focus within modal (prevent tab to background)',
-        'Return focus to trigger element when closed'
-      ],
-      keyboard_shortcuts: [
-        'Escape key to close',
-        'Tab/Shift+Tab to cycle through focusable elements',
-        'Enter/Space to activate buttons'
-      ],
-      implementation: 'Use focus trap library or manual focus management'
-    },
-    aria_attributes: {
-      required: [
-        'role="dialog"',
-        'aria-modal="true"',
-        'aria-labelledby="modal-title"',
-        'aria-describedby="modal-description" (optional)'
-      ],
-      rationale: 'Screen readers need semantic information about modal context'
-    },
-    focus_indicator: {
-      requirement: 'Visible focus on all interactive elements within modal',
-      contrast: 'Minimum 3:1 contrast ratio (WCAG 2.1 Level AA)',
-      style: 'Recommended: 2-3px solid outline with offset'
-    },
-    reference: '/accessibility/keyboard-navigation.md'
-  }
-}
+const consistency = await mcp.callTool('get_heuristic', { id: 'H4' });
+// Returns: Consistency and standards - follow platform conventions
+
+// Search for accessibility-specific documentation
+const accessibilityDocs = await mcp.callTool('search_standards', { query: 'keyboard navigation' });
+// Returns: Focus management, skip links, ARIA patterns
+
+const wcagDocs = await mcp.callTool('search_standards', { query: 'WCAG accessibility' });
+// Returns: WCAG guidelines, screen readers, assistive technologies
+
+// Example results inform implementation:
+// - H3 (User Control): Escape key closes modal, clear exit paths
+// - H4 (Consistency): Follow platform keyboard conventions
+// - Keyboard docs: Focus trapping, tab order, visible focus indicators
+// - WCAG docs: aria-modal, role="dialog", screen reader announcements
 ```
 
 ## How to Apply This Pattern

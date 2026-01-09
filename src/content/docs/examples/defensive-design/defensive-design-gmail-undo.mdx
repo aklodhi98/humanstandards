@@ -144,42 +144,28 @@ When you use the Human Standards MCP server, these rules enforce defensive desig
 ### How to Query This Pattern via MCP
 
 ```typescript
-// Get component guidance for a destructive action
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'button',
-  context: {
-    action: 'destructive',
-    type: 'send'
-  }
-});
+// Get relevant heuristics for undo/defensive design
+const userControl = await mcp.callTool('get_heuristic', { id: 'H3' });
+// Returns: User control and freedom - undo, cancel, escape routes
 
-// Returns:
-{
-  defensive_design: {
-    recommendation: 'Implement undo with delay instead of confirmation',
-    pattern: 'delayed-execution-with-undo',
-    timing: '5-10 seconds for low-risk, 10-30 seconds for high-risk',
-    rationale: 'Less disruptive than confirmation, catches immediate regret',
-    reference: '/decision-making-errors/defensive-design.md'
-  },
-  feedback: {
-    required: [
-      'Clear visual indicator of pending action',
-      'Prominent undo button',
-      'Progress indicator showing remaining time',
-      'Immediate feedback when undone'
-    ],
-    reference: '/interaction-patterns/feedback.md'
-  },
-  accessibility: {
-    requirements: [
-      'Announce undo option to screen readers',
-      'Keyboard shortcut for undo (Ctrl+Z)',
-      'Sufficient time to perceive and act (min 5 seconds)'
-    ],
-    reference: '/accessibility/wcag-guidelines.md'
-  }
-}
+const errorPrevention = await mcp.callTool('get_heuristic', { id: 'H5' });
+// Returns: Error prevention - confirmations for destructive actions
+
+const systemStatus = await mcp.callTool('get_heuristic', { id: 'H1' });
+// Returns: Visibility of system status - feedback during pending actions
+
+// Search for defensive design patterns
+const defensiveDocs = await mcp.callTool('search_standards', { query: 'defensive design undo' });
+// Returns: Undo patterns, confirmation dialogs, error recovery
+
+const feedbackDocs = await mcp.callTool('search_standards', { query: 'feedback' });
+// Returns: Toast notifications, progress indicators, timing guidelines
+
+// Example results inform implementation:
+// - H3 (User Control): Always provide undo for destructive actions
+// - H5 (Error Prevention): Delay execution instead of confirmation dialogs
+// - H1 (System Status): Show pending state with progress indicator
+// - Defensive docs: 5-10s undo window, prominent undo button
 ```
 
 ## How to Apply This Pattern

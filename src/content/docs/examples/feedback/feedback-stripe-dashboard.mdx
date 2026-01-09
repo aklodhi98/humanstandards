@@ -204,51 +204,21 @@ When you use the Human Standards MCP server, these rules enforce feedback patter
 ### How to Query This Pattern via MCP
 
 ```typescript
-// Get component guidance for feedback patterns
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'button',
-  context: {
-    action: 'async',
-    consequence: 'high-stakes'
-  }
-});
+// Get relevant heuristics for feedback patterns
+const systemStatus = await mcp.callTool('get_heuristic', { id: 'H1' });
+// Returns: Visibility of system status - loading states, feedback, progress
 
-// Returns:
-{
-  feedback: {
-    timing: 'immediate',
-    states: [
-      'idle: Default state, button enabled',
-      'loading: Spinner + disabled during API call (<1s)',
-      'success: Toast notification with checkmark (3-5s)',
-      'error: Toast with specific error message + retry option'
-    ],
-    implementation: {
-      loading_indicator: 'Inline spinner in button or overlay',
-      success_message: 'Toast notification (non-blocking)',
-      error_message: 'Toast notification + inline error if form-related',
-      accessibility: 'aria-live="polite" for screen reader announcements'
-    },
-    reference: '/interaction-patterns/feedback.md'
-  },
-  defensive_design: {
-    confirmation: {
-      when: 'High-stakes or destructive actions',
-      pattern: 'Dialog with clear consequences + red confirm button',
-      example: 'Delete customer: "This will permanently delete all data. Cannot be undone."'
-    },
-    error_recovery: {
-      specificity: 'high',
-      requirements: [
-        'Explain what went wrong',
-        'Why it happened (if known)',
-        'What user can do to fix it',
-        'Link to docs or support'
-      ]
-    },
-    reference: '/decision-making-errors/defensive-design.md'
-  }
-}
+const errorRecovery = await mcp.callTool('get_heuristic', { id: 'H9' });
+// Returns: Help users recover from errors - clear messages, solutions
+
+// Search for feedback-specific documentation
+const feedbackDocs = await mcp.callTool('search_standards', { query: 'feedback notifications' });
+// Returns: Feedback patterns, timing guidelines, toast notifications
+
+// Example results inform implementation:
+// - H1 (System Status): Show loading state immediately, success/error feedback
+// - H9 (Error Recovery): Specific error messages with actionable solutions
+// - Feedback docs: Toast positioning, auto-dismiss timing, accessibility
 ```
 
 ## How to Apply This Pattern

@@ -466,27 +466,26 @@ Learn from production systems demonstrating these principles:
 
 ## Using Human Standards MCP
 
-Each principle on this page is encoded in the Human Standards MCP server, allowing AI tools to query for guidance during code generation:
+Each principle on this page is encoded in the Human Standards MCP server. The MCP acts as a reference book that AI tools consult while building interfaces:
 
 ```typescript
-// Example: Get guidance for a complex form
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'form',
-  context: {
-    fields: 12,
-    complexity: 'complex'
-  }
-});
+// Example: Building a complex form - query relevant heuristics
+const errorPrevention = await mcp.callTool('get_heuristic', { id: 'H5' });
+// Returns: Error Prevention - validation, confirmations, constraints
 
-// Returns recommendations for:
-// - Progressive disclosure (cognitive load)
-// - Validation timing (error prevention)
-// - Touch target sizes (ergonomics)
-// - Keyboard accessibility (WCAG)
-// - Autosave (defensive design)
+const errorRecovery = await mcp.callTool('get_heuristic', { id: 'H9' });
+// Returns: Help users recover from errors - clear messages, solutions
+
+// Get all heuristics for comprehensive guidance
+const allHeuristics = await mcp.callTool('get_all_heuristics', {});
+// Returns: Summary of all 10 Nielsen usability heuristics
+
+// Search Human Standards documentation for specific topics
+const formDocs = await mcp.callTool('search_standards', { query: 'forms cognitive load' });
+// Returns: Progressive disclosure, validation timing, chunking patterns
 ```
 
-The MCP server ensures that AI-generated code follows these principles automatically, not as an afterthought.
+The MCP server ensures that AI tools can look up relevant usability principles based on the task at hand.
 
 **Learn more:** [About Human Standards](/human-overview/what-are-human-standards/) • [MCP Server Documentation](/human-standards-mcp/)
 

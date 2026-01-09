@@ -19,4 +19,9 @@ pnpm-debug.log*
 
 # macOS-specific files
 .DS_Store
+
+# Local files
 writing-style.md
+
+# Claude Code local settings
+.claude/

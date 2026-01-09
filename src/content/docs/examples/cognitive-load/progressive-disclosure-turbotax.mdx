@@ -141,35 +141,28 @@ When you use the Human Standards MCP server to validate or generate forms, these
 ### How to Query This Pattern via MCP
 
 ```typescript
-// Get component guidance for a complex form
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'form',
-  context: {
-    fields: 12,
-    complexity: 'complex'
-  }
-});
+// Get relevant heuristics for form design
+const recognition = await mcp.callTool('get_heuristic', { id: 'H6' });
+// Returns: Recognition rather than recall - show context, visible options
 
-// Returns:
-{
-  cognitive_load: {
-    assessment: 'High cognitive load - 12 fields exceeds working memory capacity',
-    recommendation: 'Use 3-step progressive disclosure wizard (4 fields per step)',
-    reference: '/cognition/cognitive-load.md'
-  },
-  interaction_patterns: {
-    pattern: 'multi-step-wizard',
-    steps: 3,
-    fields_per_step: '4-5 fields',
-    include_progress_indicator: true,
-    reference: '/interaction-patterns/forms.md'
-  },
-  defensive_design: {
-    autosave: 'Required - save progress between steps',
-    session_timeout: 'Warn before timeout, preserve data',
-    reference: '/decision-making-errors/defensive-design.md'
-  }
-}
+const minimalist = await mcp.callTool('get_heuristic', { id: 'H8' });
+// Returns: Aesthetic and minimalist design - remove noise, show only relevant
+
+const errorPrevention = await mcp.callTool('get_heuristic', { id: 'H5' });
+// Returns: Error prevention - validation, autosave, confirmations
+
+// Search for cognitive load and form patterns
+const cogLoadDocs = await mcp.callTool('search_standards', { query: 'cognitive load' });
+// Returns: Working memory limits, chunking, progressive disclosure
+
+const formDocs = await mcp.callTool('search_standards', { query: 'forms wizard' });
+// Returns: Multi-step forms, progress indicators, form design
+
+// Example results inform implementation:
+// - H6 (Recognition): Show progress indicator, visible step context
+// - H8 (Minimalist): 4-5 fields per step, hide advanced options
+// - H5 (Error Prevention): Autosave between steps, preserve data
+// - Cognitive load docs: Break 12-field form into 3 steps
 ```
 
 ## How to Apply This Pattern

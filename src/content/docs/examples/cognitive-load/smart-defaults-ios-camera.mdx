@@ -173,45 +173,29 @@ When you use the Human Standards MCP server, these rules enforce smart defaults:
 ### How to Query This Pattern via MCP
 
 ```typescript
-// Get component guidance for settings interface
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'settings',
-  context: {
-    user_expertise: 'mixed',
-    options_count: 20
-  }
-});
+// Get relevant heuristics for smart defaults
+const recognition = await mcp.callTool('get_heuristic', { id: 'H6' });
+// Returns: Recognition rather than recall - use intelligent defaults
 
-// Returns:
-{
-  cognitive_load: {
-    assessment: '20 options create high cognitive load and choice overload',
-    recommendation: 'Use smart defaults + progressive disclosure pattern',
-    implementation: [
-      'Set intelligent defaults for all 20 options',
-      'Show only 3-5 most common settings initially',
-      'Hide advanced options behind "Advanced" section',
-      'Provide "Restore defaults" option'
-    ],
-    reference: '/cognition/cognitive-load.md'
-  },
-  smart_defaults: {
-    strategy: 'context-aware',
-    examples: [
-      'Use device capabilities (detect dark mode, locale)',
-      'Learn from user behavior (remember last used settings)',
-      'Apply sensible defaults (privacy = strict, quality = high)'
-    ],
-    reference: '/decision-making-errors/cognitive-biases.md'
-  },
-  progressive_disclosure: {
-    pattern: 'basic-advanced-expert',
-    basic: 'Smart defaults, zero configuration needed',
-    advanced: '"Show more options" reveals 5-7 common tweaks',
-    expert: '"Advanced settings" unlocks all 20 options',
-    reference: '/interaction-patterns/progressive-disclosure.md'
-  }
-}
+const minimalist = await mcp.callTool('get_heuristic', { id: 'H8' });
+// Returns: Aesthetic and minimalist design - hide complexity
+
+const flexibility = await mcp.callTool('get_heuristic', { id: 'H7' });
+// Returns: Flexibility and efficiency - shortcuts for power users
+
+// Search for cognitive load and defaults patterns
+const cogLoadDocs = await mcp.callTool('search_standards', { query: 'cognitive load' });
+// Returns: Choice overload, decision fatigue, working memory
+
+const biasesDocs = await mcp.callTool('search_standards', { query: 'biases defaults' });
+// Returns: Status quo bias, default effect, nudge theory
+
+// Example results inform implementation:
+// - H6 (Recognition): Set intelligent defaults, eliminate decisions
+// - H8 (Minimalist): Show 3-5 options, hide 20 advanced settings
+// - H7 (Flexibility): "Advanced" section for expert users
+// - Cognitive load docs: Context-aware defaults (time of day, device)
+// - Biases docs: Conservative defaults for privacy-sensitive settings
 ```
 
 ## How to Apply This Pattern

@@ -22,6 +22,7 @@ export default defineConfig({
 						{ slug: 'human-overview/what-are-human-standards' },
 						{ slug: 'human-overview/scope-and-roadmap' },
 						{ slug: 'human-overview/key-principles-and-laws' },
+						{ slug: 'human-overview/mcp-server', label: 'MCP Server', badge: { text: 'New', variant: 'success' } },
 					],
 				},
 

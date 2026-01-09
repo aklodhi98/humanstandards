@@ -1,209 +1,121 @@
 # Human Standards MCP Server
 
-**Systematic human factors validation for AI-generated interfaces**
+**A reference guide for human-centered design principles, accessible to AI agents via MCP**
 
-This MCP (Model Context Protocol) server provides AI tools like Claude Code with real-time access to Human Standards documentation and validation tools. It transforms human factors principles from documentation into active, queryable infrastructure.
+This MCP (Model Context Protocol) server provides AI tools like Claude with real-time access to Human Standards documentation and Nielsen's 10 Usability Heuristics. It acts as a "reference book" that AI can consult while designing and building interfaces.
 
 ## What It Does
 
-Instead of AI tools relying on trained intuition, they can:
+The MCP server exposes three tools:
 
-✅ **Consult standards at generation time** - "What guidance applies to this form?"
-✅ **Validate code against standards** - "Does this HTML meet WCAG 2.2 AA?"
-✅ **Check specific requirements** - "Is this contrast ratio sufficient?"
-✅ **Search documentation** - "Find guidance on cognitive load"
+1. **`get_heuristic`** - Deep dive on a specific Nielsen usability heuristic (H1-H10)
+2. **`get_all_heuristics`** - Summary of all 10 heuristics for context
+3. **`search_standards`** - Search the Human Standards documentation
 
-## The Difference
+## Philosophy
 
-### Before (Intuitive Approach)
-```
-User: "Build a registration form"
-AI: *generates form based on training data*
-Result: 11 fields, vague errors, no autosave, accessibility gaps
-```
+The MCP is the **reference book**. The AI is the **practitioner**.
 
-### After (Standards-Informed)
-```
-User: "Build a registration form"
-AI: *calls get_component_guidance('form', { fields: 8 })*
-MCP: "Use 3-step wizard, autosave, WCAG AA, 48px touch targets..."
-AI: *generates compliant form*
-AI: *calls validate_html(code)*
-MCP: "✓ WCAG AA compliant, ✓ cognitive load optimized"
-Result: Progressive disclosure, clear errors, autosave, fully accessible
-```
+When building an interface, the AI decides which principles are relevant based on context, then looks them up. For example:
 
-See [demo-comparison](../demo-comparison/) for the night-and-day difference.
+- Building a form? Look up H1 (feedback), H5 (error prevention), H9 (error recovery)
+- Designing navigation? Look up H4 (consistency), H6 (recognition over recall)
+- Adding a delete button? Look up H3 (user control), H5 (error prevention)
 
 ## Available Tools
 
-### 1. `get_component_guidance`
+### 1. `get_heuristic`
 
-Get systematic guidance for UI components.
+Get detailed information about a specific Nielsen usability heuristic.
 
 **Input:**
 ```json
 {
-  "component": "form",
-  "context": {
-    "fields": 8,
-    "platform": "web"
-  }
+  "id": "H1"
 }
 ```
 
 **Output:**
 ```json
 {
-  "cognitive_load": {
-    "assessment": "High cognitive load for 8 fields",
-    "recommendation": "Use progressive disclosure - break into 2-3 steps",
-    "reference": "/cognition/cognitive-load.md#chunk-information",
-    "implementation": ["Multi-step wizard", "3-4 fields per step", "Progress indicator"]
-  },
-  "accessibility": {
-    "requirements": [
-      "Every input has visible label",
-      "Required fields marked with aria-required",
-      "Errors use aria-invalid and aria-describedby"
-    ],
-    "wcag_level": "AA",
-    "reference": "/accessibility/wcag-guidelines.md"
-  },
-  "forms": {
-    "validation_timing": "on blur",
-    "error_messages": "specific and actionable",
-    "autocomplete": true,
-    "reference": "/interaction-patterns/forms.md"
-  },
-  "defensive_design": {
-    "required": ["autosave", "clear error messages", "beforeunload warning"],
-    "reference": "/decision-making-errors/defensive-design.md"
-  }
+  "id": "H1",
+  "name": "Visibility of system status",
+  "principle": "The design should always keep users informed about what is going on...",
+  "description": "Users should never have to wonder what is happening...",
+  "questions": [
+    "Does the user know what state the system is in?",
+    "Is feedback provided immediately after user actions?",
+    "Are loading states and progress clearly communicated?"
+  ],
+  "examples": [
+    "Loading spinners and progress bars",
+    "Form submission confirmation messages",
+    "Highlighted current navigation item"
+  ],
+  "violations": [
+    "Silent failures with no error message",
+    "Actions that complete without confirmation"
+  ],
+  "related_docs": [
+    { "path": "/interaction-patterns/notifications-feedback", "url": "https://humanstandards.org/interaction-patterns/notifications-feedback" }
+  ],
+  "reference": "https://humanstandards.org/interaction-patterns/nielsen-heuristics"
 }
 ```
 
-### 2. `validate_html`
+### 2. `get_all_heuristics`
 
-Validate HTML against Human Standards.
+Get a summary of all 10 Nielsen usability heuristics.
+
+**Input:**
+```json
+{}
+```
+
+**Output:**
+```json
+{
+  "heuristics": [
+    { "id": "H1", "name": "Visibility of system status", "principle": "..." },
+    { "id": "H2", "name": "Match between system and the real world", "principle": "..." },
+    ...
+  ],
+  "reference": "https://humanstandards.org/interaction-patterns/nielsen-heuristics",
+  "source": "Nielsen Norman Group - 10 Usability Heuristics for User Interface Design"
+}
+```
+
+### 3. `search_standards`
+
+Search Human Standards documentation for specific topics.
 
 **Input:**
 ```json
 {
-  "html": "<form>...</form>",
-  "component_type": "form"
+  "query": "cognitive load"
 }
 ```
 
 **Output:**
 ```json
 {
-  "passed": false,
-  "score": 65,
-  "issues": [
+  "query": "cognitive load",
+  "results": [
     {
-      "severity": "error",
-      "rule": "wcag-aria-labels",
-      "category": "accessibility",
-      "message": "Form input missing label",
-      "element": "input#email",
-      "recommendation": "Add a visible <label> element linked via for/id",
-      "reference": "/accessibility/wcag-guidelines.md#understandable"
+      "title": "Cognitive Load",
+      "description": "Reduce extraneous load and fit intrinsic load to user ability.",
+      "path": "/cognition/cognitive-load.md",
+      "url": "https://humanstandards.org/cognition/cognitive-load"
     },
     {
-      "severity": "warning",
-      "rule": "cognitive-form-length",
-      "category": "cognitive-load",
-      "message": "Form has 8 fields without progressive disclosure",
-      "recommendation": "Break long forms into 2-3 steps",
-      "reference": "/cognition/cognitive-load.md#chunk-information"
+      "title": "Working Memory",
+      "description": "Understanding the brain's limited scratch pad...",
+      "path": "/cognition/working-memory.md",
+      "url": "https://humanstandards.org/cognition/working-memory"
     }
   ],
-  "compliance": {
-    "wcag_aa": false,
-    "cognitive_load": "high",
-    "mobile_friendly": false
-  }
+  "reference": "https://humanstandards.org"
 }
-```
-
-### 3. `check_color_contrast`
-
-Verify color combinations meet WCAG standards.
-
-**Input:**
-```json
-{
-  "foreground": "#666666",
-  "background": "#FFFFFF",
-  "font_size": 16,
-  "is_bold": false
-}
-```
-
-**Output:**
-```json
-{
-  "ratio": 3.95,
-  "passes_aa": false,
-  "passes_aaa": false,
-  "level": "normal",
-  "recommendation": "Contrast ratio 3.95:1 is too low. Needs at least 4.5:1 (AA) or 7:1 (AAA)."
-}
-```
-
-### 4. `search_standards`
-
-Search documentation for specific topics.
-
-**Input:**
-```json
-{
-  "query": "error messages"
-}
-```
-
-**Output:**
-```json
-[
-  {
-    "title": "Forms",
-    "path": "/interaction-patterns/forms.md",
-    "description": "Compose usable, accessible forms",
-    "relevance": 15
-  },
-  {
-    "title": "Defensive Design",
-    "path": "/decision-making-errors/defensive-design.md",
-    "description": "Error prevention and recovery",
-    "relevance": 12
-  }
-]
-```
-
-### 5. `get_validation_rules`
-
-Get all validation rules or filter by category.
-
-**Input:**
-```json
-{
-  "category": "accessibility"
-}
-```
-
-**Output:**
-```json
-[
-  {
-    "id": "wcag-contrast-text",
-    "category": "accessibility",
-    "severity": "error",
-    "description": "Text must have sufficient contrast ratio",
-    "check": "Color contrast ratio must be at least 4.5:1 for normal text",
-    "reference": "/accessibility/wcag-guidelines.md#perceivable"
-  }
-]
 ```
 
 ## Installation
@@ -229,6 +141,8 @@ npm run index-docs
 
 This creates `data/standards-index.json` from the Human Standards markdown files.
 
+**Important:** Run `npm run index-docs` whenever the documentation changes (new pages added, content updated) to keep the search index current.
+
 ## Usage
 
 ### With Claude Desktop
@@ -248,11 +162,9 @@ Add to your Claude Desktop config (`~/Library/Application Support/Claude/claude_
 
 ### With Claude Code (CLI)
 
-Claude Code stores MCP server configurations per-project in `~/.claude.json`. You can add the Human Standards MCP server in two ways:
+Claude Code stores MCP server configurations in `~/.claude.json`. Add the Human Standards MCP server:
 
 **Option 1: Edit `~/.claude.json` directly**
-
-Find your project entry and add the `mcpServers` configuration:
 
 ```json
 {
@@ -280,28 +192,9 @@ Find your project entry and add the `mcpServers` configuration:
 
 **After configuration:**
 
-1. Restart Claude Code (close and reopen the terminal/IDE)
+1. Restart Claude Code
 2. Type `/mcp` to verify the server is connected
-3. You should see "human-standards" with 5 tools available
-
-**Example configuration for macOS:**
-
-```json
-{
-  "projects": {
-    "/Users/yourname/workspace/myproject": {
-      "mcpServers": {
-        "human-standards": {
-          "command": "node",
-          "args": ["/Users/yourname/workspace/humanstandards/human-standards-mcp/dist/index.js"]
-        }
-      }
-    }
-  }
-}
-```
-
-**Note:** The MCP server starts automatically when Claude Code initializes - you don't need to run it manually in a separate terminal.
+3. You should see "human-standards" with 3 tools available
 
 ### Standalone Testing
 
@@ -315,85 +208,60 @@ npx @modelcontextprotocol/inspector node dist/index.js
 
 ## How AI Tools Use It
 
-### Before Generating Code
+### Example: Building a Registration Form
 
-```typescript
-// AI tool internally:
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'form',
-  context: { fields: 8 }
-});
+```
+User: "Build a registration form"
 
-// Use guidance to inform code generation
-// - Break into 3 steps (cognitive load)
-// - Add ARIA labels (accessibility)
-// - Implement autosave (defensive design)
-// - Use 48px buttons (ergonomics)
+AI thinks: "Forms involve feedback (H1), error prevention (H5),
+           and error recovery (H9). Let me check these."
+
+AI: *calls get_heuristic('H5')* - Error prevention
+AI: *calls get_heuristic('H9')* - Error recovery
+AI: *calls search_standards('forms')* - Form patterns
+
+AI now knows:
+- Use confirmation for important actions
+- Validate before submission
+- Show specific, actionable error messages
+- Preserve user input after errors
+
+AI: *generates form with these principles applied*
 ```
 
-### After Generating Code
+### Example: Designing Navigation
 
-```typescript
-// Validate the generated code
-const validation = await mcp.callTool('validate_html', {
-  html: generatedCode,
-  component_type: 'form'
-});
+```
+User: "Add navigation to the app"
 
-if (!validation.passed) {
-  // Fix issues before returning to user
-  for (const issue of validation.issues) {
-    if (issue.severity === 'error') {
-      // Apply fix based on issue.recommendation
-    }
-  }
-}
+AI thinks: "Navigation involves consistency (H4) and
+           recognition over recall (H6)."
+
+AI: *calls get_heuristic('H4')* - Consistency and standards
+AI: *calls get_heuristic('H6')* - Recognition rather than recall
+AI: *calls search_standards('navigation')* - Navigation patterns
+
+AI now knows:
+- Follow platform conventions
+- Keep terminology consistent
+- Make options visible, don't require memorization
+- Show current location clearly
 ```
 
-### During Generation
+## The 10 Heuristics
 
-```typescript
-// Check specific requirements
-const contrast = await mcp.callTool('check_color_contrast', {
-  foreground: '#666666',
-  background: '#FFFFFF'
-});
-
-if (!contrast.passes_aa) {
-  // Adjust colors to meet WCAG AA
-}
-```
-
-## Validation Rules
-
-The server includes built-in rules for:
-
-### Accessibility (WCAG 2.2 AA)
-- Color contrast ratios
-- ARIA labels and attributes
-- Keyboard navigation
-- Focus indicators
-- Semantic HTML
-
-### Cognitive Load
-- Form field count (recommend progressive disclosure for 6+)
-- Error message clarity
-- Visual hierarchy
-
-### Ergonomics
-- Touch target sizes (44-48px minimum)
-- Spacing between interactive elements
-
-### Forms
-- Visible labels (not placeholders)
-- Autocomplete attributes
-- Validation timing (on blur, not keystroke)
-- Error message specificity
-
-### Defensive Design
-- Autosave for long forms
-- Confirmation for destructive actions
-- Data loss prevention
+| ID | Name | When to Use |
+|----|------|-------------|
+| H1 | Visibility of system status | Loading states, feedback, progress |
+| H2 | Match between system and real world | Terminology, icons, mental models |
+| H3 | User control and freedom | Undo, cancel, escape routes |
+| H4 | Consistency and standards | Patterns, conventions, terminology |
+| H5 | Error prevention | Validation, confirmations, constraints |
+| H6 | Recognition rather than recall | Visible options, context, history |
+| H7 | Flexibility and efficiency | Shortcuts, customization, power users |
+| H8 | Aesthetic and minimalist design | Focus, hierarchy, remove noise |
+| H9 | Help users recover from errors | Clear messages, solutions, recovery |
+| H10 | Help and documentation | Contextual help, searchable docs |
 
 ## Development
 
@@ -402,70 +270,52 @@ The server includes built-in rules for:
 ```
 human-standards-mcp/
 ├── src/
-│   ├── index.ts              # Main MCP server
+│   ├── index.ts              # Main MCP server + heuristics data
 │   ├── types/                # TypeScript types
 │   ├── tools/
-│   │   ├── get-guidance.ts   # Component guidance tool
-│   │   └── check-contrast.ts # Color contrast tool
-│   ├── validators/
-│   │   └── html-validator.ts # HTML validation engine
+│   │   └── get-guidance.ts   # Search implementation
 │   └── indexer/
 │       └── index-docs.ts     # Documentation indexer
 ├── data/
-│   └── standards-index.json  # Generated index
+│   └── standards-index.json  # Generated search index
 ├── dist/                     # Compiled JavaScript
 └── package.json
 ```
 
-### Adding New Rules
+### Updating the Search Index
 
-Edit `src/indexer/index-docs.ts` in the `generateValidationRules()` function:
-
-```typescript
-{
-  id: 'your-rule-id',
-  category: 'accessibility',
-  severity: 'error',
-  description: 'What this checks',
-  check: 'How to verify',
-  reference: '/path/to/doc.md#section'
-}
-```
-
-Then rebuild the index:
+When documentation changes:
 
 ```bash
 npm run index-docs
 npm run build
 ```
 
-### Adding New Tools
+The indexer:
+- Scans all `.md` and `.mdx` files in `src/content/docs/`
+- Extracts title, description, and key points (H2 headers)
+- Extracts reference URLs
+- Outputs to `data/standards-index.json`
 
-1. Create tool implementation in `src/tools/`
-2. Add tool definition to `src/index.ts` in the `tools` array
-3. Add handler in the `CallToolRequestSchema` switch statement
+### Adding Content to the Index
 
-## Testing
+The indexer automatically includes all markdown files from these directories:
+- accessibility
+- cognition
+- perception
+- emotions-motivation
+- decision-making-errors
+- ergonomics
+- interaction-patterns
+- code-design-tokens
+- checklists-playbooks
+- research-methods-metrics
+- social-cultural
+- references
+- human-overview
+- home
 
-Test with sample HTML:
-
-```bash
-node dist/index.js
-```
-
-Then use the MCP Inspector or call tools via Claude Desktop/Code.
-
-## Impact
-
-With this MCP server, every AI-generated interface can automatically:
-
-✅ **Meet WCAG 2.2 AA** (4.5:1 contrast, ARIA labels, keyboard nav)
-✅ **Optimize cognitive load** (progressive disclosure, chunking)
-✅ **Prevent data loss** (autosave, confirmations)
-✅ **Work on mobile** (48px touch targets)
-✅ **Provide clear errors** ("Email must include @" not "Invalid")
-
-**The standards become systematic, not aspirational.**
+To add a new category, edit `src/indexer/index-docs.ts` and add the directory name to the `categoryDirs` array.
 
 ## License
 
@@ -479,4 +329,4 @@ Issues and PRs welcome! See the main [Human Standards repository](https://github
 
 ---
 
-Built with [Model Context Protocol](https://modelcontextprotocol.io/) and [Human Standards](https://humanstandards.dev/).
+Built with [Model Context Protocol](https://modelcontextprotocol.io/) and [Human Standards](https://humanstandards.org).

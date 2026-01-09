@@ -89,23 +89,22 @@ More examples are being added regularly. Future categories include:
 
 ## Using Examples with Human Standards MCP
 
-Each example shows how to query the Human Standards MCP server for guidance:
+Each example shows how to query the Human Standards MCP server for guidance. The MCP acts as a reference book that AI tools consult while building interfaces:
 
 ```typescript
-// Example: Get component guidance for a complex form
-const guidance = await mcp.callTool('get_component_guidance', {
-  component: 'form',
-  context: {
-    fields: 12,
-    complexity: 'complex'
-  }
-});
+// Example: Building a complex form - query relevant heuristics
+const errorPrevention = await mcp.callTool('get_heuristic', { id: 'H5' });
+// Returns: Error Prevention - validation, confirmations, constraints
 
-// Returns recommendations for progressive disclosure,
-// autosave, validation timing, and more
+const errorRecovery = await mcp.callTool('get_heuristic', { id: 'H9' });
+// Returns: Help users recover from errors - clear messages, solutions
+
+// Search for form-specific patterns in Human Standards docs
+const formDocs = await mcp.callTool('search_standards', { query: 'forms' });
+// Returns: Form design patterns, validation timing, cognitive load
 ```
 
-The MCP server encodes these proven patterns so AI tools can apply them systematically during code generation.
+The MCP server encodes proven patterns from Nielsen's 10 Usability Heuristics and Human Standards documentation, allowing AI tools to look up relevant principles based on context.
 
 ## How to Apply These Patterns
 
