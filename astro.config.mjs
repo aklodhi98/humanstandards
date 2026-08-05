@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	// Required for sitemap generation and absolute canonical URLs.
+	site: 'https://www.humanstandards.org',
 	integrations: [
 		starlight({
 			title: 'Human Standards',
@@ -11,6 +13,9 @@ export default defineConfig({
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/aklodhi98/humanstandards' },
 			],
 			credits: false,
+			// Stamp each page from git history rather than hand-maintaining dates in
+			// headings — standards and citation freshness are the whole point here.
+			lastUpdated: true,
 			components: {
 				Footer: './src/components/overrides/Footer.astro',
 			},
