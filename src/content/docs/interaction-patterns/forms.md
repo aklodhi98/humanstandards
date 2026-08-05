@@ -520,7 +520,7 @@ Every accessible form needs:
 
 **Best practice**: For birth dates, three dropdowns are often easiest. For event dates, a calendar picker is expected.
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Form Abandonment Statistics
 
@@ -540,7 +540,11 @@ According to [2024 form design research](https://buildform.ai/blog/form-design-b
 
 ### WCAG 2.2 and Forms
 
-With [WCAG 2.2 now the legal standard](https://www.allaccessible.org/blog/implementing-aria-labels-for-web-accessibility/) (referenced in 4,605 ADA lawsuits in 2024), accessible form design is increasingly critical. Key success criteria include 3.3.1 (Error Identification), 3.3.2 (Labels or Instructions), and 3.3.3 (Error Suggestion).
+Forms attract accessibility litigation because their failures are easy to detect and hard to work around. The [2026 WebAIM Million](https://webaim.org/projects/million/) found **missing form input labels on 51% of home pages**, up from 48.2% the year before — one of the six failure types that together account for 96% of all detected errors.
+
+Key success criteria: 3.3.1 (Error Identification), 3.3.2 (Labels or Instructions), 3.3.3 (Error Suggestion), plus 3.3.7 (Redundant Entry) and 3.3.8 (Accessible Authentication) added in WCAG 2.2.
+
+Note that most regulations still cite **WCAG 2.1 AA**, not 2.2 — build to 2.2, but see [which version applies to you](/accessibility/wcag-guidelines/#which-version-applies-to-you) before making compliance claims.
 
 ### CHI Research on Usability Guidelines
 

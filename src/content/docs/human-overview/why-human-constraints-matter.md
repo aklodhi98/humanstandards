@@ -111,10 +111,10 @@ Users aren't always in ideal conditions:
 ### Legal risk mitigation
 
 **Enforcement is accelerating**:
-- Nearly **4,000 ADA web accessibility lawsuits** filed in the U.S. in 2024
+- **3,117 federal website accessibility lawsuits** filed in the U.S. in 2025 — up 27% year over year, and 36% of all federal ADA Title III filings
 - Average settlement: **$5,000–$20,000** (can exceed **$350,000** for large enterprises)
-- **European Accessibility Act** compliance deadlines in 2025
-- Global trend toward mandatory accessibility
+- **European Accessibility Act** applicable since June 2025, with the first national enforcement actions in France in late 2025
+- US federal deadlines for [ADA Title II and HHS Section 504](/references/standards-guidelines/) now fall in 2027–2028
 
 **Proactive compliance is cheaper**:
 - Building accessibility in from the start ("shift left") costs less than remediation
@@ -297,7 +297,7 @@ Machine learning makes individual accommodation scalable:
 - Cognitive walkthroughs
 - Expert reviews
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Business Impact Quantified
 
@@ -329,7 +329,9 @@ New design standards focus on neurodiverse users, including dyslexia-friendly fo
 
 ### Legal Landscape
 
-[2024 accessibility lawsuit data](https://elementor.com/blog/roi-of-accessibility-inclusive-design-growth/) shows nearly **4,000 ADA web accessibility lawsuits** filed in the U.S., with average settlements of **$5,000–$20,000** and potential costs exceeding **$350,000** for large enterprises. The European Accessibility Act compliance deadline approaches in 2025.
+[Seyfarth Shaw's litigation tracking](https://www.adatitleiii.com/) recorded **3,117 federal website accessibility lawsuits** in the U.S. in 2025, a 27% rise over 2024's 2,452. Filings cluster in New York (1,021), Florida (961), and Illinois (585), and roughly 46% of federal cases involve defendants who had already been sued once. Typical settlements run **$5,000–$20,000**, with costs exceeding **$350,000** for large enterprises.
+
+Meanwhile the underlying problem is getting worse, not better: the [2026 WebAIM Million](https://webaim.org/projects/million/) found detected WCAG failures on 95.9% of the top million home pages, the first regression after six years of gradual improvement.
 
 ## Implementation checklist
 

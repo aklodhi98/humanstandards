@@ -1136,7 +1136,7 @@ StyleDictionary.registerTransform({
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### W3C DTCG Specification Stable Release
 
@@ -1156,7 +1156,7 @@ Current WCAG contrast formulas assume sRGB color space. As displays support wide
 
 ### Regulatory Updates
 
-In April 2024, the US Department of Justice updated Title II of the ADA, mandating WCAG 2.1 AA compliance for government websites by 2026-2027.
+In April 2024, the US Department of Justice updated Title II of the ADA, mandating WCAG 2.1 AA compliance for government websites and mobile apps. The DOJ extended both compliance deadlines by a year on 17 April 2026 — now **26 April 2027** for entities serving populations of 50,000+ and **26 April 2028** for smaller entities. See [Standards & Guidelines](/references/standards-guidelines/).
 
 ---
 

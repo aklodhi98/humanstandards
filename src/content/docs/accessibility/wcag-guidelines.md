@@ -67,36 +67,66 @@ The majority of accessibility failures come from a short list of problems:
 
 Fix these first, and you'll address most of your issues.
 
-## Recent Updates (2024-2025)
+## Which version applies to you
 
-### WCAG 2.2 Becomes the Standard
+This trips up a lot of teams, because the version you *should* build to and the version that is *legally required* of you are usually not the same.
 
-WCAG 2.2 was published on October 5, 2023, with an update on December 12, 2024. [WCAG 2.1 received an updated W3C Recommendation on May 6, 2025](https://www.w3.org/news/2025/web-content-accessibility-guidelines-wcag-2-1-updated/), addressing minor technical issues.
+| If you are… | Legally required | Recommended target |
+|-------------|------------------|--------------------|
+| US state or local government (ADA Title II) | WCAG 2.1 AA | 2.2 AA |
+| US HHS-funded healthcare (Section 504) | WCAG 2.1 AA | 2.2 AA |
+| US federal agency or contractor (Section 508) | WCAG 2.0 AA | 2.2 AA |
+| Selling into the EU (EAA / EN 301 549 V3.2.1) | WCAG 2.1 AA | 2.2 AA |
+| Everyone else | No general mandate | 2.2 AA |
 
-**WCAG 2.2 is now the baseline compliance standard for 2025**, adding 9 new success criteria including:
-- **Focus Appearance (Enhanced)** — Better visibility for keyboard focus
-- **Dragging Movements** — Alternatives to drag-and-drop operations
-- **Target Size (Minimum)** — Tap/click targets of at least 24×24 CSS pixels
+:::caution[WCAG 2.2 is the right target, but it is not what most regulations cite]
+No major regulation currently mandates WCAG 2.2. The DOJ's April 2024 ADA Title II rule names **WCAG 2.1 Level AA** — you will see this widely misreported as 2.2. EN 301 549 moves to 2.2 when V4.1.1 is cited in the Official Journal, expected around October 2026.
 
-### ISO Standardization
+Build to 2.2 AA anyway: it is backwards compatible, it is where procurement language is heading, and the nine added criteria are genuinely worth having. Just do not tell a regulator or auditor that 2.2 is what the rule says.
+:::
 
-WCAG 2.2 became an approved ISO standard as **ISO/IEC 40500:2025**, exactly matching the October 2023 version. The December 2024 version is expected to become ISO/IEC 40500:2026 by late 2026.
+Full deadline tables, penalty ranges, and jurisdiction detail live in [Standards & Guidelines](/references/standards-guidelines/).
 
-### Legal and Regulatory Landscape
+## Recent Updates
 
-In April 2024, the DOJ final rule established explicit requirements for state and local government web content and mobile applications, naming **WCAG 2.2 Level AA as the standard**. Over 4,500 digital accessibility lawsuits were filed in the U.S. in 2024, primarily under the ADA.
+### WCAG 2.2 is now an ISO standard
 
-As of June 28, 2025, all businesses must be fully compliant with the **European Accessibility Act's requirements**, with enforcement and penalties now active. EN 301 549 currently uses WCAG 2.1, but the next version is expected to use WCAG 2.2.
+On [21 October 2025 WCAG 2.2 was approved as **ISO/IEC 40500:2025**](https://www.w3.org/WAI/news/2025-10-21/wcag22-iso), matching the October 2023 version exactly. This matters mainly because it lets countries that adopt standards by ISO reference pick up WCAG 2.2 without writing their own. The December 2024 editorial update is expected to land as ISO/IEC 40500:2026 in late 2026.
 
-### WCAG 3.0 Development
+WCAG 2.2 was published 5 October 2023 and editorially updated 12 December 2024. [WCAG 2.1 received an updated Recommendation on 6 May 2025](https://www.w3.org/news/2025/web-content-accessibility-guidelines-wcag-2-1-updated/) covering minor technical issues. Its nine added criteria over 2.1 include:
 
-The Accessibility Guidelines Working Group is progressing WCAG 3.0 through 2025, with plans to complete the proposed guidelines and conformance model for public review. However, [WCAG 3 is not expected to be a completed W3C standard for several years](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/), and will not supersede WCAG 2 for at least several years after finalization.
+- **Target Size (Minimum), 2.5.8** — tap targets at least 24×24 CSS pixels
+- **Dragging Movements, 2.5.7** — a non-drag alternative for any drag operation
+- **Focus Not Obscured, 2.4.11** — sticky headers must not cover the focused element
+- **Accessible Authentication, 3.3.8** — no cognitive function test to log in
+- **Redundant Entry, 3.3.7** — don't ask for the same information twice in a process
 
-WCAG 3's philosophy—focusing on outcomes, tasks, and usability rather than rigid pass/fail criteria—is already influencing how accessibility professionals think, with more emphasis on task completion, severity assessment, and cognitive considerations.
+### US deadlines both slipped a year
 
-### Industry Adoption
+Two federal deadlines moved within three weeks of each other in 2026:
 
-Industry experts expect 2026 to see WCAG 2.1 feel old and WCAG 2.2 become the default expectation in procurement language, RFPs, and accessibility evaluation. Organizations should treat **WCAG 2.2 Level AA as the operative compliance standard** while monitoring WCAG 3.0 development for future-proofing.
+- **17 April 2026** — DOJ extended ADA Title II to 26 April 2027 (population ≥ 50,000) and 26 April 2028 (smaller entities and special districts)
+- **7 May 2026** — HHS extended Section 504 to 11 May 2027 (15+ employees) and 10 May 2028 (fewer than 15), four days before the original date
+
+Neither extension changed the technical requirement. Both remain WCAG 2.1 AA.
+
+Litigation has not slowed: Seyfarth Shaw counted **3,117 federal website accessibility lawsuits in 2025**, up 27% from 2,452 in 2024, and 36% of all federal ADA Title III filings.
+
+### The EAA is applicable, enforcement is uneven
+
+The European Accessibility Act became applicable on 28 June 2025. In its first year enforcement varied widely by member state — France's DGCCRF issued formal notices to four major retailers in November 2025, German operators saw law-firm warning letters, and Dutch enforcement is expected in the second half of 2026. As of mid-2026 no confirmed EAA fine had been publicly verified, though authorities can also order product withdrawal and mandate audits.
+
+### WCAG 3.0 is still years out
+
+W3C published a [new Working Draft on 3 March 2026](https://www.w3.org/WAI/news/2026-03-03/wcag3). "Outcomes" are now **requirements** (174 of them), and the **bronze/silver/gold conformance model has been dropped** in favour of an approach still being revised. Candidate Recommendation is anticipated around Q4 2027; a final Recommendation not before 2028, and [WCAG 2 will stay current for several years after that](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/).
+
+WCAG 3's direction — task completion, severity, and cognitive factors over binary pass/fail — is already shaping how practitioners think. Read it for that. Do not set compliance targets against it.
+
+### Automated-detectable failures are getting worse
+
+The [2026 WebAIM Million](https://webaim.org/projects/million/) found **95.9%** of the top million home pages had detected WCAG 2 failures, up from 94.8% in 2025 — the first regression after six years of improvement. Average errors per page rose 10.1% to 56.1. Low contrast text alone now affects **83.9%** of home pages, up 4.8 points in a single year.
+
+The six failures listed under [Common high-impact issues](#common-high-impact-issues) above account for 96% of everything detected. None of them require a redesign to fix.
 
 ## References
 
@@ -106,14 +136,21 @@ Industry experts expect 2026 to see WCAG 2.1 feel old and WCAG 2.2 become the de
 - [WCAG 3.0 Introduction](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/)
 
 **Recent Updates:**
-- [Web Content Accessibility Guidelines (WCAG) 2.1 Updated (May 2025)](https://www.w3.org/news/2025/web-content-accessibility-guidelines-wcag-2-1-updated/)
+- [WCAG 2.2 Approved as ISO/IEC 40500:2025 — W3C WAI](https://www.w3.org/WAI/news/2025-10-21/wcag22-iso)
+- [WCAG 3 Working Draft, March 2026 — W3C WAI](https://www.w3.org/WAI/news/2026-03-03/wcag3)
+- [WCAG 2.1 Updated (May 2025) — W3C](https://www.w3.org/news/2025/web-content-accessibility-guidelines-wcag-2-1-updated/)
 - [What We're Working On | WAI | W3C](https://www.w3.org/WAI/update/)
-- [2025 WCAG & ADA Website Compliance Requirements](https://www.accessibility.works/blog/wcag-ada-website-compliance-standards-requirements/)
-- [Web Accessibility Best Practices 2025 Guide](https://www.broworks.net/blog/web-accessibility-best-practices-2025-guide)
+
+**Regulations (primary sources):**
+- [ADA Title II web rule — ada.gov](https://www.ada.gov/resources/2024-03-08-web-rule/)
+- [HHS OCR Section 504 deadline extension](https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html)
+- [Revised 508 Standards — US Access Board](https://www.access-board.gov/ict/)
+- [European Accessibility Act — European Commission](https://ec.europa.eu/social/main.jsp?catId=1202)
 
 **Practical Resources:**
-- [WebAIM Million](https://webaim.org/projects/million/) (common failures data)
-- [2026 Predictions: The Next Big Shifts in Web Accessibility](https://webaim.org/blog/2026-predictions/)
+- [WebAIM Million](https://webaim.org/projects/million/) (common failures data, updated annually)
+- [WAI-ARIA Authoring Practices Guide](https://www.w3.org/WAI/ARIA/apg/) — patterns for custom components
+- [How to Meet WCAG (Quick Reference)](https://www.w3.org/WAI/WCAG22/quickref/) — filterable by level and technology
 
 ---
 

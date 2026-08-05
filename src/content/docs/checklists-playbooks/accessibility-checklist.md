@@ -985,17 +985,25 @@ Manual testing catches the other 60-70%.
 
 ---
 
-## Recent Legal Requirements (2024-2025)
+## Recent Legal Requirements (2025–2026)
 
 ### United States
 
-The DOJ's [April 2024 final rule](https://www.ada.gov/resources/web-guidance/) establishes WCAG 2.1 AA for state/local government websites:
-- Population 50,000+: Deadline April 24, 2026
-- Smaller entities: Deadline April 26, 2027
+The DOJ's [April 2024 final rule](https://www.ada.gov/resources/2024-03-08-web-rule/) establishes **WCAG 2.1 AA** for state/local government websites and mobile apps. **Both deadlines were extended one year on 17 April 2026:**
+
+- Population 50,000+: ~~April 24, 2026~~ → **26 April 2027**
+- Smaller entities and special district governments: ~~April 26, 2027~~ → **26 April 2028**
+
+HHS separately extended its [Section 504 deadlines](https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html) on 7 May 2026, covering any organisation receiving HHS funding — hospitals, health plans, community health centres, digital health companies:
+
+- 15 or more employees: **11 May 2027**
+- Fewer than 15 employees: **10 May 2028**
+
+Section 508 (federal agencies and contractors) still references **WCAG 2.0 AA**, with no announced update.
 
 ### European Union
 
-The [European Accessibility Act](https://ec.europa.eu/social/main.jsp?catId=1202) is fully enforceable as of June 28, 2025, requiring accessibility for:
+The [European Accessibility Act](https://ec.europa.eu/social/main.jsp?catId=1202) has been applicable since 28 June 2025, requiring accessibility for:
 - E-commerce websites and apps
 - Banking services
 - E-books and software

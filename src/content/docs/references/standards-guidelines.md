@@ -16,10 +16,15 @@ This page provides a comprehensive reference to the standards, guidelines, and r
 | **WCAG** | International | Web content | 2.2 (Oct 2023) | — |
 | **EN 301 549** | EU | All ICT | V3.2.1 (2021) | WCAG 2.1 AA |
 | **Section 508** | US Federal | Federal ICT | Revised (2017) | WCAG 2.0 AA |
-| **ADA** | US | Public accommodations | Title II (2024) | WCAG 2.1 AA |
-| **EAA** | EU | Commercial ICT | Effective June 2025 | WCAG 2.1 AA |
+| **ADA Title II** | US state/local govt | Web + mobile apps | DOJ final rule (2024) | WCAG 2.1 AA |
+| **Section 504** | US HHS-funded | Web + mobile apps | HHS final rule (2024) | WCAG 2.1 AA |
+| **EAA** | EU | Commercial ICT | Applicable June 2025 | WCAG 2.1 AA |
 | **AODA** | Ontario, CA | Organizations | 2021 | WCAG 2.0 AA |
 | **CAN/ASC** | Canada | All ICT | EN 301 549:2024 | WCAG 2.1 AA |
+
+:::caution[Two US deadlines moved in 2026]
+Both major US digital accessibility deadlines were extended by one year during 2026. DOJ extended ADA Title II on **17 April 2026**; HHS extended Section 504 on **7 May 2026**, four days before it would have taken effect. The WCAG 2.1 AA technical requirement did not change in either case — only the dates. See [US Standards and Regulations](#us-standards-and-regulations) below.
+:::
 
 ### Human Factors Standards Matrix
 
@@ -89,8 +94,11 @@ The European standard for accessibility requirements in ICT products and service
 | V1.1.2 | 2015 | WCAG 2.0 AA |
 | V2.1.2 | 2018 | WCAG 2.1 AA |
 | V3.1.1 | 2019 | WCAG 2.1 AA |
-| V3.2.1 | 2021 | WCAG 2.1 AA (current) |
-| **V4.1.1** | 2026 (planned) | **WCAG 2.2 AA** |
+| V3.2.1 | 2021 | WCAG 2.1 AA (**still the harmonised standard**) |
+| V4.1.0 | June 2026 | WCAG 2.2 AA (final draft) |
+| **V4.1.1** | Expected late 2026 | **WCAG 2.2 AA** |
+
+**Status as of August 2026:** V3.2.1 remains the version cited in the Official Journal of the EU, so WCAG 2.1 AA is still the operative legal requirement. ETSI published the final draft [V4.1.0 in June 2026](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/04.01.00_30/en_301549v040100va.pdf); V4.1.1 is expected to be cited in the Official Journal around October 2026, at which point conformance creates a presumption of conformity with the EAA. Plan for WCAG 2.2 AA now, but note that 2.1 AA is what is currently enforceable.
 
 **Scope:** Hardware, software, websites, apps, documents, support services
 
@@ -115,9 +123,11 @@ The EU directive requiring accessibility for products and services.
 - E-books and e-readers
 - Communication services
 
-**Penalties:** Up to €100,000 or 4% of annual revenue
+**Technical Standard:** EN 301 549 V3.2.1 (WCAG 2.1 AA)
 
-**Technical Standard:** EN 301 549 (WCAG 2.1 AA)
+**Penalties:** Set by each member state, not by the directive. Reported maximums range from roughly €60,000 (Ireland) to about €900,000 (Sweden). France sets €50,000 for a first offence, rising to €250,000 for repeat violations; Germany sets up to €100,000.
+
+**Enforcement in practice (first year):** All 27 member states have transposed the directive, but enforcement has been uneven. France moved first — in November 2025 the DGCCRF issued formal enforcement notices to four major retailers (Auchan, Carrefour, E.Leclerc, Picard) after inspections found systematic e-commerce accessibility failures. German e-commerce operators began receiving law-firm warning letters shortly after transposition. Active Dutch enforcement is expected in the second half of 2026. As of mid-2026 no confirmed EAA fine had been publicly verified — but authorities can also order product withdrawal, mandate audits, and publish non-compliance, which several have signalled they will use before reaching for fines.
 
 ---
 
@@ -128,9 +138,11 @@ The EU directive requiring accessibility for products and services.
 US federal accessibility requirements for ICT.
 
 **Current Status:**
-- References WCAG 2.0 Level AA (2017 refresh)
-- Update to WCAG 2.2 expected by 2026
+- Still references **WCAG 2.0 Level AA**, unchanged since the 2017 refresh
+- **No rulemaking to adopt WCAG 2.1 or 2.2 has been announced by the US Access Board.** Commentary predicting a 2.2 update by 2026 did not materialise — treat any such claim with suspicion and check [access-board.gov/ict](https://www.access-board.gov/ict/) directly
 - Applies to federal agencies and contractors
+
+This leaves US federal procurement one full WCAG generation behind state and local government, which the DOJ moved to WCAG 2.1 AA. In practice most federal agencies and vendors target 2.1 AA or 2.2 AA anyway, because VPATs are increasingly requested against the newer versions.
 
 **Enforcement:** US Access Board, Department of Justice
 
@@ -145,16 +157,40 @@ US federal accessibility requirements for ICT.
 Civil rights law prohibiting discrimination based on disability.
 
 **Title II (State/Local Government):**
-- April 2024 DOJ rule update
-- References WCAG 2.1 Level AA
-- Applies to government websites and apps
+- April 2024 DOJ final rule
+- References **WCAG 2.1 Level AA** (not 2.2 — a common misreading)
+- Applies to government websites, mobile apps, and content provided by private contractors on a public entity's behalf
+
+**Compliance deadlines — extended one year in April 2026:**
+
+| Entity size | Original deadline | Current deadline |
+|-------------|-------------------|------------------|
+| Population ≥ 50,000 | 24 April 2026 | **26 April 2027** |
+| Population < 50,000, and special district governments | 24 April 2027 | **26 April 2028** |
+
+The DOJ announced the extension on 17 April 2026, a week before the first deadline would have hit. The technical standard and the scope of covered content were not changed.
 
 **Title III (Public Accommodations):**
 - Covers private businesses
 - Courts reference WCAG 2.1 AA in settlements
 - No explicit technical standard (yet)
 
-**Litigation:** 4,605 federal lawsuits filed in 2024
+**Litigation:** Seyfarth Shaw counted **3,117 federal website accessibility lawsuits in 2025**, up 27% from 2,452 in 2024 — 36% of all 8,667 federal ADA Title III filings that year, against 28% in 2024. Filings concentrate heavily: New York (1,021), Florida (961, roughly double its 470 in 2024), and Illinois (585). California recorded just 4, reflecting state court rulings that online-only businesses fall outside ADA coverage. Including state courts, combined annual filings exceed 5,000, and roughly 46% of federal cases involve repeat defendants.
+
+### Section 504 of the Rehabilitation Act (HHS)
+
+Often missed alongside Title II: HHS's 2024 final rule extends digital accessibility duties to **any organisation receiving HHS federal financial assistance** — hospitals, health systems, health plans, community health centres, clinical research institutions, and digital health companies.
+
+**Requirement:** WCAG 2.1 Level AA across websites, mobile apps, patient portals, and kiosks.
+
+| Recipient size | Original deadline | Current deadline |
+|----------------|-------------------|------------------|
+| 15 or more employees | 11 May 2026 | **11 May 2027** |
+| Fewer than 15 employees | 10 May 2027 | **10 May 2028** |
+
+HHS's Office for Civil Rights published an interim final rule on **7 May 2026** — four days before the original deadline — extending both dates by a year, citing the number of community health centres and hospitals that would not have made it.
+
+**Resource:** [HHS OCR announcement](https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html)
 
 ---
 
@@ -375,7 +411,7 @@ The most widely recognized usability principles, developed by Jakob Nielsen in 1
 
 ---
 
-## Recent Developments (2024-2025)
+## Recent Developments (2025–2026)
 
 ### WCAG 2.2 Adoption
 
@@ -393,9 +429,13 @@ The EAA became legally applicable on June 28, 2025:
 
 ### US Regulatory Updates
 
-- April 2024: DOJ published Title II final rule referencing WCAG 2.1 AA
-- Section 508 update to WCAG 2.2 expected by 2026
-- 4,605 ADA lawsuits filed in 2024 (steady high volume)
+- **April 2024:** DOJ published the Title II final rule referencing WCAG 2.1 AA
+- **17 April 2026:** DOJ extended both Title II deadlines by a year (now April 2027 / April 2028)
+- **7 May 2026:** HHS extended both Section 504 deadlines by a year (now May 2027 / May 2028)
+- **Section 508 remains on WCAG 2.0 AA** with no announced rulemaking
+- **3,117 federal website accessibility lawsuits in 2025**, up 27% year over year (Seyfarth Shaw)
+
+The pattern worth noting: the technical bar has not moved, but the enforcement calendar slipped a full year on both federal tracks within three weeks of each other. Teams that paced remediation to the original dates now have breathing room; teams that had not started are in the same position they were, one year later.
 
 ### ISO 9241 Evolution
 
@@ -406,11 +446,52 @@ Recent and upcoming parts:
 
 ### WCAG 3.0 Development
 
-W3C continues developing WCAG 3.0 with:
-- New testing approach (bronze/silver/gold)
-- Broader scope (beyond web to all digital content)
-- New success criteria structure
-- Expected publication: TBD (multi-year effort)
+W3C published a new [WCAG 3 Working Draft on 3 March 2026](https://www.w3.org/WAI/news/2026-03-03/wcag3). What changed:
+
+- **Terminology:** "outcomes" are now **requirements** (the draft describes 174 of them), and "Foundational Requirements" became **Core Requirements**
+- **Conformance:** the earlier **bronze/silver/gold** scoring model is no longer part of the draft. The working group is revising the model toward something more flexible for organisations rather than a single pass/fail score
+- **Maturity labels:** individual guidelines and requirements now carry a maturity level — Placeholder, Exploratory, Developing, Refining, or Mature — so readers can see which parts are stable
+- **Scope:** broader than web content alone
+
+**Timeline:** a Candidate Recommendation is anticipated around Q4 2027, with a final Recommendation not before 2028. W3C has stated WCAG 2 will remain current for at least several years after WCAG 3 is finalised.
+
+:::note[Do not build a compliance programme against WCAG 3 yet]
+Requirement counts, names, and the conformance model can all still change. **WCAG 2.2 AA is the standard to design and test against today.** Read WCAG 3 to see where thinking is heading — particularly its emphasis on task completion and severity over binary criteria — not to set targets.
+:::
+
+### The Web Is Getting Less Accessible, Not More
+
+The [2026 WebAIM Million](https://webaim.org/projects/million/) (February 2026 data) reversed six consecutive years of gradual improvement:
+
+| Measure | 2025 | 2026 |
+|---------|------|------|
+| Home pages with detected WCAG 2 failures | 94.8% | **95.9%** |
+| Average detected errors per page | 51 | **56.1** (+10.1%) |
+
+The six most common failures, unchanged in rank for years, still account for **96% of all detected errors**:
+
+| Failure | 2025 | 2026 | Change |
+|---------|------|------|--------|
+| Low contrast text | 79.1% | **83.9%** | ↑ 4.8 |
+| Missing alternative text | 55.5% | 53.1% | ↓ 2.4 |
+| Missing form input labels | 48.2% | **51.0%** | ↑ 2.8 |
+| Empty links | 45.4% | 46.3% | ↑ 0.9 |
+| Empty buttons | 29.6% | 30.6% | ↑ 1.0 |
+| Missing document language | 15.8% | 13.5% | ↓ 2.3 |
+
+These are all detectable by automated tooling in seconds and fixable without redesign. See [Testing & Audit Tools](/accessibility/testing-audit-tools/).
+
+### AI Transparency Enters the Picture
+
+The EU AI Act's **Article 50 transparency obligations became applicable on 2 August 2026**, and they are interface requirements as much as legal ones:
+
+- People must be clearly informed when they are interacting with an AI system (chatbots, virtual assistants) unless it is obvious from context
+- Synthetic audio, image, video, and text — including deepfakes — must be marked in a machine-readable, detectable format
+- Deployers must disclose deepfakes depicting real people, places, or events
+
+These apply to *any* AI system in those situations, not only high-risk ones. Separately, obligations for standalone high-risk systems (Annex III) were deferred from August 2026 to **2 December 2027**, and product-embedded high-risk systems (Annex I) to **2 August 2028**.
+
+For designers this lands squarely in disclosure and labelling patterns — see [Trust & Perception](/emotions-motivation/trust-perception/) and [Notifications & Feedback](/interaction-patterns/notifications-feedback/).
 
 ---
 
@@ -419,17 +500,24 @@ W3C continues developing WCAG 3.0 with:
 **WCAG:**
 - [WCAG 2.2 Specification — W3C](https://www.w3.org/TR/WCAG22/)
 - [WCAG 2 Overview — W3C WAI](https://www.w3.org/WAI/standards-guidelines/wcag/)
-- [WCAG 2.2 Complete Guide 2025 — AllAccessible](https://www.allaccessible.org/blog/wcag-22-complete-guide-2025)
+- [WCAG 3 Introduction — W3C WAI](https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/) — status, maturity levels, timeline
+- [WCAG 3 Working Draft, March 2026 — W3C WAI](https://www.w3.org/WAI/news/2026-03-03/wcag3)
 
 **European:**
-- [EN 301 549 — Wikipedia](https://en.wikipedia.org/wiki/EN_301_549)
-- [EN 301 549 Conformance — WCAG.com](https://www.wcag.com/compliance/en-301-549/)
-- [EN 301 549 — ETSI](https://www.etsi.org/standards/search#page=1&search=EN%20301%20549)
+- [EN 301 549 V4.1.0 final draft (June 2026) — ETSI](https://www.etsi.org/deliver/etsi_en/301500_301599/301549/04.01.00_30/en_301549v040100va.pdf) — the actual PDF
+- [EN 301 549 — ETSI standards search](https://www.etsi.org/standards/search#page=1&search=EN%20301%20549)
+- [European Accessibility Act — European Commission](https://ec.europa.eu/social/main.jsp?catId=1202)
+- [EU AI Act Article 50 transparency rules](https://artificialintelligenceact.eu/transparency-rules-article-50/)
 
 **US:**
 - [Section508.gov](https://www.section508.gov/)
-- [US Access Board — WCAG 2.2](https://www.access-board.gov/news/2023/11/27/w3c-wcag-2-2-now-available/)
-- [VPAT 2.5 Guide — Accessibility.Works](https://www.accessibility.works/blog/vpat-25-wcag-ada-508-reporting/)
+- [US Access Board — Revised 508 Standards](https://www.access-board.gov/ict/) — authoritative on which WCAG version actually applies
+- [ADA Title II web rule — ada.gov](https://www.ada.gov/resources/2024-03-08-web-rule/)
+- [HHS OCR Section 504 deadline extension](https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html)
+- [Seyfarth Shaw ADA Title III litigation tracking](https://www.adatitleiii.com/) — the standard source for US filing counts
+
+**Data and trends:**
+- [The WebAIM Million](https://webaim.org/projects/million/) — annual accessibility analysis of the top 1M home pages
 
 **ISO 9241:**
 - [ISO 9241 — Wikipedia](https://en.wikipedia.org/wiki/ISO_9241)

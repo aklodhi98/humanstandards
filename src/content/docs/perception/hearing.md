@@ -323,7 +323,7 @@ Many deaf and hard of hearing users cannot use voice phone calls effectively.
 - WCAG conformance checking
 - Media accessibility audits
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Soundability Lab Research
 
@@ -335,7 +335,9 @@ According to [industry experts](https://cmooresound.com/2024/12/2025-sound-predi
 
 ### DOJ 2024 ADA Digital Accessibility Rule
 
-The [Department of Justice's April 2024 final rule](https://www.ada.gov/resources/2024-03-08-web-rule/) updated ADA Title II requirements for web content and mobile apps. Public entities must follow WCAG 2.1 Level AA, with compliance deadlines of April 2026 for large entities (50,000+ population) and April 2027 for smaller entities.
+The [Department of Justice's April 2024 final rule](https://www.ada.gov/resources/2024-03-08-web-rule/) updated ADA Title II requirements for web content and mobile apps. Public entities must follow WCAG 2.1 Level AA — which for audio means captions, transcripts, and audio description are legal obligations, not enhancements.
+
+**Deadlines were extended one year on 17 April 2026:** entities serving populations of 50,000+ now have until **26 April 2027**; smaller entities and special district governments until **26 April 2028**. The technical requirement did not change. See [Standards & Guidelines](/references/standards-guidelines/) for the full picture, including the parallel HHS Section 504 deadlines for healthcare.
 
 ### Caption Effectiveness Research
 

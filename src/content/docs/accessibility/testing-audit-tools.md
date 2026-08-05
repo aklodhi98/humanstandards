@@ -344,7 +344,7 @@ Conformance testing tells you if you meet standards. User testing tells you if p
 - Ask about their typical experience
 - Note workarounds and frustrations
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Automated Testing Coverage Improvements
 
@@ -354,9 +354,11 @@ According to [2024 accessibility testing research](https://www.audioeye.com/post
 
 [2024 tool comparisons](https://accessibility-test.org/blog/compare/eaa-compliance-tool-axe-vs-wave-vs-lighthouse-comparison/) confirm that while Lighthouse uses axe-core, it runs only a subset of the 70+ tests available in full axe DevTools. For comprehensive accessibility analysis, dedicated tools like axe DevTools are recommended over general-purpose tools like Lighthouse.
 
-### EAA Compliance Deadline
+### EAA Compliance
 
-Business owners across Europe face a **June 2025 deadline** for the European Accessibility Act. Organizations selling products or services in EU markets must meet strict accessibility standards, with [penalties reaching up to €500,000](https://testguild.com/accessibility-testing-tools-automation/) in some countries.
+The European Accessibility Act has been **applicable since 28 June 2025** — the deadline has passed, and organisations selling products or services in EU markets are now expected to conform. Penalties are set nationally rather than by the directive, with reported maximums ranging from roughly €60,000 (Ireland) to about €900,000 (Sweden).
+
+First-year enforcement was uneven but real: France's DGCCRF issued formal notices to four major retailers in November 2025 after e-commerce inspections, and Dutch enforcement is expected in the second half of 2026. Authorities can also mandate audits and order product withdrawal, so an automated scan report is a useful thing to have on file before an inspector asks.
 
 ### Hybrid Testing Approach
 

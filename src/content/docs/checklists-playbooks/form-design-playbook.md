@@ -907,7 +907,7 @@ class FormValidator {
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Form Abandonment Statistics
 
@@ -918,9 +918,11 @@ class FormValidator {
 
 ### Legal Landscape Changes
 
-- US DOJ updated ADA Title II in April 2024 requiring WCAG 2.1 AA compliance
-- European Accessibility Act fully enforceable in 2025
-- Accessibility lawsuits increased 14% in 2024
+- US DOJ updated ADA Title II in April 2024 requiring WCAG 2.1 AA; deadlines extended in April 2026 to 26 April 2027 (population 50,000+) and 26 April 2028 (smaller entities)
+- HHS Section 504 extends the same WCAG 2.1 AA requirement to HHS-funded healthcare, now due 11 May 2027 / 10 May 2028
+- European Accessibility Act applicable since 28 June 2025
+- Federal website accessibility lawsuits rose 27% in 2025 to 3,117 (Seyfarth Shaw)
+- Missing form input labels were detected on 51% of the top million home pages ([2026 WebAIM Million](https://webaim.org/projects/million/))
 
 ### Field Count Impact
 

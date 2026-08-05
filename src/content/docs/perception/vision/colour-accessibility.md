@@ -443,11 +443,13 @@ Automated tools catch many issues, but user testing with people who have CVD pro
 - Test with both anomalous trichromacy and dichromacy
 - Consider age-related color perception changes
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Color Contrast as Top Accessibility Violation
 
-According to [WebAIM's 2024 Million analysis](https://webaim.org/projects/million/), color contrast remains the #1 accessibility violation, affecting 83.6% of all websites. With 4,605 ADA lawsuits filed in 2024 and the European Accessibility Act now in force since June 28, 2025, proper color contrast is increasingly a legal requirement.
+According to the [2026 WebAIM Million](https://webaim.org/projects/million/), low contrast text remains the single most common accessibility violation, detected on **83.9%** of the top million home pages — up 4.8 points from 79.1% in 2025. It is the largest contributor to a broader regression: 95.9% of home pages now have detected WCAG 2 failures, reversing six straight years of improvement.
+
+The legal exposure has grown alongside it. Seyfarth Shaw counted 3,117 federal website accessibility lawsuits in the US in 2025, up 27% year over year, and the European Accessibility Act has been applicable since 28 June 2025.
 
 ### Simulated Interface CVD Research
 
