@@ -49,7 +49,7 @@ Users seek information that confirms their existing beliefs and ignore contradic
 - Don't exploit loss aversion with manipulative messaging
 - Make disclaimers and important information visible
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Psychology for UX
 

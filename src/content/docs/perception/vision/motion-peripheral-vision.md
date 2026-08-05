@@ -270,7 +270,7 @@ Research on heads-up displays (HUDs) emphasizes that UI elements benefiting from
 - **Uncluttered**: Single, clear message per peripheral element
 - **Visually distinct**: Different from surrounding content
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Foveated Rendering and Motion Perception
 

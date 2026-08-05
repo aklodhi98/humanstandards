@@ -469,7 +469,7 @@ IF mobile-viewport:
 7. Test with screen reader for content access
 ```
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Typography and Cognitive Load
 

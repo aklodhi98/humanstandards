@@ -79,7 +79,7 @@ When users make mistakes, explain what went wrong and how to fix it. Don't just 
 - **Abandonment**: People leave when overwhelmed
 - **User feedback**: "This is confusing" = high extraneous load
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Interface Optimization Based on Cognitive Load Theory
 

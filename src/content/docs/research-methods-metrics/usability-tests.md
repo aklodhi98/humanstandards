@@ -388,7 +388,7 @@ FUNCTION selectTestType(constraints, goals):
 
 ---
 
-## AI-Powered Analysis (2024-2025)
+## AI-Powered Analysis
 
 According to the 2024 State of User Research report, **56% of UX researchers** now use AI to support their work — a **36% increase from 2023**.
 
@@ -590,7 +590,7 @@ At 90% confidence level (acceptable for UX research):
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### AI Accelerating Research Workflows
 

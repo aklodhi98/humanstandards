@@ -515,7 +515,7 @@ Machine translation catches 70-80% of issues. Native speakers catch:
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### AI and Cultural Sensitivity
 

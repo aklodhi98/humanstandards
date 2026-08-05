@@ -343,7 +343,7 @@ Analyze errors to understand root causes:
 - Build error prevention into design processes
 - Review support tickets for recurring error patterns
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Error Prevention Hierarchy
 

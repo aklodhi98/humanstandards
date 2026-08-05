@@ -391,7 +391,7 @@ Notable HCI research labs:
 
 ---
 
-## Recent Research Trends (2024-2025)
+## Recent Research Trends
 
 ### AI and HCI
 

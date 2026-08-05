@@ -335,7 +335,7 @@ As interfaces extend beyond screens:
 - Controller-based touch alternatives
 - Gesture recognition without contact
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### MotorEase: Automated Accessibility Detection
 

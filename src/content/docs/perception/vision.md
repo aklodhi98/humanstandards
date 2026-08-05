@@ -173,7 +173,7 @@ Peripheral vision is highly sensitive to motion, which helped our ancestors dete
 - Don't use flashing content (>3 flashes per second)
 - Make motion purposeful, not decorative
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Foveal Vision in AI Systems
 

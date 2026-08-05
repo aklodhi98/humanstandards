@@ -78,7 +78,7 @@ For keyboard users, focus position is their place in the interface:
 - **Competing animations**: Create chaos, not clarity
 - **Hidden important info**: Burying essentials in visual noise
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Eye-Tracking and Visual Attention
 

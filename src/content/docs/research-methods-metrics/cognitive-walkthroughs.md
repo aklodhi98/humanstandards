@@ -498,7 +498,7 @@ A pluralistic walkthrough is a variant that includes multiple stakeholder perspe
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Method Effectiveness Studies
 

@@ -236,7 +236,7 @@ Recent research demonstrates measurable benefits:
 - Catch violations before they reach production
 - Use tools like `axe-core` or `pa11y` for automated testing
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Typography and Legibility Factors
 

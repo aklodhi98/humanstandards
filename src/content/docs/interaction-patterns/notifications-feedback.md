@@ -487,7 +487,7 @@ Reserve celebration for achievements, not routine actions:
 
 **Over-celebration** feels condescending and wastes user attention.
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Notification Fatigue Impact
 

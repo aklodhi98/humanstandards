@@ -346,7 +346,7 @@ A short, 2-item usability survey:
 
 Google's metrics for user experience quality, used in search ranking since 2021.
 
-### Current Metrics (2024-2025)
+### Current Metrics
 
 | Metric | Measures | Good | Needs Improvement | Poor |
 |--------|----------|------|-------------------|------|
@@ -575,7 +575,7 @@ Tracking everything, acting on nothing.
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### NPS Decline Trend
 

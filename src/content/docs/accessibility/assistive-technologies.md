@@ -363,7 +363,7 @@ Traditional voice recognition struggles with atypical speech patterns. 2024 saw 
 - [ ] No ambiguous or duplicate names
 - [ ] All interactive elements are activatable by voice
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### WebAIM Screen Reader Survey #10
 

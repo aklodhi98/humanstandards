@@ -422,7 +422,7 @@ FUNCTION evaluatePrivacyDesign(feature):
 
 Regulations vary by jurisdiction but share common themes.
 
-### Major Privacy Regulations (2024-2025)
+### Major Privacy Regulations
 
 | Regulation | Jurisdiction | Key Requirements | Effective |
 |------------|--------------|------------------|-----------|
@@ -433,7 +433,7 @@ Regulations vary by jurisdiction but share common themes.
 | **DMA** | EU | Gatekeepers can't use dark patterns | 2024 |
 | **MODPA** | Maryland (US) | Strict data minimization | Oct 2025 |
 
-### Notable Enforcement (2024-2025)
+### Notable Enforcement
 
 | Company | Fine | Violation |
 |---------|------|-----------|
@@ -469,7 +469,7 @@ FUNCTION checkCompliance(feature):
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Dark Pattern Prevalence
 

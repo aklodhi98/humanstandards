@@ -308,7 +308,7 @@ While manipulative approaches can provide short-term metrics improvements, they 
 - Word of mouth favors trustworthy experiences
 - Users actively seek alternatives to manipulative products
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### AI Interface Trust
 

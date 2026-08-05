@@ -436,7 +436,7 @@ Voice search is becoming standard: **by 2024, over 50% of online searches were p
 - Prioritize content/product additions
 - Use for autocomplete suggestions
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Search UX Evolution
 

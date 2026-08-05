@@ -60,7 +60,7 @@ Some users find haptics distracting, annoying, or physically uncomfortable. Resp
 - Test with haptics disabled to ensure the experience still works
 - Ask users whether the haptic intensity feels appropriate
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Wearable Haptic Interfaces
 

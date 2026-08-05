@@ -574,7 +574,7 @@ User editing with Editor permissions
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### CSCW 2024
 

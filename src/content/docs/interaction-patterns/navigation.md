@@ -459,7 +459,7 @@ All navigation elements must meet touch target requirements:
 
 See [Targets & Spacing](/ergonomics/targets-spacing/) for detailed guidance.
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Hidden Navigation UX Impact
 

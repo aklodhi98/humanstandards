@@ -303,7 +303,7 @@ Break down tasks to identify memory requirements:
 - What earlier decisions affect later steps?
 - Where are memory demands highest?
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Cognitive Offloading as Value-Based Decision
 

@@ -237,7 +237,7 @@ Persuasive technology focuses on designing systems that influence attitudes and 
 - Don't exploit cognitive biases for profit
 - Consider vulnerable populations
 
-### Dark patterns: Regulatory shift (2024-2025)
+### Dark patterns: Regulatory shift
 
 Dark patterns are deceptive design practices that trick users into actions they didn't intend. Recent regulatory developments have made these explicitly illegal in many jurisdictions.
 
@@ -336,7 +336,7 @@ If you answer "no" or "maybe" to any of these, reconsider the design.
 - Does engagement increase or decline over time?
 - Are users learning and growing, or just collecting points?
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Fogg Behavior Model Applications
 

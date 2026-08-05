@@ -886,7 +886,7 @@ function showPMFSurvey() {
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Activation Impact
 

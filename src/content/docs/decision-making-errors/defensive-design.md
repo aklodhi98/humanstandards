@@ -290,7 +290,7 @@ Every user action needs these considerations:
 - [ ] **Retry safe**: Actions are idempotent
 - [ ] **Graceful degradation**: Partial failures handled
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Guardrails Framework for UX Safety
 

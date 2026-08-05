@@ -613,7 +613,7 @@ FFitts Law (Finger-Fitts) accounts for:
 - [ ] **Spacious mode available for accessibility**
 - [ ] **User preference is respected/saved**
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### WCAG 2.5.8 Legal Status
 

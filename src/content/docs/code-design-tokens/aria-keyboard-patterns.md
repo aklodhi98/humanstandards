@@ -921,7 +921,7 @@ For each widget, verify:
 
 ---
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Navigation Patterns Study
 

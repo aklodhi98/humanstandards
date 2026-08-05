@@ -350,7 +350,7 @@ Consider the range of devices and contexts:
 - Task completion rates by device type
 - Error rates for different target sizes
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### WCAG 2.2 Implementation
 

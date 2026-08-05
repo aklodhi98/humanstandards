@@ -396,7 +396,7 @@ Annual stress testing helps identify problems before emergencies occur.
 - Abandonment rates during high-stress flows
 - Support ticket volume during incidents
 
-## Recent Research (2024-2025)
+## Recent Research
 
 ### Cognitive Load in Mixed Reality
 
