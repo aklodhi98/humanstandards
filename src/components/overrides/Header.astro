@@ -1,0 +1,183 @@
+---
+import config from 'virtual:starlight/user-config';
+
+import LanguageSelect from 'virtual:starlight/components/LanguageSelect';
+import Search from 'virtual:starlight/components/Search';
+import SiteTitle from 'virtual:starlight/components/SiteTitle';
+import SocialIcons from 'virtual:starlight/components/SocialIcons';
+import ThemeSelect from 'virtual:starlight/components/ThemeSelect';
+import { Icon } from '@astrojs/starlight/components';
+
+const shouldRenderSearch =
+	config.pagefind || config.components.Search !== '@astrojs/starlight/components/Search.astro';
+---
+
+<div class="hs-header">
+	<div class="hs-header__title">
+		<SiteTitle />
+	</div>
+
+	<nav class="hs-header__nav" aria-label="Primary navigation">
+		<details class="hs-header__standards">
+			<summary>
+				Standards
+				<Icon name="down-caret" size="0.85em" />
+			</summary>
+			<div class="hs-header__menu">
+				<a href="/human-overview/getting-started/">Getting Started</a>
+				<a href="/cognition/cognitive-load/">Understanding Humans</a>
+				<a href="/accessibility/wcag-guidelines/">Design Standards</a>
+				<a href="/examples/">Implementation</a>
+			</div>
+		</details>
+		<a href="/research-methods-metrics/usability-tests/">Research</a>
+		<a href="/human-overview/mcp-server/">MCP</a>
+		<a href="/home/about-this-site/">About</a>
+	</nav>
+
+	<div class="hs-header__tools print:hidden">
+		<div class="hs-header__search">{shouldRenderSearch && <Search />}</div>
+		<div class="hs-header__social"><SocialIcons /></div>
+		<ThemeSelect />
+		<LanguageSelect />
+	</div>
+</div>
+
+<style>
+	@layer starlight.core {
+		.hs-header {
+			display: grid;
+			grid-template-columns: minmax(13rem, 1fr) auto minmax(20rem, 1fr);
+			align-items: center;
+			gap: clamp(1rem, 2.5vw, 3rem);
+			height: 100%;
+		}
+
+		.hs-header__title {
+			min-width: 0;
+			overflow: clip;
+		}
+
+		.hs-header__title :global(.site-title) {
+			color: var(--hs-ink);
+			font-size: clamp(1.25rem, 2vw, 1.65rem);
+			font-weight: 650;
+			letter-spacing: -0.035em;
+		}
+
+		.hs-header__nav,
+		.hs-header__tools,
+		.hs-header__social {
+			display: flex;
+			align-items: center;
+		}
+
+		.hs-header__nav {
+			gap: clamp(1.25rem, 2.4vw, 2.75rem);
+			font-size: 0.95rem;
+			font-weight: 550;
+		}
+
+		.hs-header__nav > a,
+		.hs-header__standards summary {
+			color: var(--hs-ink);
+			text-decoration: none;
+			white-space: nowrap;
+		}
+
+		.hs-header__nav > a:hover,
+		.hs-header__nav > a:focus-visible,
+		.hs-header__standards summary:hover,
+		.hs-header__standards summary:focus-visible {
+			color: var(--hs-accent);
+		}
+
+		.hs-header__standards {
+			position: relative;
+		}
+
+		.hs-header__standards summary {
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4rem;
+			list-style: none;
+			cursor: pointer;
+		}
+
+		.hs-header__standards summary::-webkit-details-marker {
+			display: none;
+		}
+
+		.hs-header__standards[open] summary :global(svg) {
+			transform: rotate(180deg);
+		}
+
+		.hs-header__menu {
+			position: absolute;
+			top: calc(100% + 0.8rem);
+			left: -1rem;
+			display: grid;
+			width: 15rem;
+			padding: 0.65rem;
+			border: 1px solid var(--hs-rule);
+			border-radius: 0.5rem;
+			background: var(--hs-surface-raised);
+			box-shadow: 0 14px 32px rgb(23 25 20 / 0.12);
+		}
+
+		.hs-header__menu a {
+			padding: 0.7rem 0.8rem;
+			border-radius: 0.3rem;
+			color: var(--hs-ink);
+			font-size: 0.875rem;
+			text-decoration: none;
+		}
+
+		.hs-header__menu a:hover,
+		.hs-header__menu a:focus-visible {
+			background: var(--hs-accent-soft);
+			color: var(--hs-accent-text);
+		}
+
+		.hs-header__tools {
+			justify-content: flex-end;
+			gap: 1rem;
+			min-width: 0;
+		}
+
+		.hs-header__search {
+			width: min(16rem, 100%);
+		}
+
+		.hs-header__social {
+			color: var(--hs-ink);
+		}
+
+		@media (max-width: 68rem) {
+			.hs-header {
+				grid-template-columns: minmax(11rem, 1fr) auto;
+			}
+
+			.hs-header__nav {
+				display: none;
+			}
+		}
+
+		@media (max-width: 49.99rem) {
+			.hs-header {
+				grid-template-columns: minmax(0, 1fr) auto;
+				gap: 0.75rem;
+			}
+
+			.hs-header__search {
+				width: auto;
+			}
+
+			.hs-header__social,
+			.hs-header__tools :global(starlight-theme-select),
+			.hs-header__tools :global(starlight-language-select) {
+				display: none;
+			}
+		}
+	}
+</style>

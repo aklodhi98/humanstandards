@@ -1,0 +1,195 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import contours from '../../assets/acidic-olive-contours.png';
+---
+
+<section class="hs-hero" aria-labelledby="_top">
+	<div class="hs-hero__copy">
+		<h1 id="_top">
+			<span>Design with a better</span>
+			<span>understanding of <em>people.</em></span>
+		</h1>
+		<p>
+			Human factors research translated into practical standards,<br />
+			code examples, and AI-assisted validation.
+		</p>
+		<div class="hs-hero__actions">
+			<a class="hs-button hs-button--primary" href="/human-overview/getting-started/">
+				Explore the Standards
+				<Icon name="right-arrow" size="1em" />
+			</a>
+			<a class="hs-button hs-button--text" href="/home/about-this-site/">
+				How to use this library
+				<Icon name="right-arrow" size="1em" />
+			</a>
+		</div>
+	</div>
+
+	<img
+		class="hs-hero__visual"
+		src={contours.src}
+		width={contours.width}
+		height={contours.height}
+		alt=""
+		loading="eager"
+		fetchpriority="high"
+	/>
+</section>
+
+<style>
+	.hs-hero {
+		position: relative;
+		display: grid;
+		align-items: start;
+		min-height: clamp(27.5rem, 34vw, 34rem);
+		padding: clamp(4rem, 8vw, 8rem) clamp(1.5rem, 5.2vw, 5rem) clamp(1.75rem, 2.5vw, 2.5rem);
+		overflow: hidden;
+		isolation: isolate;
+	}
+
+	.hs-hero__copy {
+		position: relative;
+		z-index: 1;
+		width: min(47rem, 58vw);
+	}
+
+	.hs-hero h1 {
+		margin: 0;
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: clamp(3.25rem, 4.65vw, 4.7rem);
+		font-weight: 500;
+		line-height: 1.08;
+		letter-spacing: -0.045em;
+	}
+
+	.hs-hero h1 span {
+		display: block;
+		white-space: nowrap;
+	}
+
+	.hs-hero h1 em {
+		font-weight: 400;
+	}
+
+	.hs-hero p {
+		margin: 1.5rem 0 0;
+		color: var(--hs-text-muted);
+		font-size: clamp(1rem, 1.35vw, 1.18rem);
+		line-height: 1.65;
+	}
+
+	.hs-hero__actions {
+		display: flex;
+		align-items: center;
+		gap: clamp(1.5rem, 3.25vw, 3.5rem);
+		margin-top: 1.35rem;
+	}
+
+	.hs-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+		min-height: 3.25rem;
+		font-size: 1rem;
+		font-weight: 550;
+		text-decoration: none;
+		transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+	}
+
+	.hs-button:hover {
+		transform: translateY(-2px);
+	}
+
+	.hs-button--primary {
+		padding: 0.75rem 1.4rem;
+		border-radius: 0.3rem;
+		background: var(--hs-accent);
+		color: var(--hs-button-text);
+		box-shadow: 0 1px 0 rgb(23 25 20 / 0.08);
+	}
+
+	.hs-button--primary:hover {
+		background: var(--hs-accent-hover);
+		color: var(--hs-button-text);
+	}
+
+	.hs-button--text {
+		min-height: auto;
+		padding: 0.35rem 0;
+		border-bottom: 1.5px solid currentColor;
+		color: var(--hs-ink);
+	}
+
+	.hs-button--text:hover {
+		color: var(--hs-accent-text);
+	}
+
+	.hs-hero__visual {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		right: 18%;
+		width: 58%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+		pointer-events: none;
+		user-select: none;
+	}
+
+	:global(:root[data-theme='dark']) .hs-hero__visual {
+		display: none;
+	}
+
+	@media (max-width: 72rem) {
+		.hs-hero__copy {
+			width: min(43rem, 67vw);
+		}
+
+		.hs-hero__visual {
+			right: -18%;
+			width: 70%;
+			opacity: 0.72;
+		}
+	}
+
+	@media (max-width: 50rem) {
+		.hs-hero {
+			min-height: auto;
+			padding-top: 5.5rem;
+			padding-bottom: 4rem;
+		}
+
+		.hs-hero__copy {
+			width: 100%;
+		}
+
+		.hs-hero h1 {
+			font-size: clamp(2.7rem, 11vw, 4rem);
+		}
+
+		.hs-hero h1 span {
+			white-space: normal;
+		}
+
+		.hs-hero p br {
+			display: none;
+		}
+
+		.hs-hero__visual {
+			right: -35%;
+			width: 110%;
+			opacity: 0.16;
+		}
+	}
+
+	@media (max-width: 34rem) {
+		.hs-hero__actions {
+			align-items: flex-start;
+			flex-direction: column;
+			gap: 1.25rem;
+		}
+	}
+</style>

@@ -1,159 +1,170 @@
-/* Custom styles for Human Standards */
+/* Human Standards visual system */
 
-/* Force hero centering on ALL viewport sizes */
-.hero {
-  text-align: center !important;
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  max-width: none !important;
-  margin-inline: auto !important;
-  padding: 2rem 2rem 1rem 2rem !important;
-  min-height: auto !important;
-  position: relative !important;
-  overflow: visible !important;
+:root {
+  --hs-accent: #687319;
+  --hs-accent-hover: #596313;
+  --hs-accent-text: #687319;
+  --hs-accent-soft: #eaedcf;
+  --hs-button-text: #fff;
+  --hs-bg: #f7f3ea;
+  --hs-surface-raised: #fcfaf5;
+  --hs-ink: #171914;
+  --hs-text-muted: #4b554f;
+  --hs-rule: #ddd8cc;
+  --hs-font-display: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+  --sl-nav-height: 5rem;
+  --sl-content-width: 45rem;
+  --sl-color-accent: var(--hs-accent);
+  --sl-color-accent-high: #4f590d;
+  --sl-color-accent-low: var(--hs-accent-soft);
+  --sl-color-text-accent: var(--hs-accent-text);
+  --sl-color-bg-accent: var(--hs-accent);
+  --sl-color-text-invert: #fff;
 }
 
-/* Gradient blob behind hero - Purple (top-left) */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  width: 700px;
-  height: 500px;
-  background: radial-gradient(ellipse at center,
-      rgba(139, 92, 246, 0.18) 0%,
-      rgba(99, 102, 241, 0.1) 40%,
-      transparent 70%);
-  border-radius: 50%;
-  filter: blur(50px);
-  z-index: -1;
-  pointer-events: none;
+:root[data-theme='light'] {
+  --sl-color-white: var(--hs-ink);
+  --sl-color-gray-1: #242820;
+  --sl-color-gray-2: #3d443b;
+  --sl-color-gray-3: #5c655d;
+  --sl-color-gray-4: #8a9088;
+  --sl-color-gray-5: #c7c4ba;
+  --sl-color-gray-6: #ebe7de;
+  --sl-color-gray-7: var(--hs-surface-raised);
+  --sl-color-black: var(--hs-bg);
+  --sl-color-bg: var(--hs-bg);
+  --sl-color-bg-nav: var(--hs-surface-raised);
+  --sl-color-bg-sidebar: var(--hs-bg);
+  --sl-color-hairline: var(--hs-rule);
+  --sl-color-hairline-light: #e9e4d9;
+  --sl-color-hairline-shade: var(--hs-rule);
+  --sl-color-text: var(--hs-text-muted);
 }
 
-/* Gradient blob behind hero - Orange (bottom-right) */
-.hero::after {
-  content: '';
-  position: absolute;
-  top: 65%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-  width: 650px;
-  height: 450px;
-  background: radial-gradient(ellipse at center,
-      rgba(251, 146, 60, 0.2) 0%,
-      rgba(249, 115, 22, 0.12) 40%,
-      transparent 70%);
-  border-radius: 50%;
-  filter: blur(50px);
-  z-index: -1;
-  pointer-events: none;
+:root[data-theme='dark'] {
+  --hs-bg: #171914;
+  --hs-surface-raised: #20231d;
+  --hs-ink: #f7f3ea;
+  --hs-text-muted: #c3c9bc;
+  --hs-rule: #3b4034;
+  --hs-accent: #8f9e35;
+  --hs-accent-hover: #a7b747;
+  --hs-accent-text: #bdc967;
+  --hs-accent-soft: #30371c;
+  --hs-button-text: #171914;
+  --sl-color-accent: var(--hs-accent);
+  --sl-color-accent-high: #d8e58a;
+  --sl-color-accent-low: #31391b;
+  --sl-color-text-accent: var(--hs-accent-text);
+  --sl-color-bg-accent: var(--hs-accent);
+  --sl-color-text-invert: #171914;
+  --sl-color-bg: var(--hs-bg);
+  --sl-color-bg-nav: var(--hs-bg);
+  --sl-color-bg-sidebar: #1c1f19;
+  --sl-color-hairline: var(--hs-rule);
+  --sl-color-hairline-light: #32372d;
+  --sl-color-hairline-shade: var(--hs-rule);
+  --sl-color-text: var(--hs-text-muted);
 }
 
-/* Adjust blobs for dark mode */
-:root[data-theme='dark'] .hero::before {
-  background: radial-gradient(ellipse at center,
-      rgba(139, 92, 246, 0.25) 0%,
-      rgba(99, 102, 241, 0.12) 40%,
-      transparent 70%);
+html,
+body {
+  background: var(--hs-bg);
 }
 
-:root[data-theme='dark'] .hero::after {
-  background: radial-gradient(ellipse at center,
-      rgba(251, 146, 60, 0.25) 0%,
-      rgba(249, 115, 22, 0.15) 40%,
-      transparent 70%);
+body {
+  color: var(--hs-text-muted);
+  font-feature-settings: "kern" 1, "liga" 1;
 }
 
-/* Override the two-column grid layout on desktop */
-.hero>img,
-.hero>picture,
-.hero>.hero-html {
-  display: none !important;
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+select:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--hs-accent) 62%, white);
+  outline-offset: 3px;
 }
 
-.hero .stack {
-  text-align: center !important;
-  align-items: center !important;
-  margin-inline: auto !important;
-  max-width: 900px !important;
-  grid-column: 1 / -1 !important;
-  /* Span full width if in grid */
+/* Full-width homepage composition. */
+:root[data-has-hero] {
+  --sl-content-width: 100%;
+  --sl-content-pad-x: 0;
 }
 
-.hero h1,
-.hero h1#_top {
-  text-align: center !important;
-  width: 100% !important;
+:root[data-has-hero] main > .content-panel {
+  padding: 0;
 }
 
-/* Target the tagline paragraph */
-.hero .tagline,
-.hero .stack>p,
-.hero p {
-  text-align: center !important;
-  width: 100% !important;
-  margin-inline: auto !important;
-  display: block !important;
+:root[data-has-hero] .content-panel > .sl-container {
+  max-width: none;
 }
 
-.hero .actions {
-  justify-content: center !important;
-  flex-wrap: wrap !important;
-  width: 100% !important;
-}
-
-/* Override any grid/flex layout that creates two columns */
-@media (min-width: 50rem) {
-  .hero {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    grid-template-columns: 1fr !important;
-  }
-
-  .hero .stack {
-    text-align: center !important;
-    align-items: center !important;
-  }
-}
-
-/* Center content below hero */
-body:has(.hero) .sl-markdown-content {
-  max-width: 900px;
-  margin-inline: auto;
-}
-
-/* Hero search component positioning */
-body:has(.hero) .sl-markdown-content .hero-search {
+:root[data-has-hero] .content-panel > .sl-container > * + * {
   margin-top: 0;
-  margin-bottom: 1.5rem;
 }
 
-/* Hero action buttons below search */
-body:has(.hero) .hero-actions {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  gap: 1rem;
-  margin-bottom: 3rem;
-  width: 100%;
+:root[data-has-hero] .sl-markdown-content {
+  max-width: none;
 }
 
-/* Five-card grid layout for homepage */
-body:has(.hero) .sl-link-card {
-  min-height: 120px;
+:root[data-has-hero] .sl-markdown-content > :not(.hs-library) {
+  display: none;
 }
 
-/* Ensure cards grid looks good with 5 items */
-@media (min-width: 50rem) {
-  body:has(.hero) .sl-markdown-content > .not-content:has(.clickable-card) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
+:root[data-has-hero] footer {
+  max-width: none;
+  padding-inline: clamp(1.5rem, 6.4vw, 6rem);
+}
+
+/* Header controls adopt the quieter mock treatment. */
+.hs-header__search site-search button[data-open-modal] {
+  border-color: var(--hs-rule);
+  border-radius: 0.5rem;
+  background: var(--hs-surface-raised);
+  color: var(--hs-text-muted);
+}
+
+.hs-header__search site-search button[data-open-modal]:hover {
+  border-color: var(--hs-accent);
+  color: var(--hs-ink);
+}
+
+.hs-header__social a {
+  color: var(--hs-ink);
+}
+
+.hs-header__tools select {
+  border-color: var(--hs-rule);
+  border-radius: 0.5rem;
+  background-color: var(--hs-surface-raised);
+  color: var(--hs-ink);
+}
+
+/* Documentation pages keep Starlight's information architecture with the new tokens. */
+:root:not([data-has-hero]) .sl-markdown-content h1,
+:root:not([data-has-hero]) .sl-markdown-content h2,
+:root:not([data-has-hero]) .sl-markdown-content h3,
+:root:not([data-has-hero]) .sl-markdown-content h4 {
+  color: var(--hs-ink);
+  letter-spacing: -0.025em;
+}
+
+:root:not([data-has-hero]) .sl-markdown-content h1 {
+  font-family: var(--hs-font-display);
+  font-weight: 500;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (max-width: 50rem) {
+  :root {
+    --sl-nav-height: 4rem;
   }
 }

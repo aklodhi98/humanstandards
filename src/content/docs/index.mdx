@@ -3,34 +3,9 @@ title: Human Standards
 description: Practical human factors and accessibility guidance for product teams
 template: splash
 hero:
-  tagline: Human factors research translated into design standards, code examples, and an MCP server for AI-assisted validation.
+  tagline: Human factors research translated into practical standards, code examples, and AI-assisted validation.
 ---
 
-import { CardGrid, LinkButton } from '@astrojs/starlight/components';
-import ClickableCard from '../../components/ClickableCard.astro';
+import HomeStandardsGrid from '../../components/HomeStandardsGrid.astro';
 
-<div class="sl-flex actions hero-actions">
-  <LinkButton href="/human-overview/getting-started/" variant="primary" icon="right-arrow">
-    Explore the Standards
-  </LinkButton>
-</div>
-
-## Explore the Standards
-
-<CardGrid>
-	<ClickableCard title="Getting Started" icon="rocket" href="/human-overview/getting-started/">
-		Introduction to human factors and how to use this guide effectively.
-	</ClickableCard>
-	<ClickableCard title="Understanding Humans" icon="puzzle" href="/cognition/cognitive-load/">
-		Cognition, perception, emotions, and decision-making patterns.
-	</ClickableCard>
-	<ClickableCard title="Design Standards" icon="approve-check-circle" href="/accessibility/wcag-guidelines/">
-		Ergonomics, accessibility (WCAG), and interaction patterns.
-	</ClickableCard>
-	<ClickableCard title="Implementation" icon="seti:html" href="/examples/">
-		Code examples, design tokens, and checklists for your projects.
-	</ClickableCard>
-	<ClickableCard title="Research & References" icon="open-book" href="/research-methods-metrics/usability-tests/">
-		Research methods, metrics, and academic sources.
-	</ClickableCard>
-</CardGrid>
+<HomeStandardsGrid />

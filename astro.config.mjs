@@ -9,6 +9,12 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Human Standards',
+			head: [
+				{
+					tag: 'script',
+					content: `try { if (!localStorage.getItem('starlight-theme')) localStorage.setItem('starlight-theme', 'light'); } catch {}`,
+				},
+			],
 			editLink: {
 				baseUrl: 'https://github.com/aklodhi98/humanstandards/edit/main/',
 			},
@@ -21,6 +27,8 @@ export default defineConfig({
 			lastUpdated: true,
 			components: {
 				Footer: './src/components/overrides/Footer.astro',
+				Header: './src/components/overrides/Header.astro',
+				Hero: './src/components/overrides/Hero.astro',
 			},
 			customCss: [
 				'./src/styles/custom.css',
