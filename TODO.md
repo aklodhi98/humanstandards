@@ -33,23 +33,24 @@ longer repeat the removed figures as facts.
 
 ## 2. Five pages are far below the site's depth baseline
 
-**Priority: medium.** Siblings in the same sections run 2,000–4,000 words.
+**Priority: medium. Status: completed 9 August 2026.**
 
-| Page | Words | Links |
-|------|-------|-------|
-| `src/content/docs/ergonomics/anthropometrics.md` | 305 | 3 |
-| `src/content/docs/ergonomics/posture-device-use.md` | 318 | 3 |
-| `src/content/docs/perception/touch/fine-motor-sensitivity.md` | 360 | 3 |
-| `src/content/docs/perception/hearing/noise-masking.md` | 415 | 3 |
-| `src/content/docs/perception/hearing/frequency-ranges.md` | 423 | 3 |
+The five pages now match the structure and depth of their stronger siblings:
 
-`ergonomics/anthropometrics.md` is the sharpest mismatch — its sibling
-`ergonomics/targets-spacing.md` is 2,443 words.
+| Page | Words | Unique external links |
+|------|-------|-----------------------|
+| `src/content/docs/ergonomics/anthropometrics.md` | 2,045 | 7 |
+| `src/content/docs/ergonomics/posture-device-use.md` | 2,354 | 9 |
+| `src/content/docs/perception/touch/fine-motor-sensitivity.md` | 2,255 | 10 |
+| `src/content/docs/perception/hearing/noise-masking.md` | 2,153 | 13 |
+| `src/content/docs/perception/hearing/frequency-ranges.md` | 2,336 | 10 |
 
-**Done when:** each page carries the same structure as its stronger siblings — practical
-guidance, a worked example or measurement table, and cited sources. ISO 7250
-(anthropometric measurements), ISO 9241-400 (physical input devices), and ISO 9241-920
-(tactile/haptic) are the obvious anchors for the ergonomics and touch pages.
+**Completed:** each page now includes practical requirements, a worked example, a reproducible
+measurement or testing table, a review checklist, and inline citations. The ergonomics and touch
+pages are anchored in ISO 7250-1, ISO/TR 7250-2:2024, ISO 9241-400, ISO 9241-920:2024, and WCAG
+2.2. The hearing pages use NIDCD, WHO, NIOSH, ITU-T, ISO 9921, IEC 60268-16, and WCAG guidance.
+Generic environmental sound-level claims and unsupported age/hand-size cut-offs were replaced by
+explicit measurement methods and evidence boundaries.
 
 ---
 
