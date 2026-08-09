@@ -27,6 +27,21 @@ The 1483 × 1061 source was normalized to the implementation capture width befor
 3. Second correction: aligned the hero to the source rhythm, moved the library start to 520 px, matched the 5.2vw content inset, and made the sticky header opaque so content never ghosts through it.
 4. Final comparison: hierarchy, spacing, contour placement, library density, and acidic-olive identity are consistent with the selected direction. Minor type-rendering differences reflect the production font stack and are acceptable.
 
+## Browser annotation follow-up — card top padding
+
+- Source visual truth: Browser Comment 1 marker screenshot attached to the `Implementation` standards card at 1381 × 955 CSS px.
+- Target selector: `.hs-library-card:nth-of-type(4)` in `HomeStandardsGrid.astro`.
+- Updated implementation: `/Users/ak/.codex/visualizations/2026/08/09/019fe670-8e8f-7fd1-b44f-78b0d641a967/humanstandards-design-audit/annotation-card-top-padding-full.png`
+- Focused comparison evidence: `/Users/ak/.codex/visualizations/2026/08/09/019fe670-8e8f-7fd1-b44f-78b0d641a967/humanstandards-design-audit/qa-annotation-card-padding-before-after.jpg`
+- Verification viewport: 1381 × 955 CSS px at DPR 1.3; browser capture output 1370 × 947 px.
+- State: homepage, light theme, menus closed, search closed, page at scroll position 0.
+- Finding: the annotated desktop card row had no explicit top inset, leaving the icons visually tight to the cards' top edge. This was a P3 spacing refinement rather than a functional or accessibility defect.
+- Fix: desktop cards now use a 12 px top inset (`padding: 0.75rem 1.25rem 0`). All five cards were updated consistently; no nearby layout, content, assets, or interactions changed.
+- Post-fix evidence: the selected card measures 12 px from its box top to the icon container. Tablet cards retain 32 px top padding and mobile cards retain 28 px; neither alternate layout has horizontal overflow.
+- Required fidelity surfaces: typography, colors, imagery, icons, and copy are unchanged; only the requested spacing rhythm changed.
+- Browser console: no warnings or errors after reload and responsive checks.
+- Residual findings: none at P0, P1, or P2. Focused region evidence was sufficient because the annotation affected a single repeated component and the full-view capture confirms the surrounding composition stayed stable.
+
 ## Accessibility and interaction checks
 
 - Primary acidic olive `#687319` against white: 5.18:1.
