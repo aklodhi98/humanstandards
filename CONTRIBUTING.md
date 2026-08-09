@@ -9,11 +9,11 @@ Thank you for your interest in contributing to Human Standards! This project aim
 - **Fix errors** — Typos, broken links, outdated information
 - **Clarify concepts** — Make complex topics more understandable
 - **Add examples** — Real-world case studies with measurable impact
-- **Expand coverage** — New topics within [our current scope](/human-overview/scope-and-roadmap/)
+- **Expand coverage** — New topics within [our current scope](https://www.humanstandards.org/human-overview/scope-and-roadmap/)
 
 ### 2. Share Real-World Examples
 
-We're especially interested in **before/after case studies** that demonstrate human factors principles in action. See our [How to Document Examples](/examples/how-to-document-examples/) guide for the complete framework.
+We're especially interested in **before/after case studies** that demonstrate human factors principles in action. See our [How to Document Examples](https://www.humanstandards.org/examples/how-to-document-examples/) guide for the complete framework.
 
 **Required elements:**
 - Observable problem with quantitative evidence
@@ -34,9 +34,9 @@ Found a problem? [Open an issue](https://github.com/aklodhi98/humanstandards/iss
 ### 4. Suggest New Topics
 
 Before suggesting a new topic:
-1. Check our [Scope & Roadmap](/human-overview/scope-and-roadmap/) to understand current coverage
+1. Check our [Scope & Roadmap](https://www.humanstandards.org/human-overview/scope-and-roadmap/) to understand current coverage
 2. Search [existing issues](https://github.com/aklodhi98/humanstandards/issues) to avoid duplicates
-3. Open a discussion or issue explaining:
+3. Open an issue explaining:
    - What topic you'd like to see
    - Why it's important
    - What evidence/sources exist
@@ -83,9 +83,9 @@ For new content or significant changes:
 
 6. **Test your changes**
    ```bash
-   npm run build
+   npm run check
    ```
-   Ensure the build completes without errors.
+   Ensure the build and internal-link checks complete without errors.
 
 7. **Commit and push**
    ```bash
@@ -203,9 +203,9 @@ export function AccessibleButton({ label, onClick, disabled = false }: ButtonPro
 Link to related content:
 
 ```markdown
-See [Cognitive Load](/cognition/cognitive-load/) for more on reducing mental effort.
+See [Cognitive Load](https://www.humanstandards.org/cognition/cognitive-load/) for more on reducing mental effort.
 
-See our [Progressive Disclosure example](/examples/progressive-disclosure-turbotax/) for implementation details.
+See our [Progressive Disclosure example](https://www.humanstandards.org/examples/cognitive-load/progressive-disclosure-turbotax/) for implementation details.
 ```
 
 ## Adding Images
@@ -236,7 +236,7 @@ Unacceptable behavior includes harassment, discrimination, or personal attacks. 
 
 ## Questions?
 
-- **Stuck?** Open a [discussion](https://github.com/aklodhi98/humanstandards/discussions)
+- **Stuck?** Open an [issue](https://github.com/aklodhi98/humanstandards/issues/new)
 - **Found a bug?** File an [issue](https://github.com/aklodhi98/humanstandards/issues)
 - **Want to chat?** Reach out via [aklodhi.com](https://aklodhi.com)
 

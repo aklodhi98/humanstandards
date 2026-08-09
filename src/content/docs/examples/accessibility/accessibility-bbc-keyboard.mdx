@@ -125,13 +125,13 @@ The BBC, as a public service broadcaster, treats accessibility as a core require
     [Comprehensive accessibility standards](/accessibility/wcag-guidelines/) covering perceivable, operable, understandable, robust.
   </Card>
   <Card title="Screen Readers" icon="information">
-    [Designing for screen readers](/accessibility/screen-readers/) with semantic HTML and ARIA.
+    [Designing for screen readers](/accessibility/assistive-technologies/) with semantic HTML and ARIA.
   </Card>
   <Card title="Keyboard Navigation" icon="puzzle">
-    [Keyboard interaction patterns](/accessibility/keyboard-navigation/) for common UI components.
+    [Keyboard interaction patterns](/code-design-tokens/aria-keyboard-patterns/) for common UI components.
   </Card>
   <Card title="Ergonomics" icon="star">
-    [Touch target sizes](/ergonomics/touch-targets/) and motor control considerations.
+    [Touch target sizes](/ergonomics/targets-spacing/) and motor control considerations.
   </Card>
 </CardGrid>
 
@@ -147,7 +147,7 @@ When you use the Human Standards MCP server, these rules enforce keyboard access
   rule: 'wcag-keyboard-accessible',
   message: 'Interactive element must be keyboard accessible',
   recommendation: 'Use semantic HTML (<button>, <a>) or add tabindex="0" + keyboard handlers',
-  reference: '/accessibility/keyboard-navigation.md'
+  reference: '/code-design-tokens/aria-keyboard-patterns/'
 }
 ```
 
@@ -159,7 +159,7 @@ When you use the Human Standards MCP server, these rules enforce keyboard access
   rule: 'wcag-focus-visible',
   message: 'Focus indicator must be visible (do not use outline: none)',
   recommendation: 'Provide 3:1 contrast focus indicator on all interactive elements',
-  reference: '/accessibility/wcag-guidelines.md#operable'
+  reference: '/accessibility/wcag-guidelines/#operable'
 }
 ```
 
@@ -171,7 +171,7 @@ When you use the Human Standards MCP server, these rules enforce keyboard access
   rule: 'wcag-skip-links',
   message: 'Pages with repeated navigation should have skip links',
   recommendation: 'Add "Skip to main content" link as first focusable element',
-  reference: '/accessibility/keyboard-navigation.md'
+  reference: '/code-design-tokens/aria-keyboard-patterns/'
 }
 ```
 
@@ -183,7 +183,7 @@ When you use the Human Standards MCP server, these rules enforce keyboard access
   rule: 'wcag-aria-labels',
   message: 'Interactive element lacks accessible name',
   recommendation: 'Add aria-label, aria-labelledby, or visible text content',
-  reference: '/accessibility/screen-readers.md'
+  reference: '/accessibility/assistive-technologies/#screen-readers'
 }
 ```
 
@@ -715,9 +715,9 @@ BBC achieves:
 
 ## Related Examples
 
-- [Error Prevention - Grammarly](/examples/error-prevention-grammarly/) - Accessible error messages help all users
-- [Feedback & Confirmation - Stripe Dashboard](/examples/feedback-confirmation-stripe/) - Screen reader announcements for status changes
-- [Progressive Disclosure - TurboTax](/examples/progressive-disclosure-turbotax/) - Logical tab order in multi-step forms
+- [Error Prevention - Grammarly](/examples/defensive-design/error-prevention-grammarly/) - Accessible error messages help all users
+- [Feedback & Confirmation - Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/) - Screen reader announcements for status changes
+- [Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/) - Logical tab order in multi-step forms
 
 ---
 

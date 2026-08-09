@@ -246,4 +246,4 @@ Research in the last decade has shown that processing in peripheral and foveal v
 - [Legibility & Contrast](/perception/vision/legibility-contrast/) — Text readability requirements
 - [Motion & Peripheral Vision](/perception/vision/motion-peripheral-vision/) — How motion draws attention
 - [Attention & Focus](/cognition/attention-focus/) — Directing user attention effectively
-- [Visual Hierarchy](/interaction-patterns/) — Creating clear information structure
+- [Visual Hierarchy](/interaction-patterns/nielsen-heuristics/) — Creating clear information structure

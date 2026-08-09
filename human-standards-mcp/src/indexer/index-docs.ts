@@ -96,6 +96,12 @@ function extractReferences(content: string): string[] {
   return refs;
 }
 
+function toSitePath(relativePath: string): string {
+  let route = relativePath.replace(/\\/g, '/').replace(/\.mdx?$/, '');
+  if (route.endsWith('/index')) route = route.slice(0, -'index'.length);
+  return `/${route.replace(/^\/+|\/+$/g, '')}/`;
+}
+
 /**
  * Index a single category directory
  */
@@ -117,7 +123,7 @@ function indexCategory(categoryPath: string, categoryName: string): CategoryInde
 
       documents.push({
         title: metadata.title,
-        path: '/' + relativePath.replace(/\\/g, '/'),
+        path: toSitePath(relativePath),
         description: metadata.description,
         key_points: extractKeyPoints(metadata.content),
         references: extractReferences(metadata.content)
@@ -146,7 +152,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'error',
       description: 'Text must have sufficient contrast ratio',
       check: 'Color contrast ratio must be at least 4.5:1 for normal text, 3:1 for large text (WCAG AA)',
-      reference: '/accessibility/wcag-guidelines.md#perceivable'
+      reference: '/accessibility/wcag-guidelines/#perceivable'
     },
     {
       id: 'wcag-aria-labels',
@@ -154,7 +160,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'error',
       description: 'Form inputs must have associated labels',
       check: 'Every input must have a visible label linked via for/id or aria-label',
-      reference: '/accessibility/wcag-guidelines.md#understandable'
+      reference: '/accessibility/wcag-guidelines/#understandable'
     },
     {
       id: 'wcag-focus-indicators',
@@ -162,7 +168,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'error',
       description: 'Interactive elements must have visible focus indicators',
       check: 'Keyboard focus must be clearly visible (recommend 3px outline)',
-      reference: '/accessibility/wcag-guidelines.md#operable'
+      reference: '/accessibility/wcag-guidelines/#operable'
     },
 
     // Cognitive load rules
@@ -172,7 +178,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'warning',
       description: 'Long forms should use progressive disclosure',
       check: 'Forms with 6+ fields should be broken into steps',
-      reference: '/cognition/cognitive-load.md#chunk-information'
+      reference: '/cognition/cognitive-load/#chunk-information'
     },
     {
       id: 'cognitive-error-clarity',
@@ -180,7 +186,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'error',
       description: 'Error messages must be specific and actionable',
       check: 'Avoid vague errors like "Invalid" - explain what went wrong and how to fix',
-      reference: '/cognition/cognitive-load.md#clear-error-recovery'
+      reference: '/cognition/cognitive-load/#clear-error-recovery'
     },
 
     // Ergonomics rules
@@ -190,7 +196,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'warning',
       description: 'Touch targets must meet minimum size',
       check: 'Interactive elements must be at least 44x44pt (iOS) or 48x48dp (Android)',
-      reference: '/ergonomics/targets-spacing.md'
+      reference: '/ergonomics/targets-spacing/'
     },
 
     // Forms rules
@@ -200,7 +206,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'warning',
       description: 'Form inputs should enable autocomplete',
       check: 'Use autocomplete attributes for name, email, address, phone, etc.',
-      reference: '/interaction-patterns/forms.md#enable-autocomplete'
+      reference: '/interaction-patterns/forms/#autocomplete-attributes'
     },
     {
       id: 'forms-visible-labels',
@@ -208,7 +214,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'error',
       description: 'Use visible labels, not placeholders',
       check: 'Placeholder text is not a substitute for labels - labels must remain visible',
-      reference: '/interaction-patterns/forms.md#always-use-visible-labels'
+      reference: '/interaction-patterns/forms/#always-use-visible-labels'
     },
 
     // Defensive design rules
@@ -218,7 +224,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'warning',
       description: 'Long forms should implement autosave',
       check: 'Forms with multiple fields should save drafts to prevent data loss',
-      reference: '/decision-making-errors/defensive-design.md#autosave-everything'
+      reference: '/decision-making-errors/defensive-design/#autosave-everything'
     },
     {
       id: 'defensive-destructive-confirm',
@@ -226,7 +232,7 @@ function generateValidationRules(index: StandardsIndex): ValidationRule[] {
       severity: 'error',
       description: 'Destructive actions must require confirmation',
       check: 'Delete, remove, and other destructive actions need confirmation dialogs',
-      reference: '/decision-making-errors/defensive-design.md#show-state-and-consequences'
+      reference: '/decision-making-errors/defensive-design/#show-state-and-consequences'
     }
   ];
 
@@ -245,7 +251,7 @@ function generateComponentPatterns(): ComponentPattern[] {
         cognitive_load: {
           assessment: 'High cognitive load for 6+ fields',
           recommendation: 'Use progressive disclosure - break into 2-3 steps',
-          reference: '/cognition/cognitive-load.md#chunk-information',
+          reference: '/cognition/cognitive-load/#chunk-information',
           implementation: ['Multi-step wizard', 'Group related fields', 'Show progress indicator']
         },
         accessibility: {
@@ -256,19 +262,19 @@ function generateComponentPatterns(): ComponentPattern[] {
             'Form works without JavaScript for critical paths'
           ],
           wcag_level: 'AA',
-          reference: '/accessibility/wcag-guidelines.md',
+          reference: '/accessibility/wcag-guidelines/',
           aria_requirements: ['aria-required', 'aria-invalid', 'aria-describedby']
         },
         forms: {
           validation_timing: 'on blur',
           error_messages: 'specific and actionable',
           autocomplete: true,
-          reference: '/interaction-patterns/forms.md'
+          reference: '/interaction-patterns/forms/'
         },
         defensive_design: {
           required: ['autosave', 'clear error messages', 'beforeunload warning'],
           optional: ['draft restoration', 'progress preservation'],
-          reference: '/decision-making-errors/defensive-design.md'
+          reference: '/decision-making-errors/defensive-design/'
         }
       }
     },
@@ -279,12 +285,12 @@ function generateComponentPatterns(): ComponentPattern[] {
         ergonomics: {
           min_touch_target: '48x48px',
           spacing: '12px from adjacent targets',
-          reference: '/ergonomics/targets-spacing.md'
+          reference: '/ergonomics/targets-spacing/'
         },
         defensive_design: {
           required: ['confirmation dialog', 'clear consequences'],
           optional: ['undo window'],
-          reference: '/decision-making-errors/defensive-design.md'
+          reference: '/decision-making-errors/defensive-design/'
         },
         accessibility: {
           requirements: [
@@ -293,7 +299,7 @@ function generateComponentPatterns(): ComponentPattern[] {
             'Clear label (not icon-only)'
           ],
           wcag_level: 'AA',
-          reference: '/accessibility/wcag-guidelines.md'
+          reference: '/accessibility/wcag-guidelines/'
         }
       }
     },
@@ -303,7 +309,7 @@ function generateComponentPatterns(): ComponentPattern[] {
         cognitive_load: {
           assessment: 'Modals interrupt flow and increase cognitive load',
           recommendation: 'Use sparingly, only for critical decisions or confirmations',
-          reference: '/cognition/cognitive-load.md',
+          reference: '/cognition/cognitive-load/',
           implementation: ['Focus trap', 'Clear close action', 'ESC key support']
         },
         accessibility: {
@@ -314,7 +320,7 @@ function generateComponentPatterns(): ComponentPattern[] {
             'Keyboard dismissible (ESC)'
           ],
           wcag_level: 'AA',
-          reference: '/accessibility/wcag-guidelines.md'
+          reference: '/accessibility/wcag-guidelines/'
         }
       }
     }

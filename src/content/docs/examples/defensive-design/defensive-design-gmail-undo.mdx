@@ -103,13 +103,13 @@ Gmail introduced "Undo Send" in 2009 (Labs feature) and made it default in 2015.
     [Core principles](/decision-making-errors/defensive-design/) of building systems that anticipate and prevent user errors.
   </Card>
   <Card title="Decision-Making Errors" icon="puzzle">
-    [Understanding cognitive biases](/decision-making-errors/cognitive-biases/) like immediacy bias and emotional reasoning.
+    [Understanding cognitive biases](/decision-making-errors/biases-heuristics/) like immediacy bias and emotional reasoning.
   </Card>
   <Card title="Feedback Mechanisms" icon="information">
-    [System feedback patterns](/interaction-patterns/feedback/) that communicate status and enable recovery.
+    [System feedback patterns](/interaction-patterns/notifications-feedback/) that communicate status and enable recovery.
   </Card>
   <Card title="User Control" icon="approve-check">
-    [Empowering users](/interaction-patterns/user-control/) with undo, redo, and recovery options.
+    [Empowering users](/interaction-patterns/nielsen-heuristics/#heuristic-3-user-control-and-freedom) with undo, redo, and recovery options.
   </Card>
 </CardGrid>
 
@@ -125,7 +125,7 @@ When you use the Human Standards MCP server, these rules enforce defensive desig
   rule: 'defensive-undo-destructive',
   message: 'Destructive action (delete, send, publish) should allow undo',
   recommendation: 'Implement undo with 5-10 second window for error recovery',
-  reference: '/decision-making-errors/defensive-design.md'
+  reference: '/decision-making-errors/defensive-design/'
 }
 ```
 
@@ -137,7 +137,7 @@ When you use the Human Standards MCP server, these rules enforce defensive desig
   rule: 'defensive-confirmation-timing',
   message: 'Consider delayed execution with undo instead of confirmation dialog',
   recommendation: 'Undo is less disruptive than confirmation for low-risk actions',
-  reference: '/decision-making-errors/defensive-design.md'
+  reference: '/decision-making-errors/defensive-design/'
 }
 ```
 
@@ -533,9 +533,9 @@ Gmail's undo achieves:
 
 ## Related Examples
 
-- [Error Prevention - Grammarly](/examples/error-prevention-grammarly/) - Prevent mistakes before they happen
-- [Progressive Disclosure - TurboTax](/examples/progressive-disclosure-turbotax/) - Reduce cognitive load through staged disclosure
-- [Feedback & Confirmation - Stripe Dashboard](/examples/feedback-confirmation-stripe/) - Clear system status communication
+- [Error Prevention - Grammarly](/examples/defensive-design/error-prevention-grammarly/) - Prevent mistakes before they happen
+- [Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/) - Reduce cognitive load through staged disclosure
+- [Feedback & Confirmation - Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/) - Clear system status communication
 
 ---
 

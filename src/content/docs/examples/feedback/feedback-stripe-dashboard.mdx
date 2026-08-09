@@ -136,16 +136,16 @@ Stripe Dashboard exemplifies system status visibility through real-time feedback
 
 <CardGrid>
   <Card title="Feedback Mechanisms" icon="information">
-    [Timing, clarity, and modality](/interaction-patterns/feedback/) of effective system feedback.
+    [Timing, clarity, and modality](/interaction-patterns/notifications-feedback/) of effective system feedback.
   </Card>
   <Card title="Defensive Design" icon="warning">
     [Error prevention and recovery](/decision-making-errors/defensive-design/) through confirmation and undo.
   </Card>
   <Card title="Accessibility" icon="approve-check">
-    [Screen reader announcements](/accessibility/screen-readers/) for dynamic status changes.
+    [Screen reader announcements](/accessibility/assistive-technologies/) for dynamic status changes.
   </Card>
   <Card title="Visual Design" icon="star">
-    [Color, typography, and icons](/perception/visual-hierarchy/) for clear status communication.
+    [Color, typography, and icons](/perception/vision/) for clear status communication.
   </Card>
 </CardGrid>
 
@@ -161,7 +161,7 @@ When you use the Human Standards MCP server, these rules enforce feedback patter
   rule: 'feedback-immediate-required',
   message: 'User actions should provide immediate feedback (<1 second)',
   recommendation: 'Show loading state immediately, then success/error notification',
-  reference: '/interaction-patterns/feedback.md'
+  reference: '/interaction-patterns/notifications-feedback/'
 }
 ```
 
@@ -173,7 +173,7 @@ When you use the Human Standards MCP server, these rules enforce feedback patter
   rule: 'feedback-success-confirmation',
   message: 'Successful actions should confirm completion',
   recommendation: 'Use toast notification or inline message to confirm success',
-  reference: '/interaction-patterns/feedback.md'
+  reference: '/interaction-patterns/notifications-feedback/'
 }
 ```
 
@@ -185,7 +185,7 @@ When you use the Human Standards MCP server, these rules enforce feedback patter
   rule: 'defensive-specific-errors',
   message: 'Generic error messages like "Error occurred" are not helpful',
   recommendation: 'Provide specific error with actionable recovery steps',
-  reference: '/decision-making-errors/defensive-design.md'
+  reference: '/decision-making-errors/defensive-design/'
 }
 ```
 
@@ -197,7 +197,7 @@ When you use the Human Standards MCP server, these rules enforce feedback patter
   rule: 'feedback-loading-states',
   message: 'Async operations should show loading state',
   recommendation: 'Use skeleton loaders or spinners to indicate progress',
-  reference: '/interaction-patterns/feedback.md'
+  reference: '/interaction-patterns/notifications-feedback/'
 }
 ```
 
@@ -769,9 +769,9 @@ Stripe-quality feedback achieves:
 
 ## Related Examples
 
-- [Defensive Design - Gmail Undo](/examples/defensive-design-gmail-undo/) - Error recovery through undo mechanisms
-- [Error Prevention - Grammarly](/examples/error-prevention-grammarly/) - Real-time feedback prevents errors
-- [Accessibility - BBC Keyboard Navigation](/examples/accessibility-bbc-keyboard/) - Screen reader announcements for status changes
+- [Defensive Design - Gmail Undo](/examples/defensive-design/defensive-design-gmail-undo/) - Error recovery through undo mechanisms
+- [Error Prevention - Grammarly](/examples/defensive-design/error-prevention-grammarly/) - Real-time feedback prevents errors
+- [Accessibility - BBC Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/) - Screen reader announcements for status changes
 
 ---
 

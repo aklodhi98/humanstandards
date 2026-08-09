@@ -30,7 +30,7 @@ Users need to know what the system is doing at all times. Without feedback, user
 - **1-10s**: Show progress indicator with percentage
 - **>10s**: Show detailed progress + estimated time remaining
 
-**See:** [Notifications & Feedback](/interaction-patterns/notifications-feedback/) • [Examples: Stripe Dashboard](/examples/feedback-stripe-dashboard/)
+**See:** [Notifications & Feedback](/interaction-patterns/notifications-feedback/) • [Examples: Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/)
 
 ---
 
@@ -84,7 +84,7 @@ People make mistakes. Systems that don't allow recovery create anxiety and frust
 - Shopping cart "Remove item" buttons
 - Search filters with "Clear all" option
 
-**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Gmail Undo Send](/examples/defensive-design-gmail-undo/)
+**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Gmail Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)
 
 ---
 
@@ -157,7 +157,7 @@ Every error disrupts flow, wastes time, and damages trust. Prevention is better 
 - Password strength meters
 - Format hints ("MM/DD/YYYY")
 
-**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Grammarly Error Prevention](/examples/error-prevention-grammarly/)
+**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Grammarly Error Prevention](/examples/defensive-design/error-prevention-grammarly/)
 
 ---
 
@@ -193,7 +193,7 @@ Working memory is limited (3-4 items). Interfaces that require memorization are 
 - Disabled states clearly different from enabled
 - Visited links different color
 
-**See:** [Working Memory](/cognition/working-memory/) • [Examples: Smart Defaults - iOS Camera](/examples/smart-defaults-ios-camera/)
+**See:** [Working Memory](/cognition/working-memory/) • [Examples: Smart Defaults - iOS Camera](/examples/cognitive-load/smart-defaults-ios-camera/)
 
 ---
 
@@ -235,7 +235,7 @@ Users grow from novice to expert. Designs should accommodate both without forcin
 - VS Code command palette (Cmd+Shift+P)
 - Photoshop layers (novices use one, experts use hundreds)
 
-**See:** [Cognitive Load](/cognition/cognitive-load/) • [Examples: Progressive Disclosure - TurboTax](/examples/progressive-disclosure-turbotax/)
+**See:** [Cognitive Load](/cognition/cognitive-load/) • [Examples: Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)
 
 ---
 
@@ -322,7 +322,7 @@ Errors are inevitable. Good error messages help users recover quickly; bad ones 
 - ❌ "Upload failed"
 - ✅ "File size exceeds 10MB limit. Please compress the file or upload a smaller version."
 
-**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Grammarly Error Prevention](/examples/error-prevention-grammarly/)
+**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Grammarly Error Prevention](/examples/defensive-design/error-prevention-grammarly/)
 
 ---
 
@@ -427,12 +427,12 @@ Always validate with **real users performing real tasks**.
 
 See how leading products apply these heuristics:
 
-- **[Stripe Dashboard](/examples/feedback-stripe-dashboard/)**: #1 (visibility of system status) with real-time feedback
-- **[Gmail Undo Send](/examples/defensive-design-gmail-undo/)**: #3 (user control) and #5 (error prevention)
-- **[Grammarly](/examples/error-prevention-grammarly/)**: #5 (error prevention) and #9 (error recovery)
-- **[iOS Camera](/examples/smart-defaults-ios-camera/)**: #6 (recognition over recall) and #8 (minimalist design)
-- **[BBC Keyboard Navigation](/examples/accessibility-bbc-keyboard/)**: #7 (flexibility) for power users
-- **[TurboTax](/examples/progressive-disclosure-turbotax/)**: #6 (recognition) and #8 (minimalist)
+- **[Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/)**: #1 (visibility of system status) with real-time feedback
+- **[Gmail Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: #3 (user control) and #5 (error prevention)
+- **[Grammarly](/examples/defensive-design/error-prevention-grammarly/)**: #5 (error prevention) and #9 (error recovery)
+- **[iOS Camera](/examples/cognitive-load/smart-defaults-ios-camera/)**: #6 (recognition over recall) and #8 (minimalist design)
+- **[BBC Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)**: #7 (flexibility) for power users
+- **[TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)**: #6 (recognition) and #8 (minimalist)
 
 ---
 

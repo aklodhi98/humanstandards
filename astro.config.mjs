@@ -9,6 +9,9 @@ export default defineConfig({
 	integrations: [
 		starlight({
 			title: 'Human Standards',
+			editLink: {
+				baseUrl: 'https://github.com/aklodhi98/humanstandards/edit/main/',
+			},
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/aklodhi98/humanstandards' },
 			],

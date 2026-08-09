@@ -6,7 +6,7 @@
       "documents": [
         {
           "title": "Assistive Technologies",
-          "path": "/accessibility/assistive-technologies.md",
+          "path": "/accessibility/assistive-technologies/",
           "description": "Understanding screen readers, magnifiers, switch devices, voice control, and eye tracking—and designing interfaces that work with them.",
           "key_points": [
             "Screen readers",
@@ -16,7 +16,7 @@
             "Eye tracking",
             "Atypical speech recognition",
             "Testing with assistive technologies",
-            "Recent Research (2024-2025)"
+            "Recent Research"
           ],
           "references": [
             "https://webaim.org/projects/screenreadersurvey10/",
@@ -28,7 +28,7 @@
         },
         {
           "title": "Testing & Audit Tools",
-          "path": "/accessibility/testing-audit-tools.md",
+          "path": "/accessibility/testing-audit-tools/",
           "description": "Combining automated testing, manual evaluation, and user testing for comprehensive accessibility coverage.",
           "key_points": [
             "The testing pyramid",
@@ -38,7 +38,7 @@
             "Color and contrast tools",
             "Integrating testing into workflow",
             "User testing with people with disabilities",
-            "Recent Research (2024-2025)"
+            "Recent Research"
           ],
           "references": [
             "https://www.deque.com/axe/devtools/",
@@ -50,21 +50,22 @@
         },
         {
           "title": "WCAG Guidelines",
-          "path": "/accessibility/wcag-guidelines.md",
+          "path": "/accessibility/wcag-guidelines/",
           "description": "Prioritize WCAG 2.2 AA; plan exceptions and test regularly.",
           "key_points": [
             "Understanding the structure",
             "Conformance levels",
             "Common high-impact issues",
-            "Recent Updates (2024-2025)",
+            "Which version applies to you",
+            "Recent Updates",
             "See Also"
           ],
           "references": [
+            "https://www.w3.org/WAI/news/2025-10-21/wcag22-iso",
             "https://www.w3.org/news/2025/web-content-accessibility-guidelines-wcag-2-1-updated/",
+            "https://www.w3.org/WAI/news/2026-03-03/wcag3",
             "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/",
-            "https://www.w3.org/TR/WCAG22/",
-            "https://www.w3.org/WAI/WCAG22/quickref/",
-            "https://www.w3.org/WAI/standards-guidelines/wcag/wcag3-intro/"
+            "https://webaim.org/projects/million/"
           ]
         }
       ]
@@ -75,14 +76,14 @@
       "documents": [
         {
           "title": "Attention & Focus",
-          "path": "/cognition/attention-focus.md",
+          "path": "/cognition/attention-focus/",
           "description": "Guide attention with hierarchy, reduce interruptions, and preserve flow.",
           "key_points": [
             "How attention works",
             "Directing attention",
             "Protecting flow",
             "Attention anti-patterns",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "See Also"
           ],
           "references": [
@@ -95,14 +96,14 @@
         },
         {
           "title": "Cognitive Load",
-          "path": "/cognition/cognitive-load.md",
+          "path": "/cognition/cognitive-load/",
           "description": "Reduce extraneous load and fit intrinsic load to user ability.",
           "key_points": [
             "Three types of load",
             "Reducing extraneous load",
             "Supporting intrinsic load",
             "Measuring cognitive load",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "See Also"
           ],
           "references": [
@@ -115,7 +116,7 @@
         },
         {
           "title": "Confusion",
-          "path": "/cognition/confusion.md",
+          "path": "/cognition/confusion/",
           "description": "Understanding what causes confusion in digital interfaces and how to design for clarity",
           "key_points": [
             "What is confusion?",
@@ -137,7 +138,7 @@
         },
         {
           "title": "Working Memory",
-          "path": "/cognition/working-memory.md",
+          "path": "/cognition/working-memory/",
           "description": "Understanding the brain's limited scratch pad and designing interfaces that work with—not against—human memory constraints.",
           "key_points": [
             "The architecture of working memory",
@@ -145,7 +146,7 @@
             "Cognitive offloading",
             "Working memory across user populations",
             "Measuring memory demands",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "Implementation checklist",
             "See Also"
           ],
@@ -165,7 +166,7 @@
       "documents": [
         {
           "title": "Hearing",
-          "path": "/perception/hearing.md",
+          "path": "/perception/hearing/",
           "description": "Designing audio experiences that complement visual interfaces, provide accessible alternatives, and work across diverse listening contexts.",
           "key_points": [
             "The golden rule",
@@ -187,7 +188,7 @@
         },
         {
           "title": "Touch",
-          "path": "/perception/touch.md",
+          "path": "/perception/touch/",
           "description": "Designing for the reality of imprecise fingers, occlusion, varied grips, and diverse motor abilities.",
           "key_points": [
             "The finger problem",
@@ -197,7 +198,7 @@
             "Motor impairment considerations",
             "Touch sensing technology",
             "The future of touch",
-            "Recent Research (2024-2025)"
+            "Recent Research"
           ],
           "references": [
             "https://arxiv.org/html/2403.13690v1",
@@ -209,7 +210,7 @@
         },
         {
           "title": "Vision",
-          "path": "/perception/vision.md",
+          "path": "/perception/vision/",
           "description": "How human vision guides layout, hierarchy, and attention in digital interfaces.",
           "key_points": [
             "How human vision works",
@@ -218,7 +219,7 @@
             "Color perception",
             "Contrast sensitivity",
             "Motion perception",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "Design applications"
           ],
           "references": [
@@ -237,7 +238,7 @@
       "documents": [
         {
           "title": "Motivation Models",
-          "path": "/emotions-motivation/motivation-models.md",
+          "path": "/emotions-motivation/motivation-models/",
           "description": "Evidence-based frameworks for understanding and designing for human motivation, from the Fogg Behavior Model to Self-Determination Theory and ethical persuasive design.",
           "key_points": [
             "The Fogg Behavior Model",
@@ -246,7 +247,7 @@
             "Habit formation and behavior loops",
             "Ethical persuasive design",
             "Practical implementation guidelines",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "Impact of motivation-informed design"
           ],
           "references": [
@@ -259,7 +260,7 @@
         },
         {
           "title": "Stress & Cognitive Impact",
-          "path": "/emotions-motivation/stress-cognitive-impact.md",
+          "path": "/emotions-motivation/stress-cognitive-impact/",
           "description": "How stress impairs cognition and decision-making, and how to design interfaces that support users in high-pressure situations.",
           "key_points": [
             "How stress affects cognition",
@@ -269,7 +270,7 @@
             "Information anxiety",
             "Low-stress interface modes",
             "Testing for stress",
-            "Recent Research (2024-2025)"
+            "Recent Research"
           ],
           "references": [
             "https://www.nature.com/articles/s41598-025-98891-3",
@@ -281,7 +282,7 @@
         },
         {
           "title": "Trust & Perception",
-          "path": "/emotions-motivation/trust-perception.md",
+          "path": "/emotions-motivation/trust-perception/",
           "description": "How users form trust judgments, the psychological foundations of credibility, and why dark patterns destroy long-term relationships.",
           "key_points": [
             "How users form trust judgments",
@@ -289,7 +290,7 @@
             "Trust signals in interface design",
             "Dark patterns and trust destruction",
             "Building trustworthy interfaces",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "Implementation checklist",
             "See Also"
           ],
@@ -309,12 +310,12 @@
       "documents": [
         {
           "title": "Biases & Heuristics",
-          "path": "/decision-making-errors/biases-heuristics.md",
+          "path": "/decision-making-errors/biases-heuristics/",
           "description": "Recognize and mitigate decision pitfalls in UI choice architecture.",
           "key_points": [
             "Common cognitive biases in UI design",
             "Mitigations",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "See Also"
           ],
           "references": [
@@ -327,7 +328,7 @@
         },
         {
           "title": "Defensive Design (Error Prevention & Recovery)",
-          "path": "/decision-making-errors/defensive-design.md",
+          "path": "/decision-making-errors/defensive-design/",
           "description": "Building guardrails that validate early, allow undo, constrain dangerous actions, and recover gracefully when things go wrong.",
           "key_points": [
             "Prevention: Stop errors before they happen",
@@ -335,7 +336,7 @@
             "Technical resilience",
             "AI and automated system guardrails",
             "Error handling checklist",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "See Also"
           ],
           "references": [
@@ -348,7 +349,7 @@
         },
         {
           "title": "Error Types (Slips, Lapses & Mistakes)",
-          "path": "/decision-making-errors/error-types.md",
+          "path": "/decision-making-errors/error-types/",
           "description": "Understanding the psychology of human error—slips, lapses, and mistakes require different design solutions.",
           "key_points": [
             "The three types of human error",
@@ -357,7 +358,7 @@
             "Designing to prevent mistakes",
             "Error recovery: When prevention fails",
             "Measuring and learning from errors",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "Implementation checklist"
           ],
           "references": [
@@ -376,7 +377,7 @@
       "documents": [
         {
           "title": "Anthropometrics (Reach, Size Ranges)",
-          "path": "/ergonomics/anthropometrics.md",
+          "path": "/ergonomics/anthropometrics/",
           "description": "Design for variability in reach, grip, and device sizes.",
           "key_points": [
             "Why this matters",
@@ -392,7 +393,7 @@
         },
         {
           "title": "Posture & Device Use",
-          "path": "/ergonomics/posture-device-use.md",
+          "path": "/ergonomics/posture-device-use/",
           "description": "Account for seated, standing, and on-the-move use.",
           "key_points": [
             "How people actually hold devices",
@@ -408,7 +409,7 @@
         },
         {
           "title": "Targets & Spacing",
-          "path": "/ergonomics/targets-spacing.md",
+          "path": "/ergonomics/targets-spacing/",
           "description": "The science of touch target sizing, Fitts's Law, thumb zones, and designing interfaces that work for real human fingers.",
           "key_points": [
             "Fitts's Law fundamentals",
@@ -418,7 +419,7 @@
             "Target placement strategies",
             "Accessibility considerations",
             "Implementation guidelines",
-            "Recent Research (2024-2025)"
+            "Recent Research"
           ],
           "references": [
             "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum",
@@ -436,7 +437,7 @@
       "documents": [
         {
           "title": "Forms",
-          "path": "/interaction-patterns/forms.md",
+          "path": "/interaction-patterns/forms/",
           "description": "Designing forms that balance usability, accessibility, and conversion—through thoughtful structure, clear validation, and patterns that reduce friction and errors.",
           "key_points": [
             "Structure and layout",
@@ -458,7 +459,7 @@
         },
         {
           "title": "Navigation",
-          "path": "/interaction-patterns/navigation.md",
+          "path": "/interaction-patterns/navigation/",
           "description": "Designing wayfinding systems that answer \"Where am I?\" and \"Where can I go?\"—through clear information architecture, accessible landmarks, and patterns that work for all users.",
           "key_points": [
             "Information architecture fundamentals",
@@ -480,7 +481,7 @@
         },
         {
           "title": "Nielsen's 10 Usability Heuristics",
-          "path": "/interaction-patterns/nielsen-heuristics.md",
+          "path": "/interaction-patterns/nielsen-heuristics/",
           "description": "The most recognized set of usability principles for interaction design, developed by Jakob Nielsen in 1994 and still fundamental today.",
           "key_points": [
             "The 10 Heuristics",
@@ -496,7 +497,7 @@
         },
         {
           "title": "Notifications & Feedback",
-          "path": "/interaction-patterns/notifications-feedback.md",
+          "path": "/interaction-patterns/notifications-feedback/",
           "description": "Designing feedback systems that inform without overwhelming—matching message importance to presentation, preventing notification fatigue, and enabling graceful error recovery.",
           "key_points": [
             "Levels of feedback",
@@ -506,7 +507,7 @@
             "Undo and recovery patterns",
             "Error feedback design",
             "Success feedback",
-            "Recent Research (2024-2025)"
+            "Recent Research"
           ],
           "references": [
             "https://www.magicbell.com/blog/alert-fatigue",
@@ -518,7 +519,7 @@
         },
         {
           "title": "Search & Discovery",
-          "path": "/interaction-patterns/search-discovery.md",
+          "path": "/interaction-patterns/search-discovery/",
           "description": "Designing effective search experiences with autocomplete, faceted navigation, and robust zero-results handling.",
           "key_points": [
             "How users actually search",
@@ -546,7 +547,7 @@
       "documents": [
         {
           "title": "Accessible Typography",
-          "path": "/code-design-tokens/accessible-typography.md",
+          "path": "/code-design-tokens/accessible-typography/",
           "description": "Specifications for readable type systems—font sizes, line heights, contrast ratios, and fluid scaling that meet WCAG requirements and work for all users.",
           "key_points": [
             "Specifications",
@@ -568,7 +569,7 @@
         },
         {
           "title": "ARIA & Keyboard Patterns",
-          "path": "/code-design-tokens/aria-keyboard-patterns.md",
+          "path": "/code-design-tokens/aria-keyboard-patterns/",
           "description": "Roving tabindex, focus traps, roles/names/states, and common keybinds for accessible custom widgets.",
           "key_points": [
             "The First Rule of ARIA",
@@ -590,7 +591,7 @@
         },
         {
           "title": "CSS/JSON Design Tokens",
-          "path": "/code-design-tokens/css-json-tokens.md",
+          "path": "/code-design-tokens/css-json-tokens/",
           "description": "Define a cross-platform token taxonomy with accessibility constraints, export pipelines, and machine-readable specifications.",
           "key_points": [
             "Why Design Tokens Matter",
@@ -612,7 +613,7 @@
         },
         {
           "title": "Touch Targets & Spacing",
-          "path": "/code-design-tokens/touch-targets-spacing.md",
+          "path": "/code-design-tokens/touch-targets-spacing/",
           "description": "Specifications for interactive element sizing—minimum dimensions, spacing requirements, and density modes that meet WCAG and platform standards.",
           "key_points": [
             "Specifications",
@@ -640,7 +641,7 @@
       "documents": [
         {
           "title": "Accessibility Checklist",
-          "path": "/checklists-playbooks/accessibility-checklist.md",
+          "path": "/checklists-playbooks/accessibility-checklist/",
           "description": "A pragmatic checklist to help you meet WCAG 2.2 AA and build inclusive experiences.",
           "key_points": [
             "Quick Reference: WCAG 2.2 Success Criteria",
@@ -653,16 +654,16 @@
             "Focus"
           ],
           "references": [
-            "https://www.ada.gov/resources/web-guidance/",
+            "https://www.ada.gov/resources/2024-03-08-web-rule/",
+            "https://www.hhs.gov/press-room/hhs-extends-mobile-and-web-accessibility-deadline.html",
             "https://ec.europa.eu/social/main.jsp?catId=1202",
             "https://www.w3.org/TR/WCAG22/",
-            "https://www.w3.org/WAI/WCAG22/quickref/",
-            "https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/"
+            "https://www.w3.org/WAI/WCAG22/quickref/"
           ]
         },
         {
           "title": "Content & Microcopy Templates",
-          "path": "/checklists-playbooks/content-microcopy-templates.md",
+          "path": "/checklists-playbooks/content-microcopy-templates/",
           "description": "Ready-to-use patterns for buttons, errors, empty states, and more.",
           "key_points": [
             "Quick Reference: Microcopy Specifications",
@@ -684,7 +685,7 @@
         },
         {
           "title": "Form Design Playbook",
-          "path": "/checklists-playbooks/form-design-playbook.md",
+          "path": "/checklists-playbooks/form-design-playbook/",
           "description": "A practical, end-to-end guide to scope, design, validate, and ship accessible, high-converting forms.",
           "key_points": [
             "Quick Reference: Form Design Specifications",
@@ -700,13 +701,13 @@
             "https://baymard.com/learn/ux-statistics",
             "https://baymard.com/blog/avoid-multi-column-forms",
             "https://baymard.com/learn/ux-statistics",
-            "https://wpforms.com/online-form-statistics-facts/",
-            "https://www.reform.app/blog/accessible-form-validation-best-practices"
+            "https://webaim.org/projects/million/",
+            "https://wpforms.com/online-form-statistics-facts/"
           ]
         },
         {
           "title": "Onboarding Playbook",
-          "path": "/checklists-playbooks/onboarding-playbook.md",
+          "path": "/checklists-playbooks/onboarding-playbook/",
           "description": "Patterns and tactics to help users reach first success quickly and confidently.",
           "key_points": [
             "Quick Reference: Onboarding Specifications",
@@ -734,7 +735,7 @@
       "documents": [
         {
           "title": "Cognitive Walkthroughs",
-          "path": "/research-methods-metrics/cognitive-walkthroughs.md",
+          "path": "/research-methods-metrics/cognitive-walkthroughs/",
           "description": "Evaluate step-by-step whether a new user can achieve goals.",
           "key_points": [
             "Cognitive Walkthrough Specifications",
@@ -756,7 +757,7 @@
         },
         {
           "title": "Metrics & Benchmarks",
-          "path": "/research-methods-metrics/metrics-benchmarks.md",
+          "path": "/research-methods-metrics/metrics-benchmarks/",
           "description": "Define north-star and guardrail metrics; set baselines and targets.",
           "key_points": [
             "Metric Specifications",
@@ -778,7 +779,7 @@
         },
         {
           "title": "Usability Tests",
-          "path": "/research-methods-metrics/usability-tests.md",
+          "path": "/research-methods-metrics/usability-tests/",
           "description": "Plan small, fast studies to de-risk decisions and measure task success.",
           "key_points": [
             "Why it matters",
@@ -806,7 +807,7 @@
       "documents": [
         {
           "title": "Localization & Cultural Variations",
-          "path": "/social-cultural/localization-variations.md",
+          "path": "/social-cultural/localization-variations/",
           "description": "Design for language, formats, and cultural metaphors; support RTL and expansion.",
           "key_points": [
             "Localization Specifications",
@@ -828,7 +829,7 @@
         },
         {
           "title": "Multi-user Scenarios",
-          "path": "/social-cultural/multi-user-scenarios.md",
+          "path": "/social-cultural/multi-user-scenarios/",
           "description": "Design collaboration with roles, presence, and conflict resolution.",
           "key_points": [
             "Collaboration Specifications",
@@ -850,7 +851,7 @@
         },
         {
           "title": "Social Norms & Privacy",
-          "path": "/social-cultural/social-norms-privacy.md",
+          "path": "/social-cultural/social-norms-privacy/",
           "description": "Respect norms and minimize data; make consent informed and revocable.",
           "key_points": [
             "Privacy Specifications",
@@ -878,7 +879,7 @@
       "documents": [
         {
           "title": "Academic Research",
-          "path": "/references/academic-research.md",
+          "path": "/references/academic-research/",
           "description": "Canonical venues and how to cite sources used in this guide.",
           "key_points": [
             "Research Venues Overview",
@@ -888,7 +889,7 @@
             "Citation Practices",
             "Foundational Papers",
             "Research Organizations",
-            "Recent Research Trends (2024-2025)"
+            "Recent Research Trends"
           ],
           "references": [
             "https://chi.acm.org/",
@@ -900,7 +901,7 @@
         },
         {
           "title": "Books & Further Reading",
-          "path": "/references/books-further-reading.md",
+          "path": "/references/books-further-reading/",
           "description": "Curated foundational and practical references.",
           "key_points": [
             "Reading Path Recommendations",
@@ -922,7 +923,7 @@
         },
         {
           "title": "Standards & Guidelines",
-          "path": "/references/standards-guidelines.md",
+          "path": "/references/standards-guidelines/",
           "description": "Key standards and platform guidelines referenced throughout this site.",
           "key_points": [
             "Standards Overview",
@@ -939,7 +940,7 @@
             "https://www.w3.org/WAI/WCAG22/quickref/",
             "https://www.w3.org/WAI/WCAG22/Understanding/",
             "https://www.w3.org/WAI/WCAG22/Techniques/",
-            "https://www.etsi.org/standards/search#page=1&search=EN%20301%20549"
+            "https://www.etsi.org/deliver/etsi_en/301500_301599/301549/04.01.00_30/en_301549v040100va.pdf"
           ]
         }
       ]
@@ -950,7 +951,7 @@
       "documents": [
         {
           "title": "Getting Started with Human Standards",
-          "path": "/human-overview/getting-started.mdx",
+          "path": "/human-overview/getting-started/",
           "description": "Your guide to building digital interfaces that respect human capabilities and limitations",
           "key_points": [
             "What is Human Factors?",
@@ -972,7 +973,7 @@
         },
         {
           "title": "Key Principles & Laws",
-          "path": "/human-overview/key-principles-and-laws.md",
+          "path": "/human-overview/key-principles-and-laws/",
           "description": "Foundational principles, laws, and patterns from human factors research that inform interface design across all domains.",
           "key_points": [
             "Core Design Laws",
@@ -993,8 +994,30 @@
           ]
         },
         {
+          "title": "MCP Server",
+          "path": "/human-overview/mcp-server/",
+          "description": "AI-assisted design validation using the Human Standards MCP server",
+          "key_points": [
+            "What It Does",
+            "Philosophy",
+            "Installation",
+            "Configuration",
+            "Available Tools",
+            "Usage Examples",
+            "The 10 Heuristics",
+            "Updating the Index"
+          ],
+          "references": [
+            "https://github.com/aklodhi98/humanstandards.git",
+            "https://humanstandards.org/interaction-patterns/nielsen-heuristics\"",
+            "https://humanstandards.org/cognition/cognitive-load\"",
+            "https://humanstandards.org/cognition/working-memory\"",
+            "https://github.com/aklodhi98/humanstandards/tree/main/human-standards-mcp"
+          ]
+        },
+        {
           "title": "Scope & Roadmap",
-          "path": "/human-overview/scope-and-roadmap.md",
+          "path": "/human-overview/scope-and-roadmap/",
           "description": "Current focus areas and planned expansion into multi-modal design domains",
           "key_points": [
             "Project Scope",
@@ -1008,7 +1031,7 @@
           ],
           "references": [
             "https://github.com/aklodhi98/humanstandards/blob/main/CONTRIBUTING.md",
-            "https://github.com/aklodhi98/humanstandards/discussions",
+            "https://github.com/aklodhi98/humanstandards/issues/new",
             "https://github.com/aklodhi98/humanstandards/issues",
             "https://github.com/aklodhi98/humanstandards/blob/main/CONTRIBUTING.md",
             "https://github.com/aklodhi98/humanstandards/blob/main/CONTRIBUTING.md"
@@ -1016,7 +1039,7 @@
         },
         {
           "title": "What are Human Standards?",
-          "path": "/human-overview/what-are-human-standards.md",
+          "path": "/human-overview/what-are-human-standards/",
           "description": "Human Standards (also known as Human Factors or HF/E) are principles for designing technology that fits human capabilities and limitations.",
           "key_points": [
             "Why \"Human Standards\"?",
@@ -1038,7 +1061,7 @@
         },
         {
           "title": "Why Human Constraints Matter",
-          "path": "/human-overview/why-human-constraints-matter.md",
+          "path": "/human-overview/why-human-constraints-matter/",
           "description": "The scientific and business case for designing with human limitations in mind—how constraints drive better products, wider reach, and stronger outcomes.",
           "key_points": [
             "The reality of human limitations",
@@ -1047,7 +1070,7 @@
             "Applying constraints in practice",
             "AI and the future of constraint-based design",
             "Measuring success",
-            "Recent Research (2024-2025)",
+            "Recent Research",
             "Implementation checklist"
           ],
           "references": [
@@ -1066,7 +1089,7 @@
       "documents": [
         {
           "title": "About This Site",
-          "path": "/home/about-this-site.md",
+          "path": "/home/about-this-site/",
           "description": "What Human Standards covers, who it's for, and how to use it effectively — whether you're a human reader or an AI agent.",
           "key_points": [
             "Purpose",
@@ -1081,14 +1104,14 @@
           "references": [
             "https://astro.build/",
             "https://creativecommons.org/publicdomain/zero/1.0/",
-            "https://github.com/humanstandards/humanstandards/issues",
-            "https://github.com/humanstandards/humanstandards/issues",
-            "https://github.com/humanstandards/humanstandards/discussions"
+            "https://github.com/aklodhi98/humanstandards/blob/main/LICENSE.md",
+            "https://github.com/aklodhi98/humanstandards/blob/main/THIRD_PARTY_LICENSES.md",
+            "https://github.com/aklodhi98/humanstandards/issues/new"
           ]
         },
         {
           "title": "How to Contribute",
-          "path": "/home/how-to-contribute.md",
+          "path": "/home/how-to-contribute/",
           "description": "Contribution workflow, style guidelines, evidence standards, and templates for contributing to Human Standards.",
           "key_points": [
             "Ways to Contribute",
@@ -1110,7 +1133,7 @@
         },
         {
           "title": "Quick Reference",
-          "path": "/home/quick-reference.md",
+          "path": "/home/quick-reference/",
           "description": "Evidence-based thresholds, defaults, and specifications for human-centered design — the numbers you need daily.",
           "key_points": [
             "Typography",
@@ -1140,7 +1163,7 @@
       "severity": "error",
       "description": "Text must have sufficient contrast ratio",
       "check": "Color contrast ratio must be at least 4.5:1 for normal text, 3:1 for large text (WCAG AA)",
-      "reference": "/accessibility/wcag-guidelines.md#perceivable"
+      "reference": "/accessibility/wcag-guidelines/#perceivable"
     },
     {
       "id": "wcag-aria-labels",
@@ -1148,7 +1171,7 @@
       "severity": "error",
       "description": "Form inputs must have associated labels",
       "check": "Every input must have a visible label linked via for/id or aria-label",
-      "reference": "/accessibility/wcag-guidelines.md#understandable"
+      "reference": "/accessibility/wcag-guidelines/#understandable"
     },
     {
       "id": "wcag-focus-indicators",
@@ -1156,7 +1179,7 @@
       "severity": "error",
       "description": "Interactive elements must have visible focus indicators",
       "check": "Keyboard focus must be clearly visible (recommend 3px outline)",
-      "reference": "/accessibility/wcag-guidelines.md#operable"
+      "reference": "/accessibility/wcag-guidelines/#operable"
     },
     {
       "id": "cognitive-form-length",
@@ -1164,7 +1187,7 @@
       "severity": "warning",
       "description": "Long forms should use progressive disclosure",
       "check": "Forms with 6+ fields should be broken into steps",
-      "reference": "/cognition/cognitive-load.md#chunk-information"
+      "reference": "/cognition/cognitive-load/#chunk-information"
     },
     {
       "id": "cognitive-error-clarity",
@@ -1172,7 +1195,7 @@
       "severity": "error",
       "description": "Error messages must be specific and actionable",
       "check": "Avoid vague errors like \"Invalid\" - explain what went wrong and how to fix",
-      "reference": "/cognition/cognitive-load.md#clear-error-recovery"
+      "reference": "/cognition/cognitive-load/#clear-error-recovery"
     },
     {
       "id": "ergonomics-touch-targets",
@@ -1180,7 +1203,7 @@
       "severity": "warning",
       "description": "Touch targets must meet minimum size",
       "check": "Interactive elements must be at least 44x44pt (iOS) or 48x48dp (Android)",
-      "reference": "/ergonomics/targets-spacing.md"
+      "reference": "/ergonomics/targets-spacing/"
     },
     {
       "id": "forms-autocomplete",
@@ -1188,7 +1211,7 @@
       "severity": "warning",
       "description": "Form inputs should enable autocomplete",
       "check": "Use autocomplete attributes for name, email, address, phone, etc.",
-      "reference": "/interaction-patterns/forms.md#enable-autocomplete"
+      "reference": "/interaction-patterns/forms/#autocomplete-attributes"
     },
     {
       "id": "forms-visible-labels",
@@ -1196,7 +1219,7 @@
       "severity": "error",
       "description": "Use visible labels, not placeholders",
       "check": "Placeholder text is not a substitute for labels - labels must remain visible",
-      "reference": "/interaction-patterns/forms.md#always-use-visible-labels"
+      "reference": "/interaction-patterns/forms/#always-use-visible-labels"
     },
     {
       "id": "defensive-autosave",
@@ -1204,7 +1227,7 @@
       "severity": "warning",
       "description": "Long forms should implement autosave",
       "check": "Forms with multiple fields should save drafts to prevent data loss",
-      "reference": "/decision-making-errors/defensive-design.md#autosave-everything"
+      "reference": "/decision-making-errors/defensive-design/#autosave-everything"
     },
     {
       "id": "defensive-destructive-confirm",
@@ -1212,7 +1235,7 @@
       "severity": "error",
       "description": "Destructive actions must require confirmation",
       "check": "Delete, remove, and other destructive actions need confirmation dialogs",
-      "reference": "/decision-making-errors/defensive-design.md#show-state-and-consequences"
+      "reference": "/decision-making-errors/defensive-design/#show-state-and-consequences"
     }
   ],
   "patterns": [
@@ -1226,7 +1249,7 @@
         "cognitive_load": {
           "assessment": "High cognitive load for 6+ fields",
           "recommendation": "Use progressive disclosure - break into 2-3 steps",
-          "reference": "/cognition/cognitive-load.md#chunk-information",
+          "reference": "/cognition/cognitive-load/#chunk-information",
           "implementation": [
             "Multi-step wizard",
             "Group related fields",
@@ -1241,7 +1264,7 @@
             "Form works without JavaScript for critical paths"
           ],
           "wcag_level": "AA",
-          "reference": "/accessibility/wcag-guidelines.md",
+          "reference": "/accessibility/wcag-guidelines/",
           "aria_requirements": [
             "aria-required",
             "aria-invalid",
@@ -1252,7 +1275,7 @@
           "validation_timing": "on blur",
           "error_messages": "specific and actionable",
           "autocomplete": true,
-          "reference": "/interaction-patterns/forms.md"
+          "reference": "/interaction-patterns/forms/"
         },
         "defensive_design": {
           "required": [
@@ -1264,7 +1287,7 @@
             "draft restoration",
             "progress preservation"
           ],
-          "reference": "/decision-making-errors/defensive-design.md"
+          "reference": "/decision-making-errors/defensive-design/"
         }
       }
     },
@@ -1278,7 +1301,7 @@
         "ergonomics": {
           "min_touch_target": "48x48px",
           "spacing": "12px from adjacent targets",
-          "reference": "/ergonomics/targets-spacing.md"
+          "reference": "/ergonomics/targets-spacing/"
         },
         "defensive_design": {
           "required": [
@@ -1288,7 +1311,7 @@
           "optional": [
             "undo window"
           ],
-          "reference": "/decision-making-errors/defensive-design.md"
+          "reference": "/decision-making-errors/defensive-design/"
         },
         "accessibility": {
           "requirements": [
@@ -1297,7 +1320,7 @@
             "Clear label (not icon-only)"
           ],
           "wcag_level": "AA",
-          "reference": "/accessibility/wcag-guidelines.md"
+          "reference": "/accessibility/wcag-guidelines/"
         }
       }
     },
@@ -1307,7 +1330,7 @@
         "cognitive_load": {
           "assessment": "Modals interrupt flow and increase cognitive load",
           "recommendation": "Use sparingly, only for critical decisions or confirmations",
-          "reference": "/cognition/cognitive-load.md",
+          "reference": "/cognition/cognitive-load/",
           "implementation": [
             "Focus trap",
             "Clear close action",
@@ -1322,7 +1345,7 @@
             "Keyboard dismissible (ESC)"
           ],
           "wcag_level": "AA",
-          "reference": "/accessibility/wcag-guidelines.md"
+          "reference": "/accessibility/wcag-guidelines/"
         }
       }
     }

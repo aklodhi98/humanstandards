@@ -40,6 +40,7 @@ Open [http://localhost:4321](http://localhost:4321) to view the site.
 | `npm install`     | Install dependencies                         |
 | `npm run dev`     | Start local dev server at `localhost:4321`   |
 | `npm run build`   | Build production site to `./dist/`           |
+| `npm run check`   | Build and validate all internal links         |
 | `npm run preview` | Preview build locally before deploying       |
 
 ## Contributing
@@ -116,10 +117,10 @@ Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.
 
 ### Research Community
 
-Thank you to researchers in cognitive psychology, human factors engineering, and HCI whose evidence-based work makes this resource possible. Full citations in [academic research references](/references/academic-research.md).
+Thank you to researchers in cognitive psychology, human factors engineering, and HCI whose evidence-based work makes this resource possible. Full citations are available in the [academic research references](https://www.humanstandards.org/references/academic-research/).
 
 Thank you to all who advance human-centered design. 🙏
 
 ---
 
-**Questions?** Open an issue or start a discussion. We'd love to hear from you!
+**Questions?** [Open an issue](https://github.com/aklodhi98/humanstandards/issues/new). We'd love to hear from you!

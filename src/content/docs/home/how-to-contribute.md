@@ -36,9 +36,9 @@ Human Standards is an open-source project that welcomes contributions from desig
 | Activity | How |
 |----------|-----|
 | **Report issues** | Open GitHub issue |
-| **Suggest topics** | Discussion or issue |
+| **Suggest topics** | Open GitHub issue |
 | **Review PRs** | Comment on pull requests |
-| **Answer questions** | GitHub discussions |
+| **Answer questions** | GitHub issues |
 | **Spread awareness** | Share and cite |
 
 ---
@@ -58,7 +58,7 @@ Human Standards is an open-source project that welcomes contributions from desig
 ### Larger Contributions
 
 ```
-1. Open Issue → 2. Discussion → 3. Fork → 4. Branch → 5. PR → 6. Review → 7. Merge
+1. Open Issue → 2. Confirm Scope → 3. Fork → 4. Branch → 5. PR → 6. Review → 7. Merge
 ```
 
 **Step-by-step:**
@@ -68,7 +68,7 @@ Human Standards is an open-source project that welcomes contributions from desig
    - Explain the rationale
    - Link to supporting evidence
 
-2. **Wait for discussion**
+2. **Confirm scope**
    - Maintainers may have questions
    - Others may offer suggestions
    - Scope may be refined
@@ -235,7 +235,7 @@ Human Standards is an open-source project that welcomes contributions from desig
 
 Every content page should follow this structure:
 
-```markdown
+````markdown
 ---
 title: Page Title
 description: One-sentence description for search and previews.
@@ -290,7 +290,7 @@ rule_name:
 
 ## Decision Logic
 
-```pseudo
+```text
 FUNCTION evaluateSomething(input):
   IF condition:
     RETURN result
@@ -327,7 +327,7 @@ Description of recent research with link.
 
 - [Related Page](/path/) — Brief description
 - [Another Page](/path/) — Brief description
-```
+````
 
 ---
 
@@ -362,7 +362,7 @@ rules:
 ```
 
 **Pseudo-code decision logic:**
-```pseudo
+```text
 FUNCTION checkRequirement(element):
   value = element.property
   IF value < threshold:
@@ -397,8 +397,8 @@ npm install
 # Start development server
 npm run dev
 
-# Build for production
-npm run build
+# Build and validate internal links
+npm run check
 
 # Preview production build
 npm run preview
@@ -432,8 +432,8 @@ humanstandards/
 | Check | Command/Method |
 |-------|----------------|
 | **Local preview** | `npm run dev` |
-| **Build succeeds** | `npm run build` |
-| **Links work** | Manual check or link checker |
+| **Build and internal links pass** | `npm run check` |
+| **External links work** | Manual check |
 | **Markdown valid** | Linting in editor |
 | **Content accurate** | Verify against sources |
 
@@ -452,8 +452,8 @@ A contribution is ready for merge when:
 
 ### Technical Quality
 
-- [ ] Build passes (`npm run build`)
-- [ ] All links work (internal and external)
+- [ ] Build and internal-link checks pass (`npm run check`)
+- [ ] External links have been checked
 - [ ] Images have alt text
 - [ ] Code examples are syntactically correct
 
@@ -539,9 +539,9 @@ Contributors are recognized in:
 
 | Need | Where |
 |------|-------|
-| **General questions** | GitHub Discussions |
+| **General questions** | GitHub Issues |
 | **Bug reports** | GitHub Issues |
-| **Contribution guidance** | This page or Discussions |
+| **Contribution guidance** | This page or GitHub Issues |
 | **Quick questions** | Issue comments |
 
 ---

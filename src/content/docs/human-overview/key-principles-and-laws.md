@@ -16,7 +16,7 @@ This page provides a high-level overview of the key principles covered across Hu
 - Use screen edges and corners (infinite width/height)
 - Touch targets: minimum 44×44pt (iOS), 48×48dp (Android)
 
-**See:** [Targets & Spacing](/ergonomics/targets-spacing/) • [Examples: Accessibility - BBC](/examples/accessibility-bbc-keyboard/)
+**See:** [Targets & Spacing](/ergonomics/targets-spacing/) • [Examples: Accessibility - BBC](/examples/accessibility/accessibility-bbc-keyboard/)
 
 **References:**
 - Fitts (1954) — The information capacity of the human motor system: https://doi.org/10.1037/h0055392
@@ -32,7 +32,7 @@ This page provides a high-level overview of the key principles covered across Hu
 - Use progressive disclosure for advanced options
 - Provide smart defaults to eliminate decisions
 
-**See:** [Cognitive Load](/cognition/cognitive-load/) • [Examples: Smart Defaults - iOS Camera](/examples/smart-defaults-ios-camera/)
+**See:** [Cognitive Load](/cognition/cognitive-load/) • [Examples: Smart Defaults - iOS Camera](/examples/cognitive-load/smart-defaults-ios-camera/)
 
 **References:**
 - Hick (1952) — On the rate of gain of information: https://doi.org/10.1113/jphysiol.1952.sp004764
@@ -50,7 +50,7 @@ Modern research has revised Miller's original "7±2" down to **3-4 chunks** for 
 - Use recognition over recall (dropdown vs. text input)
 - Externalize memory through auto-save, undo, history
 
-**See:** [Working Memory](/cognition/working-memory/) • [Examples: Progressive Disclosure - TurboTax](/examples/progressive-disclosure-turbotax/)
+**See:** [Working Memory](/cognition/working-memory/) • [Examples: Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)
 
 **References:**
 - Cowan (2001) — The magical number 4: https://doi.org/10.1016/S1364-6613(00)01591-6
@@ -109,7 +109,7 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 - Consistency (same patterns = less learning)
 - Visual clarity (whitespace, hierarchy, grouping)
 
-**See:** [Cognitive Load](/cognition/cognitive-load/) • [Examples: Progressive Disclosure - TurboTax](/examples/progressive-disclosure-turbotax/)
+**See:** [Cognitive Load](/cognition/cognitive-load/) • [Examples: Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)
 
 **References:**
 - Sweller (1988) — Cognitive load during problem solving: https://doi.org/10.1016/0959-4752(88)90004-4
@@ -199,7 +199,7 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 - **Specific error messages**: "Password must include 1 number" not "Invalid"
 - **Preview before commit**: Show consequences before action
 
-**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Gmail Undo Send](/examples/defensive-design-gmail-undo/)
+**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Gmail Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)
 
 ---
 
@@ -251,7 +251,7 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 - No flashing content (>3 times/second = seizure risk)
 - Touch targets ≥44×44px (WCAG 2.2)
 
-**See:** [WCAG Guidelines](/accessibility/wcag-guidelines/) • [Examples: BBC Keyboard Navigation](/examples/accessibility-bbc-keyboard/)
+**See:** [WCAG Guidelines](/accessibility/wcag-guidelines/) • [Examples: BBC Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)
 
 ---
 
@@ -297,7 +297,7 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 - Status badges (color + icon + text)
 - Optimistic UI (show result immediately, rollback if fails)
 
-**See:** [Notifications & Feedback](/interaction-patterns/notifications-feedback/) • [Examples: Stripe Dashboard](/examples/feedback-stripe-dashboard/)
+**See:** [Notifications & Feedback](/interaction-patterns/notifications-feedback/) • [Examples: Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/)
 
 ---
 
@@ -311,7 +311,7 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 - Preserve user input (don't clear form on error)
 - Undo/redo for exploration without fear
 
-**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Grammarly Error Prevention](/examples/error-prevention-grammarly/)
+**See:** [Defensive Design](/decision-making-errors/defensive-design/) • [Examples: Grammarly Error Prevention](/examples/defensive-design/error-prevention-grammarly/)
 
 ---
 
@@ -355,7 +355,7 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 - Show password requirements before user types
 - Use appropriate input types (email, tel, date)
 
-**See:** [Forms](/interaction-patterns/forms/) • [Examples: Grammarly Real-Time Validation](/examples/error-prevention-grammarly/)
+**See:** [Forms](/interaction-patterns/forms/) • [Examples: Grammarly Real-Time Validation](/examples/defensive-design/error-prevention-grammarly/)
 
 ---
 
@@ -391,12 +391,12 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 
 Learn from production systems demonstrating these principles:
 
-- **[Progressive Disclosure - TurboTax](/examples/progressive-disclosure-turbotax/)**: 30% faster completion, 45% fewer help requests
-- **[Defensive Design - Gmail Undo Send](/examples/defensive-design-gmail-undo/)**: 73% usage rate, 38% anxiety reduction
-- **[Error Prevention - Grammarly](/examples/error-prevention-grammarly/)**: 86% error reduction, 75% faster proofreading
-- **[Smart Defaults - iOS Camera](/examples/smart-defaults-ios-camera/)**: 93% faster to first photo, 5× more photos taken
-- **[Accessibility - BBC Keyboard Navigation](/examples/accessibility-bbc-keyboard/)**: 98% keyboard task completion, 96% fewer screen reader errors
-- **[System Feedback - Stripe Dashboard](/examples/feedback-stripe-dashboard/)**: 89% fewer support tickets, 51% faster task completion
+- **[Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)**: 30% faster completion, 45% fewer help requests
+- **[Defensive Design - Gmail Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: 73% usage rate, 38% anxiety reduction
+- **[Error Prevention - Grammarly](/examples/defensive-design/error-prevention-grammarly/)**: 86% error reduction, 75% faster proofreading
+- **[Smart Defaults - iOS Camera](/examples/cognitive-load/smart-defaults-ios-camera/)**: 93% faster to first photo, 5× more photos taken
+- **[Accessibility - BBC Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)**: 98% keyboard task completion, 96% fewer screen reader errors
+- **[System Feedback - Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/)**: 89% fewer support tickets, 51% faster task completion
 
 [See all examples →](/examples/)
 
@@ -487,7 +487,7 @@ const formDocs = await mcp.callTool('search_standards', { query: 'forms cognitiv
 
 The MCP server ensures that AI tools can look up relevant usability principles based on the task at hand.
 
-**Learn more:** [About Human Standards](/human-overview/what-are-human-standards/) • [MCP Server Documentation](/human-standards-mcp/)
+**Learn more:** [About Human Standards](/human-overview/what-are-human-standards/) • [MCP Server Documentation](/human-overview/mcp-server/)
 
 ---
 

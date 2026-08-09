@@ -244,12 +244,12 @@ Every change has consequences:
 
 We document examples from leading companies:
 
-- **[TurboTax - Progressive Disclosure](/examples/progressive-disclosure-turbotax/)**: 30% faster, 45% fewer help requests
-- **[Gmail - Undo Send](/examples/defensive-design-gmail-undo/)**: 73% usage rate, 38% anxiety reduction
-- **[Grammarly - Error Prevention](/examples/error-prevention-grammarly/)**: 86% error reduction
-- **[iOS Camera - Smart Defaults](/examples/smart-defaults-ios-camera/)**: 93% faster to first photo
-- **[BBC - Keyboard Navigation](/examples/accessibility-bbc-keyboard/)**: 98% task completion
-- **[Stripe - System Feedback](/examples/feedback-stripe-dashboard/)**: 89% fewer support tickets
+- **[TurboTax - Progressive Disclosure](/examples/cognitive-load/progressive-disclosure-turbotax/)**: 30% faster, 45% fewer help requests
+- **[Gmail - Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: 73% usage rate, 38% anxiety reduction
+- **[Grammarly - Error Prevention](/examples/defensive-design/error-prevention-grammarly/)**: 86% error reduction
+- **[iOS Camera - Smart Defaults](/examples/cognitive-load/smart-defaults-ios-camera/)**: 93% faster to first photo
+- **[BBC - Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)**: 98% task completion
+- **[Stripe - System Feedback](/examples/feedback/feedback-stripe-dashboard/)**: 89% fewer support tickets
 
 Each includes the framework above: problem, hypothesis, implementation, metrics, lessons, and code examples.
 

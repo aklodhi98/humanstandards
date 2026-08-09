@@ -104,4 +104,4 @@ Emerging actuation methods include polymeric actuation using smart polymers that
 ## See Also
 
 - [Touch & Fine Motor Sensitivity](/perception/touch/fine-motor-sensitivity/) — Understanding tactile perception
-- [Ergonomics](/ergonomics/) — Physical considerations for haptic devices
+- [Ergonomics](/ergonomics/targets-spacing/) — Physical considerations for haptic devices

@@ -229,7 +229,7 @@ The timeline above is aspirational and depends on:
 
 ## Stay Updated
 
-- **GitHub Discussions** — Share ideas and domain expertise: https://github.com/aklodhi98/humanstandards/discussions
+- **Ideas and domain expertise** — Propose additions: https://github.com/aklodhi98/humanstandards/issues/new
 - **Issues & Roadmap** — Track progress on multi-modal expansion: https://github.com/aklodhi98/humanstandards/issues
 - **Contributing Guide** — Learn how to contribute: https://github.com/aklodhi98/humanstandards/blob/main/CONTRIBUTING.md
 

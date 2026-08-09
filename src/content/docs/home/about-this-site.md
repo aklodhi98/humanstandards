@@ -99,13 +99,13 @@ rules:
 
 ### For Implementation
 
-**[Checklists & Playbooks](/checklists-playbooks/)** — Ship with confidence:
+**[Checklists & Playbooks](/checklists-playbooks/form-design-playbook/)** — Ship with confidence:
 - [Accessibility Checklist](/checklists-playbooks/accessibility-checklist/)
 - [Form Design Playbook](/checklists-playbooks/form-design-playbook/)
 - [Onboarding Playbook](/checklists-playbooks/onboarding-playbook/)
 - [Content & Microcopy Templates](/checklists-playbooks/content-microcopy-templates/)
 
-**[Code & Design Tokens](/code-design-tokens/)** — Copy-paste implementation:
+**[Code & Design Tokens](/code-design-tokens/css-json-tokens/)** — Copy-paste implementation:
 - [CSS/JSON Tokens](/code-design-tokens/css-json-tokens/)
 - [ARIA & Keyboard Patterns](/code-design-tokens/aria-keyboard-patterns/)
 - [Touch Targets & Spacing](/code-design-tokens/touch-targets-spacing/)
@@ -351,10 +351,10 @@ These licenses apply only to material Human Standards has the right to license. 
 
 | Need | Action |
 |------|--------|
-| **Bug report** | [Open an issue](https://github.com/humanstandards/humanstandards/issues) |
-| **Feature request** | [Open an issue](https://github.com/humanstandards/humanstandards/issues) |
-| **Question** | [Start a discussion](https://github.com/humanstandards/humanstandards/discussions) |
-| **Contribution** | [Submit a PR](https://github.com/humanstandards/humanstandards/pulls) |
+| **Bug report** | [Open an issue](https://github.com/aklodhi98/humanstandards/issues/new) |
+| **Feature request** | [Open an issue](https://github.com/aklodhi98/humanstandards/issues/new) |
+| **Question** | [Ask in an issue](https://github.com/aklodhi98/humanstandards/issues/new) |
+| **Contribution** | [Submit a PR](https://github.com/aklodhi98/humanstandards/pulls) |
 
 ### Maintainers
 

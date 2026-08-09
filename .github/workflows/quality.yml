@@ -1,0 +1,45 @@
+name: Quality
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            human-standards-mcp/package-lock.json
+
+      - name: Install site dependencies
+        run: npm ci
+
+      - name: Install MCP server dependencies
+        run: npm ci --prefix human-standards-mcp
+
+      - name: Build and check internal links
+        run: npm run check
+
+      - name: Build MCP server and refresh its index
+        run: |
+          npm run build --prefix human-standards-mcp
+          npm run index-docs --prefix human-standards-mcp
+
+      - name: Verify generated MCP index is current
+        run: git diff --exit-code -- human-standards-mcp/data/standards-index.json

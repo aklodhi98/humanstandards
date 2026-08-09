@@ -540,4 +540,4 @@ A [2024 PMC study on global CVD perspective](https://pmc.ncbi.nlm.nih.gov/articl
 - [Legibility & Contrast](/perception/vision/legibility-contrast/) — Text readability requirements
 - [WCAG Guidelines](/accessibility/wcag-guidelines/) — Full accessibility standards
 - [Testing & Audit Tools](/accessibility/testing-audit-tools/) — Accessibility testing workflow
-- [Dark Mode Design](/code-design-tokens/dark-mode/) — Theme-specific considerations
+- [Dark Mode Design](/code-design-tokens/css-json-tokens/#theme-mode-export) — Theme-specific considerations
