@@ -1,31 +1,26 @@
-# License
+# Human Standards Licensing
 
-## Content License
+Human Standards uses permissive licenses so people, organizations, and AI systems can use and build on the project without seeking additional permission.
 
-All documentation content in this repository is licensed under the **Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License** (CC BY-NC-SA 4.0).
+## Original Documentation and Standards Data — CC0 1.0 Universal
 
-[![CC BY-NC-SA 4.0](https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+Unless a file or passage is identified as third-party material, the following Human Standards materials are dedicated to the public domain under **CC0 1.0 Universal**:
 
-### You are free to:
+- documentation and standards prose
+- guidance, rules, examples, and metadata expressed as content
+- generated standards indexes and other standards data
+- diagrams and other original documentation assets
 
-- **Share** — copy and redistribute the material in any medium or format
-- **Adapt** — remix, transform, and build upon the material
+To the extent possible under law, Adnan Lodhi has waived all copyright and related or neighboring rights to these materials. You may copy, modify, distribute, and use them for any purpose, including commercial purposes, without asking permission. Attribution is appreciated but not required.
 
-### Under the following terms:
+- [CC0 1.0 Universal summary](https://creativecommons.org/publicdomain/zero/1.0/)
+- [CC0 1.0 Universal legal code](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
-- **Attribution** — You must give appropriate credit to Adnan Lodhi, provide a link to the license, and indicate if changes were made.
-- **NonCommercial** — You may not use the material for commercial purposes without explicit permission.
-- **ShareAlike** — If you remix, transform, or build upon the material, you must distribute your contributions under the same license.
+## Software and Code Examples — MIT License
 
-**Full license text:** https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode
+Software, scripts, configuration, tooling, executable demos, and code examples—including code snippets embedded in documentation—are licensed under the MIT License unless otherwise noted:
 
----
-
-## Code License
-
-Any code, scripts, or tooling in this repository (excluding documentation content) is licensed under the **MIT License**:
-
-```
+```text
 MIT License
 
 Copyright (c) 2024-2026 Adnan Lodhi
@@ -49,10 +44,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
 
----
+## Third-Party Material
 
-## Contributing
+CC0 and MIT apply only to material that Human Standards has the right to license. Third-party material remains under its original terms. See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md) and any file-level notices for details.
 
-By submitting a contribution (pull request, issue, or otherwise), you agree that your contribution will be licensed under the same terms as the rest of the project, and you confirm that you have the right to license your contribution accordingly.
+## Contributions
 
-For commercial licensing inquiries, please contact Adnan Lodhi via https://aklodhi.com
+By submitting a contribution, you agree that:
+
+- original documentation and standards data you contribute will be released under CC0 1.0 Universal;
+- original software and code examples you contribute will be released under the MIT License; and
+- you have the right to contribute the material under those terms.

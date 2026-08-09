@@ -319,19 +319,20 @@ Contributions should:
 
 ## License
 
-### Documentation Content
+### Original Documentation and Standards Data
 
-This documentation is licensed under **[CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)**:
-- **Attribution** — Credit Human Standards
-- **NonCommercial** — Not for commercial use without permission
-- **ShareAlike** — Derivatives under same license
+Original Human Standards documentation and standards data are dedicated to the public domain under **[CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)**:
 
-### Code Examples
+- Use, copy, adapt, and redistribute the material for any purpose
+- Commercial use is permitted
+- Permission and attribution are not required, although attribution is appreciated
 
-Code snippets and design tokens are licensed under **MIT**:
-- Free to use in any project
-- No attribution required in code
-- No warranty provided
+### Software and Code Examples
+
+Software, tooling, and code examples are licensed under the **[MIT License](https://github.com/aklodhi98/humanstandards/blob/main/LICENSE.md)**:
+
+- Use, modify, distribute, sublicense, and sell the software
+- Keep the MIT copyright and permission notice with substantial copies
 
 ### Third-Party Content
 
@@ -340,7 +341,7 @@ Some examples and patterns are adapted from:
 - GOV.UK Design System (Open Government Licence)
 - Platform guidelines (respective licenses)
 
-See [Third Party Licenses](/THIRD_PARTY_LICENSES.md) for details.
+These licenses apply only to material Human Standards has the right to license. See [Third-Party Licenses](https://github.com/aklodhi98/humanstandards/blob/main/THIRD_PARTY_LICENSES.md) for retained third-party terms and attribution.
 
 ---
 

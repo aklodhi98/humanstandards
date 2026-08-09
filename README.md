@@ -89,12 +89,11 @@ We are committed to providing a welcoming and inclusive environment. Please be r
 
 ## License
 
-- **Content** (documentation): [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) — Share and adapt with attribution, non-commercial use only
-- **Code** (tooling/scripts): [MIT License](LICENSE.md)
+- **Original documentation and standards data:** [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — use, adapt, and redistribute for any purpose, including commercially; no permission or attribution required
+- **Software and code examples:** [MIT License](LICENSE.md) — use, modify, distribute, sublicense, and sell
+- **Third-party material:** remains under its original terms; see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)
 
 See [LICENSE.md](LICENSE.md) for full details.
-
-© 2024-2026 Adnan Lodhi. All rights reserved for commercial use.
 
 ## Acknowledgments
 

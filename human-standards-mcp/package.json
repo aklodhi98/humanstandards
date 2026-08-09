@@ -2,6 +2,7 @@
   "name": "@humanstandards/mcp-server",
   "version": "0.1.0",
   "description": "MCP server for Human Standards - systematic human factors validation for AI-generated interfaces",
+  "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",
   "main": "dist/index.js",
   "bin": {

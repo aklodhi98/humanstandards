@@ -319,9 +319,11 @@ To add a new category, edit `src/indexer/index-docs.ts` and add the directory na
 
 ## License
 
-Same as Human Standards:
-- **Content** (documentation): CC BY-NC-SA 4.0
-- **Code** (MCP server): MIT License
+- **MCP server software:** MIT License
+- **Bundled Human Standards data:** CC0 1.0 Universal
+- **Third-party material:** remains under its original terms
+
+See [LICENSE.md](LICENSE.md) for details.
 
 ## Contributing
 

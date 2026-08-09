@@ -218,8 +218,10 @@ See our [Progressive Disclosure example](/examples/progressive-disclosure-turbot
 ## License
 
 By contributing, you agree that your contributions will be licensed under:
-- **Content** (documentation): CC BY-NC-SA 4.0
-- **Code** (examples, tooling): MIT License
+- **Original documentation and standards data:** CC0 1.0 Universal
+- **Original software and code examples:** MIT License
+
+You also confirm that you have the right to contribute the material under those terms. Third-party material must retain its original licence and attribution notices.
 
 See [LICENSE.md](LICENSE.md) for details.
 

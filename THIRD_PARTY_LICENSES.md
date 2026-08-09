@@ -112,8 +112,8 @@ Individual papers and studies are cited in accordance with academic attribution 
 All content not explicitly attributed to third-party sources is original work created for Human Standards.
 
 **License:**
-- **Documentation Content:** Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)
-- **Code (MCP Server, Examples):** MIT License
+- **Original documentation and standards data:** CC0 1.0 Universal
+- **Software and code examples:** MIT License
 
 See [LICENSE.md](LICENSE.md) for full Human Standards license text.
 
