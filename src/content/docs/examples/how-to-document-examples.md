@@ -13,9 +13,34 @@ The best examples combine:
 - **Measured impact** (quantitative results, not "users loved it")
 - **Transferable lessons** (what's applicable beyond your specific context)
 
+## Evidence Standard
+
+A recognizable product is not evidence by itself. Every external case study must make it
+possible for a reader to distinguish documented product behavior from our analysis.
+
+- **Cite claims where they appear.** Link a feature, date, setting, interface behavior, or
+  result to the source that establishes that specific fact; a source list at the end is not
+  a substitute for inline support.
+- **Prefer primary evidence.** Use product documentation, vendor engineering or design-system
+  guidance, standards, patents, conference talks, or a first-party announcement. Secondary
+  commentary can provide context but must not be the sole support for a factual claim.
+- **Do not invent outcome data.** Publish a percentage, sample size, satisfaction score, or
+  before/after comparison only when the cited source reports it. If the vendor has not
+  published outcome data, say so and provide an evaluation plan instead.
+- **Label interpretation.** Use language such as “the documentation establishes” for facts,
+  and “design inference” or “transferable lesson” for our conclusions.
+- **Scope the evidence.** Design-system guidance documents an intended pattern, not proof that
+  every surface implements it or that it produced a particular user outcome.
+- **Prefer durable links.** Link canonical documentation rather than search results, campaign
+  pages, or screenshots without provenance. Re-check time-sensitive product details during
+  review.
+
 ## Structure: Before/After Comparison
 
 Use this five-part framework to document your work:
+
+> The checkout figures below are fictional examples that demonstrate reporting format. They
+> are not findings from a real product or a reusable benchmark.
 
 ### 1. Problem Framing
 
@@ -181,7 +206,7 @@ Every change has consequences:
 
 ---
 
-## Example: Checkout Button Visibility
+## Hypothetical Example: Checkout Button Visibility
 
 **Before:** Checkout button was below the fold on mobile (visible to only 23% of users without scrolling), resulting in 12% cart abandonment rate and support tickets mentioning "couldn't find checkout."
 
@@ -244,14 +269,14 @@ Every change has consequences:
 
 We document examples from leading companies:
 
-- **[TurboTax - Progressive Disclosure](/examples/cognitive-load/progressive-disclosure-turbotax/)**: 30% faster, 45% fewer help requests
-- **[Gmail - Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: 73% usage rate, 38% anxiety reduction
-- **[Grammarly - Error Prevention](/examples/defensive-design/error-prevention-grammarly/)**: 86% error reduction
-- **[iOS Camera - Smart Defaults](/examples/cognitive-load/smart-defaults-ios-camera/)**: 93% faster to first photo
-- **[BBC - Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)**: 98% task completion
-- **[Stripe - System Feedback](/examples/feedback/feedback-stripe-dashboard/)**: 89% fewer support tickets
+- **[TurboTax - Progressive Disclosure](/examples/cognitive-load/progressive-disclosure-turbotax/)**: staged disclosure in a guided tax workflow
+- **[Gmail - Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: a configurable cancellation window after Send
+- **[Grammarly - Error Prevention](/examples/defensive-design/error-prevention-grammarly/)**: inline, categorized writing suggestions
+- **[iOS Camera - Smart Defaults](/examples/cognitive-load/smart-defaults-ios-camera/)**: automatic focus, exposure, HDR, and low-light behavior with optional controls
+- **[BBC - Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)**: published GEL guidance for focus, semantics, and component behavior
+- **[Stripe - System Feedback](/examples/feedback/feedback-stripe-dashboard/)**: transaction status, decline detail, event logs, and asynchronous updates
 
-Each includes the framework above: problem, hypothesis, implementation, metrics, lessons, and code examples.
+Each includes the framework above, but only reports metrics when primary evidence is available.
 
 ---
 

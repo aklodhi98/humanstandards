@@ -1,7 +1,7 @@
 ---
 title: Error Prevention - Grammarly Real-Time Validation
-description: How Grammarly's real-time error detection prevents mistakes during writing, demonstrating proactive error prevention over reactive correction
-source: Original analysis by Human Standards
+description: How Grammarly documents inline, categorized suggestions, explanations, acceptance controls, and goal-based tailoring
+source: Human Standards analysis of cited primary documentation
 categories: [error-prevention, defensive-design, feedback]
 ---
 
@@ -13,16 +13,16 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
 ## The Problem
 
-Traditional spell checkers operate reactively:
+A writing assistant provides less value when feedback is late, vague, or detached from the
+text being reviewed:
 
-- Errors are detected **after** you finish writing
-- Corrections require **backtracking** and interrupting flow
-- Context switches break **concentration**
-- Users forget to check before sending
-- Grammar errors are often **missed completely**
-- No explanation of **why** something is wrong
+- Late detection requires **backtracking**
+- A separate review surface can add **context switching**
+- Vague corrections provide no explanation of **why** a change is suggested
+- Forced corrections can replace the writer's judgment with the system's
+- Undifferentiated feedback makes it harder to prioritize serious issues
 
-This reactive approach causes:
+These failure modes can cause:
 - **Embarrassing mistakes** in professional communication
 - **Cognitive burden** of remembering to check
 - **Interrupted flow state** during composition
@@ -31,80 +31,105 @@ This reactive approach causes:
 
 ## Grammarly's Implementation
 
-Grammarly provides real-time writing assistance with contextual error detection, explanations, and suggestions as you type.
+Grammarly's current support documentation says its products check text as the user writes and
+group suggestions into correctness, clarity, engagement, and delivery. It also documents
+colored underlines, suggestion cards, and controls to accept or dismiss a proposed change
+([Get started with Grammarly](https://support.grammarly.com/hc/en-us/articles/19812297751053-Get-started-with-Grammarly),
+[Grammarly Editor user guide](https://support.grammarly.com/hc/en-us/articles/360003474732-Grammarly-Editor-user-guide)).
 
 ### Design Decisions
 
 **1. Real-Time Detection (Inline, As You Type)**
-- Underlines errors immediately while writing
-- Non-intrusive visual indicators (colored underlines)
-- Doesn't block typing or interrupt flow
-- Prevents errors from persisting to final draft
+- Grammarly automatically checks typed text
+- Detected issues appear as colored underlines
+- Selecting an underline or suggestion opens a review action
+- The user chooses whether to accept or dismiss the suggestion
 
-**2. Severity-Based Visual Coding**
-- **Red underline**: Critical errors (spelling, grammar)
-- **Yellow underline**: Clarity and engagement suggestions
-- **Blue underline**: Tone and formality adjustments
-- **Purple underline**: Plagiarism detection
+**2. Categorized visual coding**
+- The Editor guide documents red, blue, green, and purple underlines for writing issues
+- The broader suggestion model is grouped into correctness, clarity, engagement, and delivery
+- Grammarly also provides a colorblind mode in Editor settings
+
+The exact color/category mapping can vary by Grammarly surface and plan, so this case study
+does not assign a universal meaning to every color. See the
+[Editor user guide](https://support.grammarly.com/hc/en-us/articles/360003474732-Grammarly-Editor-user-guide).
 
 **3. Contextual Explanations (Not Just Corrections)**
-- Shows **why** something is wrong
-- Provides **learning context** (grammar rules)
-- Suggests **alternatives** with reasoning
-- Builds writing skills over time
+- Suggestion cards can expose a detailed explanation through “Learn more”
+- Context-specific suggestions cover grammar, spelling, usage, wordiness, style, punctuation, and tone
+- Explanations let the writer decide whether a proposed change fits the intended meaning
+
+These behaviors are described in
+[How does Grammarly work?](https://support.grammarly.com/hc/en-us/articles/115000090871-How-does-Grammarly-work)
+and the [Editor user guide](https://support.grammarly.com/hc/en-us/articles/360003474732-Grammarly-Editor-user-guide).
 
 **4. One-Click Application**
-- Single click to accept suggestion
-- Keyboard shortcuts for power users (Ctrl+Right Arrow)
-- Minimal friction to correct
-- Undo available if you change your mind
+- Accept applies a suggestion automatically
+- Dismiss leaves the text unchanged
+- “Learn more” exposes supporting explanation
+- Proofreader also documents undo for individual accepted edits
+
+See the [Grammarly Proofreader user guide](https://support.grammarly.com/hc/en-us/articles/115000091411-Grammarly-Proofreader-user-guide).
 
 **5. Goal-Based Customization**
 - Set writing goals (audience, formality, domain)
 - Tailored suggestions based on context
-- Academic vs. casual vs. business tone
-- Adapts to user's writing style over time
+- Intent can be recorded, although Grammarly says the experimental intent setting does not currently change the suggestion list
+- Availability varies by product and plan
 
-**6. Unobtrusive Sidebar Interface**
-- Summary card shows overall score
-- Grouped suggestions by category
-- Doesn't obscure writing area
-- Can be dismissed when not needed
+Grammarly documents these limits as well as the controls
+([What are Goals?](https://support.grammarly.com/hc/en-us/articles/360054679292-What-are-Goals)).
 
-## Benefits
+**6. Review without forced acceptance**
+- Suggestions are collected in the Editor's right-side review area
+- Writers can navigate to the affected phrase from a suggestion card
+- Individual suggestion types can be deactivated on eligible plans
+- The writer retains the final decision to accept, dismiss, or report a suggestion
+
+## Transferable Design Analysis
+
+The following are design inferences from the documented suggestion flow unless a primary
+source is cited; they are not Grammarly effectiveness findings.
 
 ### Error Prevention & Quality
-- **Catch errors immediately** before they compound
-- **Prevent embarrassment** from public mistakes
-- **Improve clarity** through engagement suggestions
-- **Consistent quality** across all writing
+- **Surface potential issues** while the relevant text is still in context
+- **Offer a correction before publication** without forcing acceptance
+- **Separate kinds of feedback** so writers can review selectively
+- **Keep the original wording recoverable** through dismissal or undo
 
 ### Learning & Improvement
-- **Explanations build skills** over time
-- **Pattern recognition** reduces repeat errors
-- **Confidence boost** from immediate feedback
-- **Faster improvement** than manual review
+- **Explanations provide context** at the point of correction
+- **Accept/dismiss controls preserve judgment** instead of silently rewriting
+- **Goal settings make intended audience and formality explicit**
+- **Category grouping helps users triage** different kinds of feedback
 
 ### Workflow Efficiency
-- **No context switching** between writing and checking
-- **Faster corrections** with one-click application
-- **Reduced proofreading time** at end
-- **Maintained flow state** during composition
+- **Inline detection reduces the distance** between the text and its feedback
+- **One-action acceptance** can reduce correction steps
+- **Dismissal and preference controls** keep unwanted feedback from becoming mandatory work
+- **A consolidated review surface** supports a later proofreading pass
 
 ### Business Impact
-- **30 million daily active users** (2023)
-- **96% of users** say it improves writing confidence
-- **Business users** report higher email professionalism
-- **Students** achieve better grades on written assignments
+- Grammarly reported reaching **30 million daily active users in 2020** in its own company
+  history; this is scale context, not evidence that the interface reduces errors
+  ([Grammarly's history](https://www.grammarly.com/blog/company/grammarly-12-year-history/)).
+- No primary source was found for the outcome claims previously listed in this section.
 
-## Metrics
+## Evidence Boundary
 
-| Metric | Before Grammarly | With Grammarly | Improvement |
-|--------|------------------|----------------|-------------|
-| Errors Per Document | 15.2 avg | 2.1 avg | **86% reduction** |
-| Time Spent Proofreading | 12 min | 3 min | **75% faster** |
-| Writing Confidence (Self-Reported) | 3.1/5 | 4.6/5 | **48% increase** |
-| Professional Communication Quality | Baseline | +42% | **Measurable improvement** |
+The primary sources above establish product behavior and a historical audience figure. They
+do **not** establish the document-error, proofreading-time, confidence, or communication-quality
+comparisons previously shown here. Those figures have been removed.
+
+An evaluation should define both the writing task and what counts as a valid suggestion:
+
+| Measure | Method |
+|---------|--------|
+| Precision | Accepted valid suggestions divided by all suggestions reviewed by expert raters |
+| Recall | Known issues detected, using a controlled error set |
+| Correction cost | Time and actions needed to review, accept, dismiss, or reverse feedback |
+| False-positive burden | Incorrect or irrelevant suggestions per 1,000 words |
+| Learning transfer | Performance on an unaided follow-up task, not just edits made by the tool |
 
 ## Human Standards Connection
 
@@ -477,7 +502,7 @@ export function EmailField() {
   box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
 }
 
-/* Warning state (like Grammarly's yellow underline) */
+/* Example warning state */
 .form-input.has-warning {
   border-color: #F57C00; /* Orange */
   background-color: #FFF3E0; /* Light orange background */
@@ -611,7 +636,7 @@ export function EmailField() {
 | **Warning** | 🟡 Yellow | Doesn't block, but worth reviewing | Weak password, potential typo (email ending in .co) |
 | **Suggestion** | 🔵 Blue | Optional improvements | Password could be longer, consider adding 2FA |
 
-## Benchmarks
+## Pattern Comparison
 
 | Pattern | Error Detection | User Experience | Learning |
 |---------|----------------|-----------------|----------|
@@ -620,11 +645,10 @@ export function EmailField() {
 | **Validate on Blur** | ✅ Early detection | ✅ No interruption | ✅ Immediate feedback |
 | **Real-Time (Grammarly)** | ✅ Instant detection | ✅ Flow maintained | ✅ Contextual learning |
 
-Grammarly achieves:
-- **86% error reduction** vs. no validation
-- **96% user confidence** improvement
-- **75% faster** proofreading time
-- **30M daily active users** (2023)
+For Grammarly specifically, the cited documentation supports automatic checking, inline
+underlines, categorized suggestions, review cards, explanations, and accept/dismiss controls.
+Whether those behaviors reduce errors or proofreading time must be measured for a defined
+writing task; the historical audience figure is not an effectiveness metric.
 
 ---
 
@@ -636,4 +660,4 @@ Grammarly achieves:
 
 ---
 
-**Human Standards Integration:** Original analysis, January 2026
+**Human Standards Integration:** Analysis updated against cited primary documentation, August 2026

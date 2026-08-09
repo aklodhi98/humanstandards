@@ -5,30 +5,29 @@ current state, and what "done" looks like — so it can be picked up cold.
 
 ---
 
-## 1. Case studies cite nothing
+## 1. Case studies cite primary evidence
 
-**Priority: high.** This is the largest sourcing gap on the site.
+**Priority: high. Status: completed 9 August 2026.**
 
-Five of the six real-world examples have zero external links across roughly 11,000 words.
-They read as authoritative but are unverifiable, which undercuts the site's evidence-based
-positioning more than a thin page does.
+The five previously unsourced examples now cite first-party product documentation, vendor
+design-system guidance, support material, or product announcements inline. Unsupported
+outcome figures were removed instead of being assigned unrelated citations; each page now
+states its evidence boundary and gives a concrete measurement plan.
 
-| Page | External links |
-|------|----------------|
-| `src/content/docs/examples/accessibility/accessibility-bbc-keyboard.mdx` | 0 |
-| `src/content/docs/examples/cognitive-load/smart-defaults-ios-camera.mdx` | 0 |
-| `src/content/docs/examples/defensive-design/defensive-design-gmail-undo.mdx` | 0 |
-| `src/content/docs/examples/defensive-design/error-prevention-grammarly.mdx` | 0 |
-| `src/content/docs/examples/feedback/feedback-stripe-dashboard.mdx` | 0 |
-| `src/content/docs/examples/cognitive-load/progressive-disclosure-turbotax.mdx` | 2 |
+| Page | Unique primary-source links |
+|------|----------------------------|
+| `src/content/docs/examples/accessibility/accessibility-bbc-keyboard.mdx` | 9 |
+| `src/content/docs/examples/cognitive-load/smart-defaults-ios-camera.mdx` | 7 |
+| `src/content/docs/examples/defensive-design/defensive-design-gmail-undo.mdx` | 3 |
+| `src/content/docs/examples/defensive-design/error-prevention-grammarly.mdx` | 6 |
+| `src/content/docs/examples/feedback/feedback-stripe-dashboard.mdx` | 7 |
 
-**Done when:** each case study cites primary evidence for its specific claims — vendor
-engineering blogs, published design-system docs, patents, conference talks, or the product
-documentation itself. Needs per-case research; this is not a sweep.
+**Completed:** each case study cites primary evidence for its specific product claims. Claims
+that the primary material does not support are labelled as design analysis or removed.
 
-Note that `src/content/docs/examples/how-to-document-examples.md` sets the house standard
-for these pages. Check the new citations satisfy it, and tighten that guidance if it does
-not currently require sources.
+`src/content/docs/examples/how-to-document-examples.md` now requires inline primary sources,
+explicit evidence boundaries, and prohibits unattributed outcome data. Summary pages no
+longer repeat the removed figures as facts.
 
 ---
 

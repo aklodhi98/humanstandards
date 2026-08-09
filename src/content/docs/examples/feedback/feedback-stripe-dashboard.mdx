@@ -1,7 +1,7 @@
 ---
 title: Feedback & Confirmation - Stripe Dashboard
-description: How Stripe's dashboard provides clear, immediate feedback that builds user confidence through transparent system status communication
-source: Original analysis by Human Standards
+description: How Stripe documents transaction status, decline details, refund actions, event delivery, and operational reporting in its Dashboard
+source: Human Standards analysis of cited primary documentation
 categories: [feedback, system-status, user-confidence]
 ---
 
@@ -32,103 +32,109 @@ Financial platforms especially need to communicate clearly because mistakes have
 
 ## Stripe's Implementation
 
-Stripe Dashboard exemplifies system status visibility through real-time feedback, clear confirmations, and transparent error handling.
+Stripe's documentation presents the Dashboard as an operational surface for finding
+transactions, inspecting status, managing payments, monitoring an integration, and exporting
+reports. That makes it a useful system-status case, but the evidence supports specific
+documented behaviors—not every visual or timing detail previously attributed to the product
+([Stripe: Web Dashboard](https://docs.stripe.com/dashboard/basics)).
 
 ### Design Decisions
 
-**1. Immediate Feedback on All Actions**
-- Button click → Instant loading state (spinner)
-- Action completes → Toast notification appears
-- Success: Green checkmark + "Payment refunded"
-- Error: Red X + Specific problem description
-- **Less than 1 second** from action to initial feedback
+**1. Status is attached to the operational object**
+- The Transactions area lists customer payments and their status
+- Users can filter transactions and inspect related account resources
+- The Dashboard home also surfaces unresolved disputes and identity-verification work
 
-**2. Toast Notifications (Non-Blocking)**
-- Appear in top-right corner (consistent location)
-- Success: Green background, checkmark icon
-- Error: Red background, warning icon
-- Info: Blue background, info icon
-- Auto-dismiss after 5 seconds (stay longer if hovered)
-- Don't block interaction with page
-- Stackable for multiple actions
+These capabilities are documented in
+[Stripe's Dashboard guide](https://docs.stripe.com/dashboard/basics).
 
-**3. Inline Status Indicators**
-- Payment status badges (Succeeded, Failed, Pending)
-- Color-coded (green, red, yellow) + text label
-- Never rely on color alone (accessibility)
-- Icons reinforce status (✓, ✗, ⏳)
-- Update in real-time via webhooks
+**2. Failure information supports a next action**
+- When an issuer provides decline information, Stripe exposes it in the Dashboard and API
+- Decline codes and failure messages provide diagnostic context
+- Stripe's guidance distinguishes on-session recovery (ask for another payment method) from off-session recovery (notify the customer)
 
-**4. Detailed Error Messages**
-- Never show generic "Error occurred"
-- Specific problem: "Card was declined by issuing bank"
-- Actionable solution: "Ask customer to contact their bank"
-- Error codes for support reference
-- Link to documentation for complex issues
+See [Stripe: Card declines](https://docs.stripe.com/declines/card).
 
-**5. Progressive Loading States**
-- Empty state → Skeleton loaders (content shape preview)
-- Loading → Spinner + "Fetching payments..."
-- Success → Content fades in smoothly
-- Error → Retry button + error description
-- Never show "blank screen of uncertainty"
+**3. High-consequence actions expose scope before execution**
+- The Dashboard refund flow starts from a specific payment
+- A full refund is the default, while a partial refund requires an explicit amount
+- A reason is required, with a note required for “Other”
+- Stripe documents when refunds can be canceled and exposes refund state and reference details
 
-**6. Confirmation Dialogs for Destructive Actions**
-- Delete customer: "Are you sure? This cannot be undone."
-- Refund payment: Shows amount, asks for confirmation
-- Cancel subscription: Explains consequences first
-- Red "Confirm" button for destructive actions
-- Escape key cancels (keyboard accessibility)
+See [Stripe: Refund and cancel payments](https://docs.stripe.com/refunds).
 
-**7. Background Process Indicators**
-- Long operations (exports, reports) don't block UI
-- Progress bar shows completion percentage
-- "We'll email you when this is ready"
-- Notification center tracks background tasks
-- Can navigate away without losing progress
+**4. Integration feedback preserves technical evidence**
+- Workbench logs successful and failed API requests
+- Logs include the original request, response, and related API resources
+- Webhook delivery views distinguish Delivered, Pending, and Failed attempts and expose response details
 
-**8. Webhooks & Real-Time Updates**
-- Dashboard updates automatically via WebSockets
-- Payment status changes appear without refresh
-- New charges show up in real-time
-- Dispute filed → Instant notification badge
-- No manual refresh needed
+Primary evidence:
+[Stripe Dashboard: Monitor and test](https://docs.stripe.com/dashboard/basics#monitor-and-test-your-integration) and
+[Stripe: View event deliveries](https://docs.stripe.com/webhooks#debug-webhook-integrations).
 
-## Benefits
+**5. Asynchronous changes are represented as events**
+- Stripe can push event data to registered destinations when account activity occurs
+- Events cover asynchronous outcomes such as bank confirmation, disputes, and recurring-payment success
+- Stripe explicitly warns that duplicate delivery can occur and that event order is not guaranteed
+
+See [Stripe: Receive events](https://docs.stripe.com/webhooks).
+
+**6. Reporting turns status into a durable artifact**
+- Dashboard reporting covers historical transactions, payments, and payouts
+- Reports can be filtered, given custom columns, and exported
+- Stripe's reporting documentation supports CSV download for accounting work
+
+See [Stripe: Reporting](https://docs.stripe.com/stripe-reports).
+
+Together, these patterns create a chain from business object → current status → diagnostic
+detail → next action → event history or export. That chain is the transferable design lesson;
+claims about toast placement, color, animation, WebSockets, or sub-second response are outside
+the published evidence reviewed for this page.
+
+## Transferable Design Analysis
+
+The following are design inferences from the documented operational model, not Stripe-published
+outcome findings.
 
 ### User Confidence & Trust
-- **Know immediately** if actions succeeded
-- **Understand failures** with specific context
-- **Trust the system** through transparency
-- **Reduce anxiety** about money operations
+- **Visible object state** can reduce ambiguity about what the system recorded
+- **Failure context** can make the next recovery step more specific
+- **Event history** provides evidence when the current state alone is insufficient
+- **Exports** let operators reconcile the interface with another record
 
 ### Error Prevention & Recovery
-- **Catch mistakes** before they're permanent (confirmations)
-- **Prevent duplicate actions** (clear success feedback)
-- **Enable quick recovery** (specific error messages)
-- **Reduce support burden** (self-service error resolution)
+- **Scoped refund inputs** make amount and reason explicit
+- **Status visibility** can discourage repeated actions made only to check whether the first worked
+- **Decline detail** can route recovery to a new payment method or customer contact
+- **Request and delivery logs** support self-service diagnosis before escalation
 
 ### Operational Efficiency
-- **Faster task completion** (no waiting to verify)
-- **Fewer errors** (users know what happened)
-- **Less training needed** (system guides through feedback)
-- **Higher user satisfaction** (feels reliable)
+- **Object-level status** reduces the need to infer state from a separate log
+- **Decline detail** supports a defined recovery path
+- **Event-delivery history** gives developers evidence for integration failures
+- **Exports** preserve operational data for reconciliation and analysis
 
-### Business Impact
-- **Reduced support tickets** (fewer "did it work?" questions)
-- **Higher user retention** (confidence breeds loyalty)
-- **Faster onboarding** (clear feedback teaches the system)
-- **Competitive advantage** (reliability differentiator)
+### Business Implications
+- **Traceability** from a payment or refund to its current state
+- **Safer operations** through scoped actions and documented state transitions
+- **Faster diagnosis** when API calls or event deliveries fail
+- **Reconciliation support** through filterable and exportable reports
 
-## Metrics
+## Evidence Boundary
 
-| Metric | Before Clear Feedback | With Stripe-Style Feedback | Improvement |
-|--------|----------------------|---------------------------|-------------|
-| User Confidence (Survey) | 3.1/5 | 4.8/5 | **+55% improvement** |
-| Duplicate Actions | 12% of transactions | 1% of transactions | **92% reduction** |
-| "Did it work?" Support Tickets | 18% of all tickets | 2% of all tickets | **89% reduction** |
-| Task Completion Time | 45 seconds avg | 22 seconds avg | **51% faster** |
-| User Satisfaction | 3.5/5 | 4.6/5 | **+31% improvement** |
+Stripe's public documentation establishes the Dashboard capabilities and state model above.
+It does **not** publish the confidence, duplicate-action, support-ticket, task-time, or
+satisfaction comparisons previously shown on this page. Those figures have been removed.
+
+To evaluate feedback quality in a financial operations interface, measure:
+
+| Measure | Method |
+|---------|--------|
+| State comprehension | Ask users to identify current state and next action from defined scenarios |
+| Duplicate-action rate | Repeated mutations with the same intent, normalized by eligible actions |
+| Recovery completion | Failed operations successfully resolved without support intervention |
+| Diagnostic time | Time from an alert to the relevant request, event, or decline evidence |
+| Reconciliation defects | Differences between product state and exported/accounting records |
 
 ## Human Standards Connection
 
@@ -239,7 +245,7 @@ interface Toast {
   duration?: number;
 }
 
-// Toast notification component (Stripe-style)
+// Example toast notification component
 export function ToastNotification({
   toast,
   onDismiss
@@ -440,7 +446,7 @@ export function ConfirmationDialog({
   );
 }
 
-// Status badge (Stripe-style)
+// Example status badge
 export function StatusBadge({
   status,
   label
@@ -491,7 +497,7 @@ function showToast(toast: Omit<Toast, 'id'>) {
 }
 ```
 
-### CSS Example (Stripe-Style Feedback)
+### CSS Example (Operational Feedback)
 
 ```css
 /* Toast container (top-right corner) */
@@ -756,14 +762,18 @@ function showToast(toast: Omit<Toast, 'id'>) {
 | **Error** | Specific error message + recovery action | "Card declined. Ask customer to try another card." |
 | **Background** | Progress notification + completion alert | "Export started. We'll email you when it's ready." |
 
-## Benchmarks
+## Product Evidence Checks
 
-Stripe-quality feedback achieves:
-- **\<1 second** to initial feedback (loading state)
-- **89% reduction** in "did it work?" support tickets
-- **51% faster** task completion (no verification delays)
-- **+55% confidence** improvement (user surveys)
-- **92% reduction** in duplicate actions
+| Question | Documented Stripe evidence |
+|----------|----------------------------|
+| Can an operator see an object's current state? | Transactions list payments and status |
+| Does a failure expose usable detail? | Dashboard and API expose available decline information and codes |
+| Is a consequential action scoped? | Refund flow starts from a payment and captures amount and reason |
+| Can developers trace asynchronous failures? | Workbench and webhook delivery views retain request and delivery status |
+| Can operations data leave the UI? | Reports and transaction data can be filtered and exported |
+
+These checks establish feature coverage, not outcome improvements. Support-ticket reduction,
+task speed, confidence, and duplicate-action rates require account-level research.
 
 ---
 
@@ -775,4 +785,4 @@ Stripe-quality feedback achieves:
 
 ---
 
-**Human Standards Integration:** Original analysis, January 2026
+**Human Standards Integration:** Analysis updated against cited primary documentation, August 2026

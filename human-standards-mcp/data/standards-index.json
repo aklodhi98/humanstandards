@@ -959,9 +959,9 @@
             "Choose Your Path",
             "Why Human Factors Matters",
             "Core Goals of Human Standards",
-            "**Reduce errors** — 86% fewer writing mistakes with real-time validation (Grammarly)",
-            "**Improve completion** — 30% faster tax filing with progressive disclosure (TurboTax)",
-            "**Increase accessibility** — 98% keyboard task completion rate (BBC)"
+            "**Reduce errors** — surface contextual feedback while correction is still inexpensive",
+            "**Improve completion** — stage complex decisions instead of presenting everything at once",
+            "**Increase accessibility** — preserve semantics, visible focus, logical order, and bypass controls"
           ],
           "references": [
             "https://github.com/aklodhi98/humanstandards/blob/main/CONTRIBUTING.md",

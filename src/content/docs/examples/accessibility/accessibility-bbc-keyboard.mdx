@@ -1,7 +1,7 @@
 ---
-title: Accessibility - BBC Keyboard Navigation
-description: How BBC's keyboard-first navigation ensures their digital services are accessible to everyone, demonstrating inclusive design that benefits all users
-source: Original analysis by Human Standards
+title: Accessibility - BBC GEL Keyboard Guidance
+description: What BBC's published GEL guidance establishes about keyboard focus, semantics, bypass controls, and dynamic components
+source: Human Standards analysis of cited primary documentation
 categories: [accessibility, keyboard-navigation, inclusive-design]
 ---
 
@@ -29,92 +29,118 @@ Common accessibility failures:
 - **Keyboard traps** (can enter but can't exit)
 - **Hidden "Skip to content" links** (can't bypass navigation)
 
-These failures exclude **15% of the global population** (1 billion people with disabilities) and frustrate power users who prefer keyboards.
+These failures affect people who depend on keyboard or switch input, as well as people using
+a keyboard because of injury, context, or preference. BBC's own focus guidance explicitly
+notes that “keyboard users” are not a single disability group and that keyboard access is an
+alternative to fine pointer control ([BBC GEL: Focus](https://bbc.github.io/gel/foundations/focus/)).
 
-## BBC's Implementation
+## BBC's Published Guidance
 
-The BBC, as a public service broadcaster, treats accessibility as a core requirement, not an optional feature. Their websites demonstrate keyboard-first design that serves all users.
+The evidence for this case study is BBC's published Global Experience Language (GEL)
+technical guidance. GEL describes framework-independent recommendations for BBC developers,
+contractors, and suppliers, with an explicit emphasis on the BBC Accessibility Guidelines
+([BBC GEL technical documentation](https://bbc.github.io/gel/)). It documents intended
+patterns; it is not an audit of every BBC page or app.
 
 ### Design Decisions
 
-**1. Visible Focus Indicators**
-- Clear, high-contrast focus outlines on ALL interactive elements
-- Yellow/black outline (meets WCAG AAA contrast)
-- Never suppressed with `outline: none`
-- Visible from 10+ feet away on TV interfaces
+**1. Semantic controls before ARIA reconstruction**
+- Use native links, buttons, and form controls for interactive content
+- Keep non-interactive elements out of the focus order
+- Rely on the built-in keyboard behavior and roles of semantic HTML where possible
 
-**2. Skip Links (Bypass Blocks)**
-- "Skip to content" appears on first Tab press
-- Bypasses repetitive navigation (40+ links on some pages)
-- Saves 30-60 seconds per page for keyboard users
-- Required by WCAG 2.1 Level A
+BBC's focus guide contrasts a scripted `div role="button"` with a native `button`, noting
+that the latter is focusable and responds to Enter and Space without added JavaScript
+([BBC GEL: Focus](https://bbc.github.io/gel/foundations/focus/#recommended-markup)).
 
-**3. Logical Tab Order**
-- Follows visual reading order (left-to-right, top-to-bottom)
-- Never uses `tabindex > 0` (disrupts natural order)
-- Groups related elements logically
-- Predictable and intuitive
+**2. Visible, resilient focus treatment**
+- Provide an obvious focus style wherever an interactive element can appear
+- Use a solid outline that remains visible against changing backgrounds
+- Account for Windows High Contrast Mode instead of relying only on background or color changes
 
-**4. Comprehensive ARIA Labels**
-- Every interactive element has accessible name
-- Buttons describe their action ("Play video", not "Click here")
-- Form fields have associated labels
-- Dynamic content changes announced to screen readers
+The published GEL examples use a solid outline and describe focus styles as functional, not
+decorative ([BBC GEL: Focus](https://bbc.github.io/gel/foundations/focus/#recommended-layout)).
 
-**5. Keyboard Shortcuts**
-- Space/Enter: Activate buttons/links
-- Arrow keys: Navigate carousels, menus
-- Escape: Close modals, cancel actions
-- Home/End: Jump to start/end of content
-- Documented and discoverable
+**3. Logical focus order**
+- Let source order determine the default sequence
+- Avoid positive `tabindex` values
+- Do not visually reorder interactive content in a way that contradicts source order
 
-**6. Focus Management in Dynamic Content**
-- Modal opens → Focus moves to modal
-- Modal closes → Focus returns to trigger element
-- Content loads → Focus managed appropriately
-- Never lose focus or trap users
+These constraints are stated directly in the focus guidance
+([BBC GEL: Focus order](https://bbc.github.io/gel/foundations/focus/#focus-order)).
 
-**7. Mobile Accessibility**
-- Touch targets ≥44×44px (WCAG 2.2 Level AAA)
-- External keyboard support on mobile devices
-- Switch control compatibility (iOS/Android)
-- Voice control through native APIs
+**4. Bypass controls for repeated or dense interfaces**
+- Provide a skip route to main content
+- Reveal visually hidden bypass links when they receive focus
+- Move focus to a real target so the bypass works for screen-reader and sighted keyboard users
 
-## Benefits
+BBC's routing guide requires the `main` element to be reachable with a skip link, while the
+Share tools component demonstrates a focused “Skip sharing” link and focusable end target
+([BBC GEL: Routing](https://bbc.github.io/gel/foundations/routing/),
+[BBC GEL: Share tools](https://bbc.github.io/gel/components/share-tools/)).
+
+**5. Component semantics expose structure and state**
+- Mark navigation as a labelled `nav` landmark
+- Use buttons for disclosure and expose state with `aria-expanded`
+- Identify the current page with `aria-current`
+
+The GEL Site menu documents all three decisions and explains what common screen readers
+announce ([BBC GEL: Site menu](https://bbc.github.io/gel/components/site-menu/)).
+
+**6. Restore focus after transient UI closes**
+- Move focus into an action dialog when it opens
+- Make the surrounding interface inert while the dialog is active
+- Return focus to the invoking control when it closes
+- Use a live region, rather than stealing focus, for non-actionable status messages
+
+This behavior is specified in the GEL Action dialog pattern
+([BBC GEL: Action dialogs](https://bbc.github.io/gel/components/action-dialogs/#expected-behaviour)).
+
+## Transferable Design Analysis
+
+The following are expected effects of the documented patterns, not measured outcomes for all
+BBC services.
 
 ### Universal Access
-- **Keyboard users** can navigate entire site
-- **Screen reader users** get full context
-- **Switch device users** can access all features
-- **Voice control users** have reliable targets
+- **Keyboard users** get operable native controls and a predictable focus sequence
+- **Screen reader users** receive native roles, names, landmarks, and state
+- **Switch device users** benefit from the same sequential interaction path
+- **Voice control users** benefit from controls with programmatic names
 
 ### Improved User Experience for Everyone
-- **Power users** navigate faster with keyboard
-- **Touch users** benefit from larger targets
-- **Mobile users** get better focus management
-- **All users** experience logical, predictable navigation
+- **Power users** can use a keyboard without a parallel interaction model
+- **Sighted keyboard users** can see location through explicit focus treatment
+- **Users of magnification** encounter focus in an order aligned with layout
+- **All users** get controls whose roles and states follow platform conventions
 
-### Business & Legal Benefits
-- **Legal compliance** with accessibility laws (UK Equality Act, US ADA)
-- **Broader audience reach** (+15% potential users)
-- **SEO benefits** (semantic HTML helps search engines)
-- **Brand reputation** (commitment to inclusivity)
+### Organizational Benefits
+- **Reusable expectations** across teams and suppliers
+- **Testable behavior** for focus order, activation, and focus return
+- **More robust controls** by preferring platform semantics
+- **Shared vocabulary** for design, engineering, accessibility, and QA
 
 ### Performance & Maintainability
-- **Semantic HTML** is lighter and faster
-- **Better code quality** (accessibility forces good structure)
-- **Easier testing** (keyboard nav reveals logic issues)
-- **Future-proof** (works with emerging assistive tech)
+- **Semantic HTML** reduces the custom scripting needed to reconstruct native behavior
+- **Shared patterns** reduce one-off component decisions
+- **Keyboard testing** exposes order, visibility, activation, and recovery defects
+- **Framework-independent guidance** can be applied across multiple implementations
 
-## Metrics
+## Evidence Boundary
 
-| Metric | Before Accessibility Focus | After Keyboard-First Design | Improvement |
-|--------|---------------------------|----------------------------|-------------|
-| Keyboard Task Completion | 45% | 98% | **+118% success rate** |
-| Time to Navigate (Keyboard) | 3.2 min | 1.1 min | **66% faster** |
-| Screen Reader Errors | 12 per page | 0.5 per page | **96% reduction** |
-| WCAG 2.1 Compliance | Level A (partial) | Level AA (full) | **Industry-leading** |
-| User Satisfaction (Assistive Tech Users) | 2.8/5 | 4.7/5 | **+68% improvement** |
+BBC's public GEL material establishes the intended keyboard patterns and supplies reference
+implementations. It does **not** publish the before/after task-completion, navigation-time,
+screen-reader-error, or satisfaction figures previously shown on this page. Those figures
+have therefore been removed.
+
+To measure an implementation of this pattern, report:
+
+| Measure | Evidence to collect |
+|---------|---------------------|
+| Keyboard task completion | Moderated or unmoderated task test, with product surface and sample stated |
+| Focus-order defects | Audit findings by component and viewport |
+| Keyboard traps | Reproducible defect count, including browser and assistive technology |
+| Time to bypass repeated content | Task timing with and without the bypass control |
+| User confidence | Survey instrument, sample, and uncertainty—not an unattributed score |
 
 ## Human Standards Connection
 
@@ -218,7 +244,7 @@ const wcagDocs = await mcp.callTool('search_standards', { query: 'WCAG accessibi
 ```tsx
 import { useEffect, useRef, useState } from 'react';
 
-// Skip link component (BBC-style)
+// Skip link component based on the documented pattern
 export function SkipLink({ targetId }: { targetId: string }) {
   const handleSkip = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -396,7 +422,7 @@ export function AccessibleButton({
   );
 }
 
-// Keyboard-navigable menu (BBC-style)
+// Keyboard-navigable menu based on the documented pattern
 export function KeyboardNavigableMenu({ items }: {
   items: Array<{ label: string; href: string }>
 }) {
@@ -457,7 +483,7 @@ export function KeyboardNavigableMenu({ items }: {
 }
 ```
 
-### CSS Example (BBC-Style Focus Indicators)
+### CSS Example (High-Contrast Focus Indicators)
 
 ```css
 /* Skip link (visible on focus) */
@@ -490,7 +516,7 @@ export function KeyboardNavigableMenu({ items }: {
   outline-offset: 2px;
 }
 
-/* BBC-style focus indicator (yellow outline on black) */
+/* Example high-contrast focus indicator */
 :focus {
   /* NEVER use outline: none without replacement! */
   outline: 3px solid #FFEB3B; /* BBC yellow */
@@ -657,7 +683,7 @@ export function KeyboardNavigableMenu({ items }: {
 }
 
 .keyboard-menu a:focus {
-  /* BBC-style focus */
+  /* Example high-contrast focus */
   outline: 3px solid #FFEB3B;
   outline-offset: 2px;
   background: #FFF9C4; /* Light yellow background */
@@ -695,21 +721,19 @@ export function KeyboardNavigableMenu({ items }: {
 - [ ] **ARIA attributes** used correctly
 - [ ] **Compatible with assistive technologies** (screen readers, switch devices)
 
-## Benchmarks
+## Implementation Checks
 
-| Component | Keyboard Support | Screen Reader | Focus Management | BBC Standard |
-|-----------|-----------------|---------------|------------------|--------------|
+| Component | Keyboard Support | Screen Reader | Focus Management | Check |
+|-----------|-----------------|---------------|------------------|-------|
 | **Buttons** | Enter/Space | Announced as "button" + label | Visible focus | ✅ |
 | **Links** | Enter | Announced as "link" + text | Visible focus | ✅ |
-| **Modals** | Escape to close, Tab trap | role="dialog", aria-modal | Focus returns | ✅ |
+| **Modals** | Operable controls; no page-level keyboard trap | `role="dialog"` + name/description | Focus enters and returns | ✅ |
 | **Menus** | Arrow keys, Home/End | role="menu", aria-expanded | Focus follows arrow | ✅ |
 | **Forms** | Tab, Space/Enter | Labels + error messages | Focus on error | ✅ |
 
-BBC achieves:
-- **98% keyboard task completion** (vs. 45% before)
-- **96% reduction** in screen reader errors
-- **66% faster** navigation for keyboard users
-- **WCAG 2.1 Level AA compliance** across all services
+Treat this table as a QA checklist, not a claim that every BBC product has been audited by
+Human Standards. The cited GEL pages are the evidence for the intended patterns; results for
+a particular service still require testing that service.
 
 ---
 
@@ -721,4 +745,4 @@ BBC achieves:
 
 ---
 
-**Human Standards Integration:** Original analysis, January 2026
+**Human Standards Integration:** Analysis updated against cited primary documentation, August 2026

@@ -391,12 +391,12 @@ Every detection system has trade-offs between **hits** (correct positives) and *
 
 Learn from production systems demonstrating these principles:
 
-- **[Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)**: 30% faster completion, 45% fewer help requests
-- **[Defensive Design - Gmail Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: 73% usage rate, 38% anxiety reduction
-- **[Error Prevention - Grammarly](/examples/defensive-design/error-prevention-grammarly/)**: 86% error reduction, 75% faster proofreading
-- **[Smart Defaults - iOS Camera](/examples/cognitive-load/smart-defaults-ios-camera/)**: 93% faster to first photo, 5× more photos taken
-- **[Accessibility - BBC Keyboard Navigation](/examples/accessibility/accessibility-bbc-keyboard/)**: 98% keyboard task completion, 96% fewer screen reader errors
-- **[System Feedback - Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/)**: 89% fewer support tickets, 51% faster task completion
+- **[Progressive Disclosure - TurboTax](/examples/cognitive-load/progressive-disclosure-turbotax/)**: staged disclosure in a guided tax workflow
+- **[Defensive Design - Gmail Undo Send](/examples/defensive-design/defensive-design-gmail-undo/)**: a configurable post-Send cancellation window
+- **[Error Prevention - Grammarly](/examples/defensive-design/error-prevention-grammarly/)**: inline, categorized suggestions with user-controlled acceptance
+- **[Smart Defaults - iOS Camera](/examples/cognitive-load/smart-defaults-ios-camera/)**: automatic capture settings with optional overrides
+- **[Accessibility - BBC GEL Keyboard Guidance](/examples/accessibility/accessibility-bbc-keyboard/)**: published focus, semantics, bypass, and component guidance
+- **[System Feedback - Stripe Dashboard](/examples/feedback/feedback-stripe-dashboard/)**: transaction status, failure detail, event history, and reporting
 
 [See all examples →](/examples/)
 

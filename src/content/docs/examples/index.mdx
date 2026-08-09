@@ -1,6 +1,6 @@
 ---
 title: Real-World Examples
-description: Case studies showing how leading companies apply human factors principles, with metrics and implementation details
+description: Evidence-backed case studies separating documented product behavior, design analysis, implementation patterns, and measurement plans
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
@@ -11,7 +11,8 @@ This section features real-world examples from leading companies demonstrating h
 
 - **The Principle** - Core concept being applied
 - **Implementation Details** - Specific design decisions and rationale
-- **Quantitative Metrics** - Measured impact (completion rates, time savings, satisfaction scores)
+- **Evidence Boundary** - What primary sources establish and what remains a design inference
+- **Measurement Approach** - Published outcomes when available; otherwise, a concrete evaluation plan
 - **Human Standards Connection** - Links to our documentation and MCP validation rules
 - **Code Examples** - Practical implementations you can adapt
 
@@ -19,9 +20,9 @@ This section features real-world examples from leading companies demonstrating h
 
 Theory is valuable, but **seeing principles applied** makes them actionable. These examples show:
 
-1. **Proof of Impact** - Real metrics from production systems
+1. **Product Evidence** - Primary documentation for the behavior being analyzed
 2. **Design Decisions** - The "why" behind implementation choices
-3. **Business Value** - How human factors drive measurable outcomes
+3. **Measurement Discipline** - How to test whether the pattern improves outcomes
 4. **Implementation Patterns** - Code you can adapt for your projects
 
 ## Examples by Category
@@ -30,12 +31,12 @@ Theory is valuable, but **seeing principles applied** makes them actionable. The
 
 <CardGrid>
   <Card title="Progressive Disclosure - TurboTax" icon="document">
-    How breaking a 100+ field tax form into simple questions reduced completion time by **30%** and help requests by **45%**.
+    How a guided tax workflow can stage complex information and decisions.
 
     [Read case study →](/examples/cognitive-load/progressive-disclosure-turbotax/)
   </Card>
   <Card title="Smart Defaults - iOS Camera" icon="star">
-    How Apple's Camera app uses intelligent defaults to eliminate decisions and deliver great photos automatically for billions of users.
+    How iPhone Camera automates focus, exposure, HDR, and low-light capture while preserving optional controls.
 
     [Read case study →](/examples/cognitive-load/smart-defaults-ios-camera/)
   </Card>
@@ -50,7 +51,7 @@ Theory is valuable, but **seeing principles applied** makes them actionable. The
     [Read case study →](/examples/defensive-design/defensive-design-gmail-undo/)
   </Card>
   <Card title="Error Prevention - Grammarly" icon="approve-check">
-    How Grammarly's real-time error detection prevents mistakes during writing, achieving **86% error reduction** vs. no validation.
+    How Grammarly documents inline, categorized suggestions with explanation and accept/dismiss controls.
 
     [Read case study →](/examples/defensive-design/error-prevention-grammarly/)
   </Card>
@@ -60,7 +61,7 @@ Theory is valuable, but **seeing principles applied** makes them actionable. The
 
 <CardGrid>
   <Card title="Keyboard Navigation - BBC" icon="puzzle">
-    How BBC's keyboard-first navigation ensures digital services are accessible to everyone, achieving **98% keyboard task completion**.
+    What BBC's published GEL guidance establishes about focus, semantics, bypass controls, and dynamic components.
 
     [Read case study →](/examples/accessibility/accessibility-bbc-keyboard/)
   </Card>
@@ -70,7 +71,7 @@ Theory is valuable, but **seeing principles applied** makes them actionable. The
 
 <CardGrid>
   <Card title="System Feedback - Stripe Dashboard" icon="information">
-    How Stripe's dashboard provides clear, immediate feedback that builds user confidence through transparent status communication.
+    How Stripe documents transaction status, decline details, refund actions, event delivery, and reporting.
 
     [Read case study →](/examples/feedback/feedback-stripe-dashboard/)
   </Card>
@@ -110,7 +111,7 @@ The MCP server encodes proven patterns from Nielsen's 10 Usability Heuristics an
 
 ### 1. Before Building
 - **Read the example** to understand the principle
-- **Check the metrics** to see potential impact
+- **Check the evidence boundary** to separate documented behavior from interpretation
 - **Query the MCP server** for component-specific guidance
 
 ### 2. During Implementation
@@ -125,7 +126,8 @@ The MCP server encodes proven patterns from Nielsen's 10 Usability Heuristics an
 
 ## Metrics Guide
 
-Examples include different types of metrics:
+The following are hypothetical formats for planning your own evaluation—not benchmarks from
+the products in these case studies:
 
 | Metric Type | What It Measures | Example |
 |-------------|------------------|---------|
@@ -136,7 +138,8 @@ Examples include different types of metrics:
 | **User Satisfaction** | Subjective experience rating | 3.2/5 → 4.4/5 (+38%) |
 | **Conversion Rate** | % who complete desired action | 2.5% → 3.8% (+52%) |
 
-Use these as benchmarks for your own improvements.
+Define a baseline, sample, task, collection method, and uncertainty before interpreting a
+change. Do not reuse the example values as expected outcomes.
 
 ## Source Attribution
 
@@ -163,7 +166,8 @@ Have a great example of human factors principles in action? We'd love to include
 - ✅ Specific problem with quantitative evidence
 - ✅ Clear hypothesis based on human factors principles
 - ✅ Implementation details with screenshots/code
-- ✅ Measured impact (before/after metrics with sample sizes)
+- ✅ Measured impact with sample sizes, or an explicit statement that no outcome evidence is available
+- ✅ Inline primary sources for externally verifiable claims
 - ✅ Lessons learned and trade-offs
 - ✅ Connection to Human Standards documentation
 
