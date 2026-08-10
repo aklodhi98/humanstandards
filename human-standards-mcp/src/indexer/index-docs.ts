@@ -19,6 +19,7 @@ interface DocMetadata {
   title: string;
   description: string;
   content: string;
+  indexForMcp: boolean;
 }
 
 export function parseMarkdown(filePath: string): DocMetadata | null {
@@ -31,11 +32,13 @@ export function parseMarkdown(filePath: string): DocMetadata | null {
     const frontmatter = frontmatterMatch[1];
     const titleMatch = frontmatter.match(/^title:\s*(.+)$/m);
     const descriptionMatch = frontmatter.match(/^description:\s*(.+)$/m);
+    const mcpMatch = frontmatter.match(/^mcp:\s*(.+)$/m);
 
     return {
       title: titleMatch?.[1].trim() ?? '',
       description: descriptionMatch?.[1].trim() ?? '',
       content: frontmatterMatch[2].trim(),
+      indexForMcp: mcpMatch?.[1].trim().toLowerCase() !== 'false',
     };
   } catch (error) {
     console.error(`Error parsing ${filePath}:`, error);
@@ -83,7 +86,7 @@ function walkMarkdownFiles(directory: string): string[] {
 
 function indexFile(filePath: string): DocumentIndex | null {
   const metadata = parseMarkdown(filePath);
-  if (!metadata || !metadata.title || !metadata.description) return null;
+  if (!metadata || !metadata.title || !metadata.description || !metadata.indexForMcp) return null;
 
   const sourcePath = path.relative(DOCS_ROOT, filePath).replace(/\\/g, '/');
   return {
@@ -122,13 +125,17 @@ export function indexDocumentation(docsRoot = DOCS_ROOT): StandardsIndex {
     .filter((entry) => entry.isFile() && /\.mdx?$/.test(entry.name))
     .map((entry) => path.join(docsRoot, entry.name))
     .sort((left, right) => left.localeCompare(right));
-  if (rootFiles.length > 0) categories.root = createCategory('root', rootFiles);
+  if (rootFiles.length > 0) {
+    const rootCategory = createCategory('root', rootFiles);
+    if (rootCategory.documents.length > 0) categories.root = rootCategory;
+  }
 
   for (const entry of rootEntries
     .filter((item) => item.isDirectory())
     .sort((left, right) => left.name.localeCompare(right.name))) {
     const files = walkMarkdownFiles(path.join(docsRoot, entry.name));
-    categories[entry.name] = createCategory(entry.name, files);
+    const category = createCategory(entry.name, files);
+    if (category.documents.length > 0) categories[entry.name] = category;
   }
 
   const documentCount = Object.values(categories).reduce(

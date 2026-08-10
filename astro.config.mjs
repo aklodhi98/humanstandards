@@ -129,6 +129,16 @@ export default defineConfig({
 						},
 					],
 				},
+
+				// Open studies - public process and recruitment, separate from standards guidance
+				{
+					label: 'Studies',
+					collapsed: false,
+					items: [
+						{ slug: 'studies', label: 'Open Studies' },
+						{ slug: 'studies/study-001-independent-reviewers', label: 'Study 001: Reviewer Call', badge: { text: 'Open', variant: 'success' } },
+					],
+				},
 			],
 		}),
 	],

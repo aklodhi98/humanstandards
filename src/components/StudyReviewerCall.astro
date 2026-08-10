@@ -1,0 +1,536 @@
+---
+interface Props {
+	applicationStatus?: 'opening' | 'open' | 'closed';
+	applicationUrl?: string;
+	discussionUrl?: string;
+}
+
+const {
+	applicationStatus = 'opening',
+	applicationUrl,
+	discussionUrl,
+} = Astro.props;
+
+const applicationLabels = {
+	opening: 'Applications opening shortly',
+	open: 'Apply to review',
+	closed: 'Applications closed',
+};
+
+const canApply = applicationStatus === 'open' && Boolean(applicationUrl);
+---
+
+<div class="study-call">
+	<header class="study-call__hero">
+		<div class="study-call__status" aria-label="Study status">
+			<span class="study-call__status-dot" aria-hidden="true"></span>
+			Independent review pending
+		</div>
+
+		<p class="study-call__eyebrow">Study 001 · Open call</p>
+		<h1>Help us evaluate nine AI-built interfaces</h1>
+		<p class="study-call__lede">
+			Human Standards is recruiting two independent experts to complete the blinded review
+			stage of our first controlled MCP study.
+		</p>
+
+		<div class="study-call__actions">
+			{canApply ? (
+				<a class="study-call__button is-primary" href={applicationUrl} target="_blank" rel="noopener">
+					{applicationLabels[applicationStatus]}
+				</a>
+			) : (
+				<span class="study-call__button is-disabled" aria-disabled="true">
+					{applicationLabels[applicationStatus]}
+				</span>
+			)}
+
+			{discussionUrl ? (
+				<a class="study-call__button is-secondary" href={discussionUrl} target="_blank" rel="noopener">
+					Ask a public question
+				</a>
+			) : (
+				<a class="study-call__text-link" href="https://github.com/aklodhi98/humanstandards" target="_blank" rel="noopener">
+					Follow the project on GitHub
+				</a>
+			)}
+		</div>
+	</header>
+
+	<section class="study-call__summary" aria-labelledby="study-at-a-glance">
+		<h2 id="study-at-a-glance">At a glance</h2>
+		<dl>
+			<div>
+				<dt>Reviewers</dt>
+				<dd>2 independent experts</dd>
+			</div>
+			<div>
+				<dt>Material</dt>
+				<dd>9 opaque interface artifacts</dd>
+			</div>
+			<div>
+				<dt>Time</dt>
+				<dd>Approximately 3–4 hours</dd>
+			</div>
+			<div>
+				<dt>Format</dt>
+				<dd>Remote and self-paced</dd>
+			</div>
+		</dl>
+	</section>
+
+	<div class="study-call__layout">
+		<main class="study-call__main">
+			<section aria-labelledby="what-we-are-studying">
+				<p class="study-call__section-number">01</p>
+				<h2 id="what-we-are-studying">What we are studying</h2>
+				<p>
+					We gave one AI coding-agent configuration the same specification for a fictional
+					community clinic appointment service under three controlled guidance conditions.
+					The generated products support booking, viewing, rescheduling, and cancelling an
+					appointment against deterministic fictional data.
+				</p>
+				<p>
+					The research question is whether a directed Human Standards MCP retrieval workflow
+					changes functional completeness, accessibility, robustness, or human-centred quality.
+					Publication is not conditional on a favourable result.
+				</p>
+			</section>
+
+			<section aria-labelledby="review-work">
+				<p class="study-call__section-number">02</p>
+				<h2 id="review-work">What the review involves</h2>
+				<p>
+					Each selected reviewer independently assesses all nine interfaces in a private review
+					environment. You will receive the same product specification, scripted tasks, fictional
+					test data, and frozen scoring rubric for every artifact.
+				</p>
+				<ul class="study-call__checklist">
+					<li>Complete booking, validation, recovery, rescheduling, and cancellation tasks.</li>
+					<li>Inspect keyboard operation and the main booking path at mobile width.</li>
+					<li>Score 10 usability and human-centred quality dimensions from observed behaviour.</li>
+					<li>Record blocked tasks and concise observations without inspecting source code.</li>
+				</ul>
+				<p>
+					The work can be split across sessions. Selected reviewers will receive setup and access
+					instructions privately before agreeing to participate.
+				</p>
+			</section>
+
+			<section aria-labelledby="independence-matters">
+				<p class="study-call__section-number">03</p>
+				<h2 id="independence-matters">Why independence matters</h2>
+				<p>
+					Artifacts are identified only as V001–V009. Reviewers will not receive condition labels,
+					run identifiers, prompts, transcripts, source comments, MCP records, automated results,
+					or the other reviewer’s scores.
+				</p>
+				<div class="study-call__note">
+					<strong>Please do not apply if you have already seen Study 001 outputs, condition mappings,
+					or preliminary results.</strong> Prior exposure would make a blinded independent review
+					impossible. General familiarity with Human Standards or MCP is not itself disqualifying.
+				</div>
+			</section>
+
+			<section aria-labelledby="after-review">
+				<p class="study-call__section-number">04</p>
+				<h2 id="after-review">What becomes public</h2>
+				<p>
+					Only after both reviewers have locked all 18 evaluations will we reveal the condition
+					mapping and analyse the human-centred quality scores. The final case study will include
+					all runs, the protocol, prompts, checksums, outcome data, disagreements, limitations,
+					and reproduction instructions.
+				</p>
+				<p>
+					Mixed, null, and negative findings will be publishable. Reviewers may choose whether to
+					be acknowledged by name; scores will otherwise use an opaque reviewer identifier.
+				</p>
+			</section>
+		</main>
+
+		<aside class="study-call__aside" aria-label="Reviewer eligibility and application information">
+			<section>
+				<p class="study-call__aside-label">Who should apply</p>
+				<h2>Reviewer profile</h2>
+				<p>We are looking for complementary practical expertise in one or more of:</p>
+				<ul>
+					<li>product or interaction design;</li>
+					<li>usability research or human factors;</li>
+					<li>digital accessibility; or</li>
+					<li>accessible front-end engineering.</li>
+				</ul>
+				<p>
+					You must be comfortable evaluating unfamiliar web interfaces with both keyboard and
+					pointer input and writing concise evidence-based observations in English.
+				</p>
+			</section>
+
+			<section>
+				<p class="study-call__aside-label">Selection</p>
+				<h2>Two complementary reviewers</h2>
+				<p>
+					Selection is based on relevant experience, independence, complementary expertise,
+					availability, and declared conflicts—not application order or agreement with the project.
+				</p>
+			</section>
+
+			<section>
+				<p class="study-call__aside-label">Honorarium</p>
+				<h2>Paid professional review</h2>
+				<p>
+					This is a paid review. The amount, payment method, and expected schedule will be stated
+					before applications open so candidates can make an informed decision.
+				</p>
+			</section>
+
+			<section id="application-status">
+				<p class="study-call__aside-label">Privacy</p>
+				<h2>Private application, public process</h2>
+				<p>
+					Contact details, screening answers, availability, and payment information will not be
+					collected in GitHub Discussions or published with the study. The private application
+					will explain what is collected, why, who can access it, and when it will be deleted.
+				</p>
+			</section>
+		</aside>
+	</div>
+
+	<footer class="study-call__footer">
+		<p>
+			<strong>Questions about the method belong in public.</strong> Once the study discussion is
+			open, use it for questions about eligibility, procedure, blinding, or publication. Do not
+			post email addresses, payment details, or other personal information on GitHub.
+		</p>
+	</footer>
+</div>
+
+<style>
+	.study-call {
+		--study-border: color-mix(in srgb, var(--hs-rule) 82%, transparent);
+		max-width: 74rem;
+		margin-inline: auto;
+	}
+
+	.study-call__hero {
+		padding: clamp(1.5rem, 3vw, 2.5rem) 0 clamp(2.75rem, 6vw, 5.5rem);
+		border-bottom: 1px solid var(--study-border);
+	}
+
+	.study-call__status {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.55rem;
+		margin-bottom: clamp(2.5rem, 6vw, 5rem);
+		padding: 0.42rem 0.72rem;
+		border: 1px solid var(--study-border);
+		border-radius: 999px;
+		color: var(--hs-text-muted);
+		font-size: 0.76rem;
+		font-weight: 650;
+		letter-spacing: 0.02em;
+	}
+
+	.study-call__status-dot {
+		width: 0.48rem;
+		height: 0.48rem;
+		border-radius: 50%;
+		background: var(--hs-accent);
+		box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--hs-accent) 16%, transparent);
+	}
+
+	.study-call__eyebrow,
+	.study-call__section-number,
+	.study-call__aside-label {
+		margin: 0;
+		color: var(--hs-accent-text);
+		font-size: 0.72rem;
+		font-weight: 760;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.study-call__hero h1 {
+		max-width: 18ch;
+		margin: 0.8rem 0 1.5rem;
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: clamp(2.8rem, 7vw, 5.8rem);
+		font-weight: 500;
+		letter-spacing: -0.055em;
+		line-height: 0.98;
+	}
+
+	.study-call__lede {
+		max-width: 45rem;
+		margin: 0;
+		color: var(--hs-text-muted);
+		font-size: clamp(1.05rem, 2vw, 1.35rem);
+		line-height: 1.65;
+	}
+
+	.study-call__actions {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-top: 2rem;
+		flex-wrap: wrap;
+	}
+
+	.study-call__button {
+		display: inline-flex;
+		min-height: 3rem;
+		padding: 0.75rem 1.1rem;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid var(--hs-accent);
+		border-radius: 0.4rem;
+		font-size: 0.9rem;
+		font-weight: 680;
+		text-decoration: none;
+	}
+
+	.study-call__button.is-primary {
+		background: var(--hs-accent);
+		color: var(--hs-button-text);
+	}
+
+	.study-call__button.is-primary:hover,
+	.study-call__button.is-primary:focus-visible {
+		background: var(--hs-accent-hover);
+	}
+
+	.study-call__button.is-secondary {
+		background: transparent;
+		color: var(--hs-accent-text);
+	}
+
+	.study-call__button.is-disabled {
+		border-color: var(--study-border);
+		background: color-mix(in srgb, var(--hs-rule) 26%, transparent);
+		color: var(--hs-text-muted);
+		cursor: not-allowed;
+	}
+
+	.study-call__text-link {
+		color: var(--hs-accent-text);
+		font-size: 0.9rem;
+		font-weight: 650;
+	}
+
+	.study-call__summary {
+		padding: 1.4rem 0;
+		border-bottom: 1px solid var(--study-border);
+	}
+
+	.study-call__summary > h2 {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		padding: 0;
+		margin: -1px;
+		overflow: hidden;
+		clip: rect(0, 0, 0, 0);
+		white-space: nowrap;
+		border: 0;
+	}
+
+	.study-call__summary dl {
+		display: grid;
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+		gap: 1rem;
+		margin: 0;
+	}
+
+	.study-call__summary dl > div {
+		padding-right: 1rem;
+	}
+
+	.study-call__summary dl > div + div {
+		padding-left: 1.25rem;
+		border-left: 1px solid var(--study-border);
+	}
+
+	.study-call__summary dt {
+		color: var(--hs-text-muted);
+		font-size: 0.7rem;
+		font-weight: 700;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+	}
+
+	.study-call__summary dd {
+		margin: 0.35rem 0 0;
+		color: var(--hs-ink);
+		font-size: 0.92rem;
+		font-weight: 620;
+		line-height: 1.45;
+	}
+
+	.study-call__layout {
+		display: grid;
+		grid-template-columns: minmax(0, 1.55fr) minmax(18rem, 0.75fr);
+		gap: clamp(3rem, 8vw, 7rem);
+		padding: clamp(3.5rem, 8vw, 7rem) 0;
+	}
+
+	.study-call__main {
+		display: grid;
+		gap: clamp(3.5rem, 7vw, 6rem);
+	}
+
+	.study-call__main section {
+		margin: 0;
+	}
+
+	.study-call__main h2,
+	.study-call__aside h2 {
+		color: var(--hs-ink);
+		letter-spacing: -0.035em;
+	}
+
+	.study-call__main h2 {
+		margin: 0.65rem 0 1.25rem;
+		font-family: var(--hs-font-display);
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 500;
+	}
+
+	.study-call__main p,
+	.study-call__main li,
+	.study-call__aside p,
+	.study-call__aside li {
+		font-size: 0.98rem;
+		line-height: 1.78;
+	}
+
+	.study-call__main p {
+		max-width: 44rem;
+	}
+
+	.study-call__checklist {
+		display: grid;
+		gap: 0.75rem;
+		padding: 0;
+		list-style: none;
+	}
+
+	.study-call__checklist li {
+		position: relative;
+		padding-left: 1.8rem;
+	}
+
+	.study-call__checklist li::before {
+		position: absolute;
+		top: 0.68em;
+		left: 0;
+		width: 0.55rem;
+		height: 0.55rem;
+		border: 1px solid var(--hs-accent);
+		border-radius: 50%;
+		content: '';
+	}
+
+	.study-call__note {
+		margin-top: 1.5rem;
+		padding: 1.2rem 1.3rem;
+		border-left: 3px solid var(--hs-accent);
+		background: color-mix(in srgb, var(--hs-accent) 8%, transparent);
+		color: var(--hs-text-muted);
+		font-size: 0.94rem;
+		line-height: 1.7;
+	}
+
+	.study-call__note strong {
+		color: var(--hs-ink);
+	}
+
+	.study-call__aside {
+		align-self: start;
+		border-top: 2px solid var(--hs-ink);
+	}
+
+	.study-call__aside section {
+		padding: 1.5rem 0 1.75rem;
+		border-bottom: 1px solid var(--study-border);
+	}
+
+	.study-call__aside h2 {
+		margin: 0.45rem 0 0.9rem;
+		font-size: 1.15rem;
+		font-weight: 680;
+	}
+
+	.study-call__aside p,
+	.study-call__aside ul {
+		margin-bottom: 0;
+	}
+
+	.study-call__aside ul {
+		padding-left: 1.2rem;
+	}
+
+	.study-call__footer {
+		padding: 1.6rem 0;
+		border-top: 1px solid var(--study-border);
+	}
+
+	.study-call__footer p {
+		max-width: 56rem;
+		margin: 0;
+		font-size: 0.88rem;
+		line-height: 1.7;
+	}
+
+	.study-call__footer strong {
+		color: var(--hs-ink);
+	}
+
+	@media (max-width: 58rem) {
+		.study-call__summary dl {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+		}
+
+		.study-call__summary dl > div:nth-child(3) {
+			padding-left: 0;
+			border-left: 0;
+		}
+
+		.study-call__layout {
+			grid-template-columns: 1fr;
+		}
+
+		.study-call__aside {
+			display: grid;
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			column-gap: 2rem;
+		}
+	}
+
+	@media (max-width: 38rem) {
+		.study-call__hero h1 {
+			font-size: clamp(2.65rem, 14vw, 4rem);
+		}
+
+		.study-call__actions,
+		.study-call__button {
+			width: 100%;
+		}
+
+		.study-call__text-link {
+			padding: 0.5rem 0;
+		}
+
+		.study-call__summary dl,
+		.study-call__aside {
+			grid-template-columns: 1fr;
+		}
+
+		.study-call__summary dl > div,
+		.study-call__summary dl > div + div,
+		.study-call__summary dl > div:nth-child(3) {
+			padding: 0.85rem 0;
+			border-top: 1px solid var(--study-border);
+			border-left: 0;
+		}
+	}
+</style>

@@ -154,6 +154,15 @@ select:focus-visible {
   font-weight: 500;
 }
 
+/* The reviewer call is a public recruitment page, not a narrow reference article. */
+:root:has(.study-call) {
+  --sl-content-width: 76rem;
+}
+
+:root:has(.study-call) main > .content-panel:first-of-type {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
