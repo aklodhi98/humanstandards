@@ -3,7 +3,7 @@ title: Accessibility Checklist
 description: A pragmatic checklist to help you meet WCAG 2.2 AA and build inclusive experiences.
 ---
 
-This checklist helps you build accessible products that meet WCAG 2.2 Level AA—the legal standard in most jurisdictions. It covers both technical requirements and the human impact behind each criterion.
+This checklist helps you build accessible products against WCAG 2.2 Level AA, a widely used conformance target. Legal obligations vary by jurisdiction and sector. It covers both technical requirements and the human impact behind each criterion.
 
 Use this as a practical guide during design, development, and QA. The validation rules can be consumed by AI agents and automated testing tools.
 
@@ -44,7 +44,7 @@ Use this as a practical guide during design, development, and QA. The validation
 | **3.3.7** | **Redundant Entry** | Auto-populate repeated info (NEW in 2.2) |
 | 4.1.2 | Name, Role, Value | Custom controls have proper ARIA |
 
-### Level AA (Legal Standard)
+### Level AA (Common Conformance Target)
 
 | # | Criterion | Summary |
 |---|-----------|---------|
@@ -130,9 +130,10 @@ rules:
 
   - id: focus-visible
     severity: error
-    check: "Focus indicator visible with ≥3:1 contrast"
+    check: "Keyboard focus indicator is visible"
     selector: ":focus-visible"
     wcag: "2.4.7 AA"
+    note: "For a stronger design target, WCAG 2.4.13 AAA specifies indicator area and a ≥3:1 change of contrast"
 
   - id: focus-not-obscured
     severity: error

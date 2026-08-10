@@ -131,9 +131,10 @@ rules:
 
   - id: focus-visible
     severity: error
-    check: "Focus indicator visible with ≥3:1 contrast ratio"
+    check: "Keyboard focus indicator is visible"
     selector: ":focus-visible"
     wcag: "2.4.7 AA"
+    note: "WCAG 2.4.13 AAA specifies indicator area and a ≥3:1 change of contrast"
 
   - id: focus-not-obscured
     severity: error

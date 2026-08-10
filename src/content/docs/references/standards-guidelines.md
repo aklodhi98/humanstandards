@@ -68,7 +68,7 @@ Both major US digital accessibility deadlines were extended by one year during 2
 | Level | Requirements | Typical Use |
 |-------|-------------|-------------|
 | **Level A** | 25 criteria | Bare minimum (not sufficient) |
-| **Level AA** | +13 criteria | Legal standard, recommended baseline |
+| **Level AA** | +13 criteria | Common conformance target; legal applicability varies |
 | **Level AAA** | +23 criteria | Enhanced accessibility (not required) |
 
 **Note:** WCAG 2.2 is backwards compatible — conforming to 2.2 also means conforming to 2.1 and 2.0.

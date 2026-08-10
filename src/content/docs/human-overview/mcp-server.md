@@ -3,17 +3,18 @@ title: MCP Server
 description: AI-assisted design validation using the Human Standards MCP server
 ---
 
-The Human Standards MCP (Model Context Protocol) server gives AI tools like Claude real-time access to usability heuristics and design standards. Think of it as a reference book that AI can consult while building interfaces.
+The Human Standards MCP (Model Context Protocol) server gives compatible AI tools read-only access to usability heuristics and the indexed Human Standards guidance. Think of it as a reference book that AI can consult while building interfaces.
 
 ## What It Does
 
-The MCP server exposes three tools:
+The MCP server exposes four read-only tools:
 
 | Tool | Purpose |
 |------|---------|
 | `get_heuristic` | Deep dive on a specific Nielsen usability heuristic (H1-H10) |
 | `get_all_heuristics` | Summary of all 10 heuristics for context |
-| `search_standards` | Search the Human Standards documentation |
+| `search_standards` | Search full document content and return ranked excerpts |
+| `get_standard` | Read an indexed document or one named section |
 
 ## Philosophy
 
@@ -126,7 +127,7 @@ Get detailed information about a specific Nielsen usability heuristic.
     "Actions that complete without confirmation"
   ],
   "related_docs": [
-    { "path": "/interaction-patterns/notifications-feedback", "url": "..." }
+    { "path": "/interaction-patterns/notifications-feedback/", "url": "..." }
   ]
 }
 ```
@@ -146,37 +147,53 @@ Get a summary of all 10 Nielsen usability heuristics.
     { "id": "H2", "name": "Match between system and the real world", "principle": "..." },
     // ... H3-H10
   ],
-  "reference": "https://humanstandards.org/interaction-patterns/nielsen-heuristics"
+  "source": "https://www.nngroup.com/articles/ten-usability-heuristics/"
 }
 ```
 
 ### `search_standards`
 
-Search Human Standards documentation for specific topics.
+Search every indexed Human Standards document. Results include matched terms and
+an excerpt from the actual guidance, so the tool remains useful when the website
+cannot be opened.
 
 ```typescript
 // Input
-{ "query": "cognitive load" }
+{ "query": "forms error recovery", "limit": 3 }
 
 // Output
 {
-  "query": "cognitive load",
+  "query": "forms error recovery",
+  "result_count": 3,
   "results": [
     {
-      "title": "Cognitive Load",
-      "description": "Reduce extraneous load and fit intrinsic load to user ability.",
-      "path": "/cognition/cognitive-load",
-      "url": "https://humanstandards.org/cognition/cognitive-load"
-    },
-    {
-      "title": "Working Memory",
-      "description": "Understanding the brain's limited scratch pad...",
-      "path": "/cognition/working-memory",
-      "url": "https://humanstandards.org/cognition/working-memory"
+      "title": "Forms",
+      "description": "Designing forms that balance usability, accessibility, and conversion...",
+      "path": "/interaction-patterns/forms/",
+      "matched_terms": ["form", "error", "recovery"],
+      "snippet": "Relevant guidance excerpt...",
+      "relevance": 58,
+      "url": "https://humanstandards.org/interaction-patterns/forms/"
     }
   ]
 }
 ```
+
+### `get_standard`
+
+Use a path returned by `search_standards` to read the actual guidance. Long
+documents list their section headings and can be requested one section at a time.
+
+```typescript
+// Input
+{
+  "path": "/interaction-patterns/forms/",
+  "section": "Validation timing"
+}
+```
+
+The response includes document content, available sections, key points,
+references, and an explicit `truncated` flag.
 
 ## Usage Examples
 
@@ -190,7 +207,8 @@ AI thinks: "Forms involve feedback (H1), error prevention (H5),
 
 AI: *calls get_heuristic('H5')* - Error prevention
 AI: *calls get_heuristic('H9')* - Error recovery
-AI: *calls search_standards('forms')* - Form patterns
+AI: *calls search_standards('forms error recovery')* - Ranked excerpts
+AI: *calls get_standard('/interaction-patterns/forms/', 'Validation timing')*
 
 AI now knows:
 - Use confirmation for important actions

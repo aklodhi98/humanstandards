@@ -6,11 +6,12 @@ This MCP (Model Context Protocol) server provides AI tools like Claude with real
 
 ## What It Does
 
-The MCP server exposes three tools:
+The MCP server exposes four read-only tools:
 
 1. **`get_heuristic`** - Deep dive on a specific Nielsen usability heuristic (H1-H10)
 2. **`get_all_heuristics`** - Summary of all 10 heuristics for context
-3. **`search_standards`** - Search the Human Standards documentation
+3. **`search_standards`** - Search the full Human Standards library with ranked excerpts
+4. **`get_standard`** - Read an indexed document or one named section
 
 ## Philosophy
 
@@ -57,9 +58,9 @@ Get detailed information about a specific Nielsen usability heuristic.
     "Actions that complete without confirmation"
   ],
   "related_docs": [
-    { "path": "/interaction-patterns/notifications-feedback", "url": "https://humanstandards.org/interaction-patterns/notifications-feedback" }
+    { "path": "/interaction-patterns/notifications-feedback/", "url": "https://humanstandards.org/interaction-patterns/notifications-feedback/" }
   ],
-  "reference": "https://humanstandards.org/interaction-patterns/nielsen-heuristics"
+  "source": "https://www.nngroup.com/articles/ten-usability-heuristics/"
 }
 ```
 
@@ -80,43 +81,56 @@ Get a summary of all 10 Nielsen usability heuristics.
     { "id": "H2", "name": "Match between system and the real world", "principle": "..." },
     ...
   ],
-  "reference": "https://humanstandards.org/interaction-patterns/nielsen-heuristics",
-  "source": "Nielsen Norman Group - 10 Usability Heuristics for User Interface Design"
+  "source": "https://www.nngroup.com/articles/ten-usability-heuristics/"
 }
 ```
 
 ### 3. `search_standards`
 
-Search Human Standards documentation for specific topics.
+Search the complete indexed document content. Results include the matched terms
+and an excerpt from the actual guidance, not only a website link.
 
 **Input:**
 ```json
 {
-  "query": "cognitive load"
+  "query": "forms error recovery",
+  "limit": 3
 }
 ```
 
 **Output:**
 ```json
 {
-  "query": "cognitive load",
+  "query": "forms error recovery",
+  "result_count": 3,
   "results": [
     {
-      "title": "Cognitive Load",
-      "description": "Reduce extraneous load and fit intrinsic load to user ability.",
-      "path": "/cognition/cognitive-load.md",
-      "url": "https://humanstandards.org/cognition/cognitive-load"
-    },
-    {
-      "title": "Working Memory",
-      "description": "Understanding the brain's limited scratch pad...",
-      "path": "/cognition/working-memory.md",
-      "url": "https://humanstandards.org/cognition/working-memory"
+      "title": "Forms",
+      "description": "Designing forms that balance usability, accessibility, and conversion...",
+      "path": "/interaction-patterns/forms/",
+      "matched_terms": ["form", "error", "recovery"],
+      "snippet": "Relevant guidance excerpt...",
+      "relevance": 58,
+      "url": "https://humanstandards.org/interaction-patterns/forms/"
     }
-  ],
-  "reference": "https://humanstandards.org"
+  ]
 }
 ```
+
+### 4. `get_standard`
+
+Read the guidance found by `search_standards`. Long documents list their section
+headings and can be requested one section at a time.
+
+```json
+{
+  "path": "/interaction-patterns/forms/",
+  "section": "Validation timing"
+}
+```
+
+The response includes the document content, available sections, key points,
+references, and an explicit `truncated` flag.
 
 ## Installation
 
@@ -139,7 +153,9 @@ npm run build
 npm run index-docs
 ```
 
-This creates `data/standards-index.json` from the Human Standards markdown files.
+This creates `data/standards-index.json` from every Human Standards Markdown and
+MDX file, including nested folders. The generated index contains the guidance
+required for isolated clients to retrieve documents without browsing the web.
 
 **Important:** Run `npm run index-docs` whenever the documentation changes (new pages added, content updated) to keep the search index current.
 
@@ -194,7 +210,7 @@ Claude Code stores MCP server configurations in `~/.claude.json`. Add the Human 
 
 1. Restart Claude Code
 2. Type `/mcp` to verify the server is connected
-3. You should see "human-standards" with 3 tools available
+3. You should see "human-standards" with 4 tools available
 
 ### Standalone Testing
 
@@ -218,7 +234,8 @@ AI thinks: "Forms involve feedback (H1), error prevention (H5),
 
 AI: *calls get_heuristic('H5')* - Error prevention
 AI: *calls get_heuristic('H9')* - Error recovery
-AI: *calls search_standards('forms')* - Form patterns
+AI: *calls search_standards('forms error recovery')* - Ranked guidance excerpts
+AI: *calls get_standard('/interaction-patterns/forms/', 'Validation timing')*
 
 AI now knows:
 - Use confirmation for important actions
@@ -273,7 +290,8 @@ human-standards-mcp/
 │   ├── index.ts              # Main MCP server + heuristics data
 │   ├── types/                # TypeScript types
 │   ├── tools/
-│   │   └── get-guidance.ts   # Search implementation
+│   │   ├── get-guidance.ts   # Search and excerpt implementation
+│   │   └── get-standard.ts   # Document and section retrieval
 │   └── indexer/
 │       └── index-docs.ts     # Documentation indexer
 ├── data/
@@ -292,30 +310,16 @@ npm run build
 ```
 
 The indexer:
-- Scans all `.md` and `.mdx` files in `src/content/docs/`
-- Extracts title, description, and key points (H2 headers)
+- Recursively scans every `.md` and `.mdx` file in `src/content/docs/`
+- Extracts title, description, headings, full content, and key points
 - Extracts reference URLs
 - Outputs to `data/standards-index.json`
 
 ### Adding Content to the Index
 
-The indexer automatically includes all markdown files from these directories:
-- accessibility
-- cognition
-- perception
-- emotions-motivation
-- decision-making-errors
-- ergonomics
-- interaction-patterns
-- code-design-tokens
-- checklists-playbooks
-- research-methods-metrics
-- social-cultural
-- references
-- human-overview
-- home
-
-To add a new category, edit `src/indexer/index-docs.ts` and add the directory name to the `categoryDirs` array.
+No category allow-list is required. Add a frontmatter-bearing Markdown or MDX
+file anywhere under `src/content/docs/`, then rebuild and commit the generated
+index. The test suite asserts complete coverage and representative retrievals.
 
 ## License
 

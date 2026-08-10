@@ -115,26 +115,18 @@ rules:
 
 **MCP Server** — Real-time human factors guidance in your development workflow:
 
-```bash
-# Install the Human Standards MCP server
-npm install -g human-standards-mcp
+Build the MCP server from this repository, then configure a compatible client to
+run `human-standards-mcp/dist/index.js` with Node. See [MCP Server](/human-overview/mcp-server/)
+for the exact setup and verification steps.
 
-# Configure in your AI assistant
-{
-  "mcpServers": {
-    "human-standards": {
-      "command": "human-standards-mcp",
-      "args": ["serve"]
-    }
-  }
-}
-```
+**Available read-only MCP tools:**
+- `get_heuristic` — Retrieve one Nielsen usability heuristic
+- `get_all_heuristics` — Review the complete heuristic framework
+- `search_standards` — Search full Human Standards content with ranked excerpts
+- `get_standard` — Read an indexed document or a named section
 
-**Available MCP Tools:**
-- `validate_design` — Check designs against human factors criteria
-- `get_specification` — Retrieve specific values and thresholds
-- `suggest_improvements` — Get recommendations for design issues
-- `check_accessibility` — WCAG compliance validation
+The MCP is a reference service. It does not claim to automatically validate a
+design or certify WCAG conformance.
 
 ---
 

@@ -29,7 +29,7 @@ This playbook provides both human-readable guidance and machine-parseable specif
 | Placeholder text | 4.5:1 | 1.4.3 |
 | Input borders | 3:1 | 1.4.11 |
 | Error text | 4.5:1 | 1.4.3 |
-| Focus indicator | 3:1 | 2.4.7 |
+| Focus indicator | Visible (3:1 change of contrast recommended) | 2.4.7 AA; 2.4.13 AAA |
 
 ### Autocomplete Tokens (Common)
 
@@ -111,10 +111,10 @@ rules:
     wcag: "1.4.1 AA"
 
   - id: form-error-focus
-    severity: error
+    severity: warning
     check: "First error field receives focus on submit"
     selector: "form"
-    wcag: "3.3.1 AA"
+    best_practice: true
 
   # Required Fields
   - id: form-required-indicated
@@ -684,7 +684,7 @@ window.addEventListener('beforeunload', (e) => {
 - [ ] Client-side validation on blur and submit
 - [ ] Server-side validation (never trust client)
 - [ ] Error messages are specific and actionable
-- [ ] First error receives focus on submit
+- [ ] First error receives focus on submit (recommended recovery pattern)
 - [ ] Error summary at top with anchor links
 - [ ] `aria-invalid="true"` on fields with errors
 - [ ] Error messages have `role="alert"`
@@ -693,7 +693,7 @@ window.addEventListener('beforeunload', (e) => {
 
 - [ ] Keyboard navigation works (Tab, Shift+Tab, Enter)
 - [ ] Focus order matches visual order
-- [ ] Focus indicator visible (3:1 contrast)
+- [ ] Focus indicator visible (3:1 change of contrast is a strong AAA design target)
 - [ ] Screen reader testing completed (NVDA, VoiceOver)
 - [ ] Label contrast ≥4.5:1
 - [ ] Input border contrast ≥3:1

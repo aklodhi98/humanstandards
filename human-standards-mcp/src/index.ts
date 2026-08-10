@@ -18,22 +18,31 @@ import * as path from 'path';
 import { fileURLToPath } from 'url';
 
 import { StandardsIndex } from './types/index.js';
+import { assertValidStandardsIndex, normalizeDocumentPath } from './standards.js';
 import { searchDocumentation } from './tools/get-guidance.js';
+import { getStandardDocument } from './tools/get-standard.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load standards index
+const SERVER_VERSION = '0.2.0';
+
+// Load standards index. Starting with an empty reference service would be a
+// successful connection with misleading results, so malformed/missing content
+// is fatal.
 const INDEX_PATH = path.join(__dirname, '../data/standards-index.json');
 let standardsIndex: StandardsIndex;
 
 try {
   const indexData = fs.readFileSync(INDEX_PATH, 'utf-8');
-  standardsIndex = JSON.parse(indexData);
-  console.error('✓ Loaded standards index');
+  const parsed: unknown = JSON.parse(indexData);
+  assertValidStandardsIndex(parsed);
+  standardsIndex = parsed;
+  console.error(`✓ Loaded standards index (${standardsIndex.document_count} documents)`);
 } catch (err) {
-  console.error('⚠ Standards index not found. Run: npm run index-docs');
-  standardsIndex = { categories: {}, rules: [], patterns: [] };
+  const message = err instanceof Error ? err.message : String(err);
+  console.error(`Fatal: unable to load standards index: ${message}`);
+  process.exit(1);
 }
 
 // Nielsen's 10 Usability Heuristics
@@ -323,7 +332,7 @@ const HEURISTICS: Record<string, {
 const server = new Server(
   {
     name: 'human-standards',
-    version: '0.1.0'
+    version: SERVER_VERSION
   },
   {
     capabilities: {
@@ -332,10 +341,30 @@ const server = new Server(
   }
 );
 
+const readOnlyAnnotations = {
+  readOnlyHint: true,
+  destructiveHint: false,
+  idempotentHint: true,
+  openWorldHint: false,
+};
+
+function jsonResult(data: Record<string, unknown>) {
+  return {
+    content: [
+      {
+        type: 'text' as const,
+        text: JSON.stringify(data, null, 2),
+      },
+    ],
+    structuredContent: data,
+  };
+}
+
 // Define available tools
 const tools: Tool[] = [
   {
     name: 'get_heuristic',
+    title: 'Get usability heuristic',
     description: 'Get detailed information about a specific Nielsen usability heuristic (H1-H10). Returns the principle, description, key questions to ask, good examples, common violations, and related documentation.',
     inputSchema: {
       type: 'object',
@@ -346,30 +375,124 @@ const tools: Tool[] = [
           enum: ['H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'H7', 'H8', 'H9', 'H10']
         }
       },
-      required: ['id']
-    }
+      required: ['id'],
+      additionalProperties: false
+    },
+    outputSchema: {
+      type: 'object',
+      properties: {
+        id: { type: 'string' },
+        name: { type: 'string' },
+        principle: { type: 'string' },
+        description: { type: 'string' },
+        questions: { type: 'array', items: { type: 'string' } },
+        examples: { type: 'array', items: { type: 'string' } },
+        violations: { type: 'array', items: { type: 'string' } },
+        related_docs: { type: 'array', items: { type: 'object' } },
+        source: { type: 'string' }
+      },
+      required: ['id', 'name', 'principle', 'description', 'questions', 'examples', 'violations', 'related_docs', 'source']
+    },
+    annotations: readOnlyAnnotations
   },
   {
     name: 'get_all_heuristics',
+    title: 'List usability heuristics',
     description: 'Get a summary of all 10 Nielsen usability heuristics. Useful for understanding the full framework or identifying which heuristics might apply to a situation.',
     inputSchema: {
       type: 'object',
-      properties: {}
-    }
+      properties: {},
+      additionalProperties: false
+    },
+    outputSchema: {
+      type: 'object',
+      properties: {
+        heuristics: { type: 'array', items: { type: 'object' } },
+        source: { type: 'string' }
+      },
+      required: ['heuristics', 'source']
+    },
+    annotations: readOnlyAnnotations
   },
   {
     name: 'search_standards',
-    description: 'Search Human Standards documentation for specific topics. Returns relevant documents with titles, descriptions, and URLs.',
+    title: 'Search Human Standards',
+    description: 'Search the full Human Standards library. Returns ranked documents, matched terms, and excerpts from the actual guidance. Use get_standard with a returned path to read the document or a named section.',
     inputSchema: {
       type: 'object',
       properties: {
         query: {
           type: 'string',
-          description: 'Search query (e.g., "forms", "cognitive load", "error handling", "accessibility")'
+          minLength: 1,
+          maxLength: 200,
+          description: 'Topic or task query (e.g., "forms error recovery", "cognitive load", "touch targets")'
+        },
+        limit: {
+          type: 'integer',
+          minimum: 1,
+          maximum: 10,
+          default: 5,
+          description: 'Maximum number of ranked results to return (1-10).'
         }
       },
-      required: ['query']
-    }
+      required: ['query'],
+      additionalProperties: false
+    },
+    outputSchema: {
+      type: 'object',
+      properties: {
+        query: { type: 'string' },
+        result_count: { type: 'integer' },
+        results: { type: 'array', items: { type: 'object' } }
+      },
+      required: ['query', 'result_count', 'results']
+    },
+    annotations: readOnlyAnnotations
+  },
+  {
+    name: 'get_standard',
+    title: 'Read a Human Standard',
+    description: 'Read the actual Human Standards guidance at a path returned by search_standards. For long documents, the response lists available sections; pass section to retrieve one focused section without truncation.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        path: {
+          type: 'string',
+          minLength: 1,
+          description: 'Document path returned by search_standards, such as /interaction-patterns/forms/.'
+        },
+        section: {
+          type: 'string',
+          minLength: 1,
+          description: 'Optional H2 or H3 section title from available_sections.'
+        },
+        max_chars: {
+          type: 'integer',
+          minimum: 2000,
+          maximum: 30000,
+          default: 12000,
+          description: 'Maximum content characters to return.'
+        }
+      },
+      required: ['path'],
+      additionalProperties: false
+    },
+    outputSchema: {
+      type: 'object',
+      properties: {
+        title: { type: 'string' },
+        path: { type: 'string' },
+        description: { type: 'string' },
+        content: { type: 'string' },
+        available_sections: { type: 'array', items: { type: 'string' } },
+        key_points: { type: 'array', items: { type: 'string' } },
+        references: { type: 'array', items: { type: 'string' } },
+        requested_section: { type: ['string', 'null'] },
+        truncated: { type: 'boolean' }
+      },
+      required: ['title', 'path', 'description', 'content', 'available_sections', 'key_points', 'references', 'requested_section', 'truncated']
+    },
+    annotations: readOnlyAnnotations
   }
 ];
 
@@ -382,35 +505,29 @@ server.setRequestHandler(ListToolsRequestSchema, async () => {
 server.setRequestHandler(CallToolRequestSchema, async (request) => {
   const { name, arguments: args } = request.params;
 
-  if (!args) {
-    throw new Error('Missing arguments');
-  }
+  if (!tools.some((tool) => tool.name === name)) throw new Error(`Unknown tool: ${name}`);
 
   try {
     switch (name) {
       case 'get_heuristic': {
-        const id = (args.id as string).toUpperCase();
+        if (typeof args?.id !== 'string' || !args.id.trim()) {
+          throw new Error('id must be one of H1-H10.');
+        }
+        const id = args.id.toUpperCase();
         const heuristic = HEURISTICS[id];
 
         if (!heuristic) {
           throw new Error(`Unknown heuristic: ${id}. Valid IDs are H1-H10.`);
         }
 
-        return {
-          content: [
-            {
-              type: 'text',
-              text: JSON.stringify({
-                ...heuristic,
-                related_docs: heuristic.related_docs.map(path => ({
-                  path,
-                  url: `https://humanstandards.org${path}`
-                })),
-                reference: 'https://humanstandards.org/interaction-patterns/nielsen-heuristics'
-              }, null, 2)
-            }
-          ]
-        };
+        return jsonResult({
+          ...heuristic,
+          related_docs: heuristic.related_docs.map((documentPath) => {
+            const normalizedPath = normalizeDocumentPath(documentPath);
+            return { path: normalizedPath, url: `https://humanstandards.org${normalizedPath}` };
+          }),
+          source: 'https://www.nngroup.com/articles/ten-usability-heuristics/'
+        });
       }
 
       case 'get_all_heuristics': {
@@ -420,41 +537,51 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           principle: h.principle
         }));
 
-        return {
-          content: [
-            {
-              type: 'text',
-              text: JSON.stringify({
-                heuristics: summary,
-                reference: 'https://humanstandards.org/interaction-patterns/nielsen-heuristics',
-                source: 'Nielsen Norman Group - 10 Usability Heuristics for User Interface Design'
-              }, null, 2)
-            }
-          ]
-        };
+        return jsonResult({
+          heuristics: summary,
+          source: 'https://www.nngroup.com/articles/ten-usability-heuristics/'
+        });
       }
 
       case 'search_standards': {
-        const query = args.query as string;
-        const results = searchDocumentation(query, standardsIndex);
+        if (typeof args?.query !== 'string' || !args.query.trim()) {
+          throw new Error('query must contain at least one word.');
+        }
+        if (args.query.length > 200) throw new Error('query must be 200 characters or fewer.');
+        if (args.limit !== undefined && (!Number.isInteger(args.limit) || Number(args.limit) < 1 || Number(args.limit) > 10)) {
+          throw new Error('limit must be an integer from 1 to 10.');
+        }
+        const query = args.query.trim();
+        const results = searchDocumentation(query, standardsIndex, Number(args.limit ?? 5));
+        return jsonResult({
+          query,
+          result_count: results.length,
+          results: results.map((result) => ({
+            ...result,
+            url: `https://humanstandards.org${result.path}`
+          }))
+        });
+      }
 
-        return {
-          content: [
-            {
-              type: 'text',
-              text: JSON.stringify({
-                query,
-                results: results.map(r => ({
-                  title: r.title,
-                  description: r.description,
-                  path: r.path,
-                  url: `https://humanstandards.org${r.path}`
-                })),
-                reference: 'https://humanstandards.org'
-              }, null, 2)
-            }
-          ]
-        };
+      case 'get_standard': {
+        if (typeof args?.path !== 'string' || !args.path.trim()) {
+          throw new Error('path must be a document path returned by search_standards.');
+        }
+        if (args.section !== undefined && (typeof args.section !== 'string' || !args.section.trim())) {
+          throw new Error('section must contain at least one word.');
+        }
+        if (
+          args.max_chars !== undefined &&
+          (!Number.isInteger(args.max_chars) || Number(args.max_chars) < 2000 || Number(args.max_chars) > 30000)
+        ) {
+          throw new Error('max_chars must be an integer from 2000 to 30000.');
+        }
+        return jsonResult(
+          getStandardDocument(args.path, standardsIndex, {
+            section: args.section as string | undefined,
+            maxChars: args.max_chars as number | undefined,
+          }) as unknown as Record<string, unknown>,
+        );
       }
 
       default:
