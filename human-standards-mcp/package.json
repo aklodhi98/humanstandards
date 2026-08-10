@@ -1,6 +1,6 @@
 {
   "name": "@humanstandards/mcp-server",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Read-only Human Standards reference retrieval for AI-assisted interface work",
   "license": "SEE LICENSE IN LICENSE.md",
   "type": "module",

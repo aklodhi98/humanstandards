@@ -16,6 +16,14 @@ test('stdio server exposes and executes the complete read-only reference contrac
   await client.connect(transport);
   context.after(async () => client.close());
 
+  const instructions = client.getInstructions();
+  assert.ok(instructions);
+  assert.ok(instructions.length <= 512);
+  assert.match(instructions, /designing, implementing, or reviewing user interfaces/);
+  assert.match(instructions, /Start with search_standards/);
+  assert.match(instructions, /then call get_standard/);
+  assert.match(instructions, /server is read-only/);
+
   const listed = await client.listTools();
   assert.deepEqual(
     listed.tools.map((tool) => tool.name).sort(),

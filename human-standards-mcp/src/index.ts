@@ -25,7 +25,7 @@ import { getStandardDocument } from './tools/get-standard.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SERVER_VERSION = '0.2.0';
+const SERVER_VERSION = '0.2.1';
 
 // Load standards index. Starting with an empty reference service would be a
 // successful connection with misleading results, so malformed/missing content
@@ -329,6 +329,8 @@ const HEURISTICS: Record<string, {
 };
 
 // Initialize MCP server
+const serverInstructions = 'Use Human Standards when designing, implementing, or reviewing user interfaces, user flows, forms, navigation, feedback, errors, onboarding, accessibility, content, or interaction patterns. Start with search_standards using the task and user context, then call get_standard for the most relevant returned paths. Use get_all_heuristics or get_heuristic for heuristic reviews. Ground important design decisions in the retrieved guidance and identify the standards consulted. This server is read-only.';
+
 const server = new Server(
   {
     name: 'human-standards',
@@ -337,7 +339,8 @@ const server = new Server(
   {
     capabilities: {
       tools: {}
-    }
+    },
+    instructions: serverInstructions
   }
 );
 
