@@ -1,0 +1,483 @@
+<div class="rhythm-examples">
+	<figure class="relationship-figure">
+		<div class="relationship-scale" aria-hidden="true">
+			<div class="relationship-step is-attached">
+				<span class="relationship-label">Attached</span>
+				<span class="relationship-pair"><i></i><i></i></span>
+				<span class="relationship-intent">one unit</span>
+			</div>
+			<div class="relationship-step is-associated">
+				<span class="relationship-label">Associated</span>
+				<span class="relationship-pair"><i></i><i></i></span>
+				<span class="relationship-intent">directly related</span>
+			</div>
+			<div class="relationship-step is-grouped">
+				<span class="relationship-label">Grouped</span>
+				<span class="relationship-pair"><i></i><i></i></span>
+				<span class="relationship-intent">peer items</span>
+			</div>
+			<div class="relationship-step is-separated">
+				<span class="relationship-label">Separated</span>
+				<span class="relationship-pair"><i></i><i></i></span>
+				<span class="relationship-intent">different roles</span>
+			</div>
+			<div class="relationship-step is-sectional">
+				<span class="relationship-label">Sectional</span>
+				<span class="relationship-pair"><i></i><i></i></span>
+				<span class="relationship-intent">new region</span>
+			</div>
+		</div>
+		<figcaption>
+			<strong>Relationship ladder.</strong> Separation grows with semantic distance. The steps show order, not a required ratio.
+		</figcaption>
+	</figure>
+
+	<div class="comparison-grid">
+		<figure class="comparison-card is-weak">
+			<div class="example-heading">
+				<span>Uniform spacing</span>
+				<span class="example-status">Weak grouping</span>
+			</div>
+			<div class="demo-form demo-form-uniform" aria-hidden="true">
+				<span class="demo-label">Email address</span>
+				<span class="demo-input"></span>
+				<span class="demo-help">We’ll only use this for account notices.</span>
+				<span class="demo-label">Team name</span>
+				<span class="demo-input"></span>
+				<span class="demo-help">Visible to everyone in your workspace.</span>
+				<span class="demo-button">Create workspace</span>
+			</div>
+			<figcaption>
+				Every sibling receives the same gap, so help text drifts between fields and the action reads like another input.
+			</figcaption>
+		</figure>
+
+		<figure class="comparison-card is-clear">
+			<div class="example-heading">
+				<span>Relational rhythm</span>
+				<span class="example-status">Clear grouping</span>
+			</div>
+			<div class="demo-form" aria-hidden="true">
+				<div class="demo-fields">
+					<div class="demo-field">
+						<span class="demo-label">Email address</span>
+						<span class="demo-input"></span>
+						<span class="demo-help">We’ll only use this for account notices.</span>
+					</div>
+					<div class="demo-field">
+						<span class="demo-label">Team name</span>
+						<span class="demo-input"></span>
+						<span class="demo-help">Visible to everyone in your workspace.</span>
+					</div>
+				</div>
+				<div class="demo-actions">
+					<span class="demo-button">Create workspace</span>
+				</div>
+			</div>
+			<figcaption>
+				Labels and help stay associated with their controls; fields form a group; the action gets a stronger pause.
+			</figcaption>
+		</figure>
+	</div>
+
+	<div class="pattern-grid">
+		<figure class="pattern-card">
+			<div class="example-heading">
+				<span>Editorial flow</span>
+				<span class="example-status">Asymmetric on purpose</span>
+			</div>
+			<div class="editorial-demo" aria-hidden="true">
+				<div class="article-tail">
+					<span></span><span></span>
+				</div>
+				<div class="rhythm-marker">sectional pause</div>
+				<div class="article-heading">Design the relationship first</div>
+				<div class="rhythm-marker is-tight">associated</div>
+				<div class="article-copy">
+					<span></span><span></span><span></span>
+				</div>
+				<div class="rhythm-marker is-medium">grouped</div>
+				<div class="article-copy is-short">
+					<span></span><span></span>
+				</div>
+			</div>
+			<figcaption>
+				A heading is farther from the section it ends than from the content it introduces. Mathematical symmetry would weaken the reading cue.
+			</figcaption>
+		</figure>
+
+		<figure class="pattern-card">
+			<div class="example-heading">
+				<span>Responsive settings</span>
+				<span class="example-status">Relationship preserved</span>
+			</div>
+			<div class="settings-demo" aria-hidden="true">
+				<div class="viewport-label">Wide</div>
+				<div class="setting-row is-wide">
+					<div class="setting-copy">
+						<strong>Weekly summary</strong>
+						<span>Receive a digest every Friday.</span>
+					</div>
+					<span class="toggle is-on"></span>
+				</div>
+				<div class="responsive-arrow">recompose →</div>
+				<div class="viewport-label">Narrow</div>
+				<div class="setting-row is-narrow">
+					<div class="setting-copy">
+						<strong>Weekly summary</strong>
+						<span>Receive a digest every Friday.</span>
+					</div>
+					<span class="toggle is-on"></span>
+				</div>
+			</div>
+			<figcaption>
+				The layout changes, but the control remains inside its setting. Responsive rhythm preserves meaning rather than desktop coordinates.
+			</figcaption>
+		</figure>
+	</div>
+</div>
+
+<style>
+	.rhythm-examples {
+		--example-border: color-mix(in srgb, var(--hs-rule) 84%, var(--hs-ink));
+		--example-surface: color-mix(in srgb, var(--hs-surface-raised) 94%, var(--hs-accent-soft));
+		--example-muted: color-mix(in srgb, var(--hs-text-muted) 72%, transparent);
+		display: grid;
+		gap: 1rem;
+		margin-block: 1.25rem 2.5rem;
+	}
+
+	.rhythm-examples figure {
+		margin: 0;
+		border: 1px solid var(--example-border);
+		border-radius: 0.75rem;
+		background: var(--example-surface);
+		overflow: hidden;
+	}
+
+	.rhythm-examples figcaption {
+		border-top: 1px solid var(--example-border);
+		padding: 0.9rem 1rem 1rem;
+		color: var(--hs-text-muted);
+		font-size: 0.83rem;
+		line-height: 1.55;
+	}
+
+	.rhythm-examples figcaption strong {
+		color: var(--hs-ink);
+	}
+
+	.relationship-scale {
+		display: grid;
+		gap: 0.2rem;
+		padding: 0.8rem;
+	}
+
+	.relationship-step {
+		--relationship-gap: 0.2rem;
+		display: grid;
+		grid-template-columns: minmax(6.5rem, 0.8fr) minmax(7rem, 1fr) minmax(6.5rem, 0.9fr);
+		align-items: center;
+		min-height: 2.75rem;
+		padding: 0.45rem 0.65rem;
+		border-radius: 0.4rem;
+	}
+
+	.relationship-step:nth-child(odd) {
+		background: color-mix(in srgb, var(--hs-accent-soft) 48%, transparent);
+	}
+
+	.relationship-step.is-associated { --relationship-gap: 0.55rem; }
+	.relationship-step.is-grouped { --relationship-gap: 1rem; }
+	.relationship-step.is-separated { --relationship-gap: 1.65rem; }
+	.relationship-step.is-sectional { --relationship-gap: 2.5rem; }
+
+	.relationship-label {
+		color: var(--hs-ink);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.025em;
+		text-transform: uppercase;
+	}
+
+	.relationship-pair {
+		display: flex;
+		align-items: center;
+		gap: var(--relationship-gap);
+	}
+
+	.relationship-pair i {
+		display: block;
+		width: 2.2rem;
+		height: 1.15rem;
+		border: 1px solid color-mix(in srgb, var(--hs-accent) 62%, var(--hs-ink));
+		border-radius: 0.25rem;
+		background: var(--hs-accent-soft);
+	}
+
+	.relationship-intent {
+		color: var(--example-muted);
+		font-size: 0.76rem;
+		text-align: right;
+	}
+
+	.comparison-grid,
+	.pattern-grid {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+
+	.example-heading {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.75rem;
+		min-height: 2.75rem;
+		padding: 0.65rem 0.8rem;
+		border-bottom: 1px solid var(--example-border);
+		color: var(--hs-ink);
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+
+	.example-status {
+		border: 1px solid var(--example-border);
+		border-radius: 999px;
+		padding: 0.15rem 0.45rem;
+		color: var(--hs-text-muted);
+		font-size: 0.65rem;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	.is-clear .example-status,
+	.pattern-card .example-status {
+		border-color: color-mix(in srgb, var(--hs-accent) 48%, var(--example-border));
+		background: var(--hs-accent-soft);
+		color: var(--hs-accent-text);
+	}
+
+	.is-weak .example-status {
+		border-style: dashed;
+	}
+
+	.demo-form {
+		display: grid;
+		align-content: start;
+		min-height: 20rem;
+		padding: 1.15rem;
+	}
+
+	.demo-form-uniform {
+		gap: 0.72rem;
+	}
+
+	.demo-fields {
+		display: grid;
+		gap: 1.55rem;
+	}
+
+	.demo-field {
+		display: grid;
+		gap: 0.35rem;
+	}
+
+	.demo-actions {
+		margin-top: 2rem;
+	}
+
+	.demo-label {
+		color: var(--hs-ink);
+		font-size: 0.75rem;
+		font-weight: 700;
+	}
+
+	.demo-input {
+		display: block;
+		height: 2.3rem;
+		border: 1px solid var(--example-border);
+		border-radius: 0.4rem;
+		background: var(--hs-bg);
+	}
+
+	.demo-help {
+		color: var(--example-muted);
+		font-size: 0.66rem;
+		line-height: 1.4;
+	}
+
+	.demo-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		justify-self: start;
+		min-height: 2.25rem;
+		border-radius: 0.4rem;
+		padding-inline: 0.8rem;
+		background: var(--hs-accent);
+		color: var(--hs-button-text);
+		font-size: 0.72rem;
+		font-weight: 700;
+	}
+
+	.editorial-demo,
+	.settings-demo {
+		min-height: 18rem;
+		padding: 1.15rem;
+	}
+
+	.article-tail,
+	.article-copy {
+		display: grid;
+		gap: 0.35rem;
+	}
+
+	.article-tail span,
+	.article-copy span {
+		display: block;
+		height: 0.38rem;
+		border-radius: 999px;
+		background: color-mix(in srgb, var(--hs-text-muted) 28%, transparent);
+	}
+
+	.article-tail span:last-child { width: 68%; }
+	.article-copy span:nth-child(2) { width: 92%; }
+	.article-copy span:last-child { width: 76%; }
+	.article-copy.is-short span:last-child { width: 58%; }
+
+	.article-heading {
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: 1.25rem;
+		font-weight: 600;
+		letter-spacing: -0.025em;
+	}
+
+	.rhythm-marker {
+		display: flex;
+		align-items: center;
+		gap: 0.45rem;
+		min-height: 2.7rem;
+		color: var(--hs-accent-text);
+		font-size: 0.62rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	.rhythm-marker::before {
+		width: 1rem;
+		height: 1px;
+		background: currentColor;
+		content: '';
+	}
+
+	.rhythm-marker.is-tight { min-height: 1.2rem; }
+	.rhythm-marker.is-medium { min-height: 1.8rem; }
+
+	.settings-demo {
+		display: grid;
+		align-content: center;
+		gap: 0.45rem;
+	}
+
+	.viewport-label {
+		color: var(--example-muted);
+		font-size: 0.62rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		text-transform: uppercase;
+	}
+
+	.setting-row {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 0.9rem;
+		border: 1px solid var(--example-border);
+		border-radius: 0.45rem;
+		padding: 0.75rem;
+		background: var(--hs-bg);
+	}
+
+	.setting-row.is-narrow {
+		width: 72%;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.7rem;
+	}
+
+	.setting-copy {
+		display: grid;
+		gap: 0.2rem;
+	}
+
+	.setting-copy strong {
+		color: var(--hs-ink);
+		font-size: 0.72rem;
+	}
+
+	.setting-copy span {
+		color: var(--example-muted);
+		font-size: 0.62rem;
+	}
+
+	.toggle {
+		position: relative;
+		display: block;
+		flex: 0 0 auto;
+		width: 2rem;
+		height: 1.15rem;
+		border-radius: 999px;
+		background: var(--hs-accent);
+	}
+
+	.toggle::after {
+		position: absolute;
+		top: 0.18rem;
+		right: 0.18rem;
+		width: 0.79rem;
+		height: 0.79rem;
+		border-radius: 50%;
+		background: var(--hs-button-text);
+		content: '';
+	}
+
+	.responsive-arrow {
+		padding-block: 0.35rem;
+		color: var(--hs-accent-text);
+		font-size: 0.62rem;
+		font-weight: 700;
+		letter-spacing: 0.04em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+
+	@media (max-width: 42rem) {
+		.comparison-grid,
+		.pattern-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.relationship-step {
+			grid-template-columns: 6.2rem 1fr;
+		}
+
+		.relationship-intent {
+			display: none;
+		}
+
+		.demo-form,
+		.editorial-demo,
+		.settings-demo {
+			min-height: auto;
+		}
+	}
+
+	@media (prefers-contrast: more) {
+		.rhythm-examples {
+			--example-border: var(--hs-ink);
+		}
+	}
+</style>
