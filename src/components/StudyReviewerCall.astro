@@ -18,6 +18,7 @@ const applicationLabels = {
 };
 
 const canApply = applicationStatus === 'open' && Boolean(applicationUrl);
+const acceptsDirectInterest = applicationStatus === 'open' && !applicationUrl;
 ---
 
 <div class="study-call">
@@ -38,6 +39,10 @@ const canApply = applicationStatus === 'open' && Boolean(applicationUrl);
 			{canApply ? (
 				<a class="study-call__button is-primary" href={applicationUrl} target="_blank" rel="noopener">
 					{applicationLabels[applicationStatus]}
+				</a>
+			) : acceptsDirectInterest ? (
+				<a class="study-call__button is-primary" href="#express-interest">
+					How to express interest
 				</a>
 			) : (
 				<span class="study-call__button is-disabled" aria-disabled="true">
@@ -149,6 +154,16 @@ const canApply = applicationStatus === 'open' && Boolean(applicationUrl);
 		</main>
 
 		<aside class="study-call__aside" aria-label="Reviewer eligibility and application information">
+			<section id="express-interest">
+				<p class="study-call__aside-label">Express interest</p>
+				<h2>Reply through the private channel</h2>
+				<p>
+					If this call was shared with you directly or through a social post, reply privately
+					through that same channel. GitHub Discussions is for public questions about the study,
+					not applications or contact details.
+				</p>
+			</section>
+
 			<section>
 				<p class="study-call__aside-label">Who should apply</p>
 				<h2>Reviewer profile</h2>
@@ -187,9 +202,9 @@ const canApply = applicationStatus === 'open' && Boolean(applicationUrl);
 				<p class="study-call__aside-label">Privacy</p>
 				<h2>Private application, public process</h2>
 				<p>
-					Contact details, screening answers, and availability will not be
-					collected in GitHub Discussions or published with the study. The private application
-					will explain what is collected, why, who can access it, and when it will be deleted.
+					Contact details, screening answers, and availability will not be collected in GitHub
+					Discussions or published with the study. They should be shared only through the private
+					recruitment channel and used for reviewer selection, scheduling, and access.
 				</p>
 			</section>
 		</aside>
