@@ -25,6 +25,13 @@ test('search reaches nested documents and caps result counts', () => {
   assert.equal(results[0].path, '/perception/vision/legibility-contrast/');
 });
 
+test('search retrieves relationship-first spatial rhythm guidance', () => {
+  const results = searchDocumentation('spatial rhythm grouping layout', index, 3);
+
+  assert.equal(results[0]?.path, '/code-design-tokens/spatial-rhythm-layout/');
+  assert.match(results[0]?.snippet ?? '', /spacing|rhythm|relationship/i);
+});
+
 test('blank and stop-word-only searches are rejected', () => {
   assert.throws(() => searchDocumentation('', index), /at least one word/i);
   assert.throws(() => searchDocumentation('and the', index), /meaningful word/i);

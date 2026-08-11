@@ -27,20 +27,26 @@ This page provides exact specifications that AI agents and designers can apply d
 | Scenario | Minimum Gap | Recommended | Notes |
 |----------|-------------|-------------|-------|
 | Adjacent targets (both ≥24px) | 0px | 8px | WCAG 2.5.8 allows touching |
-| Adjacent targets (any <24px) | Enough to create 24px combined | 8px | Spacing compensates for size |
-| General interactive elements | 8px | 12px | Prevents mis-taps |
+| Adjacent targets (any <24px) | Satisfy the 24px spacing geometry | Product-specific | Spacing exception can compensate for size |
+| General interactive elements | Product-specific | 8-12px | Design guidance to reduce mis-taps, not a universal WCAG gap |
 | Motor impairment accommodations | 12px | 16px+ | Spacious mode |
 | Destructive adjacent to safe | 16px+ | 24px+ | Prevent catastrophic errors |
 
 ### WCAG 2.5.8 Spacing Formula
 
-If target size is below 24×24px, the target must have sufficient spacing to create a 24px diameter circle:
+If a target is below 24×24 CSS px, imagine a 24px-diameter circle centred on
+the target's bounding box. That circle must not intersect another target or the
+equivalent circle around another undersized target. For equal square targets in
+a row, a useful simplification is:
 
 ```
-Required spacing = 24px - target_dimension
+Minimum edge-to-edge gap = 24px - target dimension
 ```
 
-For a 20×20px target: `24 - 20 = 4px` minimum spacing on each side.
+For two equal 20×20px targets: `24 - 20 = 4px` minimum edge-to-edge gap. This
+does not mean 4px of extra spacing on each side. Mixed sizes and non-linear
+arrangements should be checked against the circle geometry in the normative
+[WCAG 2.5.8 definition](https://www.w3.org/WAI/WCAG22/#target-size-minimum).
 
 ### Platform-Specific Conversions
 
@@ -588,7 +594,8 @@ FFitts Law (Finger-Fitts) accounts for:
 
 ### Spacing Audit
 
-- [ ] **Adjacent targets have ≥8px gap**
+- [ ] **Undersized targets satisfy the WCAG 24px spacing geometry**
+- [ ] **Product-recommended gaps reduce mis-taps without flattening spatial hierarchy**
 - [ ] **Destructive actions separated by ≥16px**
 - [ ] **Small targets (<24px) have compensating spacing**
 - [ ] **Button groups use consistent spacing tokens**
@@ -657,6 +664,7 @@ A [November 2024 preprint](https://www.smashingmagazine.com/2022/02/fitts-law-to
 
 ## See Also
 
+- [Spatial Rhythm, Grouping & Layout](/code-design-tokens/spatial-rhythm-layout/) — Relationship-first layout guidance
 - [Targets & Spacing](/ergonomics/targets-spacing/) — Ergonomic foundations
 - [Touch](/perception/touch/) — Touch perception and interaction
 - [Accessible Typography](/code-design-tokens/accessible-typography/) — Text sizing tokens

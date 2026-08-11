@@ -18,7 +18,11 @@ This playbook provides both human-readable guidance and machine-parseable specif
 | Touch target (buttons, inputs) | 24×24 CSS px | 44×44 CSS px | 2.5.5, 2.5.8 |
 | Input height | 36px | 44-48px | — |
 | Font size (labels, inputs) | 16px | 16-18px | 1.4.4 |
-| Tap spacing between targets | 8px | 12px+ | 2.5.8 |
+| Tap spacing between targets | Satisfy 24px target geometry | 8-12px product guidance | 2.5.8 |
+
+Use spacing to express the form's relationships, not one gap between every
+child: label to control and control to message are associated; field to field is
+grouped; fields to actions are separated. See [Spatial Rhythm, Grouping & Layout](/code-design-tokens/spatial-rhythm-layout/).
 
 ### Contrast Requirements
 

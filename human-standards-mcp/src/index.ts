@@ -17,15 +17,22 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
-import { StandardsIndex } from './types/index.js';
+import {
+  SpatialDensity,
+  SpatialRhythmContract,
+  SpatialRhythmPatternId,
+  SpatialViewport,
+  StandardsIndex,
+} from './types/index.js';
 import { assertValidStandardsIndex, normalizeDocumentPath } from './standards.js';
+import { assertValidSpatialRhythmContract, getSpatialRhythm } from './spatial-rhythm.js';
 import { searchDocumentation } from './tools/get-guidance.js';
 import { getStandardDocument } from './tools/get-standard.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SERVER_VERSION = '0.2.1';
+const SERVER_VERSION = '0.3.0';
 
 // Load standards index. Starting with an empty reference service would be a
 // successful connection with misleading results, so malformed/missing content
@@ -42,6 +49,21 @@ try {
 } catch (err) {
   const message = err instanceof Error ? err.message : String(err);
   console.error(`Fatal: unable to load standards index: ${message}`);
+  process.exit(1);
+}
+
+const SPATIAL_RHYTHM_PATH = path.join(__dirname, '../data/spatial-rhythm.json');
+let spatialRhythmContract: SpatialRhythmContract;
+
+try {
+  const contractData = fs.readFileSync(SPATIAL_RHYTHM_PATH, 'utf-8');
+  const parsed: unknown = JSON.parse(contractData);
+  assertValidSpatialRhythmContract(parsed);
+  spatialRhythmContract = parsed;
+  console.error(`✓ Loaded spatial rhythm contract (${spatialRhythmContract.patterns.length} patterns)`);
+} catch (err) {
+  const message = err instanceof Error ? err.message : String(err);
+  console.error(`Fatal: unable to load spatial rhythm contract: ${message}`);
   process.exit(1);
 }
 
@@ -329,7 +351,7 @@ const HEURISTICS: Record<string, {
 };
 
 // Initialize MCP server
-const serverInstructions = 'Use Human Standards when designing, implementing, or reviewing user interfaces, user flows, forms, navigation, feedback, errors, onboarding, accessibility, content, or interaction patterns. Start with search_standards using the task and user context, then call get_standard for the most relevant returned paths. Use get_all_heuristics or get_heuristic for heuristic reviews. Ground important design decisions in the retrieved guidance and identify the standards consulted. This server is read-only.';
+const serverInstructions = 'Use Human Standards when designing, implementing, or reviewing interfaces. Start with search_standards, then read relevant paths with get_standard. For spatial layout, call get_spatial_rhythm before implementation and after rendering; preserve its relationship order and resolve it with the product\'s own tokens. Use the heuristic tools for heuristic reviews. Identify the guidance consulted. This server is read-only.';
 
 const server = new Server(
   {
@@ -496,6 +518,54 @@ const tools: Tool[] = [
       required: ['title', 'path', 'description', 'content', 'available_sections', 'key_points', 'references', 'requested_section', 'truncated']
     },
     annotations: readOnlyAnnotations
+  },
+  {
+    name: 'get_spatial_rhythm',
+    title: 'Get spatial rhythm guidance',
+    description: 'Get relationship-first spacing guidance for a whole interface or a form, settings section, card collection, editorial flow, or dashboard. Returns ordered spatial relationships, rhythm rules, responsive and density guidance, manual review questions, evidence boundaries, and token-resolution instructions. It deliberately does not prescribe a universal pixel unit. Call before implementation and during rendered review.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        pattern: {
+          type: 'string',
+          enum: ['all', 'form-stack', 'settings-section', 'card-collection', 'editorial-flow', 'dashboard'],
+          default: 'all',
+          description: 'Optional composition pattern to return. Use all for the complete contract.'
+        },
+        density: {
+          type: 'string',
+          enum: ['compact', 'comfortable', 'spacious'],
+          default: 'comfortable',
+          description: 'Intended interface density. Density changes project-token resolution, not relationship order.'
+        },
+        viewport: {
+          type: 'string',
+          enum: ['small', 'medium', 'large', 'fluid'],
+          default: 'fluid',
+          description: 'Viewport context for responsive rhythm guidance.'
+        }
+      },
+      additionalProperties: false
+    },
+    outputSchema: {
+      type: 'object',
+      properties: {
+        standard_id: { type: 'string' },
+        title: { type: 'string' },
+        principle: { type: 'string' },
+        relationship_order: { type: 'array', items: { type: 'object' } },
+        principles: { type: 'array', items: { type: 'object' } },
+        available_patterns: { type: 'array', items: { type: 'object' } },
+        patterns: { type: 'array', items: { type: 'object' } },
+        selected_context: { type: 'object' },
+        token_resolution: { type: 'object' },
+        evidence_boundary: { type: 'object' },
+        references: { type: 'array', items: { type: 'object' } },
+        source: { type: 'string' }
+      },
+      required: ['standard_id', 'title', 'principle', 'relationship_order', 'principles', 'available_patterns', 'patterns', 'selected_context', 'token_resolution', 'evidence_boundary', 'references', 'source']
+    },
+    annotations: readOnlyAnnotations
   }
 ];
 
@@ -583,6 +653,16 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
           getStandardDocument(args.path, standardsIndex, {
             section: args.section as string | undefined,
             maxChars: args.max_chars as number | undefined,
+          }) as unknown as Record<string, unknown>,
+        );
+      }
+
+      case 'get_spatial_rhythm': {
+        return jsonResult(
+          getSpatialRhythm(spatialRhythmContract, {
+            pattern: args?.pattern as 'all' | SpatialRhythmPatternId | undefined,
+            density: args?.density as SpatialDensity | undefined,
+            viewport: args?.viewport as SpatialViewport | undefined,
           }) as unknown as Record<string, unknown>,
         );
       }

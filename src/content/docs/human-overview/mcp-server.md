@@ -7,7 +7,7 @@ The Human Standards MCP (Model Context Protocol) server gives compatible AI tool
 
 ## What It Does
 
-The MCP server exposes four read-only tools:
+The MCP server exposes five read-only tools:
 
 | Tool | Purpose |
 |------|---------|
@@ -15,6 +15,7 @@ The MCP server exposes four read-only tools:
 | `get_all_heuristics` | Summary of all 10 heuristics for context |
 | `search_standards` | Search full document content and return ranked excerpts |
 | `get_standard` | Read an indexed document or one named section |
+| `get_spatial_rhythm` | Retrieve relationship-first spacing guidance for a composition and context |
 
 ## Philosophy
 
@@ -25,6 +26,7 @@ When building an interface, the AI decides which principles are relevant based o
 - Building a form? Look up H1 (feedback), H5 (error prevention), H9 (error recovery)
 - Designing navigation? Look up H4 (consistency), H6 (recognition over recall)
 - Adding a delete button? Look up H3 (user control), H5 (error prevention)
+- Laying out a form or dashboard? Retrieve its spatial rhythm before resolving product-specific tokens
 
 ## Installation
 
@@ -195,6 +197,26 @@ documents list their section headings and can be requested one section at a time
 The response includes document content, available sections, key points,
 references, and an explicit `truncated` flag.
 
+### `get_spatial_rhythm`
+
+Retrieve the ordered spatial relationships and composition guidance for a whole
+interface or a form, settings section, card collection, editorial flow, or
+dashboard.
+
+```typescript
+// Input
+{
+  "pattern": "form-stack",
+  "density": "comfortable",
+  "viewport": "small"
+}
+```
+
+The response preserves `attached < associated < grouped < separated <
+sectional`, includes responsive and density guidance, and supplies manual review
+questions. It requires the agent to resolve those roles through the product's
+own tokens rather than imposing a universal 8px unit.
+
 ## Usage Examples
 
 ### Building a Registration Form
@@ -209,12 +231,14 @@ AI: *calls get_heuristic('H5')* - Error prevention
 AI: *calls get_heuristic('H9')* - Error recovery
 AI: *calls search_standards('forms error recovery')* - Ranked excerpts
 AI: *calls get_standard('/interaction-patterns/forms/', 'Validation timing')*
+AI: *calls get_spatial_rhythm({ pattern: 'form-stack' })*
 
 AI now knows:
 - Use confirmation for important actions
 - Validate before submission
 - Show specific, actionable error messages
 - Preserve user input after errors
+- Keep labels, controls, messages, fields, and actions in a clear relationship hierarchy
 
 AI: *generates form with these principles applied*
 ```
@@ -279,4 +303,4 @@ The MCP server source code is available in the [human-standards-mcp](https://git
 
 ---
 
-**See also:** [Nielsen's Heuristics](/interaction-patterns/nielsen-heuristics/) | [Getting Started](/human-overview/getting-started/)
+**See also:** [Spatial Rhythm, Grouping & Layout](/code-design-tokens/spatial-rhythm-layout/) | [Nielsen's Heuristics](/interaction-patterns/nielsen-heuristics/) | [Getting Started](/human-overview/getting-started/)

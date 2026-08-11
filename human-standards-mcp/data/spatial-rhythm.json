@@ -1,0 +1,434 @@
+{
+  "schema_version": "1.0",
+  "standard_id": "HS-SPATIAL-RHYTHM",
+  "title": "Spatial Rhythm, Grouping & Layout",
+  "principle": "A spacing scale supplies the vocabulary. Spatial rhythm determines how that vocabulary is composed.",
+  "relationship_order": [
+    {
+      "id": "attached",
+      "rank": 1,
+      "intent": "Two elements form one immediate reading or interaction unit.",
+      "use_when": "Separating the elements would make the unit harder to understand.",
+      "examples": [
+        "icon and label",
+        "label and required indicator",
+        "value and unit"
+      ],
+      "failure_signals": [
+        "The pair looks like separate controls or facts.",
+        "Another nearby element appears more closely related."
+      ]
+    },
+    {
+      "id": "associated",
+      "rank": 2,
+      "intent": "Elements are distinct but directly explain or operate on one another.",
+      "use_when": "The relationship should be clear before the user reads labels or borders.",
+      "examples": [
+        "field label and input",
+        "input and help or error text",
+        "card title and description"
+      ],
+      "failure_signals": [
+        "Supporting text appears to belong to the next item.",
+        "A control appears detached from the content it affects."
+      ]
+    },
+    {
+      "id": "grouped",
+      "rank": 3,
+      "intent": "Peer items belong to the same collection, task, or repeated pattern.",
+      "use_when": "Users should scan the items as a coherent set while still distinguishing each item.",
+      "examples": [
+        "one form field to the next",
+        "items in a list",
+        "controls in a toolbar cluster"
+      ],
+      "failure_signals": [
+        "Repeated peers use visibly different gaps without a reason.",
+        "Items merge into one dense block."
+      ]
+    },
+    {
+      "id": "separated",
+      "rank": 4,
+      "intent": "Groups are related within the same region but perform different roles.",
+      "use_when": "The user needs a visible pause before switching subtask or content type.",
+      "examples": [
+        "form fields and form actions",
+        "card content and card footer",
+        "filters and results"
+      ],
+      "failure_signals": [
+        "Different subtasks appear to be one group.",
+        "Every gap has equal emphasis and the layout feels monotonous."
+      ]
+    },
+    {
+      "id": "sectional",
+      "rank": 5,
+      "intent": "Major regions need the strongest pause in the page rhythm.",
+      "use_when": "The user is moving to a new topic, stage, or page-level responsibility.",
+      "examples": [
+        "one page section to the next",
+        "primary content and supporting region",
+        "article body and related resources"
+      ],
+      "failure_signals": [
+        "Major regions are hard to identify when scanning.",
+        "Large empty areas interrupt a flow without communicating a boundary."
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "preserve-order",
+      "name": "Preserve relational order",
+      "guidance": "Resolve relationship ranks with the product's own tokens so closer relationships never receive more space than looser relationships without an explicit reason.",
+      "validation": "Check that attached < associated < grouped < separated < sectional in the rendered context. Ranks describe ordering, not ratios or pixel multipliers."
+    },
+    {
+      "id": "repeat-to-create-rhythm",
+      "name": "Use repetition to create rhythm",
+      "guidance": "Repeated peers should use the same spatial pattern. Predictability makes collections easier to scan.",
+      "validation": "Compare repeated instances and flag unexplained changes in internal padding, sibling gaps, or alignment."
+    },
+    {
+      "id": "vary-to-create-hierarchy",
+      "name": "Use variation to create hierarchy",
+      "guidance": "Not every gap should be equal. Deliberate changes in space create pauses, transitions, and emphasis.",
+      "validation": "Check that major group and section boundaries remain distinguishable without relying only on borders or colour."
+    },
+    {
+      "id": "content-led-rhythm",
+      "name": "Let content and typography lead",
+      "guidance": "Choose the scale and rhythm for the actual type, content length, controls, language, platform, and user context. A baseline grid is a guide, not a universal law.",
+      "validation": "Test realistic content, text resizing, translated strings, and multiple viewport widths rather than empty placeholders."
+    },
+    {
+      "id": "parent-owned-spacing",
+      "name": "Let the layout context own external spacing",
+      "guidance": "Parents should normally control gaps between siblings; components should control their internal padding. This prevents leftover margins and accidental double spacing.",
+      "validation": "Inspect whether parent gap and child margins combine to create unintended space."
+    },
+    {
+      "id": "optical-adjustment",
+      "name": "Permit accountable optical adjustment",
+      "guidance": "Visual weight, icons, type metrics, and irregular shapes can require a supported neighbouring token or a documented exception.",
+      "validation": "Require a short reason for exceptions and review the rendered result; do not fail a layout merely because every measurement is not mathematically identical."
+    }
+  ],
+  "patterns": [
+    {
+      "id": "form-stack",
+      "name": "Form stack",
+      "description": "A vertical sequence of labels, controls, supporting messages, fields, and actions.",
+      "relationships": [
+        {
+          "from": "label",
+          "to": "control",
+          "relationship": "associated",
+          "rationale": "The label identifies the control."
+        },
+        {
+          "from": "control",
+          "to": "help-or-error",
+          "relationship": "associated",
+          "rationale": "The message explains the control's value or state."
+        },
+        {
+          "from": "field",
+          "to": "field",
+          "relationship": "grouped",
+          "rationale": "Fields are peers in one task."
+        },
+        {
+          "from": "field-group",
+          "to": "form-actions",
+          "relationship": "separated",
+          "rationale": "Actions complete or leave the data-entry task."
+        }
+      ],
+      "rhythm": [
+        "Keep labels and messages visually attached to their own control.",
+        "Repeat the same field rhythm unless a subgroup or conditional region needs a deliberate pause.",
+        "Do not use a universal gap between every direct child of the form."
+      ],
+      "responsive_behavior": [
+        "Preserve relationship order when the form becomes single-column.",
+        "Allow wrapping and text expansion without detaching messages from their controls."
+      ],
+      "manual_review": [
+        "Can each help or error message be assigned to the correct field by position alone?",
+        "Do the actions read as the end of the form rather than another field?"
+      ]
+    },
+    {
+      "id": "settings-section",
+      "name": "Settings section",
+      "description": "Related preferences grouped under headings, with controls that affect nearby descriptions or values.",
+      "relationships": [
+        {
+          "from": "setting-label",
+          "to": "setting-description",
+          "relationship": "associated",
+          "rationale": "The description qualifies the setting."
+        },
+        {
+          "from": "setting-copy",
+          "to": "setting-control",
+          "relationship": "associated",
+          "rationale": "The control affects the named setting."
+        },
+        {
+          "from": "setting-row",
+          "to": "setting-row",
+          "relationship": "grouped",
+          "rationale": "Rows are peers within one settings category."
+        },
+        {
+          "from": "settings-category",
+          "to": "settings-category",
+          "relationship": "sectional",
+          "rationale": "Categories represent page-level responsibility changes."
+        }
+      ],
+      "rhythm": [
+        "Repeat row rhythm within a category.",
+        "Use a stronger pause between categories than between rows.",
+        "Keep controls visually inside the region they affect."
+      ],
+      "responsive_behavior": [
+        "When a row stacks on a small viewport, keep its control nearer to its own copy than to the next row.",
+        "Do not preserve desktop alignment by creating large, irregular mobile gaps."
+      ],
+      "manual_review": [
+        "Does every control clearly belong to one setting?",
+        "Can users scan category boundaries without reading every heading?"
+      ]
+    },
+    {
+      "id": "card-collection",
+      "name": "Card collection",
+      "description": "Repeated cards that form a collection while maintaining a smaller rhythm inside each card.",
+      "relationships": [
+        {
+          "from": "card-title",
+          "to": "card-description",
+          "relationship": "associated",
+          "rationale": "The description explains the title."
+        },
+        {
+          "from": "card-content",
+          "to": "card-actions",
+          "relationship": "separated",
+          "rationale": "Actions are related to the card but play a different role."
+        },
+        {
+          "from": "card",
+          "to": "card",
+          "relationship": "grouped",
+          "rationale": "Cards are peers in one collection."
+        },
+        {
+          "from": "card-collection",
+          "to": "next-section",
+          "relationship": "sectional",
+          "rationale": "The collection ends before a new page topic begins."
+        }
+      ],
+      "rhythm": [
+        "Keep repeated card padding and internal patterns consistent.",
+        "Avoid making the gap between cards indistinguishable from the padding inside cards.",
+        "Treat equal card heights as a layout choice, not a reason to introduce arbitrary internal voids."
+      ],
+      "responsive_behavior": [
+        "Preserve internal rhythm as the grid changes column count.",
+        "Review the vertical rhythm after cards become a single stack."
+      ],
+      "manual_review": [
+        "Is it immediately clear what belongs inside each card?",
+        "Do repeated cards feel like peers rather than individually improvised layouts?"
+      ]
+    },
+    {
+      "id": "editorial-flow",
+      "name": "Editorial flow",
+      "description": "Headings, paragraphs, lists, media, captions, callouts, and references in reading order.",
+      "relationships": [
+        {
+          "from": "heading",
+          "to": "introduced-content",
+          "relationship": "associated",
+          "rationale": "A heading belongs more strongly to what follows than to the previous section."
+        },
+        {
+          "from": "paragraph",
+          "to": "paragraph",
+          "relationship": "grouped",
+          "rationale": "Paragraphs continue one reading flow."
+        },
+        {
+          "from": "media",
+          "to": "caption",
+          "relationship": "attached",
+          "rationale": "The caption identifies or explains the media."
+        },
+        {
+          "from": "section",
+          "to": "section",
+          "relationship": "sectional",
+          "rationale": "A new heading begins a new topic or level of the argument."
+        }
+      ],
+      "rhythm": [
+        "Coordinate line height, paragraph spacing, and heading margins as one reading rhythm.",
+        "Keep a heading closer to the content it introduces than to the content it concludes.",
+        "Use callouts as purposeful interruptions, not random changes of spacing."
+      ],
+      "responsive_behavior": [
+        "Allow type and large sectional spaces to breathe with the viewport where appropriate.",
+        "Keep line length and page gutters in balance with the spatial scale."
+      ],
+      "manual_review": [
+        "Does the reading flow have clear pauses without becoming fragmented?",
+        "Do captions and notes remain attached to the correct content after reflow?"
+      ]
+    },
+    {
+      "id": "dashboard",
+      "name": "Dashboard",
+      "description": "Dense data, controls, summaries, and regions with different priorities and update frequencies.",
+      "relationships": [
+        {
+          "from": "metric-label",
+          "to": "metric-value",
+          "relationship": "attached",
+          "rationale": "The value is meaningless without its label."
+        },
+        {
+          "from": "panel-title",
+          "to": "panel-content",
+          "relationship": "associated",
+          "rationale": "The title defines the panel's scope."
+        },
+        {
+          "from": "control-cluster",
+          "to": "affected-region",
+          "relationship": "associated",
+          "rationale": "Controls should appear to operate on the nearby region."
+        },
+        {
+          "from": "dashboard-region",
+          "to": "dashboard-region",
+          "relationship": "separated",
+          "rationale": "Regions contain different analytical or operational responsibilities."
+        }
+      ],
+      "rhythm": [
+        "Use compact repeated rhythms inside dense data regions and stronger pauses between responsibilities.",
+        "Do not make the whole page uniformly dense or uniformly spacious.",
+        "Keep the most important region legible through position, scale, and surrounding space rather than empty space alone."
+      ],
+      "responsive_behavior": [
+        "Recompose regions when columns no longer fit; do not merely shrink every gap.",
+        "Preserve control-to-region association when panels move into a vertical order."
+      ],
+      "manual_review": [
+        "Can users distinguish regional responsibilities at a glance?",
+        "Does dense content remain operable without erasing hierarchy?"
+      ]
+    }
+  ],
+  "density_modes": {
+    "compact": "Resolve the same relationship order to a tighter subset of the product scale. Preserve target-size and text-spacing requirements, and retain visible section boundaries.",
+    "comfortable": "Use the product's default mapping while maintaining clear contrast between internal, grouped, and sectional relationships.",
+    "spacious": "Resolve the same relationship order to more generous tokens without stretching attached pairs or fragmenting a task."
+  },
+  "viewport_modes": {
+    "small": "Protect attached and associated relationships first. Recompose columns, then reduce larger group and section spaces only as needed.",
+    "medium": "Use available width to clarify groups and gutters without assuming the large-screen composition fits unchanged.",
+    "large": "Allow stronger sectional pauses and wider gutters where they improve hierarchy; avoid arbitrary empty areas that break task flow.",
+    "fluid": "Interpolate project tokens or semantic aliases where appropriate, while preserving relationship order across the supported viewport range."
+  },
+  "token_resolution": {
+    "status": "product-context-required",
+    "instruction": "Map the ordered relationships to the product's existing primitive or semantic spacing tokens. Do not infer a universal base unit, fixed ratio, or mandatory pixel value from this standard.",
+    "fallback": "If no product scale exists, propose a small illustrative scale, label it as a project hypothesis, and validate it with realistic content and rendered review before adoption.",
+    "exception_policy": "Prefer a supported neighbouring token for optical correction. If a raw value is necessary, record the affected pair, reason, viewport, and review evidence."
+  },
+  "evidence_boundary": {
+    "normative": [
+      "WCAG 2.2 target-size and spacing requirements apply to pointer targets.",
+      "WCAG 2.2 text-spacing requirements test whether user overrides cause loss of content or functionality."
+    ],
+    "supplemental_accessibility_guidance": [
+      "W3C cognitive accessibility guidance recommends white space to clarify chunks and reduce overwhelming presentation."
+    ],
+    "design_guidance": [
+      "Relationship ranks, rhythm patterns, density guidance, and optical adjustment are design guidance rather than WCAG conformance requirements."
+    ]
+  },
+  "references": [
+    {
+      "title": "Figma — Design systems 102: How to build your design system",
+      "url": "https://static.figma.com/uploads/b45ca996363483a82c3ab9ef6e3bcf072ade549c",
+      "role": "Spatial systems, semantic variables, responsive composition, and guidance rather than rigid rules"
+    },
+    {
+      "title": "Figma — Everything you need to know about layout grids",
+      "url": "https://www.figma.com/best-practices/everything-you-need-to-know-about-layout-grids/",
+      "role": "Content-led grids, hierarchy, baseline rhythm, nested grids, and responsive constraints"
+    },
+    {
+      "title": "Figma — Design context in AI workflows",
+      "url": "https://www.figma.com/resource-library/design-context-ai/",
+      "role": "Why agents need design-system reasoning in addition to components and variables"
+    },
+    {
+      "title": "Figma — Best practices to help Figma AI understand your design system",
+      "url": "https://help.figma.com/hc/en-us/articles/38978644498199-AI-workflows-collection-Best-practices-to-help-Figma-AI-understand-your-design-system",
+      "role": "Structured design-system context, semantic naming, component use, and agent-readable guidance"
+    },
+    {
+      "title": "Atlassian Design System — Spacing",
+      "url": "https://atlassian.design/foundations/grid-beta/applying-grid",
+      "role": "Similarity, proximity, hierarchy, visual rhythm, variation, and optical adjustment"
+    },
+    {
+      "title": "Fluent 2 — Layout",
+      "url": "https://fluent2.microsoft.design/layout",
+      "role": "Spacing and proximity, visual rhythm, flexible ramps, alignment, and responsive spacing"
+    },
+    {
+      "title": "Carbon Design System — Spacing",
+      "url": "https://carbondesignsystem.com/elements/spacing/overview/",
+      "role": "Relationships, hierarchy, whitespace, and parent-owned stack spacing"
+    },
+    {
+      "title": "U.S. Web Design System — Typography",
+      "url": "https://designsystem.digital.gov/components/typography/",
+      "role": "Editorial whitespace relationships and heading-to-content rhythm"
+    },
+    {
+      "title": "Apple Human Interface Guidelines — Layout",
+      "url": "https://developer.apple.com/design/human-interface-guidelines/layout",
+      "role": "Grouping, visual hierarchy, sufficient space, logical sections, and adaptability"
+    },
+    {
+      "title": "W3C WAI — Use White Spacing",
+      "url": "https://www.w3.org/WAI/WCAG2/supplemental/patterns/o3p10-whitespace/",
+      "role": "Supplemental cognitive accessibility guidance for clear chunks and reduced clutter"
+    },
+    {
+      "title": "Every Layout — The Stack",
+      "url": "https://every-layout.dev/layouts/stack/",
+      "role": "Context-owned sibling spacing, nested rhythms, and exceptions"
+    },
+    {
+      "title": "Utopia — Designing with a fluid space palette",
+      "url": "https://utopia.fyi/blog/designing-with-a-fluid-space-palette/",
+      "role": "Project-specific fluid spatial scales tied to content and viewport"
+    }
+  ]
+}

@@ -6,12 +6,13 @@ This MCP (Model Context Protocol) server provides AI tools like Claude with real
 
 ## What It Does
 
-The MCP server exposes four read-only tools:
+The MCP server exposes five read-only tools:
 
 1. **`get_heuristic`** - Deep dive on a specific Nielsen usability heuristic (H1-H10)
 2. **`get_all_heuristics`** - Summary of all 10 heuristics for context
 3. **`search_standards`** - Search the full Human Standards library with ranked excerpts
 4. **`get_standard`** - Read an indexed document or one named section
+5. **`get_spatial_rhythm`** - Retrieve relationship-first spacing guidance for a composition and context
 
 ## Philosophy
 
@@ -22,6 +23,7 @@ When building an interface, the AI decides which principles are relevant based o
 - Building a form? Look up H1 (feedback), H5 (error prevention), H9 (error recovery)
 - Designing navigation? Look up H4 (consistency), H6 (recognition over recall)
 - Adding a delete button? Look up H3 (user control), H5 (error prevention)
+- Laying out a form or dashboard? Retrieve its spatial rhythm before resolving product-specific tokens
 
 ## Available Tools
 
@@ -132,6 +134,25 @@ headings and can be requested one section at a time.
 The response includes the document content, available sections, key points,
 references, and an explicit `truncated` flag.
 
+### 5. `get_spatial_rhythm`
+
+Retrieve the ordered spacing relationships and composition guidance for a whole
+interface or a form, settings section, card collection, editorial flow, or
+dashboard.
+
+```json
+{
+  "pattern": "form-stack",
+  "density": "comfortable",
+  "viewport": "small"
+}
+```
+
+The response preserves the relationship order `attached < associated < grouped
+< separated < sectional`, includes manual review questions, and tells the agent
+to resolve those roles with the product's own spacing tokens. It deliberately
+does not prescribe a universal pixel unit.
+
 ## Installation
 
 ### Prerequisites
@@ -210,7 +231,7 @@ Claude Code stores MCP server configurations in `~/.claude.json`. Add the Human 
 
 1. Restart Claude Code
 2. Type `/mcp` to verify the server is connected
-3. You should see "human-standards" with 4 tools available
+3. You should see "human-standards" with 5 tools available
 
 ### Standalone Testing
 
@@ -236,12 +257,14 @@ AI: *calls get_heuristic('H5')* - Error prevention
 AI: *calls get_heuristic('H9')* - Error recovery
 AI: *calls search_standards('forms error recovery')* - Ranked guidance excerpts
 AI: *calls get_standard('/interaction-patterns/forms/', 'Validation timing')*
+AI: *calls get_spatial_rhythm({ pattern: 'form-stack' })*
 
 AI now knows:
 - Use confirmation for important actions
 - Validate before submission
 - Show specific, actionable error messages
 - Preserve user input after errors
+- Keep labels, controls, messages, fields, and actions in a clear relationship hierarchy
 
 AI: *generates form with these principles applied*
 ```
@@ -288,6 +311,7 @@ AI now knows:
 human-standards-mcp/
 ├── src/
 │   ├── index.ts              # Main MCP server + heuristics data
+│   ├── spatial-rhythm.ts     # Spatial-rhythm contract validation and selection
 │   ├── types/                # TypeScript types
 │   ├── tools/
 │   │   ├── get-guidance.ts   # Search and excerpt implementation
@@ -295,6 +319,7 @@ human-standards-mcp/
 │   └── indexer/
 │       └── index-docs.ts     # Documentation indexer
 ├── data/
+│   ├── spatial-rhythm.json   # Machine-readable relationship-first spacing contract
 │   └── standards-index.json  # Generated search index
 ├── dist/                     # Compiled JavaScript
 └── package.json

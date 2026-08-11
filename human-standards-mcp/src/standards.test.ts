@@ -8,10 +8,11 @@ test('the committed index contains every source document and nested guidance', (
   const index = loadTestIndex();
   const documents = allDocuments(index);
 
-  assert.equal(index.document_count, 66);
-  assert.equal(documents.length, 66);
+  assert.equal(index.document_count, 67);
+  assert.equal(documents.length, 67);
   assert.ok(findDocument(index, '/examples/defensive-design/error-prevention-grammarly/'));
   assert.ok(findDocument(index, '/perception/vision/legibility-contrast/'));
+  assert.ok(findDocument(index, '/code-design-tokens/spatial-rhythm-layout/'));
   assert.ok(findDocument(index, '/'));
   assert.equal('rules' in index, false);
   assert.equal('patterns' in index, false);

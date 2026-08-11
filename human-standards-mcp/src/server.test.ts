@@ -19,15 +19,16 @@ test('stdio server exposes and executes the complete read-only reference contrac
   const instructions = client.getInstructions();
   assert.ok(instructions);
   assert.ok(instructions.length <= 512);
-  assert.match(instructions, /designing, implementing, or reviewing user interfaces/);
+  assert.match(instructions, /designing, implementing, or reviewing interfaces/);
   assert.match(instructions, /Start with search_standards/);
-  assert.match(instructions, /then call get_standard/);
+  assert.match(instructions, /get_standard/);
+  assert.match(instructions, /get_spatial_rhythm/);
   assert.match(instructions, /server is read-only/);
 
   const listed = await client.listTools();
   assert.deepEqual(
     listed.tools.map((tool) => tool.name).sort(),
-    ['get_all_heuristics', 'get_heuristic', 'get_standard', 'search_standards'],
+    ['get_all_heuristics', 'get_heuristic', 'get_spatial_rhythm', 'get_standard', 'search_standards'],
   );
   assert.ok(listed.tools.every((tool) => tool.annotations?.readOnlyHint === true));
   assert.ok(listed.tools.every((tool) => tool.outputSchema));
@@ -48,6 +49,23 @@ test('stdio server exposes and executes the complete read-only reference contrac
   assert.equal(standard.isError, undefined);
   const standardStructured = standard.structuredContent as Record<string, unknown>;
   assert.match(String(standardStructured.content), /On blur/);
+
+  const spatialRhythm = await client.callTool({
+    name: 'get_spatial_rhythm',
+    arguments: { pattern: 'form-stack', density: 'compact', viewport: 'small' },
+  });
+  assert.equal(spatialRhythm.isError, undefined);
+  const rhythmStructured = spatialRhythm.structuredContent as Record<string, unknown>;
+  assert.equal(rhythmStructured.standard_id, 'HS-SPATIAL-RHYTHM');
+  assert.deepEqual(
+    (rhythmStructured.relationship_order as Array<{ id: string }>).map(({ id }) => id),
+    ['attached', 'associated', 'grouped', 'separated', 'sectional'],
+  );
+  assert.equal((rhythmStructured.patterns as Array<{ id: string }>)[0]?.id, 'form-stack');
+  assert.equal(
+    (rhythmStructured.token_resolution as { status: string }).status,
+    'product-context-required',
+  );
 
   const invalid = await client.callTool({
     name: 'search_standards',

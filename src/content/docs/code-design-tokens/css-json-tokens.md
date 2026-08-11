@@ -316,6 +316,11 @@ The [Design Tokens Community Group](https://www.w3.org/community/design-tokens/)
 
 ### Spacing Tokens
 
+The following primitive scale is an implementation example, not a universal
+layout rule. Give layout decisions semantic relationship aliases—such as
+attached, associated, grouped, separated, and sectional—then resolve those
+aliases to the project's scale. See [Spatial Rhythm, Grouping & Layout](/code-design-tokens/spatial-rhythm-layout/).
+
 ```json
 {
   "space": {
@@ -454,14 +459,14 @@ The [Design Tokens Community Group](https://www.w3.org/community/design-tokens/)
       }
     },
     "spacing": {
-      "minimum": {
+      "recommended": {
         "$value": "0.5rem",
         "$type": "dimension",
         "$extensions": {
           "human-standards": {
             "px": 8,
-            "wcag": "2.5.8 spacing offset",
-            "note": "Required when target < 24×24"
+            "status": "product guidance",
+            "note": "A useful project token, not WCAG's universal gap. Validate undersized targets using the 24px spacing geometry."
           }
         }
       }
@@ -707,9 +712,9 @@ rules:
 
   - id: line-height-minimum
     severity: warning
-    check: "Line height ≥1.5 for body text"
-    applies_to: "Paragraph text"
-    wcag: "1.4.12 Text Spacing"
+    check: "Body line height follows the product's readability guidance"
+    applies_to: "Paragraph text; also test user overrides at 1.5×"
+    wcag: "1.4.12 requires override resilience, not a prescribed default"
 
   # Touch Target Validation
   - id: touch-target-size
@@ -720,7 +725,7 @@ rules:
 
   - id: touch-target-spacing
     severity: warning
-    check: "Adjacent targets have ≥8px spacing if <44px"
+    check: "Targets below 24×24 CSS px satisfy the 24px spacing geometry"
     applies_to: "touchTarget.spacing tokens"
     wcag: "2.5.8 AA"
 
@@ -926,7 +931,7 @@ IF creating a touch/click target:
   MINIMUM: touchTarget.size.minimum (24px, WCAG 2.5.8 AA)
   PREFERRED: touchTarget.size.comfortable (44px, WCAG 2.5.5 AAA)
   IF target is smaller than 24px:
-    ENSURE spacing.minimum (8px) around target
+    ENSURE the 24px WCAG spacing geometry is satisfied
 
 IF setting body text size:
   MINIMUM: typography.fontSize.base (16px)
@@ -942,18 +947,17 @@ IF setting heading size:
 ### Which Spacing Token to Use
 
 ```
-IF spacing within a component (padding):
-  SMALL: space.2 (8px) for compact elements
-  MEDIUM: space.4 (16px) for standard elements
-  LARGE: space.6 (24px) for spacious elements
+1. LABEL the relationship:
+   attached < associated < grouped < separated < sectional
 
-IF spacing between components (margin, gap):
-  TIGHT: space.4 (16px) for related items
-  NORMAL: space.6 (24px) for standard separation
-  LOOSE: space.8 (32px) for section separation
+2. RESOLVE it with the product's spacing tokens:
+   preserve the order; do not assume a universal ratio or pixel value
 
-IF spacing between touch targets:
-  MINIMUM: space.2 (8px) when targets < 44px
+3. APPLY external spacing in the parent layout:
+   use gap or a composition primitive; keep component padding internal
+
+4. VERIFY the rendered rhythm:
+   realistic content, repeated peers, target geometry, density, and viewports
 ```
 
 ---
@@ -1103,9 +1107,10 @@ StyleDictionary.registerTransform({
 - [ ] Define letter-spacing that supports WCAG 1.4.12
 
 ### Spacing & Touch Tokens
-- [ ] Base spacing scale on consistent unit (4px or 8px)
+- [ ] Define a project-appropriate primitive scale; do not treat its base unit as layout semantics
+- [ ] Map semantic relationships to tokens while preserving `attached < associated < grouped < separated < sectional`
 - [ ] Include WCAG touch target sizes (24px minimum, 44px comfortable)
-- [ ] Document spacing requirements between targets
+- [ ] Document WCAG target geometry separately from product-recommended gaps
 
 ### Export Pipeline
 - [ ] Configure Style Dictionary 4+ for DTCG format
