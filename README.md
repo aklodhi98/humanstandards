@@ -1,12 +1,16 @@
 # Human Standards
 
-Practical human factors and accessibility guidance for product teams. An open-source, community-driven resource for building technology that truly serves people.
+Human factors research translated into practical standards, code examples, and read-only context for AI agents.
+
+[Explore the live library](https://www.humanstandards.org/) · [Connect the MCP server](https://www.humanstandards.org/human-overview/mcp-server/) · [Review Study 001](https://www.humanstandards.org/studies/study-001-independent-reviewers/)
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
+> **Study 001 is recruiting two blinded independent reviewers.** The study asks whether access to human-factors guidance changes the quality of AI-built interfaces. Reviewers score nine opaque artifacts against a frozen rubric; mixed, null, and negative results will be published alongside positive ones. [Read the independent-reviewer brief](https://www.humanstandards.org/studies/study-001-independent-reviewers/).
+
 ## What is Human Standards?
 
-Human Standards is a comprehensive guide covering the human side of product design:
+Human Standards is an open-source reference library for the human side of product design. Product teams can browse the guidance directly, while compatible AI tools can retrieve the same material through five read-only MCP tools.
 
 - **Cognition** — Attention, cognitive load, working memory
 - **Perception** — Vision, hearing, touch
@@ -17,17 +21,43 @@ Human Standards is a comprehensive guide covering the human side of product desi
 - **Interaction Patterns** — Forms, navigation, notifications
 - **Research Methods** — Usability testing, cognitive walkthroughs
 
-## Quick Start
+The MCP server can search the full indexed library, retrieve complete standards or named sections, inspect Nielsen's usability heuristics, and return relationship-first spatial-rhythm guidance. It does not write to projects or external services.
+
+## Run the MCP Server from Source
+
+The current installation path is from the repository:
 
 ```bash
-# Clone the repository
+git clone https://github.com/aklodhi98/humanstandards.git
+cd humanstandards/human-standards-mcp
+npm ci
+npm run build
+npm run index-docs
+```
+
+Configure a compatible MCP client to run the built entry point:
+
+```json
+{
+  "mcpServers": {
+    "human-standards": {
+      "command": "node",
+      "args": ["/absolute/path/to/humanstandards/human-standards-mcp/dist/index.js"]
+    }
+  }
+}
+```
+
+See the [MCP setup guide](https://www.humanstandards.org/human-overview/mcp-server/) for client-specific instructions and tool examples.
+
+## Develop the Documentation Site
+
+```bash
 git clone https://github.com/aklodhi98/humanstandards.git
 cd humanstandards
 
-# Install dependencies
-npm install
+npm ci
 
-# Start the development server
 npm run dev
 ```
 

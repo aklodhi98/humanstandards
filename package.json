@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
+    "build:social-preview": "node scripts/build-social-preview.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check": "npm run build && npm run check:links",
     "preview": "astro preview",

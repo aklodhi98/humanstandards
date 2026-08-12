@@ -11,6 +11,46 @@ export default defineConfig({
 			title: 'Human Standards',
 			head: [
 				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image',
+						content: 'https://www.humanstandards.org/social-preview.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:width', content: '1280' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:height', content: '640' },
+				},
+				{
+					tag: 'meta',
+					attrs: { property: 'og:image:type', content: 'image/png' },
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						property: 'og:image:alt',
+						content: 'Human Standards — practical human factors for product teams and AI agents',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:image',
+						content: 'https://www.humanstandards.org/social-preview.png',
+					},
+				},
+				{
+					tag: 'meta',
+					attrs: {
+						name: 'twitter:image:alt',
+						content: 'Human Standards — practical human factors for product teams and AI agents',
+					},
+				},
+				{
 					tag: 'script',
 					content: `try { if (!localStorage.getItem('starlight-theme')) localStorage.setItem('starlight-theme', 'light'); } catch {}`,
 				},
