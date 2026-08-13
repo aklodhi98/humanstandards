@@ -1,0 +1,133 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+---
+
+<section class="hs-follow" aria-labelledby="hs-follow-title">
+	<div class="hs-follow__copy">
+		<p class="hs-follow__eyebrow">Open source and evolving</p>
+		<h2 id="hs-follow-title">Help more people find Human Standards</h2>
+		<p>
+			If this library is useful, star the project on GitHub. It gives you an easy way back and
+			helps other practitioners discover the work. You can also join the public discussion or
+			watch the repository for future releases.
+		</p>
+	</div>
+
+	<div class="hs-follow__actions">
+		<a
+			class="hs-follow__button is-primary"
+			href="https://github.com/aklodhi98/humanstandards"
+			target="_blank"
+			rel="noopener"
+		>
+			<Icon name="github" size="1.1rem" />
+			Star on GitHub
+		</a>
+		<a
+			class="hs-follow__button is-secondary"
+			href="https://github.com/aklodhi98/humanstandards/discussions"
+			target="_blank"
+			rel="noopener"
+		>
+			Join the discussion
+			<Icon name="right-arrow" size="1rem" />
+		</a>
+	</div>
+</section>
+
+<style>
+	.hs-follow {
+		display: grid;
+		grid-template-columns: minmax(0, 1.5fr) minmax(16rem, 0.7fr);
+		align-items: center;
+		gap: clamp(2rem, 6vw, 6rem);
+		margin: 0 clamp(1.5rem, 5.2vw, 5rem) clamp(4rem, 8vw, 7rem);
+		padding: clamp(2rem, 4vw, 3.5rem);
+		border: 1px solid var(--hs-rule);
+		border-radius: 0.55rem;
+		background: color-mix(in srgb, var(--hs-accent) 5%, var(--hs-bg));
+	}
+
+	.hs-follow__eyebrow {
+		margin: 0;
+		color: var(--hs-accent-text);
+		font-size: 0.76rem;
+		font-weight: 750;
+		letter-spacing: 0.14em;
+		text-transform: uppercase;
+	}
+
+	.hs-follow h2 {
+		margin: 0.75rem 0 0;
+		color: var(--hs-ink);
+		font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+		font-weight: 600;
+		letter-spacing: -0.04em;
+	}
+
+	.hs-follow__copy > p:last-child {
+		max-width: 48rem;
+		margin: 1rem 0 0;
+		color: var(--hs-text-muted);
+		font-size: 0.98rem;
+		line-height: 1.7;
+	}
+
+	.hs-follow__actions {
+		display: flex;
+		align-items: stretch;
+		flex-direction: column;
+		gap: 0.8rem;
+	}
+
+	.hs-follow__button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.75rem;
+		min-height: 3rem;
+		padding: 0.7rem 1rem;
+		border: 1px solid var(--hs-rule);
+		border-radius: 0.3rem;
+		font-size: 0.94rem;
+		font-weight: 600;
+		text-decoration: none;
+		transition: transform 160ms ease, background-color 160ms ease, border-color 160ms ease;
+	}
+
+	.hs-follow__button:hover,
+	.hs-follow__button:focus-visible {
+		transform: translateY(-2px);
+	}
+
+	.hs-follow__button.is-primary {
+		border-color: var(--hs-accent);
+		background: var(--hs-accent);
+		color: var(--hs-button-text);
+	}
+
+	.hs-follow__button.is-primary:hover,
+	.hs-follow__button.is-primary:focus-visible {
+		border-color: var(--hs-accent-hover);
+		background: var(--hs-accent-hover);
+		color: var(--hs-button-text);
+	}
+
+	.hs-follow__button.is-secondary {
+		background: var(--hs-bg);
+		color: var(--hs-ink);
+	}
+
+	.hs-follow__button.is-secondary:hover,
+	.hs-follow__button.is-secondary:focus-visible {
+		border-color: var(--hs-accent);
+		color: var(--hs-accent-text);
+	}
+
+	@media (max-width: 48rem) {
+		.hs-follow {
+			grid-template-columns: 1fr;
+			gap: 1.75rem;
+		}
+	}
+</style>

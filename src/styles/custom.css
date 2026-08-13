@@ -107,7 +107,7 @@ select:focus-visible {
   max-width: none;
 }
 
-:root[data-has-hero] .sl-markdown-content > :not(.hs-library) {
+:root[data-has-hero] .sl-markdown-content > :not(.hs-library):not(.hs-follow) {
   display: none;
 }
 

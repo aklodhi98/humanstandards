@@ -1,31 +1,67 @@
 # Human Standards
 
-Human factors research translated into practical standards, code examples, and read-only context for AI agents.
+Human factors research translated into practical design standards, implementation guidance, and read-only context for AI agents.
 
 [Explore the live library](https://www.humanstandards.org/) · [Connect the MCP server](https://www.humanstandards.org/human-overview/mcp-server/) · [Review Study 001](https://www.humanstandards.org/studies/study-001-independent-reviewers/)
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
+> **Is Human Standards useful to you?** [Star the project on GitHub](https://github.com/aklodhi98/humanstandards) to save it for later and help other practitioners discover it. You can also watch the repository for future releases or join the public [Discussions](https://github.com/aklodhi98/humanstandards/discussions).
+
 > **Study 001 is recruiting two blinded independent reviewers.** The study asks whether access to human-factors guidance changes the quality of AI-built interfaces. Reviewers score nine opaque artifacts against a frozen rubric; mixed, null, and negative results will be published alongside positive ones. [Read the independent-reviewer brief](https://www.humanstandards.org/studies/study-001-independent-reviewers/).
 
-## What is Human Standards?
+## Why Human Standards exists
 
-Human Standards is an open-source reference library for the human side of product design. Product teams can browse the guidance directly, while compatible AI tools can retrieve the same material through five read-only MCP tools.
+Product teams have access to extensive research on cognition, ergonomics, accessibility, usability, and human-computer interaction. Turning that evidence into a concrete design decision is still difficult—and AI-assisted product work makes the gap more visible.
 
-- **Cognition** — Attention, cognitive load, working memory
-- **Perception** — Vision, hearing, touch
-- **Emotions & Motivation** — Trust, stress, motivation models
-- **Decision-Making** — Biases, errors, defensive design
-- **Ergonomics** — Posture, touch targets, anthropometrics
-- **Accessibility** — WCAG guidelines, assistive technologies
-- **Interaction Patterns** — Forms, navigation, notifications
-- **Research Methods** — Usability testing, cognitive walkthroughs
+Human Standards is an open-source reference library designed to make that knowledge easier to inspect and apply. People can browse the guidance directly. Compatible AI tools can retrieve the same material through a local, read-only MCP server.
 
-The MCP server can search the full indexed library, retrieve complete standards or named sections, inspect Nielsen's usability heuristics, and return relationship-first spatial-rhythm guidance. It does not write to projects or external services.
+The project does not claim to replace user research, accessibility testing, professional judgment, or the standards and studies it cites.
 
-## Run the MCP Server from Source
+## What is included
 
-The current installation path is from the repository:
+- **Human factors guidance** — Cognition, perception, emotion, decision-making, ergonomics, accessibility, and social context
+- **Design and implementation guidance** — Interaction patterns, playbooks, code examples, and design-token constraints
+- **Research methods** — Usability testing, cognitive walkthroughs, metrics, and evaluation guidance
+- **Evidence and references** — Links to the standards, publications, and source material behind the guidance
+- **Machine-readable access** — Five read-only MCP tools for search, retrieval, heuristics, and relationship-first spatial-rhythm guidance
+- **Open evaluation** — Study protocols and evidence intended for independent review and reproducible analysis
+
+## Current status
+
+Human Standards is actively developed and should be treated as a working reference library, not a finished or universally validated standard.
+
+- The documentation library is available at [humanstandards.org](https://www.humanstandards.org/).
+- The MCP server currently runs from source and does not write to projects or external services.
+- Study 001 is at the blinded independent-review stage. No final result will be published before the review, analysis, and reproduction gates are complete.
+- Gaps, corrections, competing evidence, and well-scoped contributions are welcome.
+
+## Use the documentation library
+
+Start with [Getting Started](https://www.humanstandards.org/human-overview/getting-started/) or browse the library by topic. Every page is designed to connect principles with practical decisions, implementation guidance, and primary or established sources where available.
+
+To run the site locally:
+
+```bash
+git clone https://github.com/aklodhi98/humanstandards.git
+cd humanstandards
+npm ci
+npm run dev
+```
+
+Open [http://localhost:4321](http://localhost:4321) to view the local site.
+
+## Use the MCP server
+
+The MCP server exposes the library to compatible AI tools through five read-only tools:
+
+- `search_standards`
+- `get_standard`
+- `get_heuristic`
+- `get_all_heuristics`
+- `get_spatial_rhythm`
+
+Install and build it from the repository:
 
 ```bash
 git clone https://github.com/aklodhi98/humanstandards.git
@@ -35,7 +71,7 @@ npm run build
 npm run index-docs
 ```
 
-Configure a compatible MCP client to run the built entry point:
+Then configure a compatible MCP client to run the built entry point:
 
 ```json
 {
@@ -50,107 +86,36 @@ Configure a compatible MCP client to run the built entry point:
 
 See the [MCP setup guide](https://www.humanstandards.org/human-overview/mcp-server/) for client-specific instructions and tool examples.
 
-## Develop the Documentation Site
+## Project commands
 
-```bash
-git clone https://github.com/aklodhi98/humanstandards.git
-cd humanstandards
-
-npm ci
-
-npm run dev
-```
-
-Open [http://localhost:4321](http://localhost:4321) to view the site.
-
-## Commands
-
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm install`     | Install dependencies                         |
-| `npm run dev`     | Start local dev server at `localhost:4321`   |
-| `npm run build`   | Build production site to `./dist/`           |
-| `npm run check`   | Build and validate all internal links         |
-| `npm run preview` | Preview build locally before deploying       |
+| Command | Action |
+| :-- | :-- |
+| `npm ci` | Install the documentation-site dependencies from the lockfile |
+| `npm run dev` | Start the local site at `localhost:4321` |
+| `npm run build` | Build the production site to `./dist/` |
+| `npm run check` | Build the site and validate internal links |
+| `npm run preview` | Preview the production build locally |
+| `npm run build --prefix human-standards-mcp` | Compile the MCP server |
+| `npm test --prefix human-standards-mcp` | Run the MCP server tests after it has been built |
 
 ## Contributing
 
-We welcome contributions from everyone! Here's how you can help:
+Useful contributions include:
 
-### Adding or Improving Content
+- correcting inaccurate, ambiguous, or outdated guidance;
+- adding stronger primary or established sources;
+- improving examples and implementation details;
+- identifying missing contexts, limitations, or accessibility considerations;
+- reporting defects in the website, standards index, or MCP server.
 
-1. **Fork** the repository
-2. **Create a branch** for your changes: `git checkout -b add-new-topic`
-3. **Add or edit** Markdown files in `src/content/docs/`
-4. **Submit a Pull Request** with a clear description
+Read [CONTRIBUTING.md](CONTRIBUTING.md) for the contribution workflow, evidence expectations, content structure, and local checks. Questions and early ideas can start in [GitHub Discussions](https://github.com/aklodhi98/humanstandards/discussions); concrete defects belong in [Issues](https://github.com/aklodhi98/humanstandards/issues).
 
-### Content Guidelines
+## Licensing and attribution
 
-- **Be evidence-based** — Cite standards (WCAG, ISO) and reputable sources
-- **Be practical** — Include actionable guidance, not just theory
-- **Be concise** — Use clear, direct language
-- **Be inclusive** — Consider diverse users and contexts
+- **Original documentation and standards data:** [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+- **Software and code examples:** [MIT License](LICENSE.md)
+- **Third-party material:** retained under its original terms and documented in [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)
 
-### File Structure
+Human Standards builds on work across human factors, cognitive psychology, HCI, UX, and accessibility. Source citations are included throughout the library, with broader starting points in the [academic research references](https://www.humanstandards.org/references/academic-research/) and [standards and guidelines](https://www.humanstandards.org/references/standards-guidelines/).
 
-```
-src/content/docs/
-├── index.mdx              # Homepage
-├── cognition/             # Cognitive psychology topics
-├── perception/            # Sensory perception
-├── accessibility/         # WCAG and assistive tech
-├── interaction-patterns/  # UI patterns
-└── ...                    # Other topic areas
-```
-
-### Frontmatter Format
-
-Each content file uses this frontmatter structure:
-
-```yaml
----
-title: Your Page Title
-description: A brief description for SEO and previews.
----
-```
-
-## Code of Conduct
-
-We are committed to providing a welcoming and inclusive environment. Please be respectful and constructive in all interactions.
-
-## License
-
-- **Original documentation and standards data:** [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) — use, adapt, and redistribute for any purpose, including commercially; no permission or attribution required
-- **Software and code examples:** [MIT License](LICENSE.md) — use, modify, distribute, sublicense, and sell
-- **Third-party material:** remains under its original terms; see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md)
-
-See [LICENSE.md](LICENSE.md) for full details.
-
-## Acknowledgments
-
-Human Standards builds upon and is inspired by excellent prior work in the UX and accessibility communities.
-
-### Third-Party Content
-
-- **[Luxor Claude Marketplace](https://github.com/manutej/luxor-claude-marketplace)** by Manu Tej + Claude Code - Real-world UX examples and patterns adapted with permission under MIT license. See [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
-
-### Standards and Guidelines
-
-- **[WCAG 2.2](https://www.w3.org/WAI/WCAG22/quickref/)** - W3C Web Content Accessibility Guidelines
-- **[Nielsen's Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)** - Nielsen Norman Group foundational principles
-- **[iOS Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines/)** - Apple Inc. design standards
-- **[Material Design](https://m3.material.io/)** - Google LLC design system
-
-### Technology
-
-Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build).
-
-### Research Community
-
-Thank you to researchers in cognitive psychology, human factors engineering, and HCI whose evidence-based work makes this resource possible. Full citations are available in the [academic research references](https://www.humanstandards.org/references/academic-research/).
-
-Thank you to all who advance human-centered design. 🙏
-
----
-
-**Questions?** [Open an issue](https://github.com/aklodhi98/humanstandards/issues/new). We'd love to hear from you!
+Built with [Astro](https://astro.build) and [Starlight](https://starlight.astro.build). Maintained by [AK Lodhi](https://aklodhi.com).
