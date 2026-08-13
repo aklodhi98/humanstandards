@@ -32,7 +32,7 @@ The project does not claim to replace user research, accessibility testing, prof
 Human Standards is actively developed and should be treated as a working reference library, not a finished or universally validated standard.
 
 - The documentation library is available at [humanstandards.org](https://www.humanstandards.org/).
-- The MCP server currently runs from source and does not write to projects or external services.
+- The MCP server runs locally from the published npm package, uses bundled guidance, and does not write to projects or external services.
 - Study 001 is published as an exploratory pilot. Its protocol deviation, automated evidence, coordinator observations, condition mapping and missing independent-review outcome are public.
 - Gaps, corrections, competing evidence, and well-scoped contributions are welcome.
 
@@ -61,30 +61,29 @@ The MCP server exposes the library to compatible AI tools through five read-only
 - `get_all_heuristics`
 - `get_spatial_rhythm`
 
-Install and build it from the repository:
+The MCP client runs the npm package; it is not an application dependency and
+does not become part of the project being built:
 
 ```bash
-git clone https://github.com/aklodhi98/humanstandards.git
-cd humanstandards/human-standards-mcp
-npm ci
-npm run build
-npm run index-docs
+npx --yes @humanstandards/mcp-server
 ```
 
-Then configure a compatible MCP client to run the built entry point:
+Configure a compatible MCP client to run that command:
 
 ```json
 {
   "mcpServers": {
     "human-standards": {
-      "command": "node",
-      "args": ["/absolute/path/to/humanstandards/human-standards-mcp/dist/index.js"]
+      "command": "npx",
+      "args": ["--yes", "@humanstandards/mcp-server"]
     }
   }
 }
 ```
 
-See the [MCP setup guide](https://www.humanstandards.org/human-overview/mcp-server/) for client-specific instructions and tool examples.
+The server communicates over standard input/output, reads no project files,
+opens no network port, and uses the Human Standards snapshot bundled with its
+package release. See the [MCP setup guide](https://www.humanstandards.org/human-overview/mcp-server/) for Codex, Claude Desktop, Claude Code, source-build, and verification instructions.
 
 ## Project commands
 

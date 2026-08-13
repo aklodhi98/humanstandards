@@ -1,9 +1,13 @@
 ---
 title: MCP Server
-description: AI-assisted design validation using the Human Standards MCP server
+description: Read-only Human Standards guidance for compatible AI tools
 ---
 
 The Human Standards MCP (Model Context Protocol) server gives compatible AI tools read-only access to usability heuristics and the indexed Human Standards guidance. Think of it as a reference book that AI can consult while building interfaces.
+
+The guidance is a snapshot bundled with each package release. The server runs
+locally, does not browse the live website, and does not automatically validate
+or modify a project.
 
 ## What It Does
 
@@ -28,29 +32,47 @@ When building an interface, the AI decides which principles are relevant based o
 - Adding a delete button? Look up H3 (user control), H5 (error prevention)
 - Laying out a form or dashboard? Retrieve its spatial rhythm before resolving product-specific tokens
 
+## How It Fits Into a Project
+
+The npm package is a delivery mechanism for the MCP server. It is installed and
+launched by the **MCP client**, not added to the application being designed.
+The client communicates with the local Node.js process over standard
+input/output.
+
+The server:
+
+- does not run inside or bundle with the finished application;
+- does not read or write project files;
+- does not open a network port or send project data to Human Standards; and
+- uses the documentation snapshot included in that npm release.
+
 ## Installation
 
 ### Prerequisites
 
-- Node.js 18+
-- npm or yarn
+- Node.js 18.14.1 or later
+- An MCP-compatible client
 
-### Setup
+### Run From npm
+
+You normally do not need to install the package in your project. Configure the
+MCP client to run:
 
 ```bash
-# Clone the repository
-git clone https://github.com/aklodhi98/humanstandards.git
-cd humanstandards/human-standards-mcp
-
-# Install dependencies and build
-npm install
-npm run build
-
-# Index the documentation (creates searchable index)
-npm run index-docs
+npx --yes @humanstandards/mcp-server
 ```
 
 ## Configuration
+
+### Codex
+
+Add this to `~/.codex/config.toml`:
+
+```toml
+[mcp_servers.human-standards]
+command = "npx"
+args = ["--yes", "@humanstandards/mcp-server"]
+```
 
 ### Claude Desktop
 
@@ -63,8 +85,8 @@ Add to your Claude Desktop config:
 {
   "mcpServers": {
     "human-standards": {
-      "command": "node",
-      "args": ["/path/to/humanstandards/human-standards-mcp/dist/index.js"]
+      "command": "npx",
+      "args": ["--yes", "@humanstandards/mcp-server"]
     }
   }
 }
@@ -72,33 +94,30 @@ Add to your Claude Desktop config:
 
 ### Claude Code (CLI)
 
-**Option 1: Edit `~/.claude.json` directly**
+Add the local stdio server from a terminal:
 
-```json
-{
-  "projects": {
-    "/path/to/your/project": {
-      "mcpServers": {
-        "human-standards": {
-          "command": "node",
-          "args": ["/path/to/humanstandards/human-standards-mcp/dist/index.js"]
-        }
-      }
-    }
-  }
-}
+```bash
+claude mcp add --transport stdio human-standards -- npx --yes @humanstandards/mcp-server
 ```
 
-**Option 2: Use the `/mcp` command**
+Run `claude mcp list` to check the connection. In any client, listing the MCP
+tools should show the five read-only Human Standards tools.
 
-1. Start Claude Code in your project directory
-2. Type `/mcp` to open the MCP configuration menu
-3. Add a new server with:
-   - Name: `human-standards`
-   - Command: `node`
-   - Args: `/path/to/humanstandards/human-standards-mcp/dist/index.js`
+## Build From Source
 
-After configuration, restart Claude Code and type `/mcp` to verify the server is connected.
+Use the source workflow when contributing to the server or testing unreleased
+documentation:
+
+```bash
+git clone https://github.com/aklodhi98/humanstandards.git
+cd humanstandards/human-standards-mcp
+npm ci
+npm run build
+npm run index-docs
+```
+
+Then configure the client to run the absolute path to
+`human-standards-mcp/dist/index.js` with Node.
 
 ## Available Tools
 

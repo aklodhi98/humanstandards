@@ -113,17 +113,19 @@ rules:
 
 ### For AI Integration
 
-**MCP Server** — Real-time human factors guidance in your development workflow:
+**MCP Server** — Bundled human factors guidance in your development workflow:
 
-Build the MCP server from this repository, then configure a compatible client to
-run `human-standards-mcp/dist/index.js` with Node. See [MCP Server](/human-overview/mcp-server/)
-for the exact setup and verification steps.
+Configure a compatible client to run `@humanstandards/mcp-server` through npm.
+It runs as a local, read-only reference service and does not become an
+application dependency. See [MCP Server](/human-overview/mcp-server/) for exact
+setup and verification steps.
 
 **Available read-only MCP tools:**
 - `get_heuristic` — Retrieve one Nielsen usability heuristic
 - `get_all_heuristics` — Review the complete heuristic framework
 - `search_standards` — Search full Human Standards content with ranked excerpts
 - `get_standard` — Read an indexed document or a named section
+- `get_spatial_rhythm` — Retrieve relationship-first composition and spacing guidance
 
 The MCP is a reference service. It does not claim to automatically validate a
 design or certify WCAG conformance.
