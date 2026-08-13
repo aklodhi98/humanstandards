@@ -140,6 +140,19 @@ select:focus-visible {
   color: var(--hs-ink);
 }
 
+/* Sidebar status badges use the project palette instead of Starlight's green. */
+.sidebar-content .sl-badge.hs-sidebar-badge {
+  --sl-color-bg-badge: var(--hs-accent-soft);
+  --sl-color-border-badge: var(--hs-accent);
+  --sl-color-text-badge: var(--hs-accent-text);
+}
+
+.sidebar-content a[aria-current='page'] > .sl-badge.hs-sidebar-badge {
+  --sl-color-bg-badge: transparent;
+  --sl-color-border-badge: currentColor;
+  --sl-color-text-badge: currentColor;
+}
+
 /* Documentation pages keep Starlight's information architecture with the new tokens. */
 :root:not([data-has-hero]) .sl-markdown-content h1,
 :root:not([data-has-hero]) .sl-markdown-content h2,

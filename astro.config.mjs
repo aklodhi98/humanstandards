@@ -82,7 +82,7 @@ export default defineConfig({
 						{ slug: 'human-overview/what-are-human-standards' },
 						{ slug: 'human-overview/scope-and-roadmap' },
 						{ slug: 'human-overview/key-principles-and-laws' },
-						{ slug: 'human-overview/mcp-server', label: 'MCP Server', badge: { text: 'New', variant: 'success' } },
+						{ slug: 'human-overview/mcp-server', label: 'MCP Server', badge: { text: 'New', variant: 'success', class: 'hs-sidebar-badge' } },
 					],
 				},
 
@@ -176,7 +176,7 @@ export default defineConfig({
 					collapsed: false,
 					items: [
 						{ slug: 'studies', label: 'Open Studies' },
-						{ slug: 'studies/study-001-independent-reviewers', label: 'Study 001: Reviewer Call', badge: { text: 'Open', variant: 'success' } },
+						{ slug: 'studies/study-001-independent-reviewers', label: 'Study 001: Reviewer Call', badge: { text: 'Open', variant: 'success', class: 'hs-sidebar-badge' } },
 					],
 				},
 			],
