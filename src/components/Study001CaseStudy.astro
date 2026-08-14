@@ -450,7 +450,6 @@ const conditionGallery = [
 		font-weight: 760;
 		text-decoration: none;
 		transition:
-			transform 160ms ease,
 			background-color 160ms ease,
 			border-color 160ms ease,
 			color 160ms ease,
@@ -469,7 +468,6 @@ const conditionGallery = [
 
 	@media (hover: hover) {
 		.study-case__button:hover {
-			transform: translateY(-2px);
 			box-shadow: 0 0.35rem 0.9rem rgb(23 25 20 / 0.14);
 		}
 
@@ -486,14 +484,7 @@ const conditionGallery = [
 	}
 
 	.study-case__button:active {
-		transform: translateY(0);
 		box-shadow: none;
-	}
-
-	@media (prefers-reduced-motion: reduce) {
-		.study-case__button:hover {
-			transform: none;
-		}
 	}
 
 	.study-case__numbers {
