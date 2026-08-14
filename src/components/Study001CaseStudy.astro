@@ -449,6 +449,12 @@ const conditionGallery = [
 		border-radius: 0.5rem;
 		font-weight: 760;
 		text-decoration: none;
+		transition:
+			transform 160ms ease,
+			background-color 160ms ease,
+			border-color 160ms ease,
+			color 160ms ease,
+			box-shadow 160ms ease;
 	}
 
 	.study-case__button.is-primary {
@@ -459,6 +465,35 @@ const conditionGallery = [
 	.study-case__button.is-secondary {
 		background: transparent;
 		color: var(--hs-accent-text);
+	}
+
+	@media (hover: hover) {
+		.study-case__button:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 0.35rem 0.9rem rgb(23 25 20 / 0.14);
+		}
+
+		.study-case__button.is-primary:hover {
+			border-color: var(--hs-accent-hover);
+			background: var(--hs-accent-hover);
+		}
+
+		.study-case__button.is-secondary:hover {
+			border-color: var(--hs-accent-hover);
+			background: var(--hs-accent-soft);
+			color: var(--hs-ink);
+		}
+	}
+
+	.study-case__button:active {
+		transform: translateY(0);
+		box-shadow: none;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.study-case__button:hover {
+			transform: none;
+		}
 	}
 
 	.study-case__numbers {
