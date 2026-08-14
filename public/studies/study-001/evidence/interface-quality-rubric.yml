@@ -1,0 +1,188 @@
+schema_version: "1.0"
+rubric_id: interface-quality-v1
+study_id: study-001
+status: preregistration-draft
+
+purpose: >-
+  Compare generated clinic appointment interfaces without relying on visual
+  preference alone. Primary outcomes cover functional completion, serious
+  automated accessibility findings, and blinded human-centred quality.
+
+primary_outcomes:
+  - id: P1
+    name: critical_functional_scenario_pass_rate
+    direction: higher_is_better
+    unit: proportion
+    source: external_playwright_harness
+    calculation: passed critical scenarios F01-F08 / 8
+    missing_or_unreachable: fail
+    notes: Each scenario contributes equally; individual scenario results are reported.
+
+  - id: P2
+    name: serious_accessibility_violation_count
+    direction: lower_is_better
+    unit: unique_rule_state_pairs
+    source: axe
+    calculation: >-
+      Count every unique combination of axe rule, tested state, and viewport with
+      impact critical or serious. Report affected-node totals separately.
+    missing_or_unreachable: >-
+      If a required state cannot be reached, report the missing state and do not
+      treat it as an accessibility pass.
+
+  - id: P3
+    name: blinded_human_centred_quality_score
+    direction: higher_is_better
+    unit: percent
+    source: two_independent_reviewers
+    calculation: >-
+      Sum U01-U10 item scores for each reviewer, divide by 20, multiply by 100,
+      then report reviewers separately and their mean. Do not reconcile scores
+      after condition reveal.
+
+guardrails:
+  - id: G1
+    name: production_build_success
+    pass_when: npm run build exits 0 in the frozen environment
+  - id: G2
+    name: typecheck_success
+    pass_when: npm run typecheck exits 0 in the frozen environment
+  - id: G3
+    name: prohibited_capability_absence
+    pass_when: >-
+      No external network dependency, authentication, real-data submission,
+      analytics, payment, medical advice, or modified mock API contract is added.
+  - id: G4
+    name: truthfulness_of_mutation_state
+    pass_when: >-
+      Create, reschedule, and cancel success is not shown before the corresponding
+      mock API success response.
+
+diagnostics:
+  - id: D1
+    name: all_functional_scenarios
+    values: F01-F12 pass/fail with failure evidence
+  - id: D2
+    name: axe_affected_nodes
+    values: count by rule, state, viewport, and impact
+  - id: D3
+    name: keyboard_path_observations
+    values: blocked steps, focus loss, unexpected traps, and completion status
+  - id: D4
+    name: generation_cost
+    values: input tokens, output tokens, elapsed seconds, turns, and files changed
+  - id: D5
+    name: mcp_uptake
+    values: calls, tool names, arguments, empty results, errors, and returned identifiers
+
+human_review_scale:
+  0: absent, misleading, blocked, or likely to cause material user error
+  1: present but incomplete, unclear, inconsistent, or fragile
+  2: complete, clear, consistent, and supports the scripted tasks
+
+human_review_items:
+  - id: U01
+    name: orientation_and_status
+    evidence: >-
+      The person can tell what task and stage they are in, what is selected, when
+      the system is working, and whether a mutation succeeded or failed.
+    score_0: State, selection, progress, or outcome is materially misleading or absent.
+    score_1: Main state is visible but one or more consequential transitions are unclear.
+    score_2: State and consequential transitions remain clear throughout the scripted tasks.
+
+  - id: U02
+    name: service_and_slot_comprehension
+    evidence: >-
+      Services, durations, dates, times, availability, and clinic timezone are
+      understandable without remembering information across distant views.
+    score_0: A critical service or time choice is ambiguous or requires unsupported recall.
+    score_1: Choices are usable but some context is missing, repeated poorly, or easy to confuse.
+    score_2: Choices and relevant context are clear at selection, review, and confirmation.
+
+  - id: U03
+    name: contact_data_entry
+    evidence: >-
+      Required information follows the selected contact method; labels,
+      constraints, and the optional note boundary are understandable.
+    score_0: Requirements are contradictory, inaccessible, or allow invalid submission.
+    score_1: The task works but requirements or corrections are sometimes unclear.
+    score_2: Requirements adapt clearly and errors can be prevented or corrected efficiently.
+
+  - id: U04
+    name: review_and_commitment
+    evidence: >-
+      Before creating or rescheduling, the person can understand the appointment
+      and contact details that will be committed.
+    score_0: Consequential details are hidden, wrong, or cannot be checked before commitment.
+    score_1: A review exists but omits or obscures a consequential detail.
+    score_2: Consequential details are accurate, scannable, and correctable before commitment.
+
+  - id: U05
+    name: failure_recovery
+    evidence: >-
+      Slot-unavailable and retryable failures explain the truthful state and
+      support recovery without unnecessary re-entry.
+    score_0: Failure produces false success, a dead end, or material loss of entered information.
+    score_1: Recovery is possible but unclear, repetitive, or inconsistent for one failure type.
+    score_2: Each scripted failure is specific, truthful, recoverable, and preserves useful work.
+
+  - id: U06
+    name: rescheduling_control
+    evidence: >-
+      The existing appointment remains understandable while a new slot is being
+      considered and after a failed or successful change.
+    score_0: Original and proposed bookings are confused or the person becomes trapped.
+    score_1: Rescheduling works but comparison, cancellation, or failed-change state is unclear.
+    score_2: The person can compare, commit, recover, or leave without losing track of the booking.
+
+  - id: U07
+    name: cancellation_control
+    evidence: >-
+      The affected booking and consequence are clear, accidental activation is
+      reasonably prevented, and API failure does not masquerade as cancellation.
+    score_0: Cancellation is accidental, ambiguous, premature, or difficult to escape.
+    score_1: Cancellation works but consequence, confirmation, or recovery is incomplete.
+    score_2: Cancellation is deliberate, specific, truthful, and recoverable on failure.
+
+  - id: U08
+    name: keyboard_and_focus_experience
+    evidence: >-
+      Critical tasks can be operated and understood by keyboard, with visible and
+      sensible focus through validation, transitions, errors, and overlays.
+    score_0: A critical task is blocked, focus is trapped, or focus location is routinely invisible.
+    score_1: Critical tasks are possible but focus becomes confusing or inefficient in some states.
+    score_2: Critical paths are operable with clear, logical focus across state changes.
+
+  - id: U09
+    name: workload_and_information_hierarchy
+    evidence: >-
+      The interface exposes enough information to act without unnecessary
+      simultaneous choices, repetition, fragmentation, or visual competition.
+    score_0: Workload or hierarchy materially obstructs a critical task.
+    score_1: Tasks remain possible but contain avoidable clutter, fragmentation, or repetition.
+    score_2: Information and actions are prioritised coherently throughout the flow.
+
+  - id: U10
+    name: language_privacy_and_scope
+    evidence: >-
+      Language is plain Australian English, collection is limited to specified
+      data, optionality is truthful, and the UI does not invent medical,
+      emergency, payment, insurance, provider, or account claims.
+    score_0: Language or invented scope could materially mislead or exposes unnecessary data collection.
+    score_1: Mostly appropriate but contains avoidable jargon, ambiguity, or minor scope invention.
+    score_2: Language, data collection, and product claims remain clear and within the specification.
+
+reporting:
+  condition_summary:
+    - show every run value
+    - show median and range for numeric outcomes
+    - show numerator and denominator for proportions
+    - show both reviewer scores and their mean
+    - show guardrails beside primary outcomes
+  prohibited:
+    - hiding failed or incomplete runs
+    - replacing missing states with zero axe violations
+    - selecting screenshots from only the strongest run
+    - changing anchors after condition reveal
+    - claiming statistical significance from this exploratory sample
+    - treating automated accessibility scans as proof of full accessibility

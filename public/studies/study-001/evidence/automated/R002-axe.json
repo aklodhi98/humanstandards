@@ -1,0 +1,2964 @@
+[
+  {
+    "state": "initial-booking-entry",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "final-review",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "definition-list",
+        "impact": "serious",
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "RGAAv4",
+          "RGAA-9.3.3"
+        ],
+        "description": "Ensure <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/definition-list?application=playwright",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-dlitems",
+                "data": {
+                  "values": "div > button"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(1) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(2) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(3) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(4) > button"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "dl element has direct children that are not allowed: div > button"
+              }
+            ],
+            "impact": "serious",
+            "html": "<dl class=\"review-list\">",
+            "target": [
+              "dl"
+            ],
+            "failureSummary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > button"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"active\" aria-current=\"step\"><span>3</span>Review</li>",
+            "target": [
+              "li[aria-current=\"step\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "confirmed-booking",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607574",
+                  "bgColor": "#edf6f3",
+                  "contrastRatio": 4.44,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"reference\"><small>Booking reference</small><strong>HCC-9001</strong></div>",
+                    "target": [
+                      ".reference"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.44 (foreground color: #607574, background color: #edf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Booking reference</small>",
+            "target": [
+              ".reference > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #607574, background color: #edf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<div class=\"success\">✓</div>",
+            "target": [
+              ".success"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "contact-information-errors",
+    "scenario": "F02",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607574",
+                  "bgColor": "#edf6f3",
+                  "contrastRatio": 4.44,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside><p class=\"eyebrow\">Your appointment</p><h3>General appointment</h3><p>20 minutes</p><hr><strong>Monday 14 September</strong><p>9:00 am · Sydney time</p></aside>",
+                    "target": [
+                      "aside"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.44 (foreground color: #607574, background color: #edf6f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>20 minutes</p>",
+            "target": [
+              "aside > p:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #607574, background color: #edf6f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607574",
+                  "bgColor": "#edf6f3",
+                  "contrastRatio": 4.44,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<aside><p class=\"eyebrow\">Your appointment</p><h3>General appointment</h3><p>20 minutes</p><hr><strong>Monday 14 September</strong><p>9:00 am · Sydney time</p></aside>",
+                    "target": [
+                      "aside"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.44 (foreground color: #607574, background color: #edf6f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>9:00 am · Sydney time</p>",
+            "target": [
+              "p:nth-child(6)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.44 (foreground color: #607574, background color: #edf6f3, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\" aria-current=\"step\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\" aria-current=\"step\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\" aria-current=\"step\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F03",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "final-review",
+    "scenario": "F03",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "definition-list",
+        "impact": "serious",
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "RGAAv4",
+          "RGAA-9.3.3"
+        ],
+        "description": "Ensure <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/definition-list?application=playwright",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-dlitems",
+                "data": {
+                  "values": "div > button"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(1) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(2) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(3) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(4) > button"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "dl element has direct children that are not allowed: div > button"
+              }
+            ],
+            "impact": "serious",
+            "html": "<dl class=\"review-list\">",
+            "target": [
+              "dl"
+            ],
+            "failureSummary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > button"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"active\" aria-current=\"step\"><span>3</span>Review</li>",
+            "target": [
+              "li[aria-current=\"step\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-unavailable-error",
+    "scenario": "F03",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F04",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "final-review",
+    "scenario": "F04",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "definition-list",
+        "impact": "serious",
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "RGAAv4",
+          "RGAA-9.3.3"
+        ],
+        "description": "Ensure <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/definition-list?application=playwright",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-dlitems",
+                "data": {
+                  "values": "div > button"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(1) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(2) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(3) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(4) > button"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "dl element has direct children that are not allowed: div > button"
+              }
+            ],
+            "impact": "serious",
+            "html": "<dl class=\"review-list\">",
+            "target": [
+              "dl"
+            ],
+            "failureSummary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > button"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"active\" aria-current=\"step\"><span>3</span>Review</li>",
+            "target": [
+              "li[aria-current=\"step\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F10",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "final-review",
+    "scenario": "F10",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "definition-list",
+        "impact": "serious",
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "RGAAv4",
+          "RGAA-9.3.3"
+        ],
+        "description": "Ensure <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/definition-list?application=playwright",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-dlitems",
+                "data": {
+                  "values": "div > button"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(1) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(2) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(3) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(4) > button"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "dl element has direct children that are not allowed: div > button"
+              }
+            ],
+            "impact": "serious",
+            "html": "<dl class=\"review-list\">",
+            "target": [
+              "dl"
+            ],
+            "failureSummary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > button"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"active\" aria-current=\"step\"><span>3</span>Review</li>",
+            "target": [
+              "li[aria-current=\"step\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F11",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F11",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "definition-list",
+        "impact": "serious",
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "RGAAv4",
+          "RGAA-9.3.3"
+        ],
+        "description": "Ensure <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/definition-list?application=playwright",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-dlitems",
+                "data": {
+                  "values": "div > button"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(1) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(2) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(3) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(4) > button"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "dl element has direct children that are not allowed: div > button"
+              }
+            ],
+            "impact": "serious",
+            "html": "<dl class=\"review-list\">",
+            "target": [
+              "dl"
+            ],
+            "failureSummary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > button"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F12",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#758684",
+                  "bgColor": "#f6f8f5",
+                  "contrastRatio": 3.57,
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<li class=\"\"><span>2</span>Your details</li>",
+                    "target": [
+                      "li:nth-child(2)"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>2</span>Your details</li>",
+            "target": [
+              "li:nth-child(2)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #758684, background color: #f6f8f5, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>1</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>2</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "normal",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"\"><span>3</span>Review</li>",
+            "target": [
+              "li:nth-child(3)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\" aria-current=\"step\"><span>1</span>Appointment</li><li class=\"\"><span>2</span>Your details</li><li class=\"\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li:nth-child(3) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "final-review",
+    "scenario": "F12",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "definition-list",
+        "impact": "serious",
+        "tags": [
+          "cat.structure",
+          "wcag2a",
+          "wcag131",
+          "EN-301-549",
+          "EN-9.1.3.1",
+          "RGAAv4",
+          "RGAA-9.3.3"
+        ],
+        "description": "Ensure <dl> elements are structured correctly",
+        "help": "<dl> elements must only directly contain properly-ordered <dt> and <dd> groups, <script>, <template> or <div> elements",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/definition-list?application=playwright",
+        "nodes": [
+          {
+            "any": [],
+            "all": [],
+            "none": [
+              {
+                "id": "only-dlitems",
+                "data": {
+                  "values": "div > button"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(1) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(2) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(3) > button"
+                    ]
+                  },
+                  {
+                    "html": "<button>Change</button>",
+                    "target": [
+                      "div:nth-child(4) > button"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "dl element has direct children that are not allowed: div > button"
+              }
+            ],
+            "impact": "serious",
+            "html": "<dl class=\"review-list\">",
+            "target": [
+              "dl"
+            ],
+            "failureSummary": "Fix all of the following:\n  dl element has direct children that are not allowed: div > button"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(1) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>✓</span>",
+            "target": [
+              "li:nth-child(2) > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<li class=\"active\" aria-current=\"step\"><span>3</span>Review</li>",
+            "target": [
+              "li[aria-current=\"step\"]"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fontSize": "9.8pt (13px)",
+                  "fontWeight": "bold",
+                  "messageKey": "pseudoContent",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<ol class=\"steps\" aria-label=\"Booking progress\"><li class=\"active\"><span>✓</span>Appointment</li><li class=\"active\"><span>✓</span>Your details</li><li class=\"active\" aria-current=\"step\"><span>3</span>Review</li></ol>",
+                    "target": [
+                      "ol"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element's background color could not be determined due to a pseudo element"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<span>3</span>",
+            "target": [
+              "li[aria-current=\"step\"] > span"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "existing-booking",
+    "scenario": null,
+    "viewport": null,
+    "missing": true,
+    "error": "Required state was not reached by the semantic scenario driver.",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "reschedule-failure",
+    "scenario": null,
+    "viewport": null,
+    "missing": true,
+    "error": "Required state was not reached by the semantic scenario driver.",
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "cancellation-flow",
+    "scenario": null,
+    "viewport": null,
+    "missing": true,
+    "error": "Required state was not reached by the semantic scenario driver.",
+    "violations": [],
+    "incomplete": []
+  }
+]

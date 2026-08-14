@@ -1,0 +1,2706 @@
+[
+  {
+    "scenario": "F01",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-service:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-service:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n✓\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm booking"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n✓\n\nBOOKING CONFIRMED\n\nYou’re all booked in.\n\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-mobile",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-service:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-service:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n✓\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm booking"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "recover-slot-secondary:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "← Back"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "recover-slot-secondary:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "← Back"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "recover-slot-secondary",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-service:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-service:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n✓\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm booking"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n✓\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm booking"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n✓\n\nBOOKING CONFIRMED\n\nYou’re all booked in.\n\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F05",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking →"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F05",
+    "label": "begin-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Reschedule appointment"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "begin-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current "
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "begin-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F05",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current "
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking →"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "begin-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Reschedule appointment"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "begin-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current "
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "begin-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current "
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current "
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F07",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking →"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F07",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Cancel appointment"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F07",
+    "label": "confirm-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "confirm-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nBooking cancelled\nCancelled\n✓\n\nTh"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "confirm-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking →"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Cancel appointment"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nA"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "confirm-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "confirm-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\n!"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "confirm-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back to home\n\nYOUR BOOKING\n\nBooking cancelled\nCancelled\n✓\n\nTh"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F09",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F09",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-service:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-service:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-2:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-2:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-2",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-3:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-3:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-3",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-4:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-4:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-4",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-5:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-5:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-5",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-6:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-6:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-6",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n1\n2\n3\n4\n\nSTEP 1 OF 4\n\nWhat can we help with?\n\nChoose the type of appointment you’d l"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n✓\n2\n3\n4\n\nSTEP 2 OF 4\n\nChoose a date and time\n\nAvailable times for General appointmen"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-service:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n✓\n2\n3\n4\n\nSTEP 2 OF 4\n\nChoose a date and time\n\nAvailable times for General appointmen"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-service:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n✓\n2\n3\n4\n\nSTEP 2 OF 4\n\nChoose a date and time\n\nAvailable times for General appointmen"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n✓\n2\n3\n4\n\nSTEP 2 OF 4\n\nChoose a date and time\n\nAvailable times for General appointmen"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n✓\n✓\n3\n4\n\nSTEP 3 OF 4\n\nTell us about you\n\nWe’ll only use these details to contact you"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back\n✓\n✓\n✓\n4\n\nSTEP 4 OF 4\n\nReview your booking\n\nPlease check everything looks right befor"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm booking"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n✓\n\nBOOKING CONFIRMED\n\nYou’re all booked in.\n\nYour appointment has been confirmed. Keep your"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking →"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nAppointment\nGeneral appointme"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Reschedule appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current appointment is Tue, 15 Sept "
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to booking\n\nRESCHEDULE\n\nChoose a new time\n\nYour current appointment is Tue, 15 Sept "
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nAppointment\nGeneral appointme"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking →"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nAppointment\nGeneral appointme"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Cancel appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to home\n\nYOUR BOOKING\n\nAppointment details\n● Confirmed\nAppointment\nGeneral appointme"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "confirm-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "confirm-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷\n← Back to home\n\nYOUR BOOKING\n\nBooking cancelled\nCancelled\n✓\n\nThis booking has been cancelle"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "confirm-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment →"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n1\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "choose-service",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-service:before",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-service:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "choose-slot",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n2\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n3\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact-method"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n← Back\n✓\nAppointment\n✓\nDate & time\n✓\nYour details\n4\nReview\n\nSTE"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm booking"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "≈\nHarbour\nCOMMUNITY CLINIC\n◷ Appointments in Sydney time\n✓\n\nBOOKING CONFIRMED\n\nYou’re all booked in.\n\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  }
+]

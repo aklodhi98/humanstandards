@@ -1,0 +1,1407 @@
+[
+  {
+    "state": "initial-booking-entry",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#087d75",
+                  "bgColor": "#f5f0e5",
+                  "contrastRatio": 4.39,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "bold",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"hero\"><div><small>LOCAL CARE, SIMPLY ARRANGED</small><h1>Book a clinic appointment</h1><p>Choose an appointment and a time that suits you. No account needed.</p><button class=\"primary\">Book an appointment　→</button></div><aside>+</aside></section>",
+                    "target": [
+                      ".hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.39 (foreground color: #087d75, background color: #f5f0e5, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>LOCAL CARE, SIMPLY ARRANGED</small>",
+            "target": [
+              ".hero > div > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.39 (foreground color: #087d75, background color: #f5f0e5, font size: 10.0pt (13.3333px), font weight: bold). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#f5f0e5",
+                  "contrastRatio": 4.36,
+                  "fontSize": "13.8pt (18.4px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<section class=\"hero\"><div><small>LOCAL CARE, SIMPLY ARRANGED</small><h1>Book a clinic appointment</h1><p>Choose an appointment and a time that suits you. No account needed.</p><button class=\"primary\">Book an appointment　→</button></div><aside>+</aside></section>",
+                    "target": [
+                      ".hero"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.36 (foreground color: #607471, background color: #f5f0e5, font size: 13.8pt (18.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>Choose an appointment and a time that suits you. No account needed.</p>",
+            "target": [
+              ".hero > div > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #607471, background color: #f5f0e5, font size: 13.8pt (18.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#e7f2ee",
+                  "contrastRatio": 4.33,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<div class=\"urgent\"><b>i</b><div><h2>Need urgent medical help?</h2><p>This service does not provide emergency care or medical advice. If it is an emergency, call Triple Zero (000).</p></div></div>",
+                    "target": [
+                      ".urgent"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.33 (foreground color: #607471, background color: #e7f2ee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>This service does not provide emergency care or medical advice. If it is an emergency, call Triple Zero (000).</p>",
+            "target": [
+              ".urgent > div > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.33 (foreground color: #607471, background color: #e7f2ee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "confirmed-booking",
+    "scenario": "F01",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "messageKey": "nonBmp"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element content contains only non-text characters"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<b class=\"success\">✓</b>",
+            "target": [
+              ".success"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "contact-information-errors",
+    "scenario": "F02",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F03",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F03",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "slot-unavailable-error",
+    "scenario": "F03",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F04",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F04",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "existing-booking",
+    "scenario": "F05",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "reschedule-failure",
+    "scenario": "F06",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#fff0ee",
+                  "contrastRatio": 4.47,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<p class=\"alert bad\" role=\"alert\">!　We couldn’t reschedule your appointment. Please try again.</p>",
+                    "target": [
+                      ".alert"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.47 (foreground color: #607471, background color: #fff0ee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p class=\"alert bad\" role=\"alert\">!　We couldn’t reschedule your appointment. Please try again.</p>",
+            "target": [
+              ".alert"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #607471, background color: #fff0ee, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "cancellation-flow",
+    "scenario": "F07",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "aria-dialog-name",
+        "impact": "serious",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ],
+        "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+        "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-dialog-name?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-label attribute does not exist or is empty"
+              },
+              {
+                "id": "aria-labelledby",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+              },
+              {
+                "id": "non-empty-title",
+                "data": {
+                  "messageKey": "noAttr"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has no title attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<section class=\"modal\" role=\"dialog\" aria-modal=\"true\">",
+            "target": [
+              ".modal"
+            ],
+            "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscuring",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it partially overlaps other elements"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>This will cancel your appointment on <b>Tuesday 15 September 2026</b> at <b>10:00 am</b>.</p>",
+            "target": [
+              ".modal > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscuring",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it partially overlaps other elements"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<b>Tuesday 15 September 2026</b>",
+            "target": [
+              "p > b:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "cancellation-flow",
+    "scenario": "F08",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "aria-dialog-name",
+        "impact": "serious",
+        "tags": [
+          "cat.aria",
+          "best-practice"
+        ],
+        "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+        "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/aria-dialog-name?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "aria-label",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-label attribute does not exist or is empty"
+              },
+              {
+                "id": "aria-labelledby",
+                "data": null,
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+              },
+              {
+                "id": "non-empty-title",
+                "data": {
+                  "messageKey": "noAttr"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element has no title attribute"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<section class=\"modal\" role=\"dialog\" aria-modal=\"true\">",
+            "target": [
+              ".modal"
+            ],
+            "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+          }
+        ]
+      }
+    ],
+    "incomplete": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "normal",
+                  "messageKey": "elmPartiallyObscuring",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it partially overlaps other elements"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<p>This will cancel your appointment on <b>Tuesday 15 September 2026</b> at <b>10:00 am</b>.</p>",
+            "target": [
+              ".modal > p"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "contrastRatio": 0,
+                  "fontSize": "12.0pt (16px)",
+                  "fontWeight": "bold",
+                  "messageKey": "elmPartiallyObscuring",
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [],
+                "impact": "serious",
+                "message": "Element's background color could not be determined because it partially overlaps other elements"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<b>Tuesday 15 September 2026</b>",
+            "target": [
+              "p > b:nth-child(1)"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it partially overlaps other elements"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F10",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F10",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F11",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F11",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  },
+  {
+    "state": "slot-selection",
+    "scenario": "F12",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "tags": [
+          "cat.color",
+          "wcag2aa",
+          "wcag143",
+          "TTv5",
+          "TT13.c",
+          "EN-301-549",
+          "EN-9.1.4.3",
+          "ACT",
+          "RGAAv4",
+          "RGAA-3.2.1"
+        ],
+        "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.12/color-contrast?application=playwright",
+        "nodes": [
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" checked=\"\"><b>General appointment</b><small>20 minutes</small></label>",
+                    "target": [
+                      ".services > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>20 minutes</small>",
+            "target": [
+              ".services > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          },
+          {
+            "any": [
+              {
+                "id": "color-contrast",
+                "data": {
+                  "fgColor": "#607471",
+                  "bgColor": "#eaf6f3",
+                  "contrastRatio": 4.48,
+                  "fontSize": "10.0pt (13.3333px)",
+                  "fontWeight": "normal",
+                  "messageKey": null,
+                  "expectedContrastRatio": "4.5:1"
+                },
+                "relatedNodes": [
+                  {
+                    "html": "<label class=\"selected\"><input type=\"radio\" name=\"slot\"><small>Mon, 14 Sept</small><b>9:00 am</b></label>",
+                    "target": [
+                      ".slots > .selected"
+                    ]
+                  }
+                ],
+                "impact": "serious",
+                "message": "Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+              }
+            ],
+            "all": [],
+            "none": [],
+            "impact": "serious",
+            "html": "<small>Mon, 14 Sept</small>",
+            "target": [
+              ".slots > .selected > small"
+            ],
+            "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.48 (foreground color: #607471, background color: #eaf6f3, font size: 10.0pt (13.3333px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "incomplete": []
+  },
+  {
+    "state": "final-review",
+    "scenario": "F12",
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "missing": false,
+    "violations": [],
+    "incomplete": []
+  }
+]

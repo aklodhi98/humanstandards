@@ -1,0 +1,925 @@
+---
+const conditionRows = [
+	{
+		code: 'A',
+		name: 'Baseline',
+		description: 'Specification only',
+		functional: '50%',
+		functionalRange: '25–87.5%',
+		axe: '8',
+		axeRange: '7–11',
+	},
+	{
+		code: 'B',
+		name: 'Directed MCP',
+		description: 'Prompted to retrieve and apply Human Standards through MCP',
+		functional: '87.5%',
+		functionalRange: '50–100%',
+		axe: '4',
+		axeRange: '3–4',
+	},
+	{
+		code: 'C',
+		name: 'Frozen context',
+		description: 'The same project received a static Human Standards reference packet',
+		functional: '87.5%',
+		functionalRange: '87.5–87.5%',
+		axe: '7',
+		axeRange: '6–11',
+	},
+];
+
+const artifactRows = [
+	{ condition: 'A', blind: 'V006', run: 'R002', critical: '4/8', pairs: 7, nodes: 16, missing: '3 states' },
+	{ condition: 'A', blind: 'V009', run: 'R006', critical: '7/8', pairs: 11, nodes: 202, missing: 'None' },
+	{ condition: 'A', blind: 'V007', run: 'R008', critical: '2/8', pairs: 8, nodes: 16, missing: '3 states' },
+	{ condition: 'B', blind: 'V004', run: 'R001', critical: '8/8', pairs: 4, nodes: 15, missing: 'None' },
+	{ condition: 'B', blind: 'V003', run: 'R004', critical: '7/8', pairs: 3, nodes: 13, missing: 'None' },
+	{ condition: 'B', blind: 'V002', run: 'R009', critical: '4/8', pairs: 4, nodes: 8, missing: '3 states' },
+	{ condition: 'C', blind: 'V008', run: 'R003', critical: '7/8', pairs: 6, nodes: 19, missing: 'None' },
+	{ condition: 'C', blind: 'V001', run: 'R005', critical: '7/8', pairs: 7, nodes: 22, missing: 'None' },
+	{ condition: 'C', blind: 'V005', run: 'R007', critical: '7/8', pairs: 11, nodes: 63, missing: 'None' },
+];
+
+const conditionGallery = [
+	{
+		label: 'A · Baseline · V009',
+		src: '/studies/study-001/baseline-v009-home.png',
+		alt: 'Baseline clinic interface with an illustrated landing page, four-step booking flow and green appointment call to action',
+		caption: 'A visually distinctive baseline run was still missing expected keyboard behaviour between related time choices.',
+	},
+	{
+		label: 'B · Directed MCP · V004',
+		src: '/studies/study-001/mcp-v004-home.png',
+		alt: 'Directed MCP clinic interface with a large illustrated landing page and repeated booking and booking-management actions',
+		caption: 'The strongest MCP run completed all eight critical scenarios, yet its radio-card interaction remained problematic in the coordinator walkthrough.',
+	},
+	{
+		label: 'C · Frozen context · V001',
+		src: '/studies/study-001/frozen-v001-home.png',
+		alt: 'Frozen-context clinic interface with a split hero and two uneven cards for an existing booking and urgent medical information',
+		caption: 'The frozen packet produced a coherent visual direction, but not consistently strong interaction or scanability.',
+	},
+];
+---
+
+<article class="study-case">
+	<header class="study-case__hero">
+		<div class="study-case__status" aria-label="Study status">
+			<span aria-hidden="true"></span>
+			Exploratory pilot concluded · 14 August 2026
+		</div>
+		<p class="study-case__eyebrow">Study 001 · Coordinator-reviewed case study</p>
+		<h1>Nine AI-built clinic apps. One awkward result.</h1>
+		<p class="study-case__lede">
+			Giving an AI coding agent directed access to Human Standards through MCP improved the
+			automated numbers. It did not reliably remove the obvious usability and accessibility
+			problems a person could see and experience.
+		</p>
+		<div class="study-case__actions">
+			<a class="study-case__button is-primary" href="/studies/study-001/results.json">
+				Download the results data
+			</a>
+			<a class="study-case__button is-secondary" href="#method">
+				See how we tested
+			</a>
+		</div>
+	</header>
+
+	<section class="study-case__numbers" aria-label="Study at a glance">
+		<div><strong>9</strong><span>generated interfaces</span></div>
+		<div><strong>3</strong><span>guidance conditions</span></div>
+		<div><strong>8</strong><span>critical automated scenarios</span></div>
+		<div><strong>0</strong><span>independent reviews completed</span></div>
+	</section>
+
+	<section class="study-case__verdict" aria-labelledby="plain-english-result">
+		<p class="study-case__section-number">The short version</p>
+		<h2 id="plain-english-result">The MCP helped the numbers, not the whole experience</h2>
+		<p>
+			The directed MCP condition had the lowest median count of serious automated
+			accessibility rule–state pairs and tied the frozen-context condition on median critical
+			functional completion. That is a useful directional signal. But every condition still
+			contained conspicuous interaction problems, and the quality varied substantially from
+			one generation to the next.
+		</p>
+		<p>
+			The honest conclusion is not “MCP works” or “MCP makes no difference.” It is that access
+			to good guidance was not sufficient to make the generated product reliably good. The
+			delivery mechanism now needs stronger implementation and verification support.
+		</p>
+	</section>
+
+	<section class="study-case__gallery-section" aria-labelledby="same-brief-different-products">
+		<p class="study-case__section-number">What the agent made</p>
+		<h2 id="same-brief-different-products">The same brief produced very different products</h2>
+		<p class="study-case__intro">
+			Each run started from the same neutral React starter and the same fictional clinic
+			specification. The visual range is striking; the underlying interaction quality was less
+			predictable.
+		</p>
+		<div class="study-case__gallery">
+			{conditionGallery.map((item) => (
+				<figure>
+					<div class="study-case__figure-label">{item.label}</div>
+					<img src={item.src} alt={item.alt} loading="lazy" width="988" height="955" />
+					<figcaption>{item.caption}</figcaption>
+				</figure>
+			))}
+		</div>
+	</section>
+
+	<section id="method" class="study-case__section" aria-labelledby="method-heading">
+		<div class="study-case__split">
+			<div>
+				<p class="study-case__section-number">Method</p>
+				<h2 id="method-heading">Three treatments, three recorded runs each</h2>
+			</div>
+			<div class="study-case__prose">
+				<p>
+					One coding-agent configuration built the same community-clinic appointment product
+					three times under each condition. Runs were isolated, internet access was disabled, the
+					mock API was deterministic, and the browser clock and timezone were fixed.
+				</p>
+				<p>
+					The product had to book, validate, recover, reschedule and cancel; work with keyboard
+					input; and remain usable at mobile width. No generated run was repaired or selectively
+					rerun because of model-produced defects.
+				</p>
+			</div>
+		</div>
+
+		<div class="study-case__conditions">
+			{conditionRows.map((row) => (
+				<div>
+					<span class="study-case__condition-code">{row.code}</span>
+					<h3>{row.name}</h3>
+					<p>{row.description}</p>
+				</div>
+			))}
+		</div>
+		<p class="study-case__method-note">
+			All three MCP runs actually used the server. They made 7, 5 and 11 completed retrieval
+			calls respectively across search, standards and heuristics tools.
+		</p>
+	</section>
+
+	<section class="study-case__section" aria-labelledby="automated-results">
+		<p class="study-case__section-number">Automated evidence</p>
+		<h2 id="automated-results">The directed MCP condition was directionally strongest</h2>
+		<p class="study-case__intro">
+			Higher functional completion is better. Lower serious accessibility counts are better.
+			Medians are shown because this was an exploratory sample of only three runs per
+			condition—not a statistical test.
+		</p>
+
+		<div class="study-case__result-grid">
+			{conditionRows.map((row) => (
+				<div class:list={['study-case__result-card', `is-${row.code.toLowerCase()}`]}>
+					<div class="study-case__result-heading">
+						<span>{row.code}</span>
+						<strong>{row.name}</strong>
+					</div>
+					<dl>
+						<div>
+							<dt>Median critical completion</dt>
+							<dd>{row.functional}</dd>
+							<small>range {row.functionalRange}</small>
+						</div>
+						<div>
+							<dt>Median serious rule–state pairs</dt>
+							<dd>{row.axe}</dd>
+							<small>range {row.axeRange}</small>
+						</div>
+					</dl>
+				</div>
+			))}
+		</div>
+
+		<div class="study-case__table-wrap" tabindex="0" role="region" aria-label="All automated run results">
+			<table>
+				<caption>Every recorded run; no outputs removed</caption>
+				<thead>
+					<tr>
+						<th>Condition</th>
+						<th>Artifact</th>
+						<th>Run</th>
+						<th>Critical scenarios</th>
+						<th>Serious rule–state pairs</th>
+						<th>Affected nodes</th>
+						<th>Unreachable axe states</th>
+					</tr>
+				</thead>
+				<tbody>
+					{artifactRows.map((row) => (
+						<tr>
+							<td><span class:list={['study-case__table-condition', `is-${row.condition.toLowerCase()}`]}>{row.condition}</span></td>
+							<td>{row.blind}</td>
+							<td><a href={`/studies/study-001/evidence/automated/${row.run}-summary.json`}>{row.run}</a></td>
+							<td>{row.critical}</td>
+							<td>{row.pairs}</td>
+							<td>{row.nodes}</td>
+							<td>{row.missing}</td>
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+		<p class="study-case__fine-print">
+			An unreachable state was reported as missing, never converted into a zero-violation
+			accessibility pass. “Affected nodes” can be concentrated repetitions of the same rule;
+			for example, V009’s 202 nodes should not be read as 202 distinct accessibility rules.
+		</p>
+	</section>
+
+	<section class="study-case__section" aria-labelledby="human-walkthrough">
+		<p class="study-case__section-number">Coordinator walkthrough</p>
+		<h2 id="human-walkthrough">The glaring problems crossed condition boundaries</h2>
+		<p class="study-case__intro">
+			The project coordinator viewed all nine artifacts while their condition labels were
+			withheld and recorded qualitative observations. This was not the planned independent
+			review and no rubric score was calculated.
+		</p>
+
+		<div class="study-case__findings">
+			<article>
+				<span>01</span>
+				<div>
+					<h3>Keyboard interaction was the common failure</h3>
+					<p>
+						Radio-style appointment and time cards repeatedly failed to expose a usable focus
+						experience. Buttons and cards sometimes lacked visible focus or hover states. These
+						problems appeared in baseline, MCP and frozen-context outputs.
+					</p>
+				</div>
+			</article>
+			<article>
+				<span>02</span>
+				<div>
+					<h3>Polish and completeness were different things</h3>
+					<p>
+						Some of the most attractive interfaces had broken or incomplete interaction states.
+						V004 looked polished and passed all eight critical automated scenarios, yet its radio
+						cards remained problematic during the keyboard walkthrough. V007 looked spare and
+						coherent but completed only two critical scenarios.
+					</p>
+				</div>
+			</article>
+			<article>
+				<span>03</span>
+				<div>
+					<h3>Validation and state transitions needed more care</h3>
+					<p>
+						One baseline interface placed a missing-name error at the bottom of the form rather
+						than beside the field. Another output failed to return the reader to the top when
+						moving to review. One rescheduling path lacked a clear success state.
+					</p>
+				</div>
+			</article>
+			<article>
+				<span>04</span>
+				<div>
+					<h3>There were genuine strengths, too</h3>
+					<p>
+						V003 retained entered data across backwards navigation and organised its confirmation
+						well. V005’s home page was notably simple. V008 produced a streamlined confirmation.
+						V009’s landing page and progress structure made the flow easy to understand.
+					</p>
+				</div>
+			</article>
+		</div>
+
+		<figure class="study-case__feature-figure">
+			<img
+				src="/studies/study-001/baseline-v006-validation.png"
+				alt="Clinic details form showing an Enter your full name error below the entire form while the empty full-name field remains unmarked near the top"
+				loading="lazy"
+				width="988"
+				height="1415"
+			/>
+			<figcaption>
+				<strong>V006 · Baseline:</strong> the validation message is visible, but separated from
+				the field that needs attention. The same frozen artifact was replayed after the
+				walkthrough to capture the observed layout.
+			</figcaption>
+		</figure>
+	</section>
+
+	<section class="study-case__section" aria-labelledby="shared-failures">
+		<div class="study-case__split">
+			<div>
+				<p class="study-case__section-number">Across all nine</p>
+				<h2 id="shared-failures">Some failures were universal</h2>
+			</div>
+			<div class="study-case__prose">
+				<p>
+					Every run built and typechecked, and the browser recorded no external requests. But
+					all nine failed the non-critical refresh-safety scenario: a confirmed booking was lost
+					on refresh.
+				</p>
+				<p>
+					Every run also produced at least three serious accessibility rule–state pairs. Colour
+					contrast was the recurring automated rule; isolated outputs also produced a definition
+					list or unnamed-dialog problem.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="study-case__deviation" aria-labelledby="why-no-reviewers">
+		<p class="study-case__section-number">Protocol change</p>
+		<h2 id="why-no-reviewers">Why we stopped before independent review</h2>
+		<p>
+			The preregistered plan required two independent reviewers to score every opaque artifact
+			before the condition mapping was revealed. We recruited for that stage. It did not happen.
+		</p>
+		<p>
+			After the coordinator walkthrough, the project decided the pilot had already done enough
+			to expose the next development problems. Commissioning six to eight hours of external
+			review to turn visibly mixed outputs into a weak first benchmark was not the best use of
+			reviewer time. The mapping was revealed and recruitment was closed.
+		</p>
+		<div class="study-case__warning">
+			<strong>What this means:</strong> the preregistered P3 human-centred quality outcome is
+			missing. Coordinator observations are not independent scores, the scripted task set was
+			not completed systematically for every artifact, and this case study cannot support a
+				confirmatory claim about MCP impact.
+		</div>
+	</section>
+
+	<section class="study-case__section" aria-labelledby="what-we-change">
+		<p class="study-case__section-number">What happens next</p>
+		<h2 id="what-we-change">Turn guidance into verifiable implementation work</h2>
+		<div class="study-case__next-grid">
+			<div>
+				<strong>1</strong>
+				<h3>Make interaction guidance testable</h3>
+				<p>Pair keyboard, focus and selection guidance with concrete implementation contracts and checks.</p>
+			</div>
+			<div>
+				<strong>2</strong>
+				<h3>Retrieve by product task</h3>
+				<p>Give agents a focused recipe for forms, commitment, failure recovery and responsive state transitions.</p>
+			</div>
+			<div>
+				<strong>3</strong>
+				<h3>Require a self-check</h3>
+				<p>Ask the agent to exercise keyboard paths, validation, retry states and truthful confirmation before finishing.</p>
+			</div>
+			<div>
+				<strong>4</strong>
+				<h3>Validate on unseen work</h3>
+				<p>Use these nine outputs as a development set, then test a frozen MCP version on a new task with blinded independent reviewers.</p>
+			</div>
+		</div>
+		<p class="study-case__closing">
+			We will not tune the MCP against these interfaces and then claim success on the same
+			evidence. The next credible result has to come from a prospective holdout.
+		</p>
+	</section>
+
+	<section class="study-case__evidence" aria-labelledby="inspect-evidence">
+		<p class="study-case__section-number">Inspect the evidence</p>
+		<h2 id="inspect-evidence">The result is public, including the missing result</h2>
+		<div class="study-case__evidence-links">
+			<a href="/studies/study-001/results.json"><strong>Case-study data</strong><span>Mapping, run outcomes and every coordinator observation · JSON</span></a>
+			<a href="/studies/study-001/evidence/protocol.md"><strong>Frozen protocol</strong><span>Version 0.6.3 · Markdown</span></a>
+			<a href="/studies/study-001/evidence/product-specification.md"><strong>Product specification</strong><span>The shared fictional clinic brief · Markdown</span></a>
+			<a href="/studies/study-001/evidence/interface-quality-rubric.yml"><strong>Frozen rubric</strong><span>Primary outcomes and U01–U10 · YAML</span></a>
+			<a href="/studies/study-001/evidence/reviewer-task-script.md"><strong>Planned reviewer tasks</strong><span>The script that was not completed independently · Markdown</span></a>
+			<a href="/studies/study-001/evidence/run-order.json"><strong>Run and condition mapping</strong><span>R001–R009 and V001–V009 · JSON</span></a>
+			<a href="/studies/study-001/evidence/SHA256SUMS.txt"><strong>Evidence checksums</strong><span>SHA-256 for every published frozen evidence file · Text</span></a>
+		</div>
+		<p class="study-case__fine-print">
+			Each run identifier in the results table links to its frozen automated summary. Detailed
+			functional, axe, focus and guardrail JSON files use the same directory and filename
+			pattern. Screenshots show fictional data only.
+		</p>
+	</section>
+</article>
+
+<style>
+	.study-case {
+		--study-border: color-mix(in srgb, var(--hs-rule) 84%, transparent);
+		max-width: 76rem;
+		margin-inline: auto;
+	}
+
+	.study-case__hero {
+		padding: clamp(2rem, 5vw, 5rem) 0 clamp(3.5rem, 7vw, 7rem);
+		border-bottom: 1px solid var(--study-border);
+	}
+
+	.study-case__status {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.6rem;
+		margin-bottom: clamp(2.5rem, 6vw, 5rem);
+		padding: 0.5rem 0.8rem;
+		border: 1px solid var(--study-border);
+		border-radius: 999px;
+		color: var(--hs-text-muted);
+		font-size: 0.78rem;
+		font-weight: 700;
+	}
+
+	.study-case__status span {
+		width: 0.52rem;
+		height: 0.52rem;
+		border-radius: 50%;
+		background: #b95b3f;
+		box-shadow: 0 0 0 0.22rem color-mix(in srgb, #b95b3f 16%, transparent);
+	}
+
+	.study-case__eyebrow,
+	.study-case__section-number {
+		margin: 0;
+		color: var(--hs-accent-text);
+		font-size: 0.74rem;
+		font-weight: 800;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+	}
+
+	.study-case__hero h1 {
+		max-width: 14ch;
+		margin: 0.85rem 0 1.75rem;
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: clamp(3.2rem, 8vw, 7rem);
+		font-weight: 500;
+		letter-spacing: -0.065em;
+		line-height: 0.94;
+	}
+
+	.study-case__lede {
+		max-width: 50rem;
+		margin: 0;
+		color: var(--hs-text-muted);
+		font-size: clamp(1.15rem, 2vw, 1.55rem);
+		line-height: 1.55;
+	}
+
+	.study-case__actions {
+		display: flex;
+		gap: 0.75rem;
+		flex-wrap: wrap;
+		margin-top: 2.25rem;
+	}
+
+	.study-case__button {
+		display: inline-flex;
+		align-items: center;
+		min-height: 3rem;
+		padding: 0.75rem 1rem;
+		border: 1px solid var(--hs-accent);
+		border-radius: 0.5rem;
+		font-weight: 760;
+		text-decoration: none;
+	}
+
+	.study-case__button.is-primary {
+		background: var(--hs-accent);
+		color: var(--hs-button-text);
+	}
+
+	.study-case__button.is-secondary {
+		background: transparent;
+		color: var(--hs-accent-text);
+	}
+
+	.study-case__numbers {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		border-bottom: 1px solid var(--study-border);
+	}
+
+	.study-case__numbers div {
+		padding: clamp(1.4rem, 3vw, 2.5rem);
+		border-right: 1px solid var(--study-border);
+	}
+
+	.study-case__numbers div:last-child { border-right: 0; }
+
+	.study-case__numbers strong,
+	.study-case__numbers span { display: block; }
+
+	.study-case__numbers strong {
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: clamp(2rem, 4vw, 3.4rem);
+		font-weight: 500;
+		line-height: 1;
+	}
+
+	.study-case__numbers span {
+		margin-top: 0.45rem;
+		color: var(--hs-text-muted);
+		font-size: 0.9rem;
+	}
+
+	.study-case__verdict,
+	.study-case__deviation {
+		margin-block: clamp(4rem, 9vw, 8rem);
+		padding: clamp(2rem, 5vw, 4.5rem);
+		border-left: 0.35rem solid var(--hs-accent);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__verdict h2,
+	.study-case__deviation h2,
+	.study-case__section h2,
+	.study-case__gallery-section h2,
+	.study-case__evidence h2 {
+		max-width: 19ch;
+		margin: 0.75rem 0 1.5rem;
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: clamp(2.15rem, 5vw, 4.2rem);
+		font-weight: 500;
+		letter-spacing: -0.045em;
+		line-height: 1.04;
+	}
+
+	.study-case__verdict p:not(.study-case__section-number),
+	.study-case__deviation p:not(.study-case__section-number) {
+		max-width: 50rem;
+		font-size: 1.08rem;
+		line-height: 1.75;
+	}
+
+	.study-case__gallery-section,
+	.study-case__section,
+	.study-case__evidence {
+		padding-block: clamp(4rem, 9vw, 8rem);
+		border-top: 1px solid var(--study-border);
+	}
+
+	.study-case__intro {
+		max-width: 48rem;
+		font-size: 1.08rem;
+		line-height: 1.7;
+	}
+
+	.study-case__gallery {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.study-case__gallery figure,
+	.study-case__feature-figure {
+		margin: 0;
+		border: 1px solid var(--study-border);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__gallery img {
+		display: block;
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		object-fit: cover;
+		object-position: top;
+		border-block: 1px solid var(--study-border);
+	}
+
+	.study-case__figure-label {
+		padding: 0.75rem 0.9rem;
+		color: var(--hs-ink);
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	.study-case__gallery figcaption,
+	.study-case__feature-figure figcaption {
+		padding: 1rem;
+		font-size: 0.88rem;
+		line-height: 1.55;
+	}
+
+	.study-case__split {
+		display: grid;
+		grid-template-columns: minmax(0, 0.85fr) minmax(20rem, 1.15fr);
+		gap: clamp(2rem, 7vw, 6rem);
+	}
+
+	.study-case__prose p {
+		margin-top: 0;
+		font-size: 1.04rem;
+		line-height: 1.75;
+	}
+
+	.study-case__conditions {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin-top: 3rem;
+	}
+
+	.study-case__conditions > div {
+		position: relative;
+		min-height: 15rem;
+		padding: 1.4rem;
+		border: 1px solid var(--study-border);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__condition-code {
+		display: grid;
+		place-items: center;
+		width: 2.2rem;
+		height: 2.2rem;
+		border-radius: 50%;
+		background: var(--hs-accent-soft);
+		color: var(--hs-accent-text);
+		font-weight: 850;
+	}
+
+	.study-case__conditions h3,
+	.study-case__findings h3,
+	.study-case__next-grid h3 {
+		margin: 1.2rem 0 0.55rem;
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: 1.45rem;
+		font-weight: 500;
+	}
+
+	.study-case__conditions p,
+	.study-case__method-note {
+		line-height: 1.6;
+	}
+
+	.study-case__method-note {
+		max-width: 49rem;
+		margin-top: 1.5rem;
+		padding-left: 1rem;
+		border-left: 3px solid var(--hs-accent);
+	}
+
+	.study-case__result-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+		margin: 2.5rem 0 3rem;
+	}
+
+	.study-case__result-card {
+		padding: 1.3rem;
+		border: 1px solid var(--study-border);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__result-card.is-b { border-top: 0.35rem solid var(--hs-accent); }
+
+	.study-case__result-heading {
+		display: flex;
+		align-items: center;
+		gap: 0.65rem;
+		padding-bottom: 1rem;
+		border-bottom: 1px solid var(--study-border);
+		color: var(--hs-ink);
+	}
+
+	.study-case__result-heading span {
+		display: grid;
+		place-items: center;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		background: var(--hs-accent-soft);
+		color: var(--hs-accent-text);
+		font-weight: 850;
+	}
+
+	.study-case__result-card dl { margin: 0; }
+
+	.study-case__result-card dl div {
+		padding-top: 1rem;
+	}
+
+	.study-case__result-card dt { font-size: 0.82rem; }
+
+	.study-case__result-card dd {
+		margin: 0.3rem 0 0;
+		color: var(--hs-ink);
+		font-family: var(--hs-font-display);
+		font-size: 2.5rem;
+		font-weight: 500;
+		line-height: 1;
+	}
+
+	.study-case__result-card small { color: var(--hs-text-muted); }
+
+	.study-case__table-wrap {
+		overflow-x: auto;
+		border: 1px solid var(--study-border);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__table-wrap:focus-visible {
+		outline: 3px solid var(--hs-accent);
+		outline-offset: 3px;
+	}
+
+	.study-case table {
+		width: 100%;
+		min-width: 55rem;
+		border-collapse: collapse;
+		font-size: 0.88rem;
+	}
+
+	.study-case caption {
+		padding: 1rem;
+		color: var(--hs-ink);
+		font-weight: 760;
+		text-align: left;
+	}
+
+	.study-case th,
+	.study-case td {
+		padding: 0.75rem;
+		border-top: 1px solid var(--study-border);
+		text-align: left;
+		vertical-align: top;
+	}
+
+	.study-case th {
+		color: var(--hs-ink);
+		font-size: 0.76rem;
+		letter-spacing: 0.03em;
+	}
+
+	.study-case__table-condition {
+		display: inline-grid;
+		place-items: center;
+		width: 1.8rem;
+		height: 1.8rem;
+		border-radius: 50%;
+		background: var(--hs-accent-soft);
+		color: var(--hs-accent-text);
+		font-weight: 850;
+	}
+
+	.study-case__table-condition.is-b { background: var(--hs-accent); color: var(--hs-button-text); }
+
+	.study-case__fine-print {
+		max-width: 54rem;
+		margin-top: 1rem;
+		font-size: 0.86rem;
+		line-height: 1.6;
+	}
+
+	.study-case__findings {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1px;
+		margin-top: 2.5rem;
+		background: var(--study-border);
+		border: 1px solid var(--study-border);
+	}
+
+	.study-case__findings article {
+		display: grid;
+		grid-template-columns: 2.5rem 1fr;
+		gap: 1rem;
+		padding: clamp(1.4rem, 3vw, 2.5rem);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__findings article > span {
+		color: var(--hs-accent-text);
+		font-family: var(--hs-font-display);
+		font-size: 1.25rem;
+	}
+
+	.study-case__findings h3 { margin-top: 0; }
+
+	.study-case__findings p {
+		margin: 0;
+		line-height: 1.68;
+	}
+
+	.study-case__feature-figure {
+		display: grid;
+		grid-template-columns: minmax(0, 1.45fr) minmax(15rem, 0.55fr);
+		margin-top: 3rem;
+	}
+
+	.study-case__feature-figure img {
+		display: block;
+		width: 100%;
+		max-height: 42rem;
+		object-fit: cover;
+		object-position: top;
+		border-right: 1px solid var(--study-border);
+	}
+
+	.study-case__feature-figure figcaption {
+		align-self: end;
+		padding: clamp(1.25rem, 3vw, 2.5rem);
+		font-size: 1rem;
+	}
+
+	.study-case__warning {
+		max-width: 54rem;
+		margin-top: 2rem;
+		padding: 1.15rem 1.3rem;
+		border: 1px solid color-mix(in srgb, #b95b3f 42%, var(--study-border));
+		background: color-mix(in srgb, #b95b3f 8%, var(--hs-surface-raised));
+		line-height: 1.65;
+	}
+
+	.study-case__next-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.study-case__next-grid > div {
+		padding: 1.5rem;
+		border: 1px solid var(--study-border);
+		background: var(--hs-surface-raised);
+	}
+
+	.study-case__next-grid > div > strong {
+		color: var(--hs-accent-text);
+		font-family: var(--hs-font-display);
+		font-size: 2.4rem;
+		font-weight: 500;
+	}
+
+	.study-case__next-grid h3 { margin-top: 0.6rem; }
+
+	.study-case__next-grid p {
+		margin: 0;
+		line-height: 1.6;
+	}
+
+	.study-case__closing {
+		max-width: 52rem;
+		margin-top: 2rem;
+		font-size: 1.15rem;
+		line-height: 1.65;
+	}
+
+	.study-case__evidence-links {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+		margin-top: 2.5rem;
+	}
+
+	.study-case__evidence-links a {
+		display: block;
+		padding: 1.15rem;
+		border: 1px solid var(--study-border);
+		background: var(--hs-surface-raised);
+		text-decoration: none;
+	}
+
+	.study-case__evidence-links strong,
+	.study-case__evidence-links span { display: block; }
+
+	.study-case__evidence-links strong { color: var(--hs-ink); }
+
+	.study-case__evidence-links span {
+		margin-top: 0.35rem;
+		color: var(--hs-text-muted);
+		font-size: 0.86rem;
+		line-height: 1.45;
+	}
+
+	@media (max-width: 60rem) {
+		.study-case__numbers,
+		.study-case__gallery,
+		.study-case__conditions,
+		.study-case__result-grid { grid-template-columns: repeat(2, 1fr); }
+
+		.study-case__numbers div:nth-child(2) { border-right: 0; }
+		.study-case__numbers div:nth-child(-n + 2) { border-bottom: 1px solid var(--study-border); }
+		.study-case__gallery figure:last-child { grid-column: 1 / -1; }
+	}
+
+	@media (max-width: 42rem) {
+		.study-case__hero h1 { font-size: clamp(3rem, 16vw, 5rem); }
+
+		.study-case__split,
+		.study-case__findings,
+		.study-case__next-grid,
+		.study-case__evidence-links,
+		.study-case__feature-figure { grid-template-columns: 1fr; }
+
+		.study-case__gallery,
+		.study-case__conditions,
+		.study-case__result-grid { grid-template-columns: 1fr; }
+
+		.study-case__gallery figure:last-child { grid-column: auto; }
+		.study-case__conditions > div { min-height: 0; }
+		.study-case__feature-figure img { border-right: 0; border-bottom: 1px solid var(--study-border); }
+	}
+</style>

@@ -1,0 +1,16 @@
+{
+  "typecheck": {
+    "passed": true,
+    "exitCode": 0,
+    "elapsedMs": 613,
+    "stdout": "\n> clinic-appointment-study-starter@0.1.0 typecheck\n> tsc -b --pretty false\n\n",
+    "stderr": ""
+  },
+  "build": {
+    "passed": true,
+    "exitCode": 0,
+    "elapsedMs": 1193,
+    "stdout": "\n> clinic-appointment-study-starter@0.1.0 build\n> tsc -b && vite build\n\nvite v8.2.1 building client environment for production...\n\u001b[2K\rtransforming...✓ 17 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/index.html                   0.41 kB │ gzip:  0.28 kB\ndist/assets/index-CdMsFVgI.css   15.84 kB │ gzip:  4.40 kB\ndist/assets/index-BmuYS1OH.js   214.09 kB │ gzip: 66.14 kB\n\n✓ built in 283ms\n",
+    "stderr": ""
+  }
+}

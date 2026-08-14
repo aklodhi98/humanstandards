@@ -1,0 +1,2594 @@
+[
+  {
+    "scenario": "F01",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-service:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-service:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your boo"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F01",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nBOOKING CONFIRMED\n\nYour appointment is booked\n\nWe've reserved your"
+    }
+  },
+  {
+    "scenario": "F01",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-mobile",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-2",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-3",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-4",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-5",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance-6",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance:after",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F02",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-service:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-service:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your boo"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F03",
+    "label": "recover-slot-secondary:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Back"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "recover-slot-secondary:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\n\nCOMMUNITY CARE, MADE SIMPLE\n\nHow can we help today?\n\nArrange a clinic appointme"
+    }
+  },
+  {
+    "scenario": "F03",
+    "label": "recover-slot-secondary",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-service:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-service:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your boo"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your boo"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nBOOKING CONFIRMED\n\nYour appointment is booked\n\nWe've reserved your"
+    }
+  },
+  {
+    "scenario": "F04",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F05",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking\nView, reschedule or cancel the sample booking"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nBOOKING REFERENCE\n"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F05",
+    "label": "begin-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Reschedule appointment"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "begin-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nMANAGE BOOKING\n\nChoose a new time\n\nYour current appointment is Tue"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "begin-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F05",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F05",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking\nView, reschedule or cancel the sample booking"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nBOOKING REFERENCE\n"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "begin-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Reschedule appointment"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "begin-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nMANAGE BOOKING\n\nChoose a new time\n\nYour current appointment is Tue"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "begin-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nMANAGE BOOKING\n\nChoose a new time\n\nYour current appointment is Tue"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F06",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F07",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking\nView, reschedule or cancel the sample booking"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nBOOKING REFERENCE\n"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F07",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Cancel appointment"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n!\n\nCANCEL APPOINTMENT\n\nAre you sure?\n\nCancelling will release your "
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F07",
+    "label": "confirm-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "confirm-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nCancelled\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F07",
+    "label": "confirm-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking\nView, reschedule or cancel the sample booking"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nBOOKING REFERENCE\n"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Cancel appointment"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n!\n\nCANCEL APPOINTMENT\n\nAre you sure?\n\nCancelling will release your "
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "confirm-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "confirm-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n!\n\nCANCEL APPOINTMENT\n\nAre you sure?\n\nCancelling will release your "
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "confirm-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nCancelled\nYour appointment h"
+    }
+  },
+  {
+    "scenario": "F08",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F09",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F09",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "advance:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "advance:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F09",
+    "label": "advance",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-service:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-service:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your boo"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F10",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nBOOKING CONFIRMED\n\nYour appointment is booked\n\nWe've reserved your"
+    }
+  },
+  {
+    "scenario": "F10",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your appointment\n\nSel"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-service:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-service:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGeneral appoint"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your booking\n\nCheck e"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n\nBOOKING CONFIRMED\n\nYour appointment is booked\n\nWe've reserved your clinic appoi"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking\nView, reschedule or cancel the sample booking"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nBOOKING REFERENCE\nHCC-4821\nAPPO"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Reschedule appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n\nMANAGE BOOKING\n\nChoose a new time\n\nYour current appointment is Tuesday 15 Septe"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-reschedule:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm new time"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-reschedule:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nYour appointment has been resch"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "submit-reschedule",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Manage existing booking\nView, reschedule or cancel the sample booking"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nConfirmed\nBOOKING REFERENCE\nHCC-4821\nAPPO"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "open-existing-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Cancel appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n!\n\nCANCEL APPOINTMENT\n\nAre you sure?\n\nCancelling will release your appointment o"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "begin-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F11",
+    "label": "confirm-cancellation:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Yes, cancel appointment"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "confirm-cancellation:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nExit to home\n\nEXISTING BOOKING\n\nAppointment details\nCancelled\nYour appointment has been cance"
+    }
+  },
+  {
+    "scenario": "F11",
+    "label": "confirm-cancellation",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "begin-new-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Book an appointment\nChoose a service and an available time"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "begin-new-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n1\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 1 OF 3\n\nChoose your app"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "begin-new-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "choose-service",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-service:before",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-service:after",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "service"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-service",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "choose-slot",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "appointment-time"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-slot:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Continue"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-slot:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n2\nYour details\n3\nReview\n\nSTEP 2 OF 3\n\nYour details\nGe"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "after-slot",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "fill-name",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "choose-contact-method",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": "contact"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "fill-email",
+    "active": {
+      "tag": "input",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "fill-note",
+    "active": {
+      "tag": "textarea",
+      "id": null,
+      "role": null,
+      "name": null
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "advance-1:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Review booking"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "advance-1:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n✓\nAppointment\n✓\nYour details\n3\nReview\n\nSTEP 3 OF 3\n\nReview your boo"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "advance-1",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  },
+  {
+    "scenario": "F12",
+    "label": "submit-booking:before",
+    "active": {
+      "tag": "button",
+      "id": null,
+      "role": null,
+      "name": "Confirm appointment"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "submit-booking:after",
+    "active": {
+      "tag": "body",
+      "id": null,
+      "role": null,
+      "name": "H\nHarbour Community Clinic\nAPPOINTMENTS\nExit to home\n\nBOOKING CONFIRMED\n\nYour appointment is booked\n\nWe've reserved your"
+    }
+  },
+  {
+    "scenario": "F12",
+    "label": "submit-booking",
+    "method": "keyboard",
+    "key": "Enter",
+    "tag": "button",
+    "role": null
+  }
+]

@@ -2,13 +2,13 @@
 
 Human factors research translated into practical design standards, implementation guidance, and read-only context for AI agents.
 
-[Explore the live library](https://www.humanstandards.org/) · [Connect the MCP server](https://www.humanstandards.org/human-overview/mcp-server/) · [Review Study 001](https://www.humanstandards.org/studies/study-001-independent-reviewers/)
+[Explore the live library](https://www.humanstandards.org/) · [Connect the MCP server](https://www.humanstandards.org/human-overview/mcp-server/) · [Read Study 001](https://www.humanstandards.org/studies/study-001-case-study/)
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
 > **Is Human Standards useful to you?** [Star the project on GitHub](https://github.com/aklodhi98/humanstandards) to save it for later and help other practitioners discover it. You can also watch the repository for future releases or join the public [Discussions](https://github.com/aklodhi98/humanstandards/discussions).
 
-> **Study 001 is recruiting two blinded independent reviewers.** The study asks whether access to human-factors guidance changes the quality of AI-built interfaces. Reviewers score nine opaque artifacts against a frozen rubric; mixed, null, and negative results will be published alongside positive ones. [Read the independent-reviewer brief](https://www.humanstandards.org/studies/study-001-independent-reviewers/).
+> **Study 001 is published as an exploratory coordinator-reviewed pilot.** Directed MCP access improved the automated results but did not reliably remove obvious usability and accessibility problems. The planned independent review was not completed, and the missing human outcome is reported explicitly. [Read the case study and evidence](https://www.humanstandards.org/studies/study-001-case-study/).
 
 ## Why Human Standards exists
 
@@ -33,7 +33,7 @@ Human Standards is actively developed and should be treated as a working referen
 
 - The documentation library is available at [humanstandards.org](https://www.humanstandards.org/).
 - The MCP server currently runs from source and does not write to projects or external services.
-- Study 001 is at the blinded independent-review stage. No final result will be published before the review, analysis, and reproduction gates are complete.
+- Study 001 is published as an exploratory pilot. Its protocol deviation, automated evidence, coordinator observations, condition mapping and missing independent-review outcome are public.
 - Gaps, corrections, competing evidence, and well-scoped contributions are welcome.
 
 ## Use the documentation library

@@ -167,12 +167,14 @@ select:focus-visible {
   font-weight: 500;
 }
 
-/* The reviewer call is a public recruitment page, not a narrow reference article. */
-:root:has(.study-call) {
+/* Study features are public evidence pages, not narrow reference articles. */
+:root:has(.study-call),
+:root:has(.study-case) {
   --sl-content-width: 76rem;
 }
 
-:root:has(.study-call) main > .content-panel:first-of-type {
+:root:has(.study-call) main > .content-panel:first-of-type,
+:root:has(.study-case) main > .content-panel:first-of-type {
   display: none;
 }
 

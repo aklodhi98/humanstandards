@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "1.0",
+  "studyId": "study-001",
+  "protocolVersion": "0.6.3",
+  "runId": "R006",
+  "evaluatedAt": "2026-08-10T12:57:31.304Z",
+  "browser": {
+    "name": "Chromium",
+    "version": "151.0.7922.34"
+  },
+  "fixedNow": "2026-09-07T10:00:00+10:00",
+  "timezone": "Australia/Sydney",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 1000
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "outcomes": {
+    "criticalPassed": 7,
+    "criticalTotal": 8,
+    "criticalPassRate": 0.875,
+    "seriousAccessibilityRuleStateViewportPairs": 11,
+    "seriousAccessibilityAffectedNodes": 202,
+    "missingAxeStates": []
+  },
+  "externalRequestCount": 0,
+  "browserErrorCount": 4
+}

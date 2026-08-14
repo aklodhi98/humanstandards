@@ -1,0 +1,199 @@
+{
+  "schemaVersion": "1.0",
+  "studyId": "study-001",
+  "publishedAt": "2026-08-14",
+  "status": "exploratory-coordinator-reviewed-pilot",
+  "researchQuestion": "Does directed access to Human Standards through MCP change the quality of an AI-built clinic appointment interface?",
+  "conditions": {
+    "A": "Baseline: specification only",
+    "B": "Directed Human Standards MCP retrieval",
+    "C": "Frozen Human Standards context packet without MCP"
+  },
+  "protocolDeviation": {
+    "planned": "Two independent reviewers would each score all nine opaque artifacts before the condition mapping was revealed.",
+    "completed": "The project coordinator conducted an initially condition-blind qualitative walkthrough. No independent reviewer completed the frozen rubric and no P3 human-centred quality score was calculated.",
+    "decision": "The pilot was concluded before external review because it already exposed material cross-condition failures and no consistently superior experience. The nine outputs are now treated as a development set, not confirmatory evidence."
+  },
+  "automatedConditionSummary": [
+    {
+      "condition": "A",
+      "criticalFunctionalMedian": 0.5,
+      "criticalFunctionalRange": [0.25, 0.875],
+      "seriousRuleStatePairMedian": 8,
+      "seriousRuleStatePairRange": [7, 11]
+    },
+    {
+      "condition": "B",
+      "criticalFunctionalMedian": 0.875,
+      "criticalFunctionalRange": [0.5, 1],
+      "seriousRuleStatePairMedian": 4,
+      "seriousRuleStatePairRange": [3, 4]
+    },
+    {
+      "condition": "C",
+      "criticalFunctionalMedian": 0.875,
+      "criticalFunctionalRange": [0.875, 0.875],
+      "seriousRuleStatePairMedian": 7,
+      "seriousRuleStatePairRange": [6, 11]
+    }
+  ],
+  "artifacts": [
+    {
+      "blindId": "V006",
+      "runId": "R002",
+      "condition": "A",
+      "criticalPassed": 4,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 7,
+      "seriousAffectedNodes": 16,
+      "missingAxeStates": ["existing-booking", "reschedule-failure", "cancellation-flow"],
+      "coordinatorObservations": [
+        "The flow starts directly on booking rather than a separate landing page; this is not inherently a defect.",
+        "Appointment radio cards did not expose a usable keyboard focus experience during the walkthrough.",
+        "The first date and Email contact method were preselected.",
+        "A missing-name validation message appeared at the bottom of the form without marking or placing the message beside the field.",
+        "The stepper was clear and well spaced.",
+        "The confirmation copy claimed an email would be sent even though the fictional service sends no message."
+      ]
+    },
+    {
+      "blindId": "V009",
+      "runId": "R006",
+      "condition": "A",
+      "criticalPassed": 7,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 11,
+      "seriousAffectedNodes": 202,
+      "missingAxeStates": [],
+      "coordinatorObservations": [
+        "The landing page and four-step vertical flow were visually distinctive and easy to orient within.",
+        "Selecting an appointment type advanced immediately, which is efficient but consequential.",
+        "Arrow-key navigation was not available between time choices presented as a related selection set."
+      ]
+    },
+    {
+      "blindId": "V007",
+      "runId": "R008",
+      "condition": "A",
+      "criticalPassed": 2,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 8,
+      "seriousAffectedNodes": 16,
+      "missingAxeStates": ["existing-booking", "reschedule-failure", "cancellation-flow"],
+      "coordinatorObservations": [
+        "Home-page buttons had no visible hover treatment, pointer affordance or reliable keyboard focus indicator.",
+        "Appointment cards lacked visible radio affordance, hover treatment and a usable keyboard focus experience.",
+        "Form labels and entered values used similar heavy emphasis, weakening hierarchy.",
+        "The rescheduling path did not provide a clear post-commit success screen."
+      ]
+    },
+    {
+      "blindId": "V004",
+      "runId": "R001",
+      "condition": "B",
+      "criticalPassed": 8,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 4,
+      "seriousAffectedNodes": 15,
+      "missingAxeStates": [],
+      "coordinatorObservations": [
+        "The stepper was well aligned and spaced.",
+        "The landing page was polished, although its hero buttons and lower cards repeated the same two actions.",
+        "Appointment-type radio cards did not expose a usable keyboard focus experience during the walkthrough."
+      ]
+    },
+    {
+      "blindId": "V003",
+      "runId": "R004",
+      "condition": "B",
+      "criticalPassed": 7,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 3,
+      "seriousAffectedNodes": 13,
+      "missingAxeStates": [],
+      "coordinatorObservations": [
+        "The existing-booking action was unusually prominent and easy to discover.",
+        "Entered data was retained when moving backwards and forwards.",
+        "The confirmation details were well organised.",
+        "The progress steps were visually cramped."
+      ]
+    },
+    {
+      "blindId": "V002",
+      "runId": "R009",
+      "condition": "B",
+      "criticalPassed": 4,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 4,
+      "seriousAffectedNodes": 8,
+      "missingAxeStates": ["existing-booking", "reschedule-failure", "cancellation-flow"],
+      "coordinatorObservations": [
+        "The current-step treatment had weak separation from the page background and the progress labels were not evenly aligned.",
+        "During the walkthrough, Physiotherapy times displayed a non-injected loading failure and Retry did not recover. A later fresh launch did not reproduce the same state, so this is reported as an observed reliability warning rather than a deterministic defect.",
+        "The interface correctly refused to continue without an available date and time."
+      ]
+    },
+    {
+      "blindId": "V008",
+      "runId": "R003",
+      "condition": "C",
+      "criticalPassed": 7,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 6,
+      "seriousAffectedNodes": 19,
+      "missingAxeStates": [],
+      "coordinatorObservations": [
+        "The confirmation layout was streamlined.",
+        "Appointment and time selection controls did not expose a usable keyboard focus experience.",
+        "A date dropdown added interaction cost for only two available dates.",
+        "Email was preselected."
+      ]
+    },
+    {
+      "blindId": "V001",
+      "runId": "R005",
+      "condition": "C",
+      "criticalPassed": 7,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 7,
+      "seriousAffectedNodes": 22,
+      "missingAxeStates": [],
+      "coordinatorObservations": [
+        "The two home-page cards had uneven dimensions and the urgent-care icon was visually compressed.",
+        "The main call to action had no visible hover treatment.",
+        "Selected appointment states shifted neighbouring content.",
+        "The review transition did not return focus or scroll position to the top.",
+        "Review and confirmation details used tight spacing and centre alignment that reduced scanability."
+      ]
+    },
+    {
+      "blindId": "V005",
+      "runId": "R007",
+      "condition": "C",
+      "criticalPassed": 7,
+      "criticalTotal": 8,
+      "seriousRuleStatePairs": 11,
+      "seriousAffectedNodes": 63,
+      "missingAxeStates": [],
+      "coordinatorObservations": [
+        "The simple home page stood out positively and the review screen spacing was effective.",
+        "Appointment radio cards did not expose a usable keyboard focus experience.",
+        "Available-time headings and controls were tightly spaced.",
+        "Confirmation details were unnecessarily centre aligned.",
+        "Exit to home and Return to home repeated the same action."
+      ]
+    }
+  ],
+  "crossArtifactFindings": [
+    "Keyboard and focus behaviour remained a recurring weakness in every condition.",
+    "Run-to-run variation was large enough to complicate any simple treatment story.",
+    "Polished visual hierarchy did not guarantee complete booking-management behaviour.",
+    "All nine runs failed the non-critical refresh-safety scenario F12.",
+    "The directed MCP condition was directionally strongest on automated outcomes, but did not produce a uniformly strong human experience."
+  ],
+  "humanOutcome": {
+    "plannedOutcomeId": "P3",
+    "value": null,
+    "reason": "No independent rubric reviews were completed. Coordinator observations are qualitative and must not be substituted for the preregistered blinded human-centred quality score."
+  }
+}

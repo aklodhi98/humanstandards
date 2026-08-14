@@ -1,0 +1,158 @@
+[
+  {
+    "id": "F01",
+    "name": "Complete a new booking",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 4835,
+    "requestCount": 7
+  },
+  {
+    "id": "F02",
+    "name": "Contact method requirements",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 8057,
+    "requestCount": 12
+  },
+  {
+    "id": "F03",
+    "name": "Slot becomes unavailable",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 5627,
+    "requestCount": 9
+  },
+  {
+    "id": "F04",
+    "name": "Retry a failed booking",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 4307,
+    "requestCount": 8
+  },
+  {
+    "id": "F05",
+    "name": "Open and reschedule the existing booking",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 2236,
+    "requestCount": 8
+  },
+  {
+    "id": "F06",
+    "name": "Recover from failed rescheduling",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 2840,
+    "requestCount": 9
+  },
+  {
+    "id": "F07",
+    "name": "Cancel the existing booking",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 2183,
+    "requestCount": 7
+  },
+  {
+    "id": "F08",
+    "name": "Recover from failed cancellation",
+    "critical": true,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": false,
+    "error": "Expected values to be strictly equal:\n+ actual - expected\n\n+ 'confirmed'\n- 'cancelled'\n",
+    "elapsedMs": 2167,
+    "requestCount": 7
+  },
+  {
+    "id": "F09",
+    "name": "No available slots",
+    "critical": false,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 1775,
+    "requestCount": 6
+  },
+  {
+    "id": "F10",
+    "name": "Note boundary",
+    "critical": false,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 4093,
+    "requestCount": 7
+  },
+  {
+    "id": "F11",
+    "name": "Mobile completion",
+    "critical": false,
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "passed": true,
+    "error": null,
+    "elapsedMs": 5817,
+    "requestCount": 22
+  },
+  {
+    "id": "F12",
+    "name": "Refresh safety",
+    "critical": false,
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "passed": false,
+    "error": "Confirmed booking was lost on refresh.",
+    "elapsedMs": 3691,
+    "requestCount": 12
+  }
+]

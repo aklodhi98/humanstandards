@@ -1,0 +1,73 @@
+{
+  "schemaVersion": "1.0",
+  "studyId": "study-001",
+  "protocolVersion": "0.6.3",
+  "freezeCommit": "8d21955e186aa5f840d91067058373d7253f5fcc",
+  "method": "Sort SHA-256(<freeze-commit>:<block>:<condition>) within three complete blocks.",
+  "blindMethod": "Sort SHA-256(<freeze-commit>:blind:<run-id>) and assign V001-V009.",
+  "entries": [
+    {
+      "runId": "R001",
+      "block": 1,
+      "condition": "B",
+      "orderHash": "102e8e9e9bfee2de5fc555b3b937460550757e05e0d9c759802ce969bd916d64",
+      "blindId": "V004"
+    },
+    {
+      "runId": "R002",
+      "block": 1,
+      "condition": "A",
+      "orderHash": "2ebd11c80595f5f357fc9fdf2bd0641545fb90265193b89285ea8671896dc6d2",
+      "blindId": "V006"
+    },
+    {
+      "runId": "R003",
+      "block": 1,
+      "condition": "C",
+      "orderHash": "9b25950977f66b07dc5228d4d46e67fe5e54881df6f26746d48985c68a68544d",
+      "blindId": "V008"
+    },
+    {
+      "runId": "R004",
+      "block": 2,
+      "condition": "B",
+      "orderHash": "27a3ee412a8e3a999b61e379f76404ace98c7fb17796b128528760f8020dc5bf",
+      "blindId": "V003"
+    },
+    {
+      "runId": "R005",
+      "block": 2,
+      "condition": "C",
+      "orderHash": "84ad042822e778313e012ebc98fd278037b2fc2481ef3379cd2d3e6e28f3f850",
+      "blindId": "V001"
+    },
+    {
+      "runId": "R006",
+      "block": 2,
+      "condition": "A",
+      "orderHash": "b7a832e821ceb4fee5aa74dbf56d5bbe61a0633b6216a793a47b7b7cdaa08abf",
+      "blindId": "V009"
+    },
+    {
+      "runId": "R007",
+      "block": 3,
+      "condition": "C",
+      "orderHash": "4d6b56eed2e90b5924ca2db9db23dfe1d8501ddf825e738b1870f1955ed56f45",
+      "blindId": "V005"
+    },
+    {
+      "runId": "R008",
+      "block": 3,
+      "condition": "A",
+      "orderHash": "5e2f3b8f2aa7350448f311f199fcf9f3a44f3180033cc354d6abe55cce87b5b8",
+      "blindId": "V007"
+    },
+    {
+      "runId": "R009",
+      "block": 3,
+      "condition": "B",
+      "orderHash": "d852288aa18699b6ddda305a53299672874756d5258dd6920a7e4c843835339e",
+      "blindId": "V002"
+    }
+  ]
+}
