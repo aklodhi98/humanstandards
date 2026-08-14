@@ -1,0 +1,9 @@
+# Dogfood the published Human Standards MCP server in this trusted project.
+# Codex loads this file only for this trusted project.
+[mcp_servers.human_standards]
+command = "npx"
+args = ["--yes", "@humanstandards/mcp-server@0.3.0"]
+required = true
+startup_timeout_sec = 30
+tool_timeout_sec = 60
+default_tools_approval_mode = "auto"
