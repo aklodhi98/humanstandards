@@ -99,6 +99,29 @@ For new content or significant changes:
    - Click "New Pull Request"
    - Provide a clear description of your changes
 
+## MCP Dogfood Workflow for Interface Changes
+
+Human Standards should use its own guidance when changing a user interface. In
+an MCP-compatible client, use this bounded workflow before and after editing:
+
+1. Start with `search_standards` using the user's task or risk, not a broad
+   category name.
+2. Read only the relevant paths or named sections with `get_standard`.
+3. Use `get_heuristic` when a heuristic review is useful; do not load all ten by
+   default.
+4. For layout work, call `get_spatial_rhythm` before implementation and again
+   during rendered review. Resolve its relationship order through this
+   project's existing tokens.
+5. Record the consulted Human Standards paths, the decisions they informed,
+   and any exceptions in the pull-request description.
+6. Complete rendered browser and accessibility checks. The MCP is a reference
+   source: it does not inspect the project, validate the result, or replace user
+   research and independent review.
+
+The trusted Codex project configuration already pins the published MCP package.
+Contributors without an MCP client can follow the same paths in the public
+documentation library.
+
 ## Content Guidelines
 
 ### Evidence-Based

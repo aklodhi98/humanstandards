@@ -153,6 +153,13 @@ select:focus-visible {
   --sl-color-text-badge: currentColor;
 }
 
+/* Tip callouts use the Human Standards accent rather than Starlight purple. */
+.sl-markdown-content .starlight-aside--tip {
+  --sl-color-asides-text-accent: var(--hs-accent-text);
+  --sl-color-asides-border: var(--hs-accent);
+  background-color: var(--hs-accent-soft);
+}
+
 /* Documentation pages keep Starlight's information architecture with the new tokens. */
 :root:not([data-has-hero]) .sl-markdown-content h1,
 :root:not([data-has-hero]) .sl-markdown-content h2,

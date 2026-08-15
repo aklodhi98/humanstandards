@@ -32,6 +32,59 @@ test('search retrieves relationship-first spatial rhythm guidance', () => {
   assert.match(results[0]?.snippet ?? '', /spacing|rhythm|relationship/i);
 });
 
+test('real interface intents keep task-relevant guidance prominent', () => {
+  const cases: Array<{
+    query: string;
+    topPath?: string;
+    requiredPaths: string[];
+  }> = [
+    {
+      query: 'error recovery',
+      topPath: '/decision-making-errors/error-types/',
+      requiredPaths: [
+        '/interaction-patterns/notifications-feedback/',
+        '/decision-making-errors/defensive-design/',
+      ],
+    },
+    {
+      query: 'documentation navigation',
+      topPath: '/interaction-patterns/navigation/',
+      requiredPaths: ['/interaction-patterns/navigation/'],
+    },
+    {
+      query: 'destructive actions',
+      requiredPaths: ['/decision-making-errors/defensive-design/'],
+    },
+    {
+      query: 'onboarding',
+      topPath: '/checklists-playbooks/onboarding-playbook/',
+      requiredPaths: ['/checklists-playbooks/onboarding-playbook/'],
+    },
+    {
+      query: 'accessible forms',
+      topPath: '/checklists-playbooks/form-design-playbook/',
+      requiredPaths: ['/interaction-patterns/forms/'],
+    },
+    {
+      query: 'touch targets',
+      topPath: '/ergonomics/targets-spacing/',
+      requiredPaths: ['/code-design-tokens/touch-targets-spacing/'],
+    },
+  ];
+
+  for (const { query, topPath, requiredPaths } of cases) {
+    const results = searchDocumentation(query, index, 5);
+    const paths = results.map((result) => result.path);
+
+    if (topPath) {
+      assert.equal(paths[0], topPath, `Expected ${topPath} to lead the query "${query}".`);
+    }
+    for (const requiredPath of requiredPaths) {
+      assert.ok(paths.includes(requiredPath), `Expected ${requiredPath} for the query "${query}".`);
+    }
+  }
+});
+
 test('blank and stop-word-only searches are rejected', () => {
   assert.throws(() => searchDocumentation('', index), /at least one word/i);
   assert.throws(() => searchDocumentation('and the', index), /meaningful word/i);

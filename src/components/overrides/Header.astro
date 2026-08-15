@@ -43,6 +43,46 @@ const shouldRenderSearch =
 	</div>
 </div>
 
+<script>
+	function enhanceSearchDialogKeyboard() {
+		document.querySelectorAll<HTMLElement>('site-search').forEach((search) => {
+			if (search.dataset.hsKeyboardGuard === 'true') return;
+
+			const dialog = search.querySelector<HTMLDialogElement>('dialog');
+			const trigger = search.querySelector<HTMLButtonElement>('button[data-open-modal]');
+			if (!dialog || !trigger) return;
+
+			search.dataset.hsKeyboardGuard = 'true';
+
+			// Pagefind handles Escape inside its input before some browsers perform
+			// the native dialog cancellation. Close explicitly and restore focus to
+			// the control that opened the transient interface.
+			search.addEventListener(
+				'keydown',
+				(event) => {
+					if (event.key !== 'Escape' || !dialog.open) return;
+					event.preventDefault();
+					event.stopPropagation();
+					dialog.close();
+				},
+				{ capture: true },
+			);
+
+			dialog.addEventListener('cancel', (event) => {
+				event.preventDefault();
+				dialog.close();
+			});
+
+			dialog.addEventListener('close', () => {
+				if (trigger.isConnected && !trigger.disabled) trigger.focus({ preventScroll: true });
+			});
+		});
+	}
+
+	enhanceSearchDialogKeyboard();
+	document.addEventListener('astro:page-load', enhanceSearchDialogKeyboard);
+</script>
+
 <style>
 	@layer starlight.core {
 		.hs-header {

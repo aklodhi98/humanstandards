@@ -9,6 +9,11 @@ The guidance is a snapshot bundled with each package release. The server runs
 locally, does not browse the live website, and does not automatically validate
 or modify a project.
 
+:::tip[Connect it now]
+Using Codex? [Jump to the two-line configuration](#codex). Otherwise, [run the
+package from npm](#run-from-npm) or choose another supported client below.
+:::
+
 ## What It Does
 
 The MCP server exposes five read-only tools:
