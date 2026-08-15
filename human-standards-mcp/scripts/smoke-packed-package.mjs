@@ -74,13 +74,30 @@ try {
       ],
     );
     assert.ok(listed.tools.every((tool) => tool.annotations?.readOnlyHint === true));
+    assert.equal(client.getServerVersion()?.version, '0.3.1');
 
     const search = await client.callTool({
       name: 'search_standards',
-      arguments: { query: 'forms error recovery', limit: 1 },
+      arguments: { query: 'keyboard selection focus transition', limit: 1 },
     });
     assert.equal(search.isError, undefined);
     assert.equal(search.structuredContent?.result_count, 1);
+    const searchResults = search.structuredContent?.results;
+    assert.ok(Array.isArray(searchResults));
+    assert.equal(searchResults[0]?.path, '/code-design-tokens/aria-keyboard-patterns/');
+
+    const contract = await client.callTool({
+      name: 'get_standard',
+      arguments: {
+        path: '/code-design-tokens/aria-keyboard-patterns/',
+        section: 'Keyboard Selection and Focus Completion Contract',
+      },
+    });
+    assert.equal(contract.isError, undefined);
+    assert.match(
+      String(contract.structuredContent?.content),
+      /Required pre-handoff exercise/,
+    );
   } finally {
     await client.close();
   }

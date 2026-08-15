@@ -1,6 +1,6 @@
 {
   "name": "@humanstandards/mcp-server",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Read-only Human Standards reference retrieval for AI-assisted interface work",
   "mcpName": "io.github.aklodhi98/human-standards",
   "license": "SEE LICENSE IN LICENSE.md",

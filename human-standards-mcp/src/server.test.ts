@@ -22,6 +22,7 @@ test('stdio server exposes and executes the complete read-only reference contrac
   assert.match(instructions, /designing, implementing, or reviewing interfaces/);
   assert.match(instructions, /Start with search_standards/);
   assert.match(instructions, /get_standard/);
+  assert.match(instructions, /Keyboard Selection and Focus Completion Contract/);
   assert.match(instructions, /get_spatial_rhythm/);
   assert.match(instructions, /server is read-only/);
 
@@ -49,6 +50,18 @@ test('stdio server exposes and executes the complete read-only reference contrac
   assert.equal(standard.isError, undefined);
   const standardStructured = standard.structuredContent as Record<string, unknown>;
   assert.match(String(standardStructured.content), /On blur/);
+
+  const completionContract = await client.callTool({
+    name: 'get_standard',
+    arguments: {
+      path: '/code-design-tokens/aria-keyboard-patterns/',
+      section: 'Keyboard Selection and Focus Completion Contract',
+    },
+  });
+  assert.equal(completionContract.isError, undefined);
+  const completionStructured = completionContract.structuredContent as Record<string, unknown>;
+  assert.match(String(completionStructured.content), /Required pre-handoff exercise/);
+  assert.match(String(completionStructured.content), /unreachable state into a pass/);
 
   const spatialRhythm = await client.callTool({
     name: 'get_spatial_rhythm',

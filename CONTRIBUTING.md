@@ -112,9 +112,14 @@ an MCP-compatible client, use this bounded workflow before and after editing:
 4. For layout work, call `get_spatial_rhythm` before implementation and again
    during rendered review. Resolve its relationship order through this
    project's existing tokens.
-5. Record the consulted Human Standards paths, the decisions they informed,
-   and any exceptions in the pull-request description.
-6. Complete rendered browser and accessibility checks. The MCP is a reference
+5. For selection groups, multi-step flows, dynamic transitions, or dialogs,
+   retrieve the **Keyboard Selection and Focus Completion Contract** from
+   `/code-design-tokens/aria-keyboard-patterns/`. Before handoff, exercise its
+   required keys and focus transitions at wide and narrow viewports.
+6. Record the consulted Human Standards paths, the decisions they informed,
+   the keyboard/focus evidence when applicable, and any failed, missing, or
+   excepted checks in the pull-request description.
+7. Complete rendered browser and accessibility checks. The MCP is a reference
    source: it does not inspect the project, validate the result, or replace user
    research and independent review.
 

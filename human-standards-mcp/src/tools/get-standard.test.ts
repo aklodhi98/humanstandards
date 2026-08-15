@@ -24,6 +24,18 @@ test('get_standard returns a focused named section', () => {
   assert.equal(result.truncated, false);
 });
 
+test('get_standard returns the keyboard selection and focus completion contract', () => {
+  const result = getStandardDocument('/code-design-tokens/aria-keyboard-patterns/', index, {
+    section: 'Keyboard Selection and Focus Completion Contract',
+    maxChars: 12_000,
+  });
+
+  assert.equal(result.requested_section, 'Keyboard Selection and Focus Completion Contract');
+  assert.match(result.content, /Required pre-handoff exercise/);
+  assert.match(result.content, /Do not\s+convert an unreachable state into a pass/);
+  assert.equal(result.truncated, false);
+});
+
 test('get_standard reports invalid paths and sections clearly', () => {
   assert.throws(() => getStandardDocument('/missing/', index), /Unknown standard path/);
   assert.throws(

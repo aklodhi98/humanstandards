@@ -299,6 +299,14 @@ When content changes dynamically, focus must be managed programmatically:
 - Use `aria-live` regions for automatic announcements
 - Don't move focus unexpectedly
 
+A **substantial transition** changes the person's page, step, task responsibility,
+error-recovery target, or committed outcome. It needs a deliberate focus
+destination that is perceivable in the viewport. A minor inline update should
+normally preserve focus and use a status message instead. For selection groups,
+multi-step flows, and dialogs, complete the [Keyboard Selection and Focus
+Completion Contract](/code-design-tokens/aria-keyboard-patterns/#keyboard-selection-and-focus-completion-contract)
+before handoff.
+
 ```javascript
 // After SPA navigation
 const mainContent = document.querySelector('main');

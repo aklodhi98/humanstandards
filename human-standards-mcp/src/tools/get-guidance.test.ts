@@ -32,6 +32,13 @@ test('search retrieves relationship-first spatial rhythm guidance', () => {
   assert.match(results[0]?.snippet ?? '', /spacing|rhythm|relationship/i);
 });
 
+test('selection and transition task language retrieves the keyboard and focus contract', () => {
+  const results = searchDocumentation('keyboard selection focus transition', index, 5);
+
+  assert.equal(results[0]?.path, '/code-design-tokens/aria-keyboard-patterns/');
+  assert.match(results[0]?.snippet ?? '', /selection|focus|keyboard/i);
+});
+
 test('real interface intents keep task-relevant guidance prominent', () => {
   const cases: Array<{
     query: string;

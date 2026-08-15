@@ -32,7 +32,7 @@ import { getStandardDocument } from './tools/get-standard.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SERVER_VERSION = '0.3.0';
+const SERVER_VERSION = '0.3.1';
 
 // Load standards index. Starting with an empty reference service would be a
 // successful connection with misleading results, so malformed/missing content
@@ -351,7 +351,7 @@ const HEURISTICS: Record<string, {
 };
 
 // Initialize MCP server
-const serverInstructions = 'Use Human Standards when designing, implementing, or reviewing interfaces. Start with search_standards, then read relevant paths with get_standard. For spatial layout, call get_spatial_rhythm before implementation and after rendering; preserve its relationship order and resolve it with the product\'s own tokens. Use the heuristic tools for heuristic reviews. Identify the guidance consulted. This server is read-only.';
+const serverInstructions = 'Use Human Standards when designing, implementing, or reviewing interfaces. Start with search_standards, then read paths with get_standard. For selection groups or dynamic flows, retrieve and exercise the Keyboard Selection and Focus Completion Contract before handoff. For layout, use get_spatial_rhythm before and after rendering; preserve relationship order and use product tokens. Identify guidance and verification evidence. Use heuristic tools for heuristic reviews. This server is read-only.';
 
 const server = new Server(
   {
