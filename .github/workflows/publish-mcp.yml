@@ -1,0 +1,111 @@
+name: Publish MCP release
+
+on:
+  release:
+    types:
+      - published
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-mcp-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: startsWith(github.event.release.tag_name, 'mcp-v')
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: human-standards-mcp
+
+    steps:
+      - name: Check out the release tag
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.release.tag_name }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Use an npm version with trusted-publishing support
+        run: npm install --global npm@11.5.1
+
+      - name: Verify release identity
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          package_version="$(node --print "require('./package.json').version")"
+          test "$RELEASE_TAG" = "mcp-v$package_version"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build and refresh the bundled guidance
+        run: |
+          npm run build
+          npm run index-docs
+
+      - name: Verify the bundled guidance is current
+        run: git diff --exit-code -- data/standards-index.json
+
+      - name: Test the server and release metadata
+        run: |
+          npm test
+          node scripts/verify-release-metadata.mjs
+
+      - name: Verify a clean install of the packed package
+        run: node scripts/smoke-packed-package.mjs
+
+      - name: Publish the public npm package
+        run: npm publish --access public
+
+      - name: Confirm npm serves the released version
+        run: |
+          package_version="$(node --print "require('./package.json').version")"
+          for attempt in 1 2 3 4 5 6; do
+            published_version="$(npm view "@humanstandards/mcp-server@$package_version" version 2>/dev/null || true)"
+            if [ "$published_version" = "$package_version" ]; then
+              exit 0
+            fi
+            sleep 5
+          done
+          echo "npm did not serve @humanstandards/mcp-server@$package_version in time" >&2
+          exit 1
+
+      - name: Install the pinned MCP Registry publisher
+        working-directory: ${{ runner.temp }}
+        run: |
+          curl --fail --location --silent --show-error \
+            --output mcp-publisher.tar.gz \
+            https://github.com/modelcontextprotocol/registry/releases/download/v1.7.9/mcp-publisher_linux_amd64.tar.gz
+          echo "ab128162b0616090b47cf245afe0a23f3ef08936fdce19074f5ba0a4469281ac  mcp-publisher.tar.gz" | sha256sum --check --strict
+          tar --extract --gzip --file mcp-publisher.tar.gz mcp-publisher
+          chmod +x mcp-publisher
+
+      - name: Publish Official MCP Registry metadata
+        run: |
+          "${RUNNER_TEMP}/mcp-publisher" login github-oidc
+          "${RUNNER_TEMP}/mcp-publisher" publish
+
+      - name: Verify the Official MCP Registry listing
+        run: |
+          node --input-type=module <<'EOF'
+          const name = 'io.github.aklodhi98/human-standards';
+          const version = JSON.parse(await (await import('node:fs/promises')).readFile('package.json', 'utf8')).version;
+          const response = await fetch(`https://registry.modelcontextprotocol.io/v0.1/servers?search=${encodeURIComponent(name)}`);
+          if (!response.ok) throw new Error(`Registry lookup failed with HTTP ${response.status}`);
+          const payload = await response.json();
+          const entries = Array.isArray(payload.servers) ? payload.servers : [];
+          const match = entries.find((entry) => {
+            const server = entry.server ?? entry;
+            return server.name === name && server.version === version;
+          });
+          if (!match) throw new Error(`Registry did not return ${name}@${version}`);
+          console.log(`Registry serves ${name}@${version}.`);
+          EOF

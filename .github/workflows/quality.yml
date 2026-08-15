@@ -44,5 +44,8 @@ jobs:
       - name: Verify generated MCP index is current
         run: git diff --exit-code -- human-standards-mcp/data/standards-index.json
 
+      - name: Verify MCP release metadata
+        run: node human-standards-mcp/scripts/verify-release-metadata.mjs
+
       - name: Verify the packed MCP package from a clean install
         run: node human-standards-mcp/scripts/smoke-packed-package.mjs
