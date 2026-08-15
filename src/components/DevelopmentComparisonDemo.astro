@@ -1,0 +1,90 @@
+---
+interface Props {
+	src: string;
+	title: string;
+}
+
+const { src, title } = Astro.props;
+---
+
+<section class="development-demo" aria-label={title}>
+	<div class="development-demo__bar">
+		<div>
+			<strong>Interactive candidate artifact</strong>
+			<span>Fictional service · data stays in this browser</span>
+		</div>
+		<a href={src} target="_blank" rel="noopener">Open full screen</a>
+	</div>
+	<div class="development-demo__viewport">
+		<iframe src={src} title={title}></iframe>
+	</div>
+</section>
+
+<style>
+	.development-demo {
+		margin: 1.5rem 0 2rem;
+		border: 1px solid var(--sl-color-gray-5);
+		border-radius: 0.8rem;
+		overflow: hidden;
+		background: var(--sl-color-bg-nav);
+		box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--sl-color-black) 10%, transparent);
+	}
+
+	.development-demo__bar {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 0.9rem 1rem;
+		border-bottom: 1px solid var(--sl-color-gray-5);
+	}
+
+	.development-demo__bar div {
+		display: grid;
+		gap: 0.1rem;
+	}
+
+	.development-demo__bar strong {
+		font-size: 0.9rem;
+		color: var(--sl-color-white);
+	}
+
+	.development-demo__bar span {
+		font-size: 0.75rem;
+		color: var(--sl-color-gray-2);
+	}
+
+	.development-demo__bar a {
+		flex: none;
+		font-size: 0.8rem;
+		font-weight: 700;
+	}
+
+	.development-demo__viewport {
+		height: min(78vh, 820px);
+		min-height: 620px;
+		background: #f5f1e8;
+	}
+
+	.development-demo iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
+	@media (max-width: 36rem) {
+		.development-demo__bar {
+			align-items: flex-start;
+		}
+
+		.development-demo__bar span {
+			display: none;
+		}
+
+		.development-demo__viewport {
+			height: 72vh;
+			min-height: 560px;
+		}
+	}
+</style>

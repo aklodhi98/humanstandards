@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173f38">
+    <title>Book a hard-waste pickup | Wattle Bay Council</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="council-mark" aria-hidden="true">
+          <span>W</span>
+        </div>
+        <div>
+          <p class="council-name">Wattle Bay Council</p>
+          <p class="council-tagline">Resident services</p>
+        </div>
+      </div>
+    </header>
+
+    <main id="main-content" class="page-shell">
+      <div class="service-heading">
+        <p class="eyebrow">Waste and recycling</p>
+        <h1>Book a hard-waste pickup</h1>
+        <p class="lede">Arrange one collection of bulky household items from a Wattle Bay residential address.</p>
+      </div>
+
+      <nav id="progress" class="progress" aria-label="Booking progress">
+        <p id="progress-status" class="progress-status">Step 1 of 4</p>
+        <ol>
+          <li data-progress-step="intro" aria-current="step"><span>1</span><strong>Before you start</strong></li>
+          <li data-progress-step="details"><span>2</span><strong>Your details</strong></li>
+          <li data-progress-step="pickup"><span>3</span><strong>Pickup</strong></li>
+          <li data-progress-step="review"><span>4</span><strong>Review</strong></li>
+        </ol>
+      </nav>
+
+      <section id="step-intro" class="step-panel" data-step="intro" aria-labelledby="intro-title">
+        <div class="panel-heading">
+          <p class="step-kicker">Step 1 of 4</p>
+          <h2 id="intro-title" tabindex="-1">Before you start</h2>
+          <p>This service records one hard-waste pickup booking in this browser.</p>
+        </div>
+
+        <div class="info-grid">
+          <section class="info-card" aria-labelledby="service-title">
+            <div class="info-icon" aria-hidden="true">01</div>
+            <div>
+              <h3 id="service-title">What you can book</h3>
+              <p>Choose one category: furniture, whitegoods or garden waste. You will also choose one available collection window.</p>
+            </div>
+          </section>
+          <section class="info-card" aria-labelledby="need-title">
+            <div class="info-icon" aria-hidden="true">02</div>
+            <div>
+              <h3 id="need-title">What you will need</h3>
+              <p>Your name, Wattle Bay street address, email address and Australian mobile number.</p>
+            </div>
+          </section>
+        </div>
+
+        <aside class="notice notice-neutral" aria-label="About this demonstration">
+          <span class="notice-symbol" aria-hidden="true">i</span>
+          <div>
+            <h3>Saved on this device only</h3>
+            <p>This static service does not send email or SMS, take payment, or update a council system. Your confirmed booking is kept only in this browser until you clear it.</p>
+          </div>
+        </aside>
+
+        <div class="form-actions form-actions-end">
+          <button id="start-button" class="button button-primary" type="button">Start booking</button>
+        </div>
+      </section>
+
+      <section id="step-details" class="step-panel" data-step="details" aria-labelledby="details-title" hidden>
+        <div class="panel-heading">
+          <p class="step-kicker">Step 2 of 4</p>
+          <h2 id="details-title" tabindex="-1">Your details</h2>
+          <p>All fields are required. We use these details only to complete this booking in your browser.</p>
+        </div>
+
+        <form id="details-form" aria-labelledby="details-title" novalidate>
+          <div id="details-error-summary" class="error-summary" role="alert" tabindex="-1" hidden>
+            <h3>Please check your details</h3>
+            <p>Fix the following before you continue:</p>
+            <ul id="details-error-list"></ul>
+          </div>
+
+          <fieldset class="form-section">
+            <legend>Resident</legend>
+            <div class="field">
+              <label for="full-name">Full name</label>
+              <input id="full-name" name="fullName" type="text" autocomplete="name" required aria-describedby="full-name-error">
+              <p id="full-name-error" class="field-error" role="alert" hidden></p>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Collection address</legend>
+            <div class="field">
+              <label for="street-address">Street address</label>
+              <input id="street-address" name="streetAddress" type="text" autocomplete="street-address" required aria-describedby="street-address-hint street-address-error">
+              <p id="street-address-hint" class="field-hint">Include a unit number if you have one.</p>
+              <p id="street-address-error" class="field-error" role="alert" hidden></p>
+            </div>
+            <div class="field-row">
+              <div class="field">
+                <label for="suburb">Suburb</label>
+                <input id="suburb" name="suburb" type="text" autocomplete="address-level2" required aria-describedby="suburb-error">
+                <p id="suburb-error" class="field-error" role="alert" hidden></p>
+              </div>
+              <div class="field field-short">
+                <label for="postcode">Postcode</label>
+                <input id="postcode" name="postcode" type="text" autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{4}" maxlength="4" required aria-describedby="postcode-hint postcode-error">
+                <p id="postcode-hint" class="field-hint">4 digits</p>
+                <p id="postcode-error" class="field-error" role="alert" hidden></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Contact details</legend>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" required aria-describedby="email-hint email-error">
+              <p id="email-hint" class="field-hint">For example, name@example.com</p>
+              <p id="email-error" class="field-error" role="alert" hidden></p>
+            </div>
+            <div class="field field-medium">
+              <label for="mobile">Australian mobile number</label>
+              <input id="mobile" name="mobile" type="tel" autocomplete="tel" inputmode="tel" pattern="(?:04[0-9]{8}|04[0-9]{2} [0-9]{3} [0-9]{3})" required aria-describedby="mobile-hint mobile-error">
+              <p id="mobile-hint" class="field-hint">Enter 04xx xxx xxx or 10 digits beginning with 04.</p>
+              <p id="mobile-error" class="field-error" role="alert" hidden></p>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button id="details-back" class="button button-secondary" type="button">Back</button>
+            <button class="button button-primary" type="submit">Continue to pickup</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="step-pickup" class="step-panel" data-step="pickup" aria-labelledby="pickup-title" hidden>
+        <div class="panel-heading">
+          <p class="step-kicker">Step 3 of 4</p>
+          <h2 id="pickup-title" tabindex="-1">Choose your pickup</h2>
+          <p>Select one waste category and one collection window.</p>
+        </div>
+
+        <form id="pickup-form" aria-labelledby="pickup-title" novalidate>
+          <div id="pickup-error-summary" class="error-summary" role="alert" tabindex="-1" hidden>
+            <h3>Choose your pickup details</h3>
+            <p>Fix the following before you continue:</p>
+            <ul id="pickup-error-list"></ul>
+          </div>
+
+          <fieldset id="waste-group" class="choice-section" aria-describedby="waste-error">
+            <legend>Waste category</legend>
+            <p class="section-hint">Choose the category that best describes the items you want collected.</p>
+            <div class="option-grid option-grid-three">
+              <label class="option-card">
+                <input type="radio" name="wasteCategory" value="Furniture" required>
+                <span class="option-copy">
+                  <strong>Furniture</strong>
+                  <span>For items such as chairs, tables and small shelving.</span>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="wasteCategory" value="Whitegoods">
+                <span class="option-copy">
+                  <strong>Whitegoods</strong>
+                  <span>For large household appliances such as fridges and washers.</span>
+                </span>
+              </label>
+              <label class="option-card">
+                <input type="radio" name="wasteCategory" value="Garden waste">
+                <span class="option-copy">
+                  <strong>Garden waste</strong>
+                  <span>For bundled branches, prunings and other bulky green waste.</span>
+                </span>
+              </label>
+            </div>
+            <p id="waste-error" class="field-error group-error" role="alert" hidden></p>
+          </fieldset>
+
+          <fieldset id="window-group" class="choice-section" aria-describedby="availability-status window-error">
+            <legend>Collection window</legend>
+            <p class="section-hint">Availability is loaded when you reach this step.</p>
+
+            <div id="availability-loading" class="loading-state" role="status" hidden>
+              <span class="spinner" aria-hidden="true"></span>
+              <span>Loading available collection windows…</span>
+            </div>
+
+            <div id="availability-error" class="notice notice-error" role="alert" hidden>
+              <span class="notice-symbol" aria-hidden="true">!</span>
+              <div>
+                <h3>We could not load collection windows</h3>
+                <p>Your details are still here. Try loading the available windows again.</p>
+                <button id="retry-windows" class="button button-error" type="button">Retry</button>
+              </div>
+            </div>
+
+            <p id="availability-status" class="sr-only" aria-live="polite"></p>
+
+            <div id="window-options" class="option-grid" hidden>
+              <label class="option-card option-card-window">
+                <input type="radio" name="collectionWindow" value="Tuesday 18 August, 7:00 am–12:00 pm" required>
+                <span class="option-copy">
+                  <strong>Tuesday 18 August</strong>
+                  <span>7:00 am–12:00 pm</span>
+                </span>
+              </label>
+              <label class="option-card option-card-window">
+                <input type="radio" name="collectionWindow" value="Thursday 20 August, 12:00 pm–5:00 pm">
+                <span class="option-copy">
+                  <strong>Thursday 20 August</strong>
+                  <span>12:00 pm–5:00 pm</span>
+                </span>
+              </label>
+              <label class="option-card option-card-window">
+                <input type="radio" name="collectionWindow" value="Saturday 22 August, 7:00 am–12:00 pm">
+                <span class="option-copy">
+                  <strong>Saturday 22 August</strong>
+                  <span>7:00 am–12:00 pm</span>
+                </span>
+              </label>
+            </div>
+            <p id="window-error" class="field-error group-error" role="alert" hidden></p>
+          </fieldset>
+
+          <div class="form-actions">
+            <button id="pickup-back" class="button button-secondary" type="button">Back</button>
+            <button id="pickup-continue" class="button button-primary" type="submit" disabled>Continue to review</button>
+          </div>
+        </form>
+      </section>
+
+      <section id="step-review" class="step-panel" data-step="review" aria-labelledby="review-title" hidden>
+        <div class="panel-heading">
+          <p class="step-kicker">Step 4 of 4</p>
+          <h2 id="review-title" tabindex="-1">Review your booking</h2>
+          <p>Check the details below before you confirm. You can go back to make changes without losing your information.</p>
+        </div>
+
+        <div class="review-section">
+          <div class="review-heading">
+            <h3>Resident details</h3>
+            <button id="edit-details" class="text-button" type="button">Edit details</button>
+          </div>
+          <dl class="review-list">
+            <div><dt>Full name</dt><dd id="review-name"></dd></div>
+            <div><dt>Collection address</dt><dd id="review-address"></dd></div>
+            <div><dt>Email address</dt><dd id="review-email"></dd></div>
+            <div><dt>Mobile number</dt><dd id="review-mobile"></dd></div>
+          </dl>
+        </div>
+
+        <div class="review-section">
+          <div class="review-heading">
+            <h3>Pickup details</h3>
+            <button id="edit-pickup" class="text-button" type="button">Edit pickup</button>
+          </div>
+          <dl class="review-list">
+            <div><dt>Waste category</dt><dd id="review-category"></dd></div>
+            <div><dt>Collection window</dt><dd id="review-window"></dd></div>
+          </dl>
+        </div>
+
+        <aside class="notice notice-neutral" aria-label="Confirmation storage notice">
+          <span class="notice-symbol" aria-hidden="true">i</span>
+          <div>
+            <h3>What happens when you confirm</h3>
+            <p>The booking and reference number will be saved in this browser. No message is sent and no external system is updated.</p>
+          </div>
+        </aside>
+
+        <div class="form-actions">
+          <button id="review-back" class="button button-secondary" type="button">Back</button>
+          <button id="confirm-booking" class="button button-primary" type="button">Confirm booking</button>
+        </div>
+      </section>
+
+      <section id="step-confirmation" class="step-panel confirmation-panel" data-step="confirmation" aria-labelledby="confirmation-title" hidden>
+        <div class="success-mark" aria-hidden="true">✓</div>
+        <p class="success-label">Booking confirmed</p>
+        <h2 id="confirmation-title" tabindex="-1">Your booking is saved</h2>
+        <p class="confirmation-lede">This confirmation is stored in this browser and will remain here after a refresh.</p>
+
+        <div class="reference-card" aria-label="Booking reference">
+          <span>Booking reference</span>
+          <strong id="confirmation-reference">WBC-HW-260818-1047</strong>
+        </div>
+
+        <div class="confirmation-summary">
+          <h3>Confirmed pickup</h3>
+          <dl class="review-list">
+            <div><dt>Resident</dt><dd id="confirmation-name"></dd></div>
+            <div><dt>Collection address</dt><dd id="confirmation-address"></dd></div>
+            <div><dt>Waste category</dt><dd id="confirmation-category"></dd></div>
+            <div><dt>Collection window</dt><dd id="confirmation-window"></dd></div>
+          </dl>
+        </div>
+
+        <aside class="notice notice-success" aria-label="Saved booking information">
+          <span class="notice-symbol" aria-hidden="true">✓</span>
+          <div>
+            <h3>Keep your reference handy</h3>
+            <p>No email or SMS is sent. Return to this page in the same browser to see this confirmation again.</p>
+          </div>
+        </aside>
+
+        <div class="form-actions form-actions-end">
+          <button id="new-booking" class="button button-secondary" type="button">Start a new booking</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>Wattle Bay Council</strong>
+        <span>Fictional resident service demonstration</span>
+      </div>
+    </footer>
+
+    <dialog id="clear-booking-dialog" aria-labelledby="clear-dialog-title" aria-describedby="clear-dialog-description">
+      <form method="dialog">
+        <h2 id="clear-dialog-title">Start a new booking?</h2>
+        <p id="clear-dialog-description">This will deliberately clear the confirmed booking and reference stored in this browser. It cannot be undone.</p>
+        <div class="dialog-actions">
+          <button id="keep-booking" class="button button-secondary" value="cancel">Keep this booking</button>
+          <button id="clear-booking" class="button button-danger" value="confirm">Clear and start again</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

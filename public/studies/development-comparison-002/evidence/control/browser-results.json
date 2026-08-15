@@ -1,0 +1,70 @@
+{
+  "evaluation_id": "human-standards-heldout-development-comparison-002",
+  "date": "2026-08-15",
+  "browser": "Codex in-app browser",
+  "viewports": {
+    "wide": { "width": 1440, "height": 1000 },
+    "narrow": { "width": 390, "height": 844, "measured_document_width": 375 }
+  },
+  "conditions": {
+    "A": {
+      "validation_error_fields": 6,
+      "validation_focus": "#error-summary",
+      "load_failure_focus": "#window-load-error",
+      "radio_card_dimensions_stable": true,
+      "review_complete": true,
+      "edit_state_preserved": true,
+      "confirmation_focus": "#page-heading",
+      "reference": "WB-260822-0417",
+      "reference_persisted_after_refresh": true,
+      "narrow_horizontal_overflow": false
+    },
+    "B": {
+      "validation_error_fields": 6,
+      "validation_focus": "#details-error-summary",
+      "load_failure_focus": "#retry-windows",
+      "radio_card_dimensions_stable": true,
+      "review_complete": true,
+      "edit_state_preserved": true,
+      "confirmation_focus": "#confirmation-title",
+      "reference": "WBC-HW-260818-1047",
+      "reference_persisted_after_refresh": true,
+      "narrow_horizontal_overflow": false
+    },
+    "C": {
+      "validation_error_fields": 6,
+      "validation_focus": "#error-summary",
+      "load_failure_transition_focus": "#step-heading",
+      "radio_card_dimensions_stable": true,
+      "review_complete": true,
+      "edit_state_preserved": true,
+      "confirmation_focus": "#confirmation-status",
+      "reference": "WBC-HW-4827",
+      "reference_persisted_after_refresh": true,
+      "narrow_horizontal_overflow": false,
+      "pointer_free_keyboard_completion": "pass in Chrome at wide and narrow viewports; see keyboard-results.json"
+    },
+    "D": {
+      "validation_error_fields": 6,
+      "validation_focus": "#details-error-summary",
+      "load_failure_focus": "#window-load-error",
+      "radio_card_dimensions_stable": true,
+      "review_complete": true,
+      "edit_state_preserved": true,
+      "confirmation_focus": "#confirmation-status",
+      "reference": "WB-HA-0822",
+      "reference_persisted_after_refresh": true,
+      "reset_dialog_count": 1,
+      "reset_dialog_initial_focus": "#cancel-new-booking",
+      "reset_dialog_cancel_return_focus": "#start-new-booking",
+      "narrow_horizontal_overflow": false
+    }
+  },
+  "common_missing_evidence": {
+    "pointer_free_keyboard_completion": "missing for A, B, and D; C was subsequently exercised successfully through Chrome at both viewports",
+    "screen_reader": "not exercised",
+    "cross_browser": "not exercised",
+    "independent_human_review": "not performed"
+  },
+  "capture_note": "The original in-app-browser full-page narrow captures for A, B, and C collapsed during capture. Fresh viewport captures and bounding-box measurements showed healthy 375 px documents with no overflow. The recheck captures are authoritative. Chrome keyboard screenshots 08 through 19 are authoritative for C's keyboard exercise."
+}

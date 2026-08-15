@@ -177,6 +177,7 @@ export default defineConfig({
 					items: [
 						{ slug: 'studies', label: 'Studies' },
 						{ slug: 'studies/study-001-case-study', label: 'Study 001: Case Study', badge: { text: 'Published', variant: 'success', class: 'hs-sidebar-badge' } },
+						{ slug: 'studies/development-comparison-002', label: 'Development Comparison 002', badge: { text: 'Development', variant: 'note', class: 'hs-sidebar-badge' } },
 					],
 				},
 			],

@@ -1,0 +1,109 @@
+---
+title: "Development comparison 002: keyboard completion contract"
+description: A held-out, one-run comparison of baseline, published MCP, candidate MCP and frozen-context implementations
+mcp: false
+editUrl: false
+lastUpdated: false
+---
+
+import { Aside, Card, CardGrid } from '@astrojs/starlight/components';
+import DevelopmentComparisonDemo from '../../../components/DevelopmentComparisonDemo.astro';
+
+**Development note · 15 August 2026 · one run per condition**
+
+Human Standards MCP 0.3.1 made the new keyboard selection and focus completion contract easy for an agent to find. The candidate artifact then completed the full pointer-free exercise in Chrome at wide and narrow viewports.
+
+<Aside type="caution" title="Read this as development evidence">
+  This comparison does not show that the MCP caused a better end-user result. There was one run per condition, no independent blinded human review, and the baseline, 0.3.0 and frozen-context artifacts were not given the same Chrome fallback keyboard run. Their keyboard evidence remains **missing**, not failed.
+</Aside>
+
+The exercised candidate became [Human Standards MCP 0.3.1](https://www.npmjs.com/package/@humanstandards/mcp-server/v/0.3.1). Its source is preserved in the [0.3.1 GitHub release](https://github.com/aklodhi98/humanstandards/releases/tag/mcp-v0.3.1), and the Official MCP Registry lists `io.github.aklodhi98/human-standards` version 0.3.1 as active.
+
+## Try the candidate artifact
+
+This is the exact candidate interface produced in condition C. It is a fictional council service: nothing is submitted or sent anywhere. Use invented details only. The saved confirmation is kept in this browser so you can test refresh persistence, and **Start a new booking** clears it.
+
+For the intended keyboard exercise, use `Tab` and `Shift+Tab` to move through actions, `Space` or `Enter` to activate them, and arrow keys within each pickup-choice group.
+
+<DevelopmentComparisonDemo
+  src="/studies/development-comparison-002/demo/"
+  title="Candidate MCP hard-waste booking artifact"
+/>
+
+## What changed in the model's working context
+
+The candidate MCP search ranked the ARIA and keyboard guidance first for realistic task language such as “keyboard selection focus transition.” The agent retrieved the new **Keyboard Selection and Focus Completion Contract** before implementation and again before handoff.
+
+That contract called for:
+
+- native controls or complete keyboard semantics for single-choice groups;
+- arrow-key movement and selection within related choices;
+- visible focus and perceivable focus destinations after validation, retry, review and confirmation transitions;
+- selected-card styling that does not move neighbouring content; and
+- a rendered, pointer-free exercise before handoff, with blocked checks reported as missing.
+
+The common product task was already unusually explicit about outcomes. A capable model also produced strong baseline behaviour. The narrow finding is therefore about **retrieval and implementation focus**, not ownership of the whole visual or interaction design.
+
+## Four conditions, one recorded run each
+
+| Condition | Guidance | What was observed |
+|---|---|---|
+| A · Baseline | Product task only | Strong native-control implementation; rendered state checks passed. Complete pointer-free evidence is missing. |
+| B · Published MCP | Directed use of version 0.3.0 | Broad relevant guidance was retrieved, with more retrieval and implementation sprawl. Complete pointer-free evidence is missing. |
+| C · Candidate MCP | Directed use of local version 0.3.1 | The new contract surfaced directly. The full pointer-free path passed in Chrome at both viewports. |
+| D · Frozen context | The candidate contract supplied as static text | The contract was applied literally, including a carefully handled reset dialog. Complete pointer-free evidence is missing. |
+
+All four artifacts passed the comparable rendered checks for persistent validation, recoverable first-load failure, stable selection geometry, review completeness, confirmation persistence and narrow layout without horizontal overflow.
+
+## What this supports
+
+- The new contract is discoverable through realistic task language.
+- It gives an agent a concrete pre-handoff exercise instead of treating source inspection as proof of keyboard behaviour.
+- Candidate C passed that rendered keyboard and focus exercise in the tested browser and task.
+- Version 0.3.1 was reasonable to release as a source and package improvement.
+
+## What this does not support
+
+- A claim that MCP access caused the candidate's quality.
+- A claim that candidate C is superior to A, B or D on end-user outcomes.
+- WCAG conformance, screen-reader usability, cross-browser readiness or production readiness.
+- A general result across models, prompts, tasks or repeated runs.
+
+For a fair comparative keyboard claim, A, B and D still need the same Chrome exercise. For a broader product claim, the comparison needs several held-out tasks and independent blinded human review.
+
+## Evidence and reproducibility
+
+<CardGrid>
+  <Card title="Full result" icon="document">
+    Decision, condition results, efficiency figures, limitations and evidence index.
+
+    [Read the recorded result →](/studies/development-comparison-002/evidence/control/RESULTS.md)
+  </Card>
+  <Card title="Frozen protocol" icon="seti:config">
+    Execution settings, package identities, evidence rules and outcome boundaries fixed before the runs.
+
+    [Read the protocol →](/studies/development-comparison-002/evidence/control/protocol.md)
+  </Card>
+  <Card title="Rendered observations" icon="seti:json">
+    Coordinator browser-state observations for all four artifacts.
+
+    [Download browser-results.json →](/studies/development-comparison-002/evidence/control/browser-results.json)
+  </Card>
+  <Card title="Keyboard exercise" icon="seti:json">
+    Machine-readable wide and narrow Chrome observations for candidate C.
+
+    [Download keyboard-results.json →](/studies/development-comparison-002/evidence/control/keyboard-results.json)
+  </Card>
+  <Card title="Frozen inputs" icon="list-format">
+    The shared product task, prompts, exact frozen contract and input checksums.
+
+    [Product task →](/studies/development-comparison-002/evidence/starter/TASK.md) · [Manifest →](/studies/development-comparison-002/evidence/control/manifest.txt)
+  </Card>
+  <Card title="Recorded artifacts" icon="puzzle">
+    Original HTML, CSS, JavaScript, handoffs and current-run screenshots for A through D.
+
+    [A baseline →](/studies/development-comparison-002/evidence/run-A-baseline/) · [B 0.3.0 →](/studies/development-comparison-002/evidence/run-B-legacy-mcp/) · [C 0.3.1 →](/studies/development-comparison-002/evidence/run-C-candidate-mcp/) · [D frozen context →](/studies/development-comparison-002/evidence/run-D-frozen-context/)
+  </Card>
+</CardGrid>
+
+The recorded application artifacts are preserved unchanged. One absolute local path in D's handoff was replaced with its public relative path; no result or claim was changed. If you open more than one artifact, clear site data between conditions: some generated artifacts independently chose the same browser-storage key.

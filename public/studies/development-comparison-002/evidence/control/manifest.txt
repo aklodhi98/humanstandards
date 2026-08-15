@@ -1,0 +1,14 @@
+common-prompt.md SHA-256 3476ea10fb51b8a6a9531c9ee47ba54bda412872990649d103d2ca12f74062b4
+mcp-treatment.md SHA-256 e150f1ca548759047490323afac700436224429cdcfd5431d435b58b19965a83
+FROZEN_CONTEXT.md SHA-256 52fc1ea8a4ec47b8d5f8869230a50487c7990efe0af0941976b6a7cdf3a15521
+TASK.md SHA-256 f10880f2f608a0c1d4d74679a91700096b28452ffd1ae0c78717034427cefdd2
+README.md SHA-256 8f80e7672538aa30d74ac2d28b97dcfab5c94cf94044cc670dc35a2ccb9c98b9
+.gitignore SHA-256 c5aaee992cd50ed2be253f861dca3c42349a55619f42209e5ff3f698a04dcdeb
+candidate standards-index SHA-256 1b6b7a545b6eeb1dc6c867b745307686f0feae5af362da2afd6d25451f739c5d
+candidate source commit c93e9d30f54baac1cb5a38603b555e33d067493a
+candidate package version 0.3.1
+legacy package @humanstandards/mcp-server@0.3.0
+legacy package integrity sha512-n+6RMQWLKykUsoKpYyjZvGqAr5R88LPJhomoKwOie9AiB7KfccCuR/8YSP+QDzTsszWVqqN4F98N0h5YymVP9w==
+codex-cli 0.147.0
+model gpt-5.6-sol
+model_reasoning_effort high
